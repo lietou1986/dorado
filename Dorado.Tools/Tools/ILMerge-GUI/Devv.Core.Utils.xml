@@ -1,0 +1,530 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Devv.Core.Utils
+</name>
+</assembly>
+<members>
+<member name="M:Devv.Core.Utils.GeoIPUtil.LoadCountryDatabase(System.String)">
+	<summary>
+ Load the country database from the specified path.
+ </summary>
+</member><member name="M:Devv.Core.Utils.GeoIPUtil.FileToMemory(System.String)">
+	<summary>
+ Gets the specified file and returns the representing memory stream.
+ </summary>
+	<returns>MemoryStream object for the file.</returns>
+</member><member name="M:Devv.Core.Utils.GeoIPUtil.LookupCountryCode(System.Net.IPAddress)">
+	<summary>
+ Gets the country code for the specified IPAddress object.
+ </summary>
+	<returns>Standard country code (2 letters), empty string if not found.</returns>
+</member><member name="M:Devv.Core.Utils.GeoIPUtil.LookupCountryCode(System.String)">
+	<summary>
+ Gets the country code for the specified IP address.
+ </summary>
+	<returns>Standard country code (2 letters), empty string if not found.</returns>
+</member><member name="M:Devv.Core.Utils.GeoIPUtil.LookupCountryName(System.Net.IPAddress)">
+	<summary>
+ Gets the country name for the specified IPAddress object.
+ </summary>
+	<returns>Standard country name, empty string if not found.</returns>
+</member><member name="M:Devv.Core.Utils.GeoIPUtil.LookupCountryName(System.String)">
+	<summary>
+ Gets the country name for the specified IP address.
+ </summary>
+	<returns>Standard country name, empty string if not found.</returns>
+</member><member name="T:Devv.Core.Utils.GeoIPUtil">
+	<summary>
+ Methods to handle the GeoIP database from www.maxmind.com.
+ </summary>
+</member><member name="M:Devv.Core.Utils.CompressionUtil.GZipCompress(System.String)">
+	<summary>
+ Compresses the passed string using GZip.
+ </summary>
+	<returns>Compressed stream, as a byte array.</returns>
+</member><member name="M:Devv.Core.Utils.CompressionUtil.GZipCompress(System.Byte[])">
+	<summary>
+ Compresses the passed byte array using GZip.
+ </summary>
+	<returns>Compressed stream, as a byte array.</returns>
+</member><member name="M:Devv.Core.Utils.CompressionUtil.GZipDecompress(System.Byte[])">
+	<summary>
+ Decompresses the passed byte array using GZip.
+ </summary>
+	<returns>Decompressed stream, as a byte array.</returns>
+</member><member name="T:Devv.Core.Utils.CompressionUtil">
+	<summary>
+ Methods to handle compression methods (Compress and Decompress).
+ </summary>
+</member><member name="M:Devv.Core.Utils.SecurityUtil.GeneratePassword(System.Int32)">
+	<summary>
+ Generates a random password with the specified length.
+ </summary>
+	<returns>Random password as String.</returns>
+</member><member name="M:Devv.Core.Utils.SecurityUtil.GeneratePassword(System.Int32,System.Int32,System.String)">
+	<summary>
+ Generates a random password with the specified minimum and maximum length and valid characters.
+ </summary>
+	<returns>Random password as String.</returns>
+</member><member name="T:Devv.Core.Utils.SecurityUtil">
+	<summary>
+ Methods for security utilities.
+ </summary>
+</member><member name="F:Devv.Core.Utils.AppTypeEnum.Undefined">
+	<summary>
+ Undefined.
+ </summary>
+</member><member name="F:Devv.Core.Utils.AppTypeEnum.WindowsForms">
+	<summary>
+ Windows Forms application or component.
+ </summary>
+</member><member name="F:Devv.Core.Utils.AppTypeEnum.AspNet">
+	<summary>
+ ASP.NET web site or application.
+ </summary>
+</member><member name="T:Devv.Core.Utils.AppTypeEnum">
+	<summary>
+ Enumeration for application type (Windows Forms or ASP.NET).
+ </summary>
+</member><member name="F:Devv.Core.Utils.AssemblyUtil.COMPANY">
+	<summary>
+ Devv
+ </summary>
+</member><member name="F:Devv.Core.Utils.AssemblyUtil.COPYRIGHT">
+	<summary>
+ Copyleft 2005-2009, Devv.com
+ </summary>
+</member><member name="F:Devv.Core.Utils.AssemblyUtil.TRADEMARK">
+	<summary>
+ http://devv.com/
+ </summary>
+</member><member name="M:Devv.Core.Utils.AssemblyUtil.GetFriendlyVersion(System.Reflection.Assembly)">
+	<summary>
+ Gets a friendly assembly version.
+ </summary>
+	<returns>Major.Minor.Build version</returns>
+</member><member name="M:Devv.Core.Utils.AssemblyUtil.GetAppType">
+	<summary>
+ Gets the running application type (Windows Forms or ASP.NET).
+ </summary>
+	<returns>AppTypeEnum.AspNet or AppTypeEnum.WindowsForms</returns>
+</member><member name="M:Devv.Core.Utils.AssemblyUtil.GetCurrentCultureLanguage">
+	<summary>
+ Gets the culture language for the current thread
+ </summary>
+	<returns>The first 2 letters of the CultureInfo (example: en), lowercased.</returns>
+</member><member name="M:Devv.Core.Utils.AssemblyUtil.GetCurrentCultureRegion">
+	<summary>
+ Gets the culture region for the current thread
+ </summary>
+	<returns>The second 2 letters of the CultureInfo (example: us), lowercased.</returns>
+</member><member name="T:Devv.Core.Utils.AssemblyUtil">
+	<summary>
+ Methods to get assembly information and details.
+ </summary>
+</member><member name="M:Devv.Core.Utils.CookieUtil.GetCookie(System.String,System.DateTime)">
+	<summary>
+ Gets the cookie value and return as String.
+ </summary>
+	<returns>Cookie as String.</returns>
+</member><member name="M:Devv.Core.Utils.CookieUtil.GetCookie(System.String)">
+	<summary>
+ Gets the cookie value and return as String.
+ </summary>
+	<returns>Cookie as String.</returns>
+</member><member name="M:Devv.Core.Utils.CookieUtil.SetCookie(System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Saves the specified value to a cookie and sets the expiry date.
+ </summary>
+</member><member name="M:Devv.Core.Utils.CookieUtil.SetCookie(System.String,System.String)">
+	<summary>
+ Saves the specified value to a cookie.
+ </summary>
+</member><member name="M:Devv.Core.Utils.CookieUtil.SetCookie(System.String,System.String,System.DateTime)">
+	<summary>
+ Saves the specified value to a cookie and sets the expiry date.
+ </summary>
+</member><member name="T:Devv.Core.Utils.CookieUtil">
+	<summary>
+ Methods to read and write http cookies.
+ </summary>
+</member><member name="M:Devv.Core.Utils.RegistryUtil.GetAutoRun(System.String)">
+	<summary>
+ Gets the full path for the specified AutoRun value.
+ </summary>
+	<returns>Full executable path as String, or empty string if not found.</returns>
+</member><member name="M:Devv.Core.Utils.RegistryUtil.SetAutoRun(System.String,System.String)">
+	<summary>
+ Inserts a the specified name and path to the AutoRun records.
+ </summary>
+	<returns>True if successful, otherwise False.</returns>
+</member><member name="T:Devv.Core.Utils.RegistryUtil">
+	<summary>
+ Methods to deal with the system registry.
+ </summary>
+</member><member name="M:Devv.Core.Utils.MailUtil.Send(System.Net.Mail.MailMessage)">
+	<summary>
+ Sends the specified message using the default SMTP settings, using the current thread.
+ </summary>
+</member><member name="M:Devv.Core.Utils.MailUtil.Send(System.Net.Mail.MailMessage,System.Boolean)">
+	<summary>
+ Sends the specified message using the default SMTP settings. Retries once if failed. Supports async.
+ </summary>
+</member><member name="T:Devv.Core.Utils.MailUtil">
+	<summary>
+ Methods to send emails.
+ </summary>
+	<remarks>
+ The configuration is done using application settings:
+ Smtp.Host, Smtp.Port, Smtp.User, Smtp.Password, Smtp.EnableSsl, Smtp.RetryInterval.
+ </remarks>
+</member><member name="M:Devv.Core.Utils.RegexUtil.Test(System.String,System.String)">
+	<summary>
+ Test the specified value against a pattern.
+ </summary>
+	<returns>True if it matches, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.RegexUtil.GetTextFromHtml(System.String)">
+	<summary>
+ Extracts the text out of the specified html value.
+ </summary>
+	<returns>Plain text as String.</returns>
+</member><member name="M:Devv.Core.Utils.RegexUtil.GetTitleFromHtml(System.String)">
+	<summary>
+ Extracts the title of the specified html document.
+ </summary>
+	<returns>Text inside <title></title> as String.</returns>
+</member><member name="M:Devv.Core.Utils.RegexUtil.CreateLinksInHtml(System.String)">
+	<summary>
+ Parses the value and inserts html link tags for all URLs, using _self as target.
+ </summary>
+	<returns>Parsed text with html links.</returns>
+</member><member name="M:Devv.Core.Utils.RegexUtil.CreateLinksInHtml(System.String,System.String)">
+	<summary>
+ Parses the value and inserts html link tags for all URLs, using the desired link target.
+ </summary>
+	<returns>Parsed text with html links.</returns>
+</member><member name="M:Devv.Core.Utils.RegexUtil.RemoveAccents(System.String)">
+	<summary>
+ Removes all accents from the specified text.
+ </summary>
+	<returns>Text without accents, as String.</returns>
+</member><member name="M:Devv.Core.Utils.RegexUtil.RemoveSpecialCharacters(System.String)">
+	<summary>
+ Removes all special characters and spaces from the specified text.
+ </summary>
+	<returns>Plain text, as String.</returns>
+</member><member name="M:Devv.Core.Utils.RegexUtil.RemoveSpecialCharacters(System.String,System.Boolean)">
+	<summary>
+ Removes all special characters from the text, preserving spaces.
+ </summary>
+	<returns>Plain text, as String.</returns>
+</member><member name="T:Devv.Core.Utils.RegexUtil">
+	<summary>
+ Methods for regular expression manipulations.
+ </summary>
+</member><member name="M:Devv.Core.Utils.SerializationUtil.Serialize(System.Object)">
+	<summary>
+ Gets the serialized UTF8 value for the specified object.
+ </summary>
+	<returns>The serialized XML string.</returns>
+</member><member name="M:Devv.Core.Utils.SerializationUtil.Serialize(System.Object,System.Text.Encoding)">
+	<summary>
+ Gets the serialized value using the specified encoding.
+ </summary>
+	<returns>The serialized XML string.</returns>
+</member><member name="M:Devv.Core.Utils.SerializationUtil.Deserialize(System.String,System.Type)">
+	<summary>
+ Deserializes the xml using the specified type.
+ </summary>
+	<returns>The deserialized object.</returns>
+</member><member name="M:Devv.Core.Utils.SerializationUtil.Deserialize(System.String,System.Type,System.Text.Encoding)">
+	<summary>
+ Deserializes the xml using the specified type and encoding.
+ </summary>
+	<returns>The deserialized object.</returns>
+</member><member name="T:Devv.Core.Utils.SerializationUtil">
+	<summary>
+ Methods to serialize and deserialize objects.
+ </summary>
+</member><member name="M:Devv.Core.Utils.DataUtil.HasValue(System.Object)">
+	<summary>
+ Checks if the object passed is null or empty.
+ </summary>
+	<returns>True if has value, otherwise false.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.IsNumeric(System.String)">
+	<summary>
+ Checks if the passed value is a valid integer.
+ </summary>
+	<returns>True if a valid Int32, otherwise false.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.IsNumeric(System.String,System.Int32@)">
+	<summary>
+ Checks if the passed value is a valid integer, with a variable to bind (ByRef).
+ </summary>
+	<returns>True if a valid Int32, otherwise false.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.TrueOrFalse(System.Object)">
+	<summary>
+ Checks if the value passed is True or False.
+ </summary>
+	<returns>True if the value is 1, TRUE, YES, ON. False for 0, FALSE, NO, OFF. Otherwise throws an InvalidOperationException.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.ParseDurationToSeconds(System.String)">
+	<summary>
+ Gets the passed value as seconds (for example 1m 10s should be 70).
+ </summary>
+	<returns>The value in seconds, as Int32.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.GetDateRfc822(System.DateTime)">
+	<summary>
+ Returns a string using the RFC822 format, representing the passed DateTime.
+ </summary>
+	<returns>Date in RFC-822 format.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.ParseDateRfc822(System.String)">
+	<summary>
+ Parses the value using the RFC822 format and returns as DateTime.
+ </summary>
+	<returns>Parsed value as DateTime.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.StringToUTF8ByteArray(System.String)">
+	<summary>
+ Converts the passed String to UT8ByteArray.
+ </summary>
+	<returns>Converted String as UT8ByteArray.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.UTF8ByteArrayToString(System.Byte[])">
+	<summary>
+ Convert the passed UT8ByteArray to String.
+ </summary>
+	<returns>Converted UT8ByteArray as String.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.GetString(System.Object)">
+	<summary>
+ Return the passed object as String.
+ </summary>
+	<returns>Object converted to String.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.GetInt32(System.Object)">
+	<summary>
+ Return the passed object as Int32.
+ </summary>
+	<returns>Object converted to Int32.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.GetDouble(System.Object)">
+	<summary>
+ Return the passed object as Double.
+ </summary>
+	<returns>Object converted to Double.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.GetSingle(System.Object)">
+	<summary>
+ Return the passed object as Single.
+ </summary>
+	<returns>Object converted to Single.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.GetBoolean(System.Object)">
+	<summary>
+ Return the passed object as Boolean.
+ </summary>
+	<returns>Object converted to Boolean.</returns>
+</member><member name="M:Devv.Core.Utils.DataUtil.GetDateTime(System.Object)">
+	<summary>
+ Return the passed object as DateTime.
+ </summary>
+	<returns>Object converted to DateTime.</returns>
+</member><member name="T:Devv.Core.Utils.DataUtil">
+	<summary>
+ Methods to parse and validate data.
+ </summary>
+</member><member name="M:Devv.Core.Utils.EventLogUtil.Write(System.String,System.String,System.String,System.Diagnostics.EventLogEntryType,System.Int32)">
+	<summary>
+ Writes to the specified event log, passing all parameters.
+ </summary>
+</member><member name="T:Devv.Core.Utils.EventLogUtil">
+	<summary>
+ Add and get information from the Windows Event Logs.
+ </summary>
+</member><member name="P:Devv.Core.Utils.LogFile.Contents">
+	<value>
+ The contents of the log.
+ </value>
+</member><member name="P:Devv.Core.Utils.LogFile.FilePath">
+	<value>
+ The full path for the log file.
+ </value>
+</member><member name="P:Devv.Core.Utils.LogFile.Title">
+	<value>
+ The log descriptive title.
+ </value>
+</member><member name="P:Devv.Core.Utils.LogFile.Timestamp">
+	<value>
+ If true, will put a timestamp for every action.
+ </value>
+</member><member name="M:Devv.Core.Utils.LogFile.#ctor">
+	<summary>
+ Creates a new LogFile object.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.#ctor(System.String)">
+	<summary>
+ Creates a new LogFile object and sets the full file path.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.#ctor(System.String,System.String)">
+	<summary>
+ Creates a new LogFile object with the specified file path and title.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.ToString">
+	<returns>Returns the contents of the LogFile.</returns>
+</member><member name="M:Devv.Core.Utils.LogFile.Clear">
+	<summary>
+ Clears the log contents and set the start date as Now().
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.Init(System.String,System.String)">
+	<summary>
+ Initialize the LogFile using the specified file path and log title.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.AppendSeparator">
+	<summary>
+ Appends a line separator to the log file.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.Append">
+	<summary>
+ Appends a new line to the log file.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.Append(System.String)">
+	<summary>
+ Appends the text in a new line in the log file.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.Append(System.String,System.Boolean)">
+	<summary>
+ Appends the text in a new line, and adds a timestamp if true.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.AppendError(System.Exception)">
+	<summary>
+ Appends the specified exception to the log file.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.Save">
+	<summary>
+ Saves the LogFile to its file path.
+ </summary>
+</member><member name="M:Devv.Core.Utils.LogFile.Save(System.Boolean)">
+	<summary>
+ Saves the LogFile to its file path, and appends the date after the filename.
+ </summary>
+</member><member name="T:Devv.Core.Utils.LogFile">
+	<summary>
+ LogFile object representing a text log file.
+ </summary>
+</member><member name="M:Devv.Core.Utils.IOUtil.ValidatePath(System.String)">
+	<summary>
+ Checks if the specified value is a valid path.
+ </summary>
+	<returns>True if a valid path, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.ValidatePhysicalPath(System.String)">
+	<summary>
+ Checks if the specified value is a valid physical path.
+ </summary>
+	<returns>True if a valid physical path, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.ReadFile(System.String)">
+	<summary>
+ Reads the specified file using UTF8 and returns the contents as String.
+ </summary>
+	<returns>File contents as String.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.ReadFile(System.String,System.Text.Encoding)">
+	<summary>
+ Reads a file using the specified encoding and returns the contents as String.
+ </summary>
+	<returns>File contents as String.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.WriteFile(System.String,System.String)">
+	<summary>
+ Writes contents to the specified file using UTF8, overwrites if exists.
+ </summary>
+	<returns>True if the write operation is successful, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.WriteFile(System.String,System.String,System.Boolean)">
+	<summary>
+ Writes contents to the specified file using UTF8 (can overwrite or append).
+ </summary>
+	<returns>True if the write operation is successful, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.WriteFile(System.String,System.String,System.Boolean,System.Text.Encoding)">
+	<summary>
+ Writes contents to the specified file using a custom encoding (can overwrite or append).
+ </summary>
+	<returns>True if the write operation is successful, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.CopyFolder(System.String,System.String)">
+	<summary>
+ Copies the entire folder contents to the specified path, overwrites if exists.
+ </summary>
+	<returns>True if the copy operation is successful, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.CopyFolder(System.String,System.String,System.Boolean)">
+	<summary>
+ Copies the entire folder contents to the specified path (can overwrite or append).
+ </summary>
+	<returns>True if the copy operation is successful, otherwise False.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.GetFileSizeKbytes(System.String)">
+	<summary>
+ Gets the size of the specified file in Kilobytes.
+ </summary>
+	<returns>File size in Kilobytes, as Int32.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.GetSizeString(System.IO.FileInfo)">
+	<summary>
+ Gets the formatted size string for the specified file.
+ </summary>
+	<returns>Formatted file size as String.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.GetSizeString(System.Byte)">
+	<summary>
+ Gets the formatted size string for the specified value.
+ </summary>
+	<returns>Formatted size as String.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.GetSizeString(System.Int32)">
+	<summary>
+ Gets the formatted size string for the specified value.
+ </summary>
+	<returns>Formatted size as String.</returns>
+</member><member name="M:Devv.Core.Utils.IOUtil.GetSizeString(System.Int64)">
+	<summary>
+ Gets the formatted size string for the specified value.
+ </summary>
+	<returns>Formatted size as String.</returns>
+</member><member name="T:Devv.Core.Utils.IOUtil">
+	<summary>
+ Methods to handle IO operations and file system information.
+ </summary>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.GetConnectionString(System.String)">
+	<summary>
+ Gets a connection string settings object from the config file.
+ </summary>
+	<returns>ConnectionStringSettings object.</returns>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.GetConfig(System.String)">
+	<summary>
+ Gets a custom application config value as String, defaults to Empty.
+ </summary>
+	<returns>Key value as string, if null returns Empty.</returns>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.GetConfig(System.String,System.String)">
+	<summary>
+ Gets an application config from appSettings as String.
+ </summary>
+	<returns>If null returns the default, otherwise the value as String.</returns>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.GetConfig(System.String,System.Int32)">
+	<summary>
+ Gets an application config from appSettings as Int32.
+ </summary>
+	<returns>If null returns the default, otherwise the value as Int32.</returns>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.GetConfig(System.String,System.Boolean)">
+	<summary>
+ Gets an application config from appSettings as Boolean.
+ </summary>
+	<returns>If null returns the default, otherwise the value as Boolean.</returns>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.GetConfig(System.String,System.DateTime)">
+	<summary>
+ Gets an application config from appSettings as DateTime.
+ </summary>
+	<returns>If null returns the default, otherwise the value as DateTime.</returns>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.WriteConfig(System.String,System.Boolean)">
+	<summary>
+ Writes a Boolean value to the configuration settings.
+ </summary>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.WriteConfig(System.String,System.Int32)">
+	<summary>
+ Writes an Int32 value to the configuration settings.
+ </summary>
+</member><member name="M:Devv.Core.Utils.ConfigUtil.WriteConfig(System.String,System.String)">
+	<summary>
+ Writes a String value to the configuration settings.
+ </summary>
+</member><member name="T:Devv.Core.Utils.ConfigUtil">
+	<summary>
+ Methods to read from and write to the application config file.
+ </summary>
+</member>
+</members>
+</doc>

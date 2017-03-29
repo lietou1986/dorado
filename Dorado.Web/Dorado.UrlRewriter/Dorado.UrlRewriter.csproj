@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CCBDDF6-2608-48BB-9E71-B60B4758D4FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.UrlRewriter</RootNamespace>
+    <AssemblyName>Dorado.UrlRewriter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\AddHeaderAction.cs" />
+    <Compile Include="Actions\ConditionalAction.cs" />
+    <Compile Include="Actions\ForbiddenAction.cs" />
+    <Compile Include="Actions\GoneAction.cs" />
+    <Compile Include="Actions\IRewriteAction.cs" />
+    <Compile Include="Actions\MethodNotAllowedAction.cs" />
+    <Compile Include="Actions\NotFoundAction.cs" />
+    <Compile Include="Actions\NotImplementedAction.cs" />
+    <Compile Include="Actions\RedirectAction.cs" />
+    <Compile Include="Actions\RewriteAction.cs" />
+    <Compile Include="Actions\SetAppSettingPropertyAction.cs" />
+    <Compile Include="Actions\SetCookieAction.cs" />
+    <Compile Include="Actions\SetLocationAction.cs" />
+    <Compile Include="Actions\SetPropertyAction.cs" />
+    <Compile Include="Actions\SetStatusAction.cs" />
+    <Compile Include="Conditions\AddressCondition.cs" />
+    <Compile Include="Conditions\ExistsCondition.cs" />
+    <Compile Include="Conditions\IRewriteCondition.cs" />
+    <Compile Include="Conditions\MatchCondition.cs" />
+    <Compile Include="Conditions\MethodCondition.cs" />
+    <Compile Include="Conditions\NegativeCondition.cs" />
+    <Compile Include="Conditions\PropertyMatchCondition.cs" />
+    <Compile Include="Conditions\UrlMatchCondition.cs" />
+    <Compile Include="Conditions\HostCondition.cs" />
+    <Compile Include="Conditions\AbsUrlMatchCondition.cs" />
+    <Compile Include="Configuration\ActionParserFactory.cs" />
+    <Compile Include="Configuration\ConditionParserPipeline.cs" />
+    <Compile Include="Configuration\ConfigurationManagerFacade.cs" />
+    <Compile Include="Configuration\IConfigurationManager.cs" />
+    <Compile Include="Configuration\IRewriterConfiguration.cs" />
+    <Compile Include="Configuration\RewriterConfiguration.cs" />
+    <Compile Include="Configuration\RewriterConfigurationReader.cs" />
+    <Compile Include="Configuration\RewriterConfigurationSectionHandler.cs" />
+    <Compile Include="Configuration\TransformFactory.cs" />
+    <Compile Include="Errors\DefaultErrorHandler.cs" />
+    <Compile Include="Errors\IRewriteErrorHandler.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="FormRewriterControlAdapter.cs" />
+    <Compile Include="Logging\DebugLogger.cs" />
+    <Compile Include="Logging\IRewriteLogger.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Logging\TraceLogger.cs" />
+    <Compile Include="Parsers\AddHeaderActionParser.cs" />
+    <Compile Include="Parsers\AddressConditionParser.cs" />
+    <Compile Include="Parsers\ExistsConditionParser.cs" />
+    <Compile Include="Parsers\ForbiddenActionParser.cs" />
+    <Compile Include="Parsers\GoneActionParser.cs" />
+    <Compile Include="Parsers\HeaderMatchConditionParser.cs" />
+    <Compile Include="Parsers\IfConditionActionParser.cs" />
+    <Compile Include="Parsers\IRewriteActionParser.cs" />
+    <Compile Include="Parsers\IRewriteConditionParser.cs" />
+    <Compile Include="Parsers\MethodConditionParser.cs" />
+    <Compile Include="Parsers\NotAllowedActionParser.cs" />
+    <Compile Include="Parsers\NotFoundActionParser.cs" />
+    <Compile Include="Parsers\NotImplementedActionParser.cs" />
+    <Compile Include="Parsers\PropertyMatchConditionParser.cs" />
+    <Compile Include="Parsers\RedirectActionParser.cs" />
+    <Compile Include="Parsers\RewriteActionParser.cs" />
+    <Compile Include="Parsers\RewriteActionParserBase.cs" />
+    <Compile Include="Parsers\SetAppSettingPropertyActionParser.cs" />
+    <Compile Include="Parsers\SetCookieActionParser.cs" />
+    <Compile Include="Parsers\SetPropertyActionParser.cs" />
+    <Compile Include="Parsers\SetStatusActionParser.cs" />
+    <Compile Include="Parsers\UnlessConditionActionParser.cs" />
+    <Compile Include="Parsers\UrlMatchConditionParser.cs" />
+    <Compile Include="Parsers\HostConditionParser.cs" />
+    <Compile Include="Parsers\AbsUrlMatchConditionParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RewriteContext.cs" />
+    <Compile Include="RewriteFormHtmlTextWriter.cs" />
+    <Compile Include="RewriteProcessing.cs" />
+    <Compile Include="RewriterEngine.cs" />
+    <Compile Include="RewriterHttpModule.cs" />
+    <Compile Include="Transforms\Base64DecodeTransform.cs" />
+    <Compile Include="Transforms\Base64Transform.cs" />
+    <Compile Include="Transforms\DecodeTransform.cs" />
+    <Compile Include="Transforms\EncodeTransform.cs" />
+    <Compile Include="Transforms\IRewriteTransform.cs" />
+    <Compile Include="Transforms\LowerTransform.cs" />
+    <Compile Include="Transforms\StaticMappingTransform.cs" />
+    <Compile Include="Transforms\UpperTransform.cs" />
+    <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\HttpContextFacade.cs" />
+    <Compile Include="Utilities\IHttpContext.cs" />
+    <Compile Include="Utilities\IPRange.cs" />
+    <Compile Include="Utilities\Message.cs" />
+    <Compile Include="Utilities\MessageProvider.cs" />
+    <Compile Include="Utilities\TypeHelper.cs" />
+    <Compile Include="XmlNodeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Messages.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

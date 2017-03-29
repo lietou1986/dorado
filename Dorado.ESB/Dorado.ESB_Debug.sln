@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceComponents", "ServiceComponents", "{E8C0C2AC-74AE-4C15-AD2C-97CC3E965374}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiWcf", "ApiWcf", "{D5BDEE2D-2991-42BC-A7E4-CAC6862E7DA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.GenerateServices", "Dorado.ESB.GenerateServices\Dorado.ESB.GenerateServices.csproj", "{FA598FEB-CC94-40C8-B901-03E1356567DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.Common", "Dorado.ESB.Common\Dorado.ESB.Common.csproj", "{BC4C586D-C645-4960-9353-24C3BA6707FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.Core", "Dorado.ESB.Core\Dorado.ESB.Core.csproj", "{F9EA6889-691B-4898-BC6E-7184F5DBAF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.Extensions", "Dorado.ESB.Extensions\Dorado.ESB.Extensions.csproj", "{A1D6B07F-755C-4F0E-9CD1-20F683AF37E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.ServiceGenerateFactory", "Dorado.ESB.ServiceGenerateFactory\Dorado.ESB.ServiceGenerateFactory.csproj", "{505C8B29-8966-4A1A-8271-9EB733C1E27A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.ServiceHost", "Dorado.ESB.ServiceHost\Dorado.ESB.ServiceHost.csproj", "{A617941A-A751-45C6-AF9A-F9C637B88A77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.WindowsService", "Dorado.ESB.WindowsService\Dorado.ESB.WindowsService.csproj", "{BB19FF08-6B55-4B16-8172-291FF363D439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host_Console", "Host_Console\Host_Console.csproj", "{8AB94F5E-FC5C-4B64-87DC-DBAAAB268471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_Console", "Client_Console\Client_Console.csproj", "{BB477B5D-99CA-4441-A4EF-7ADC3CFFC8A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.Communication", "Dorado.ESB.Communication\Dorado.ESB.Communication.csproj", "{343C6F00-4C11-4A73-B2D5-38F2E05B0B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.Json", "Dorado.ESB.Json\Dorado.ESB.Json.csproj", "{0251A30D-E422-49A7-B106-766EE8CE76C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.ClientProxyFactory", "Dorado.ESB.ClientProxyFactory\Dorado.ESB.ClientProxyFactory.csproj", "{B0803286-89DF-4D3E-9884-58D6AC2C6B45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ESB.OpenApiAuth", "Dorado.ESB.OpenApiAuth\Dorado.ESB.OpenApiAuth.csproj", "{7B407F1E-9C0B-4DAB-BE83-174E0AC718FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA598FEB-CC94-40C8-B901-03E1356567DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA598FEB-CC94-40C8-B901-03E1356567DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA598FEB-CC94-40C8-B901-03E1356567DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA598FEB-CC94-40C8-B901-03E1356567DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4C586D-C645-4960-9353-24C3BA6707FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4C586D-C645-4960-9353-24C3BA6707FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4C586D-C645-4960-9353-24C3BA6707FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4C586D-C645-4960-9353-24C3BA6707FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9EA6889-691B-4898-BC6E-7184F5DBAF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9EA6889-691B-4898-BC6E-7184F5DBAF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9EA6889-691B-4898-BC6E-7184F5DBAF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9EA6889-691B-4898-BC6E-7184F5DBAF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D6B07F-755C-4F0E-9CD1-20F683AF37E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D6B07F-755C-4F0E-9CD1-20F683AF37E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D6B07F-755C-4F0E-9CD1-20F683AF37E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D6B07F-755C-4F0E-9CD1-20F683AF37E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{505C8B29-8966-4A1A-8271-9EB733C1E27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505C8B29-8966-4A1A-8271-9EB733C1E27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505C8B29-8966-4A1A-8271-9EB733C1E27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505C8B29-8966-4A1A-8271-9EB733C1E27A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A617941A-A751-45C6-AF9A-F9C637B88A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A617941A-A751-45C6-AF9A-F9C637B88A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A617941A-A751-45C6-AF9A-F9C637B88A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A617941A-A751-45C6-AF9A-F9C637B88A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB19FF08-6B55-4B16-8172-291FF363D439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB19FF08-6B55-4B16-8172-291FF363D439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB19FF08-6B55-4B16-8172-291FF363D439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB19FF08-6B55-4B16-8172-291FF363D439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AB94F5E-FC5C-4B64-87DC-DBAAAB268471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AB94F5E-FC5C-4B64-87DC-DBAAAB268471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AB94F5E-FC5C-4B64-87DC-DBAAAB268471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AB94F5E-FC5C-4B64-87DC-DBAAAB268471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB477B5D-99CA-4441-A4EF-7ADC3CFFC8A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB477B5D-99CA-4441-A4EF-7ADC3CFFC8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB477B5D-99CA-4441-A4EF-7ADC3CFFC8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB477B5D-99CA-4441-A4EF-7ADC3CFFC8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343C6F00-4C11-4A73-B2D5-38F2E05B0B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343C6F00-4C11-4A73-B2D5-38F2E05B0B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343C6F00-4C11-4A73-B2D5-38F2E05B0B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343C6F00-4C11-4A73-B2D5-38F2E05B0B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0251A30D-E422-49A7-B106-766EE8CE76C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0251A30D-E422-49A7-B106-766EE8CE76C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0251A30D-E422-49A7-B106-766EE8CE76C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0251A30D-E422-49A7-B106-766EE8CE76C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B407F1E-9C0B-4DAB-BE83-174E0AC718FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B407F1E-9C0B-4DAB-BE83-174E0AC718FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B407F1E-9C0B-4DAB-BE83-174E0AC718FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B407F1E-9C0B-4DAB-BE83-174E0AC718FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5BDEE2D-2991-42BC-A7E4-CAC6862E7DA0} = {E8C0C2AC-74AE-4C15-AD2C-97CC3E965374}
+		{FA598FEB-CC94-40C8-B901-03E1356567DF} = {D5BDEE2D-2991-42BC-A7E4-CAC6862E7DA0}
+	EndGlobalSection
+EndGlobal

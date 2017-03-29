@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using Tiwx.FastData.Ldo;
+
+namespace Tiwx.FastData.Ldo.SimpleBinder
+{
+	public class ${class.LdoClass}:Tiwx.FastData.Ldo.DefaultBinder<${class.OwnerType.FullName}>
+	{
+		public ${class.LdoClass}()
+		{
+			
+		}
+		public override Bind(${class.OwnerType.FullName} entity)
+		{
+#foreach($pi in ${class.Properties})
+			if(Columns.ContainsKey("${pi.Field.FieldName}"))
+			{
+				entity.${pi.OwnerProperty.Name}=DataReader.GetValue(Columns[${pi.Field.FieldName}]);
+			}
+#end
+		}
+	}
+}

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fileset-configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" majorversion="0" minorversion="0" majorVersion="1" minorVersion="1">
+  <parameter versionedUrl="true" autoMerge="true" enableCache="true" />
+  <fileset-collection>
+    <!--公司通知公告-->
+    <fileset name="CompanyNotice" enable="true">
+      <files>
+        <file name="Notice" type="other" version="0" url="" flags="ref remote" description="默认公告">
+          <partten><![CDATA[<h1>公告22</h1>]]></partten>
+        </file>
+      </files>
+    </fileset>
+    <fileset name="SearchAnlaysis" enable="true">
+      <files>
+        <file name="CNZZ" type="javascript" version="0" url="http://s13.cnzz.com/stat.php?id=1216963&amp;web_id=1216963" flags="ref remote" />
+        <file name="BaiduShare" type="other" version="0" url="http://bdimg.share.baidu.com/static/js/shell_v2.js" flags="ref remote" description="百度分享">
+          <partten><![CDATA[
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "{0}?cdnversion=" + Math.ceil(new Date() / 3600000)
+</script>]]></partten>
+        </file>
+        <file name="GoogleAnlaysis" type="other" version="0" url="UA-17882762-1" flags="ref remote" description="谷歌统计">
+          <partten><![CDATA[<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{0}']);
+    _gaq.push(['_setDomainName', 'jsxgold.com']);
+    _gaq.push(['_trackPageview']);
+    (function () {{
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }})();
+</script>]]></partten>
+        </file>
+        <file name="BaiduAnlaysis" type="other" version="0" url="hm.baidu.com/h.js%3Fa5ae56c4474c2f66e1dbe83d8def8c56" flags="ref remote" description="百度统计">
+          <partten><![CDATA[<script type="text/javascript">
+   var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "{0}' type='text/javascript'%3E%3C/script%3E"));
+</script>]]></partten>
+        </file>
+      </files>
+    </fileset>
+    <fileset name="PlatformFileset" enable="true">
+      <implements />
+      <files>
+        <!--收藏夹图标-->
+        <file name="Favicon" type="other" version="0" url="http://www.uuzhufu.com/img/favicon.ico" flags="ref remote">
+          <partten><![CDATA[<link rel="icon" type="image/x-icon" href="{0}" />]]></partten>
+        </file>
+        <!--公共Jquery版本-->
+        <file name="Jquery" type="javascript" version="0" url="/Scripts/Shared/jquery-1.8.3.min.js" flags="ref remote" />
+        <!--后台UI Script-->
+        <file name="UI" type="javascript" version="0" url="/fastweb/js/bui-min.js" flags="ref remote" />
+        <file name="Core" type="javascript" version="0" url="/FastWeb/js/core.js" flags="ref remote" />
+        <file name="Config" type="javascript" version="0" url="/FastWeb/js/config-min.js" flags="ref remote" />
+        <!--插件 Script-->
+        <file name="Sizzle" type="javascript" version="0" url="/Scripts/Plugins/sizzle.min.js" flags="ref remote" />
+        <file name="Slider" type="javascript" version="0" url="/Scripts/Plugins/jquery.nivo.slider.min.js" flags="ref remote" />
+        <file name="Lazyload" type="javascript" version="0" url="/Scripts/Plugins/jquery.lazyload.min.js" flags="ref remote" />
+        <file name="Jcarousel" type="javascript" version="0" url="/Scripts/Plugins/jquery.jcarousel.min.js" flags="ref remote" />
+        <file name="MultiFile" type="javascript" version="0" url="/Scripts/Plugins/jquery.MultiFile.min.js" flags="ref remote" />
+        <file name="EasyTab" type="javascript" version="0" url="/Scripts/Plugins/jquery.easytabs.min.js" flags="ref remote" />
+        <file name="ImageZoom" type="javascript" version="0" url="/Scripts/Plugins/jquery.jqzoom.min.js" flags="ref remote" />
+        <file name="ScrollTo" type="javascript" version="0" url="/Scripts/Plugins/jquery.scrollTo.min.js" flags="ref remote" />
+        <file name="PinYin" type="javascript" version="0" url="/Scripts/Plugins/jQuery.Hz2Py.min.js" flags="ref remote" />
+        <!--编辑器 Script-->
+        <file name="CKEditor" type="javascript" version="0" url="/ckeditor/ckeditor.js" flags="ref remote" />
+        <file name="CKFinder" type="javascript" version="0" url="/WebForms/CkFinder/ckfinder.js" flags="ref remote" />
+        <!--EasyUI Script-->
+        <file name="EasyUIScript" type="javascript" version="0" url="/jquery-easyui/jquery.easyui.min.js" flags="ref remote" />
+        <!--后台UI Css-->
+        <file name="BUIStyle" type="css" version="0" url="/FastWeb/css/bui-min.css" flags="ref remote" />
+        <file name="UIStyle" type="css" version="0" url="/FastWeb/css/dpl-min.css" flags="ref remote" />
+        <file name="PageStyle" type="css" version="0" url="/FastWeb/css/page-min.css" flags="ref remote" />
+        <file name="MasterStyle" type="css" version="0" url="/Styles/_Master/shared.css" flags="ref remote" />
+        <file name="MainStyle" type="css" version="0" url="/FastWeb/css/main.css" flags="ref remote" />
+        <!--EasyUI Css-->
+        <file name="EasyUICss" type="css" version="0" url="/jquery-easyui/themes/bootstrap/easyui.css" flags="ref remote" />
+        <file name="EasyUIIconCss" type="css" version="0" url="/jquery-easyui/themes/icon.css" flags="ref remote" />
+        <!--母板页面上区-->
+        <file name="MasterPageScript" type="group" version="0" url=" " flags="ref remote">
+          <depends>
+            <depend>Jquery</depend>
+            <depend>UI</depend>
+            <depend>Core</depend>
+          </depends>
+        </file>
+        <file name="MasterIndexPageScript" type="group" version="0" url=" " flags="ref remote">
+          <depends>
+            <depend>Jquery</depend>
+            <depend>UI</depend>
+            <depend>Config</depend>
+            <depend>Core</depend>
+          </depends>
+        </file>
+        <file name="MasterPageStyle" type="group" version="0" url=" " flags="ref remote">
+          <depends>
+            <depend>BUIStyle</depend>
+            <depend>UIStyle</depend>
+            <depend>PageStyle</depend>
+            <depend>MasterStyle</depend>
+          </depends>
+        </file>
+        <file name="MasterIndexPageStyle" type="group" version="0" url=" " flags="ref remote">
+          <depends>
+            <depend>BUIStyle</depend>
+            <depend>UIStyle</depend>
+            <depend>MainStyle</depend>
+          </depends>
+        </file>
+        <file name="CKSource" type="group" version="0" url=" " flags="ref remote">
+          <depends>
+            <depend>CKEditor</depend>
+            <depend>CKFinder</depend>
+          </depends>
+        </file>
+        <file name="EasyUI" type="group" version="0" url=" " flags="ref remote">
+          <depends>
+            <depend>Jquery</depend>
+            <depend>EasyUIScript</depend>
+            <depend>EasyUICss</depend>
+            <depend>EasyUIIconCss</depend>
+          </depends>
+        </file>
+      </files>
+    </fileset>
+  </fileset-collection>
+</fileset-configuration>

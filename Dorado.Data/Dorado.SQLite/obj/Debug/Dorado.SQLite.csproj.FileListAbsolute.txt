@@ -1,0 +1,13 @@
+D:\Projects\Work\NET\Dorado\Dorado.Data\Dorado.SQLite\bin\Debug\Dorado.SQLite.dll
+D:\Projects\Work\NET\Dorado\Dorado.Data\Dorado.SQLite\bin\Debug\Dorado.SQLite.pdb
+D:\Projects\Work\NET\Dorado\Dorado.Data\Dorado.SQLite\bin\Debug\System.Data.SQLite.dll
+F:\云盘\Work\Dorado\Build\Dorado.SQLite.dll
+F:\云盘\Work\Dorado\Build\Dorado.SQLite.pdb
+F:\云盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Debug\Dorado.SQLite.csprojResolveAssemblyReference.cache
+F:\云盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Debug\Dorado.SQLite.dll
+F:\云盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Debug\Dorado.SQLite.pdb
+F:\快盘\Work\Dorado\Build\Dorado.SQLite.dll
+F:\快盘\Work\Dorado\Build\Dorado.SQLite.pdb
+F:\快盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Debug\Dorado.SQLite.csprojResolveAssemblyReference.cache
+F:\快盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Debug\Dorado.SQLite.dll
+F:\快盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Debug\Dorado.SQLite.pdb

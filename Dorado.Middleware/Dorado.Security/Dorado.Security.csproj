@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{A59D53E1-5481-4826-9F97-5679A6A93C19}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Dorado.Security</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\Build\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Dorado.Security</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>..\..\Build\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary">
+      <HintPath>..\..\packages\AntiXSS.4.3.0\lib\net40\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary">
+      <HintPath>..\..\packages\AntiXSS.4.3.0\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedOpenSsl">
+      <HintPath>..\..\Dorado.Tools\References\ManagedOpenSsl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Certificate\CertificateAuthority.cs" />
+    <Compile Include="Certificate\ConfigMessage.cs" />
+    <Compile Include="Coder\DoradoCoding.cs" />
+    <Compile Include="Coder\BS_Base64.cs" />
+    <Compile Include="Coder\BS_CRC32.cs" />
+    <Compile Include="Coder\CRC32.cs" />
+    <Compile Include="Coder\RondomSN.cs" />
+    <Compile Include="Crypto\BS_AES.cs" />
+    <Compile Include="Crypto\BS_DES.cs" />
+    <Compile Include="Crypto\BS_HASH.cs" />
+    <Compile Include="Crypto\BS_Rc4.cs" />
+    <Compile Include="Crypto\BS_Rsa.cs" />
+    <Compile Include="Crypto\CryptoBase.cs" />
+    <Compile Include="Crypto\File_HASH.cs" />
+    <Compile Include="Crypto\ICrypto.cs" />
+    <Compile Include="Crypto\ProvidesKey.cs" />
+    <Compile Include="Crypto\RC4Crypto.cs" />
+    <Compile Include="Filter\FilterFile.cs" />
+    <Compile Include="Filter\FilterIP.cs" />
+    <Compile Include="Filter\FilterSql.cs" />
+    <Compile Include="Filter\FilterXss.cs" />
+    <Compile Include="Filter\OutputCode.cs" />
+    <Compile Include="Filter\RealNameFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

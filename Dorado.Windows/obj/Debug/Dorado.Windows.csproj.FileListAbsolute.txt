@@ -1,0 +1,16 @@
+D:\Projects\Work\Dorado\Dorado.Windows\bin\Debug\Dorado.Windows.dll
+D:\Projects\Work\Dorado\Dorado.Windows\bin\Debug\Dorado.Windows.pdb
+D:\Projects\Work\Dorado\Dorado.Windows\obj\Debug\Interop.IWshRuntimeLibrary.dll
+D:\Projects\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.ResolveComReference.cache
+D:\Projects\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.dll
+D:\Projects\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.pdb
+D:\Projects\Work\Dorado\Dorado.Windows\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\Work\NET\Dorado\Dorado.Windows\bin\Debug\Dorado.Windows.dll
+D:\Projects\Work\NET\Dorado\Dorado.Windows\bin\Debug\Dorado.Windows.pdb
+F:\云盘\Work\Dorado\Build\Dorado.Windows.dll
+F:\云盘\Work\Dorado\Build\Dorado.Windows.pdb
+F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csprojResolveAssemblyReference.cache
+F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Interop.IWshRuntimeLibrary.dll
+F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.ResolveComReference.cache
+F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.dll
+F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.pdb

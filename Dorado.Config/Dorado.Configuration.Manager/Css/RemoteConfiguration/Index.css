@@ -1,0 +1,12 @@
+﻿body
+{
+}
+.config_delete, .app_delete
+{
+    color: Red;
+}
+.history
+{
+    padding: 0 20px;
+    overflow: hidden;
+}

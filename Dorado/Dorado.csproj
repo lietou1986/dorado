@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56CB9912-4CE8-4370-8B21-5EEEF2123E9E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado</RootNamespace>
+    <AssemblyName>Dorado</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ASYNC</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>TRACE;ASYNC</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Core\AppDomainTypeFinder.cs" />
+    <Compile Include="Core\Cache\StorageStrategys\AspNetStorageStrategy.cs" />
+    <Compile Include="Core\Cache\StorageStrategys\NullStorageStrategy.cs" />
+    <Compile Include="Core\Cache\StorageStrategys\HttpRequestStorageStrategy.cs" />
+    <Compile Include="Core\Collection\BlockingQueue.cs" />
+    <Compile Include="Core\Collection\LazyMultimap.cs" />
+    <Compile Include="Core\Collection\MostRecentlyUsedList.cs" />
+    <Compile Include="Core\Collection\MultiMap.cs" />
+    <Compile Include="Core\Collection\QuerystringBuilder.cs" />
+    <Compile Include="Core\Collection\SizeQueue.cs" />
+    <Compile Include="Core\Collection\ThreadSafeList.cs" />
+    <Compile Include="Core\Collection\TopologicalSorter.cs" />
+    <Compile Include="Core\Collection\TreeNode.cs" />
+    <Compile Include="Core\ComparableObject.cs" />
+    <Compile Include="Core\ComponentModel\FastActivator.cs" />
+    <Compile Include="Core\ComponentModel\FastProperty.cs" />
+    <Compile Include="Core\ComponentModel\HybridExpando.cs" />
+    <Compile Include="Core\ComponentModel\ObjectSignatureAttribute.cs" />
+    <Compile Include="Core\ComponentModel\PropertyBag.cs" />
+    <Compile Include="Core\ComponentModel\SerializationUtils.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\BooleanConverter.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\DateTimeConverter.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\EnumerableConverter.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\ITypeConverter.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\NullableConverter.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\TimeSpanConverter.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\TypeConverterAdapter.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\TypeConverterBase.cs" />
+    <Compile Include="Core\ComponentModel\TypeConversion\TypeConverterFactory.cs" />
+    <Compile Include="Core\ContextState.cs" />
+    <Compile Include="Core\DisposableObject.cs" />
+    <Compile Include="Core\Email\DefaultEmailSender.cs" />
+    <Compile Include="Core\Email\EmailAccount.cs" />
+    <Compile Include="Core\Email\EmailAddress.cs" />
+    <Compile Include="Core\Email\EmailException.cs" />
+    <Compile Include="Core\Email\EmailMessage.cs" />
+    <Compile Include="Core\Email\EmailSenderExtensions.cs" />
+    <Compile Include="Core\Email\IEmailSender.cs" />
+    <Compile Include="Core\Email\SmtpContext.cs" />
+    <Compile Include="Core\Data\DataType\TreeName.cs" />
+    <Compile Include="Core\Data\DataType\TreeNameNode.cs" />
+    <Compile Include="Core\Data\Conn.cs" />
+    <Compile Include="Core\Data\ConnBase.cs" />
+    <Compile Include="Core\Data\DataArray.cs" />
+    <Compile Include="Core\Data\DataArrayColumns.cs" />
+    <Compile Include="Core\Data\DataArrayList.cs" />
+    <Compile Include="Core\Data\DataArrayRows.cs" />
+    <Compile Include="Core\Data\IConn.cs" />
+    <Compile Include="Core\ICloneable.cs" />
+    <Compile Include="Core\IOrdered.cs" />
+    <Compile Include="Core\ITypeFinder.cs" />
+    <Compile Include="Core\Logger\DBLogWriter.cs" />
+    <Compile Include="Core\Page\IPageOfItems.cs" />
+    <Compile Include="Core\Page\PageOfItems.cs" />
+    <Compile Include="Core\Queue\IQueue.cs" />
+    <Compile Include="Core\Queue\MessageStatus.cs" />
+    <Compile Include="Core\Queue\MsmqQueue.cs" />
+    <Compile Include="Core\SuperCache\AcquireContext.cs" />
+    <Compile Include="Core\SuperCache\Cache.cs" />
+    <Compile Include="Core\SuperCache\Clock.cs" />
+    <Compile Include="Core\SuperCache\DefaultAsyncTokenProvider.cs" />
+    <Compile Include="Core\SuperCache\DefaultCacheContextAccessor.cs" />
+    <Compile Include="Core\SuperCache\DefaultCacheHolder.cs" />
+    <Compile Include="Core\SuperCache\DefaultCacheManager.cs" />
+    <Compile Include="Core\SuperCache\DefaultParallelCacheContext.cs" />
+    <Compile Include="Core\SuperCache\IAsyncTokenProvider.cs" />
+    <Compile Include="Core\SuperCache\ICache.cs" />
+    <Compile Include="Core\SuperCache\ICacheContextAccessor.cs" />
+    <Compile Include="Core\SuperCache\ICacheHolder.cs" />
+    <Compile Include="Core\SuperCache\ICacheManager.cs" />
+    <Compile Include="Core\SuperCache\IClock.cs" />
+    <Compile Include="Core\SuperCache\IParallelCacheContext.cs" />
+    <Compile Include="Core\SuperCache\IVolatileProvider.cs" />
+    <Compile Include="Core\SuperCache\IVolatileToken.cs" />
+    <Compile Include="Core\SuperCache\Signals.cs" />
+    <Compile Include="Core\SuperCache\Weak.cs" />
+    <Compile Include="Core\Threading\CountdownTimer.cs" />
+    <Compile Include="Core\Threading\AsyncResultNoReturn.cs" />
+    <Compile Include="Core\FileWatcher.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\LinqExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\NullableExtensions.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Extensions\TypeDescriptorExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Extensions\WebExtensions.cs" />
+    <Compile Include="Extensions\XmlExtensions.cs" />
+    <Compile Include="Guard.cs" />
+    <Compile Include="Core\Collection\IgnoreCaseDictionary.cs" />
+    <Compile Include="Core\Collection\IgnoreCaseHashSet.cs" />
+    <Compile Include="Core\Collection\PriorityQueue.cs" />
+    <Compile Include="Core\Collection\ThreadSafeDictionaryWrapper.cs" />
+    <Compile Include="CoreException.cs" />
+    <Compile Include="CoreFactory.cs" />
+    <Compile Include="Core\Encrypt\MD4.cs" />
+    <Compile Include="Core\GlobalTimer\TimerStrategies\OnlyOnceTimerStrategy.cs" />
+    <Compile Include="Core\Logger\XmlLogWriter.cs" />
+    <Compile Include="Core\RegularExpressions.cs" />
+    <Compile Include="Core\Semaphore.cs" />
+    <Compile Include="Core\Singleton.cs" />
+    <Compile Include="Core\Encrypt\Cryption.cs" />
+    <Compile Include="Core\Encrypt\Decryptor.cs" />
+    <Compile Include="Core\Encrypt\DecryptTransformer.cs" />
+    <Compile Include="Core\Encrypt\EncryptEngine.cs" />
+    <Compile Include="Core\Encrypt\Encryption64.cs" />
+    <Compile Include="Core\Encrypt\EncryptionAlgorithm.cs" />
+    <Compile Include="Core\Encrypt\Encryptor.cs" />
+    <Compile Include="Core\Encrypt\HmacMD5.cs" />
+    <Compile Include="Core\Encrypt\ISymEncrypt.cs" />
+    <Compile Include="Core\Encrypt\StrEncryptor.cs" />
+    <Compile Include="Core\Encrypt\SymEncrypt.cs" />
+    <Compile Include="Core\Encrypt\SymEncryptionAlgorithm.cs" />
+    <Compile Include="Core\Encrypt\WebFrameworkSymEncrypt.cs" />
+    <Compile Include="Extensions\DataTypeExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\EmunExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\HtmlTextWriterExtensions.cs" />
+    <Compile Include="Extensions\HttpExtensions.cs" />
+    <Compile Include="Extensions\HttpRequestExtensions.cs" />
+    <Compile Include="Extensions\MiscExtensions.cs" />
+    <Compile Include="Extensions\RouteValueDictionaryExtensions.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="OperateStatus.cs" />
+    <Compile Include="OperateResult.cs" />
+    <Compile Include="Core\Cache\CacheExpireDependencies\DynamicCacheExpireDependency.cs" />
+    <Compile Include="Core\GlobalTimer.cs" />
+    <Compile Include="Core\GlobalTimer\GlobalTimerTaskHandle.cs" />
+    <Compile Include="Core\GlobalTimer\GlobalTimerTaskItem.cs" />
+    <Compile Include="Core\GlobalTimer\IGlobalTimerTaskHandle.cs" />
+    <Compile Include="Core\GlobalTimer\ITimerStrategy.cs" />
+    <Compile Include="Core\GlobalTimer\TimerStrategies\EveryDayTimerStrategy.cs" />
+    <Compile Include="Core\GlobalTimer\TimerStrategies\GlobalTimerIntervalTimerStrategy.cs" />
+    <Compile Include="Core\GlobalTimer\TimerStrategies\StaticIntervalTimerStrategy.cs" />
+    <Compile Include="Core\GlobalTimer\TimerStrategyAttribute.cs" />
+    <Compile Include="Core\GlobalTimer\TimerStrategyFactory.cs" />
+    <Compile Include="Core\ITask.cs" />
+    <Compile Include="Core\ITaskExecutor.cs" />
+    <Compile Include="Core\IObjectCreator.cs" />
+    <Compile Include="Core\IObjectSerializer.cs" />
+    <Compile Include="Core\IPriority.cs" />
+    <Compile Include="Core\ObjectFactory.cs" />
+    <Compile Include="Core\ObjectFactoryConfigurationSectionHandler.cs" />
+    <Compile Include="Core\ObjectSerializerManager.cs" />
+    <Compile Include="Core\Cache.cs" />
+    <Compile Include="Core\Cache\CacheExpireDependencies\NoExpireCacheExpireDependency.cs" />
+    <Compile Include="Core\Cache\CacheExpireDependencies\RelativeCacheExpireDependency.cs" />
+    <Compile Include="Core\Cache\CacheExpireDependencies\TermlyCacheExpireDependency.cs" />
+    <Compile Include="Core\Cache\CacheHelper.cs" />
+    <Compile Include="Core\Cache\CacheItem.cs" />
+    <Compile Include="Core\Cache\CacheStorageStrategyExWrapper.cs" />
+    <Compile Include="Core\Cache\CacheValueLoaderFuncAdapter.cs" />
+    <Compile Include="Core\Cache\ICacheExpireDependency.cs" />
+    <Compile Include="Core\Cache\ICacheValueLoader.cs" />
+    <Compile Include="Core\Cache\IStorageStrategy.cs" />
+    <Compile Include="Core\Cache\IStorageStrategyEx.cs" />
+    <Compile Include="Core\Cache\StorageStrategys\MemoryStorageStrategy.cs" />
+    <Compile Include="Core\ObjectPool\ObjectPoolStrategy.cs" />
+    <Compile Include="Core\Logger\FileLogWriter.cs" />
+    <Compile Include="Core\Logger\ILogItem.cs" />
+    <Compile Include="Core\Logger\ILogWriter.cs" />
+    <Compile Include="Core\Logger.cs" />
+    <Compile Include="Core\Logger\LogExtensions.cs" />
+    <Compile Include="Core\Logger\LogItem.cs" />
+    <Compile Include="Core\Logger\LogType.cs" />
+    <Compile Include="Core\ObjectPool.cs" />
+    <Compile Include="Core\ObjectPool\IObjectPoolStrategy.cs" />
+    <Compile Include="Core\ObjectSerializer\BinaryObjectSerializer.cs" />
+    <Compile Include="Core\ObjectSerializer\ExpressionBuilderAttributeBase.cs" />
+    <Compile Include="Core\ObjectSerializer\ISerializerExpressionBuilder.cs" />
+    <Compile Include="Core\ObjectSerializer\SerializerExpressionLibrary.cs" />
+    <Compile Include="Core\ObjectSerializer\SerializerExpressionManager.cs" />
+    <Compile Include="Core\PerformanceCounter\IPerfCounterProvider.cs" />
+    <Compile Include="Core\PerformanceCounter\PerfCounter.cs" />
+    <Compile Include="Core\PerformanceCounter\PerfCounterFactory.cs" />
+    <Compile Include="Core\RwLocker.cs" />
+    <Compile Include="Core\SimpleMemoryCache.cs" />
+    <Compile Include="Core\TaskDispatcher.cs" />
+    <Compile Include="Core\TaskDispatcher\ITaskDispatcherStrategy.cs" />
+    <Compile Include="Core\TaskDispatcher\ITaskQueue.cs" />
+    <Compile Include="Core\TaskDispatcher\ITaskSemaphore.cs" />
+    <Compile Include="Core\TaskDispatcher\PriorityTaskQueue.cs" />
+    <Compile Include="Core\TaskDispatcher\TaskDispatcherStrategy.cs" />
+    <Compile Include="Core\TaskDispatcher\TaskQueue.cs" />
+    <Compile Include="Core\TaskDispatcher\TaskSemaphore.cs" />
+    <Compile Include="Core\TaskExecutor.cs" />
+    <Compile Include="Core\TaskFuncAdapter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CommonUtility.cs" />
+    <Compile Include="Utils\HashCodeCombiner.cs" />
+    <Compile Include="Utils\JsonUtility.cs" />
+    <Compile Include="Utils\MsmqUtility.cs" />
+    <Compile Include="Utils\RandomUtility.cs" />
+    <Compile Include="Utils\StreamUtility.cs" />
+    <Compile Include="CodeTimer.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\CommonExtensions.cs" />
+    <Compile Include="Extensions\ConvertExtensions.cs" />
+    <Compile Include="Utils\DataTableUtility.cs" />
+    <Compile Include="Utils\OutputResultUtility.cs" />
+    <Compile Include="Utils\IOUtility.cs" />
+    <Compile Include="Extensions\ReflectorExtension.cs" />
+    <Compile Include="Utils\SerializeUtility.cs" />
+    <Compile Include="Utils\SQLUtility.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Utils\ThreadUtility.cs" />
+    <Compile Include="Core\XmlSerializerWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{D652B246-421E-4A3C-979E-A54F005CEB72}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Dorado.ActivityEngine.ServiceImp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\Build\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\Build\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>PdbOnly</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Dorado.ActivityEngine.ServiceImp</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+    <OutputPath>..\..\Build\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dorado.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Build\Dorado.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Dorado.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Build\Dorado.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Dorado.Queue, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Build\Dorado.Queue.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractActivityDispatcher.cs" />
+    <Compile Include="ActivityDispatcherManager.cs" />
+    <Compile Include="ActivityEngineConfig.cs" />
+    <Compile Include="ActivityEngineException.cs" />
+    <Compile Include="ActivityEngineProvider.cs" />
+    <Compile Include="ActivityFilterConfig.cs" />
+    <Compile Include="ActivityFilterFactory.cs" />
+    <Compile Include="ActivityFilterList.cs" />
+    <Compile Include="ActivityGroupConfig.cs" />
+    <Compile Include="ActivityGroupConfigCollection.cs" />
+    <Compile Include="ActivityGroupFilter.cs" />
+    <Compile Include="ActivityGroupNotFoundException.cs" />
+    <Compile Include="ActivityGroupNotSpecifiedException.cs" />
+    <Compile Include="ActivitySubscriber.cs" />
+    <Compile Include="ActivitySubscriberConfig.cs" />
+    <Compile Include="ActivitySubscriberConfigCollection.cs" />
+    <Compile Include="ActivitySubscriberType.cs" />
+    <Compile Include="ActivityTypeConfig.cs" />
+    <Compile Include="ActivityTypeConfigCollection.cs" />
+    <Compile Include="ActivityTypeFilter.cs" />
+    <Compile Include="ActivityTypeNotFoundException.cs" />
+    <Compile Include="ActivityWithTarget.cs" />
+    <Compile Include="AllowAllFilter.cs" />
+    <Compile Include="DenyAllFilter.cs" />
+    <Compile Include="DispatcherTypeInvalidException.cs" />
+    <Compile Include="DispatcherTypeNotSpecifiedException.cs" />
+    <Compile Include="EsbInterfaceActivityDispatcher.cs" />
+    <Compile Include="EsbInterfaceActivitySubscriber.cs" />
+    <Compile Include="EsbInterfaceCaller.cs" />
+    <Compile Include="EsbInterfaceHelper.cs" />
+    <Compile Include="JsonDateTimeFormat.cs" />
+    <Compile Include="MultiSubscriberActivityDispatcher.cs" />
+    <Compile Include="RestfulActivityDispatcher.cs" />
+    <Compile Include="RestfulActivitySubscriber.cs" />
+    <Compile Include="RestHelper.cs" />
+    <Compile Include="TypeNotFoundException.cs" />
+    <Compile Include="UnknownActivityFilterException.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dorado\Dorado.csproj">
+      <Project>{56cb9912-4ce8-4370-8b21-5eeef2123e9e}</Project>
+      <Name>Dorado</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.ActivityEngine.ServiceInterface\Dorado.ActivityEngine.ServiceInterface.csproj">
+      <Project>{ad94c6d8-099a-450b-8a8a-6f98b4910ce1}</Project>
+      <Name>Dorado.ActivityEngine.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

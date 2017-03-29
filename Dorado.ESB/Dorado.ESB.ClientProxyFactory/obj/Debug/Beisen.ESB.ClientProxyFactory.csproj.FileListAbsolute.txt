@@ -1,0 +1,13 @@
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.ESB.ClientProxyFactory.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.ESB.ClientProxyFactory.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.Configuration.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.Configuration.XmlSerializers.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.Logging.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.Logging.XmlSerializers.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\log4net.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Wintellect.PowerThreading.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.Configuration.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\bin\Debug\Beisen.Logging.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\obj\Debug\ResolveAssemblyReference.cache
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\obj\Debug\Beisen.ESB.ClientProxyFactory.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ClientProxyFactory\obj\Debug\Beisen.ESB.ClientProxyFactory.pdb

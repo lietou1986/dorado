@@ -1,0 +1,12 @@
+D:\Projects\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.ActivityEngine.ServiceInterface.dll
+D:\Projects\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.ActivityEngine.ServiceInterface.pdb
+D:\Projects\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.dll
+D:\Projects\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.pdb
+D:\Projects\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.dll
+D:\Projects\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.pdb
+D:\Projects\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\Work\NET\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.ActivityEngine.ServiceInterface.dll
+D:\Projects\Work\NET\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.ActivityEngine.ServiceInterface.pdb
+D:\Projects\Work\NET\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.dll
+D:\Projects\Work\NET\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\bin\Debug\Dorado.pdb
+F:\云盘\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.csprojResolveAssemblyReference.cache

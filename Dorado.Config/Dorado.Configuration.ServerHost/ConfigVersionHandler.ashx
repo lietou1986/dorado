@@ -1,0 +1,1 @@
+<%@ WebHandler Language="C#" CodeBehind="ConfigVersionHandler.ashx.cs" Class="Dorado.Configuration.ServerHost.ConfigVersionHandler" %>

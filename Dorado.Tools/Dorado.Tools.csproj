@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04DB8AE8-077D-4569-8473-9732884EBCAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.Tools</RootNamespace>
+    <AssemblyName>Dorado.Tools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="References\EffiProz.dll" />
+    <Content Include="References\IKAnalyzer.cfg.xml" />
+    <Content Include="References\IKAnalyzer.Net.dll" />
+    <Content Include="References\Ionic.Zip.dll" />
+    <Content Include="References\Microsoft.Ccr.Core.dll" />
+    <Content Include="References\PowerCollections.dll" />
+    <Content Include="References\SQLite.Interop.dll" />
+    <Content Include="References\System.Data.SQLite.dll" />
+    <Content Include="References\System.Data.SqlServerCe.dll" />
+    <Content Include="References\Wintellect.Threading.dll" />
+    <Content Include="Tools\ConfigGenerator\xsd.exe" />
+    <Content Include="Tools\ILMerge-GUI\Devv.Core.Erroo.dll" />
+    <Content Include="Tools\ILMerge-GUI\Devv.Core.Utils.dll" />
+    <Content Include="Tools\ILMerge-GUI\Devv.Core.Utils.xml" />
+    <Content Include="Tools\ILMerge-GUI\ILMerge-GUI.exe" />
+    <Content Include="Tools\ILMerge-GUI\ILMerge.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="References\dic\main.dic" />
+    <None Include="References\dic\preposition.dic" />
+    <None Include="References\dic\quantifier.dic" />
+    <None Include="References\dic\stopword.dic" />
+    <None Include="References\dic\suffix.dic" />
+    <None Include="References\dic\surname.dic" />
+    <None Include="References\ext_stopword.dic" />
+    <None Include="References\ManagedOpenSsl.dll" />
+    <None Include="Tools\ConfigGenerator\ConfigGenerator.bat" />
+    <None Include="Tools\ILMerge-GUI\ILMerge-GUI.exe.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

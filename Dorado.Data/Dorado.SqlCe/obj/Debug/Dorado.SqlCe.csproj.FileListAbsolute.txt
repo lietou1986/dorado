@@ -1,0 +1,12 @@
+D:\Projects\Work\NET\Dorado\Dorado.Data\Dorado.SqlCe\bin\Debug\Dorado.SqlCe.dll
+D:\Projects\Work\NET\Dorado\Dorado.Data\Dorado.SqlCe\bin\Debug\Dorado.SqlCe.pdb
+F:\云盘\Work\Dorado\Build\Dorado.SqlCe.dll
+F:\云盘\Work\Dorado\Build\Dorado.SqlCe.pdb
+F:\云盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.csprojResolveAssemblyReference.cache
+F:\云盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.dll
+F:\云盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.pdb
+F:\快盘\Work\Dorado\Build\Dorado.SqlCe.dll
+F:\快盘\Work\Dorado\Build\Dorado.SqlCe.pdb
+F:\快盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.csprojResolveAssemblyReference.cache
+F:\快盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.dll
+F:\快盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.pdb

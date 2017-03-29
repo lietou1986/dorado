@@ -1,0 +1,8 @@
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\bin\Debug\DoradoFramework.Security.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\bin\Debug\DoradoFramework.Security.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\bin\Debug\AntiXSSLibrary.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\bin\Debug\HtmlSanitizationLibrary.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\bin\Debug\ManagedOpenSsl.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\obj\Debug\DoradoFramework.Security.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\obj\Debug\DoradoFramework.Security.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Security\obj\Debug\DoradoFramework.Security.csprojResolveAssemblyReference.cache

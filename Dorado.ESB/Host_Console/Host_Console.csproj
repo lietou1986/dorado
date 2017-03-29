@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8AB94F5E-FC5C-4B64-87DC-DBAAAB268471}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Host_Console</RootNamespace>
+    <AssemblyName>Host_Console</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Config\HelloWcfApp\HelloWcfApp.Library.dll.config" />
+    <None Include="Config\HelloWorldApp\HelloWorldApp.Library.dll.config" />
+    <None Include="Config\PlatformServiceClientSettingsConfig.config" />
+    <None Include="Config\PlatformServicesServerConfig.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Beisen.ESB.Common\Beisen.ESB.Common.csproj">
+      <Project>{BC4C586D-C645-4960-9353-24C3BA6707FD}</Project>
+      <Name>Beisen.ESB.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Beisen.ESB.Core\Beisen.ESB.Core.csproj">
+      <Project>{F9EA6889-691B-4898-BC6E-7184F5DBAF9E}</Project>
+      <Name>Beisen.ESB.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Beisen.ESB.Extensions\Beisen.ESB.Extensions.csproj">
+      <Project>{A1D6B07F-755C-4F0E-9CD1-20F683AF37E2}</Project>
+      <Name>Beisen.ESB.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Beisen.ESB.OpenApiAuth\Beisen.ESB.OpenApiAuth.csproj">
+      <Project>{7B407F1E-9C0B-4DAB-BE83-174E0AC718FB}</Project>
+      <Name>Beisen.ESB.OpenApiAuth</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\HelloWcfApp\HelloWcfApp.Contracts.dll" />
+    <Content Include="Config\HelloWcfApp\HelloWcfApp.Library.dll" />
+    <Content Include="Config\HelloWorldApp\Beisen.BSP.ESB.Common.dll" />
+    <Content Include="Config\HelloWorldApp\Beisen.BSP.ESB.Core.dll" />
+    <Content Include="Config\HelloWorldApp\Beisen.BSP.ESB.GenerateServices.dll" />
+    <Content Include="Config\HelloWorldApp\Beisen.BSP.ESB.ServiceGenerateFactory.dll" />
+    <Content Include="Config\HelloWorldApp\Beisen.Configuration.dll" />
+    <Content Include="Config\HelloWorldApp\Beisen.Logging.dll" />
+    <Content Include="Config\HelloWorldApp\Beisen.PlatformServices.Interface.dll" />
+    <Content Include="Config\HelloWorldApp\HelloWorldApp.Contracts.dll" />
+    <Content Include="Config\HelloWorldApp\HelloWorldApp.Contracts.pdb" />
+    <Content Include="Config\HelloWorldApp\HelloWorldApp.Library.dll" />
+    <Content Include="Config\HelloWorldApp\HelloWorldApp.Library.pdb" />
+    <Content Include="Config\HelloWorldApp\log4net.dll" />
+    <Content Include="Config\HelloWorldApp\MySpace.Entity.dll" />
+    <Content Include="Config\HelloWorldApp\Wintellect.PowerThreading.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

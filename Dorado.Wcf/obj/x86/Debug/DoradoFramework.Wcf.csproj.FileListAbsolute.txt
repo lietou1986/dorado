@@ -1,0 +1,15 @@
+D:\TFS-Project\DoradoFramework\DoradoFramework\DoradoFramework.WcfEx\bin\Debug\DoradoFramework.Wcf.dll
+D:\TFS-Project\DoradoFramework\DoradoFramework\DoradoFramework.WcfEx\bin\Debug\DoradoFramework.Wcf.pdb
+D:\TFS-Project\DoradoFramework\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TFS-Project\DoradoFramework\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\DoradoFramework.Wcf.dll
+D:\TFS-Project\DoradoFramework\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\DoradoFramework.Wcf.pdb
+D:\TFS-Project\DoradoFramework\DoradoFramework.WcfEx\bin\Debug\DoradoFramework.Wcf.dll
+D:\TFS-Project\DoradoFramework\DoradoFramework.WcfEx\bin\Debug\DoradoFramework.Wcf.pdb
+D:\TFS-Project\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TFS-Project\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\DoradoFramework.Wcf.dll
+D:\TFS-Project\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\DoradoFramework.Wcf.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WcfEx\bin\Debug\DoradoFramework.Wcf.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WcfEx\bin\Debug\DoradoFramework.Wcf.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\DoradoFramework.Wcf.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\DoradoFramework.Wcf.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WcfEx\obj\x86\Debug\DoradoFramework.Wcf.csprojResolveAssemblyReference.cache

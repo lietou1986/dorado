@@ -1,0 +1,10 @@
+D:\Projects\Work\NET\Dorado\Build\Dorado.Wcf.dll
+D:\Projects\Work\NET\Dorado\Build\Dorado.Wcf.pdb
+D:\Projects\Work\NET\Dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.csprojResolveAssemblyReference.cache
+D:\Projects\Work\NET\Dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.dll
+D:\Projects\Work\NET\Dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.pdb
+F:\云盘\Work\Dorado\Build\Dorado.Wcf.dll
+F:\云盘\Work\Dorado\Build\Dorado.Wcf.pdb
+F:\云盘\Work\Dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.csprojResolveAssemblyReference.cache
+F:\云盘\Work\Dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.dll
+F:\云盘\Work\Dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.pdb

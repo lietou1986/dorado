@@ -1,0 +1,5 @@
+D:\Projects\dorado\Build\Dorado.dll
+D:\Projects\dorado\Build\Dorado.pdb
+D:\Projects\dorado\Dorado\obj\Release\Dorado.dll
+D:\Projects\dorado\Dorado\obj\Release\Dorado.pdb
+D:\Projects\dorado\Dorado\obj\Release\Dorado.csprojResolveAssemblyReference.cache

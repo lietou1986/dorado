@@ -1,0 +1,13 @@
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\bin\Debug\DoradoFramework.UrlRewriter.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\bin\Debug\DoradoFramework.UrlRewriter.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.Messages.resources
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.csproj.GenerateResource.Cache
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.pdb
+D:\Projects\Work\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\bin\Debug\DoradoFramework.UrlRewriter.dll
+D:\Projects\Work\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\bin\Debug\DoradoFramework.UrlRewriter.pdb
+D:\Projects\Work\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.Messages.resources
+D:\Projects\Work\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.csproj.GenerateResource.Cache
+D:\Projects\Work\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.dll
+D:\Projects\Work\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.pdb
+D:\Projects\Work\DoradoFramework\DoradoFramework.WebEx\DoradoFramework.UrlRewriter\obj\Debug\DoradoFramework.UrlRewriter.csprojResolveAssemblyReference.cache

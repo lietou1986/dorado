@@ -1,0 +1,207 @@
+ public void IsOnline()
+        {
+            return;
+        }
+
+        public System.IO.Stream GetDocumentation()
+        {
+            MemoryStream stream = new MemoryStream();
+
+            StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
+
+            List<ServiceDoc> srvDocColl = GetServiceDocs(typeof(IWcfApi));
+
+            StringBuilder builder = new StringBuilder(8192);
+            builder.AppendLine(DOC_START);
+
+            if (srvDocColl != null && srvDocColl.Count >= 0)
+            {
+                foreach (ServiceDoc srvDoc in srvDocColl)
+                {
+                    //builder.AppendLine(@"<h2>" + srvDoc.Name + @" Available Endpoints</h2><ul>");
+                    builder.AppendLine(@"<h2  onclick=""show(this)"" style=""cursor:pointer"" >" + srvDoc.Name + @"</h2><ul id=" + srvDoc.Name + @" style=""display:none"">");
+                    if (srvDoc.MethodDocList != null && srvDoc.MethodDocList.Count >= 0)
+                    {
+                        foreach (MethodDoc doc in srvDoc.MethodDocList)
+                        {
+                            string epAdreess = OperationContext.Current.EndpointDispatcher.EndpointAddress.Uri.ToString();
+                            epAdreess = ReplaceLocalhostToIPAdress(epAdreess);
+
+                            string typeDetail = epAdreess + @"/help/typeof/" + doc.ReturnTypeName;
+                            //string performance = "<a href=" + epAdreess + "help/perf/" + doc.MethodName + ">[Performance]</a>";
+                            string performance = "";
+
+                            builder.AppendLine(@"<li><font color=""blue""><b>" + doc.RequestType + @"  /" + doc.RequestUrl + @"</b>" + performance + "</font></li>");
+
+                            builder.AppendLine(@"<ol>");
+                            builder.AppendLine(@"<li><b>RequestParams :</b>" + doc.RequestParams + @"</li>");
+                            builder.AppendLine(@"<li><b>ReturnType    :</b>" + doc.ReturnTypeName + @" &mdash; <a href=" + typeDetail + @"  <font color=""blue""> [Type Details]</font><a></li>");
+                            builder.AppendLine(@"</ol>");
+                        }
+                    }
+                    builder.AppendLine(@"</ul><hr/>");
+                }
+            }
+
+            builder.AppendLine(DOC_END);
+
+            writer.Write(builder);
+            writer.Flush();
+            stream.Position = 0;
+
+            WebOperationContext.Current.OutgoingResponse.ContentType = "text/html";
+
+            return stream;
+        }
+
+        public Stream GetObjectTypeDocumentation(string typeValue)
+        {
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
+
+            StringBuilder builder = new StringBuilder(8192);
+            builder.AppendLine(DOC_START);
+            try
+            {
+                builder.AppendLine(@"<h2> Type [ " + typeValue + @" ] Properties Detail </h2>");
+                Type type = Type.GetType(typeValue, false);
+                if (type == null)
+                {
+                    foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+                    {
+                        type = assembly.GetType(typeValue, false);
+                        if (type != null)
+                            break;
+                    }
+                }
+                if (type != null)
+                {
+                    builder.AppendLine(@"<ol>");
+                    foreach (PropertyInfo pi in type.GetProperties())
+                    {
+                        builder.AppendLine(@"<li>" + pi.Name + @" : " + pi.PropertyType.Name + @"</li>");
+                    }
+                    builder.AppendLine(@"</ol>");
+                }
+            }
+            catch
+            {
+                builder.AppendLine(@"<h2>Not Found! " + typeValue + @"</h2>");
+            }
+
+            builder.AppendLine(DOC_END);
+
+            writer.Write(builder);
+            writer.Flush();
+            stream.Position = 0;
+
+            WebOperationContext.Current.OutgoingResponse.ContentType = "text/html";
+
+            return stream;
+        }
+       
+        private string ReplaceLocalhostToIPAdress(string urlStr)
+        {
+            System.Net.IPAddress[] addressList = Dns.GetHostEntry(Dns.GetHostName()).AddressList;
+            string hostIP = String.Empty;
+            if (addressList != null && addressList.Length > 0)
+            {
+                foreach (IPAddress address in addressList)
+                {
+                    if (address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                    {
+                        hostIP = address.ToString();
+                        break;
+                    }
+                }
+            }
+
+
+            if (hostIP != String.Empty && urlStr.Contains("localhost"))
+                urlStr = urlStr.Replace("localhost", hostIP);
+
+            return urlStr;
+        }
+
+        private List<ServiceDoc> GetServiceDocs(Type type)
+        {
+            List<ServiceDoc> srvDocColl = new List<ServiceDoc>();
+
+            Type[] interfaces = type.GetInterfaces();
+            foreach (Type itf in interfaces)
+            {
+                ServiceDoc srvDoc = new ServiceDoc();
+                srvDoc.Name = itf.Name;
+                srvDoc.Desc = itf.FullName;
+
+                MethodInfo[] methodInfos = itf.GetMethods(BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.FlattenHierarchy);
+                foreach (MethodInfo info in methodInfos)
+                {
+                    MethodDoc methodDoc = new MethodDoc();
+                    methodDoc.MethodName = info.Name;
+
+                    object[] attrsWebGet = info.GetCustomAttributes(typeof(WebGetAttribute), true);
+                    object[] attrsWebInvoke = info.GetCustomAttributes(typeof(WebInvokeAttribute), true);
+
+                    if (attrsWebGet.Length > 0)
+                    {
+                        WebGetAttribute attr = attrsWebGet[0] as WebGetAttribute;
+                        methodDoc.RequestType = "GET";
+                        methodDoc.RequestUrl = attr.UriTemplate;
+                    }
+
+                    if (attrsWebInvoke.Length > 0)
+                    {
+                        WebInvokeAttribute attr = attrsWebInvoke[0] as WebInvokeAttribute;
+                        methodDoc.RequestType = "POST";
+                        methodDoc.RequestUrl = attr.UriTemplate;
+                    }
+
+                    ParameterInfo[] prms = info.GetParameters();
+                    string reqParams = "";
+                    for (int i = 0; i < prms.Length; i++)
+                    {
+                        ParameterInfo prm = prms[i];
+                        string param = prm.ParameterType.Name + " " + prm.Name;
+                        reqParams += param + ";";
+                    }
+                    methodDoc.RequestParams = "{ " + reqParams + " }";
+
+                    methodDoc.ReturnTypeName = info.ReturnType.FullName;
+
+                    srvDoc.MethodDocList.Add(methodDoc);
+                }
+                srvDocColl.Add(srvDoc);
+            }
+            return srvDocColl;
+        }
+
+        private const string DOC_START = @"<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Strict//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"">
+<html xmlns=""http://www.w3.org/1999/xhtml"" xml:lang=""en-US"" lang=""en-US"">
+    <head>
+	    <title>Contact Service - Documentation</title>
+	    <meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+	    <style type=""text/css"">
+		    body {margin: 0px;padding: 0px;font-family: Calibri, Tahoma, Arial;}
+		    .banner {padding: 5px 5px 5px 15px;background-color: Gray;color: White;}
+		    .content {margin: 15px;}
+	    </style>
+    </head>
+    <script type=""text/javascript"">
+function show(obj){
+	var id = obj.innerHTML;
+	var o = document.getElementById(id);
+	if(o.style.display==""none"")o.style.display ="""";
+	else o.style.display =""none"";
+}
+</script>
+    <body>
+       <div class=""banner""><h1><img src=""http://www.Dorado.com/images1/for_01new5.gif""/> Dorado PlatformServices </h1></div>
+	   <div class=""content"">
+       <h2>Available Help</h2>
+       <ul>
+        <li><font color=""blue""><b>GET /help</b></font> &mdash; Displays Dorado Restful Api Service Documentation (if need help, pls send email to <font color=""red"">Yanguantao@Dorado.com</font> <blink>^_^</blink>)</li>
+        <li><font color=""blue""><b>GET /help/typeof/{type}</b></font> &mdash; Displays Properties of ObjectType (e.g. <font color=""blue""><i>http://xx.xx.xx.xx:xxxx/help/typeof/Dorado.PlatformServices.Model.DoradoUser</i></font> ) </li>
+       </ul>";
+
+        private const string DOC_END = @"</div><div class=""banner"">@Yanguantao yeah!</div></body></html>";

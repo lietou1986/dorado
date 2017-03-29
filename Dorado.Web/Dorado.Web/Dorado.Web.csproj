@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{146499B2-113A-4BCB-B30C-860F8F1153A6}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Dorado.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Dorado.Web</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <OutputPath>..\..\Build\</OutputPath>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>..\..\Build\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\..\packages\AjaxMin.5.14.5506.26202\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.9.3.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\RazorEngine.3.9.3\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxAttribute.cs" />
+    <Compile Include="Captcha\CaptchaImage.cs" />
+    <Compile Include="Captcha\CaptchaOptions.cs" />
+    <Compile Include="Captcha\Enumerations.cs" />
+    <Compile Include="Context\FastCookie\FastCookie.cs" />
+    <Compile Include="Context\FastCookie\FastCookieAttributes.cs" />
+    <Compile Include="Context\FastCookie\FastCookieMultiValue.cs" />
+    <Compile Include="Context\FastRequestItem\FastRequestItem.cs" />
+    <Compile Include="Context\FastRequestItem\FastRequestItemAttributes.cs" />
+    <Compile Include="Context\FastSession\FastSession.cs" />
+    <Compile Include="Context\FastSession\FastSessionAttributes.cs" />
+    <Compile Include="Exceptions\ConnNotFountException.cs" />
+    <Compile Include="Exceptions\ConnUnvailableException.cs" />
+    <Compile Include="Extensions\ControllerExtensions.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Extensions\HttpContextExtensions.cs" />
+    <Compile Include="Extensions\HttpSessionStateExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Extensions\RouteExtensions.cs" />
+    <Compile Include="Extensions\UrlHelperExtensions.cs" />
+    <Compile Include="Fakes\FakeHttpContext.cs" />
+    <Compile Include="Fakes\FakeHttpRequest.cs" />
+    <Compile Include="Fakes\FakeHttpResponse.cs" />
+    <Compile Include="Fakes\FakeHttpSessionState.cs" />
+    <Compile Include="Fakes\FakeIdentity.cs" />
+    <Compile Include="Fakes\FakePrincipal.cs" />
+    <Compile Include="FastViewEngine\Binder\DataArrayBinder.cs" />
+    <Compile Include="FastViewEngine\Binder\DataArrayListBinder.cs" />
+    <Compile Include="FastViewEngine\Binder\PageParaBinder.cs" />
+    <Compile Include="FastViewEngine\Binder\ViewParaBinder.cs" />
+    <Compile Include="FastViewEngine\Binder\KeyParaBinder.cs" />
+    <Compile Include="EasyFile.cs" />
+    <Compile Include="FastViewEngine\FastViewFileEngine.cs" />
+    <Compile Include="FastViewEngine\FastViewContext.cs" />
+    <Compile Include="FastViewEngine\IFastViewEngine.cs" />
+    <Compile Include="FastViewEngine\FastViewEngineFactory.cs" />
+    <Compile Include="FastViewEngine\FastViewMemoryResult.cs" />
+    <Compile Include="FastViewEngine\FastResult.cs" />
+    <Compile Include="FastViewEngine\ViewEngineResultCacheKey.cs" />
+    <Compile Include="FastViewEngine\Output.cs" />
+    <Compile Include="FastViewEngine\PagePara.cs" />
+    <Compile Include="FastViewEngine\PatReader.cs" />
+    <Compile Include="FastViewEngine\RegularPattern.cs" />
+    <Compile Include="Fileset\FilesetConfigurationManager.cs" />
+    <Compile Include="Fileset\CustomAttribute.cs" />
+    <Compile Include="Fileset\FilesetParameter.cs" />
+    <Compile Include="Fileset\IFileLoader.cs" />
+    <Compile Include="Fileset\LocalFileLoader.cs" />
+    <Compile Include="Fileset\LocalJsCacheItem.cs" />
+    <Compile Include="Fileset\LocalMiniFileLoader.cs" />
+    <Compile Include="Fileset\MergedStaticFile.cs" />
+    <Compile Include="Fileset\RemoteFileLoader.cs" />
+    <Compile Include="Fileset\StaticFile.cs" />
+    <Compile Include="Fileset\StaticFileDictionary.cs" />
+    <Compile Include="Fileset\StaticFileExtension.cs" />
+    <Compile Include="Fileset\StaticFileFlag.cs" />
+    <Compile Include="Fileset\StaticFileFlagExtension.cs" />
+    <Compile Include="Fileset\StaticFileset.cs" />
+    <Compile Include="Fileset\StaticFilesetManager.cs" />
+    <Compile Include="Fileset\StaticFileType.cs" />
+    <Compile Include="Fileset\VariableDictionary.cs" />
+    <Compile Include="Fileset\VariableItem.cs" />
+    <Compile Include="Fileset\FilesetConfiguration.cs" />
+    <Compile Include="Fileset\FilesetRemoteConfigurationManager.cs" />
+    <Compile Include="Filters\ConnContainer.cs" />
+    <Compile Include="Filters\Notifier.cs" />
+    <Compile Include="Filters\NotifyAttribute.cs" />
+    <Compile Include="Filters\NotifyEntry.cs" />
+    <Compile Include="Filters\UsingDBAttribute.cs" />
+    <Compile Include="HtmlBuilder\DynamicTypeGenerator.cs" />
+    <Compile Include="HtmlBuilder\HtmlString.cs" />
+    <Compile Include="HtmlBuilder\HtmlStringWriter.cs" />
+    <Compile Include="HtmlBuilder\TagBuilder.cs" />
+    <Compile Include="HtmlBuilder\TagRenderMode.cs" />
+    <Compile Include="Localization\ILocalizationService.cs" />
+    <Compile Include="Localization\IText.cs" />
+    <Compile Include="Localization\Language.cs" />
+    <Compile Include="Localization\LocaleStringResource.cs" />
+    <Compile Include="Localization\LocalizationHelper.cs" />
+    <Compile Include="Localization\LocalizedString.cs" />
+    <Compile Include="Localization\Localizer.cs" />
+    <Compile Include="Localization\NullLocalizer.cs" />
+    <Compile Include="Localization\Text.cs" />
+    <Compile Include="MimeTypes.cs" />
+    <Compile Include="ModelBinder\StringArrayBinder.cs" />
+    <Compile Include="Model\AreaDescription.cs" />
+    <Compile Include="Model\NavigationDescription.cs" />
+    <Compile Include="NavigationProvider.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Route\DomainRoute\DomainData.cs" />
+    <Compile Include="Route\DomainRoute\DomainRoute.cs" />
+    <Compile Include="Route\DomainRoute\LinkExtensions.cs" />
+    <Compile Include="Route\RouteDebug\DebugHttpHandler.cs" />
+    <Compile Include="Route\RouteDebug\DebugRoute.cs" />
+    <Compile Include="Route\RouteDebug\DebugRouteHandler.cs" />
+    <Compile Include="Route\RouteDebug\RouteDebugger.cs" />
+    <Compile Include="Anti\AntiBrowerAttribute.cs" />
+    <Compile Include="Anti\AntiSearchEngineAttribute.cs" />
+    <Compile Include="Anti\AntiSqlInjectionAttribute.cs" />
+    <Compile Include="AreaHelpers.cs" />
+    <Compile Include="JsonpBaseController.cs" />
+    <Compile Include="Anti\LinkSecurityHttpModule.cs" />
+    <Compile Include="Configuration\Anti\BrowerAndSearchEngineConfiguration.cs" />
+    <Compile Include="Configuration\Anti\BrowerBlackItems.cs" />
+    <Compile Include="Configuration\Anti\BrowerSecurityItems.cs" />
+    <Compile Include="Filters\CompressAttribute.cs" />
+    <Compile Include="DynamicAreaRegistration.cs" />
+    <Compile Include="Filters\ErrorDispatchAttribute.cs" />
+    <Compile Include="FastJsonResult.cs" />
+    <Compile Include="Configuration\GlobalWebConfiguration.cs" />
+    <Compile Include="Exceptions\HttpBrowerInvalidReqeust.cs" />
+    <Compile Include="Exceptions\HttpInvalidReqeust.cs" />
+    <Compile Include="Exceptions\HttpSearchEngineInvalidReqeust.cs" />
+    <Compile Include="Anti\InputFilter.cs" />
+    <Compile Include="JsonpViewResult.cs" />
+    <Compile Include="MergedFileResult.cs" />
+    <Compile Include="MicrosoftAjaxMinifer.cs" />
+    <Compile Include="RuntimeController.cs" />
+    <Compile Include="Configuration\Anti\SearchEngineBlackItems.cs" />
+    <Compile Include="Configuration\Anti\SearchEngineSecurityItems.cs" />
+    <Compile Include="SecurityDescriptorAttribute.cs" />
+    <Compile Include="StaticFileHelper.cs" />
+    <Compile Include="FastViewEngine\ContextObjectFactory.cs" />
+    <Compile Include="FastViewEngine\MvcFastViewExtension.cs" />
+    <Compile Include="FastViewEngine\PageContext.cs" />
+    <Compile Include="FastViewEngine\FastViewFileResult.cs" />
+    <Compile Include="FastViewEngine\FastViewResult.cs" />
+    <Compile Include="FastViewEngine\FastView.cs" />
+    <Compile Include="FastViewEngine\FastViewVirtualPathViewEngine.cs" />
+    <Compile Include="WebAppTypeFinder.cs" />
+    <Compile Include="WebExtensionAreaRegistration.cs" />
+    <Compile Include="Extensions\WebGrid.cs" />
+    <Compile Include="Extensions\WebGridExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates.AjaxMinifierStatus.cshtml" />
+    <None Include="Templates.Navigation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dorado.Config\Dorado.Configuration\Dorado.Configuration.csproj">
+      <Project>{9bca8d0b-fed3-4494-90e9-0a18a527cc3c}</Project>
+      <Name>Dorado.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dorado\Dorado.csproj">
+      <Project>{56cb9912-4ce8-4370-8b21-5eeef2123e9e}</Project>
+      <Name>Dorado</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

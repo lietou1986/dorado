@@ -1,0 +1,10 @@
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\bin\Debug\Beisen.ESB.ServiceGenerateFactory.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\bin\Debug\Beisen.ESB.ServiceGenerateFactory.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\bin\Debug\Beisen.Configuration.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\bin\Debug\Wintellect.PowerThreading.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\bin\Debug\log4net.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\bin\Debug\Beisen.Configuration.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\bin\Debug\Beisen.Configuration.XmlSerializers.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\obj\Debug\ResolveAssemblyReference.cache
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\obj\Debug\Beisen.ESB.ServiceGenerateFactory.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceGenerateFactory\obj\Debug\Beisen.ESB.ServiceGenerateFactory.pdb

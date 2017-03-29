@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "ViewConfig";
+    Layout = "~/Views/Shared/_MainNoLayout.cshtml";
+}
+<link href="/Css/RemoteConfiguration/ViewConfig.css" rel="stylesheet" type="text/css" />
+<link href="/Css/Share/jquery.snippet.min.css" rel="stylesheet" type="text/css" />
+<script src="/Js/Share/jquery.snippet.min.js" type="text/javascript"></script>
+<script src="/Js/RemoteConfiguration/ViewConfig.js" type="text/javascript"></script>
+<div class="from-config">
+    <div style="text-align: center">
+        <a class="easyui-linkbutton" iconcls="icon-edit" href="javascript:void(0)" id="btnEdit">
+            编辑</a> <a class="easyui-linkbutton config-edit" iconcls="icon-cancel" href="javascript:void(0)"
+                id="btnCancelEdit" style="display: none">取消编辑</a>&nbsp;&nbsp;<a class="easyui-linkbutton config-edit"
+                    iconcls="icon-save" href="javascript:void(0)" id="btnSaveEdit" style="display: none">保存编辑</a>
+    </div>
+    <div id="fileContainer">
+        <pre class="xml" style="margin: 10px 20px 0 0">
+    @ViewBag.FileContent
+</pre>
+    </div>
+    <div style="text-align: center; margin-top: 10px">
+        <textarea cols="20" name="fileContent" rows="2" class="easyui-validatebox" style="height: 400px;
+            width: 90%; overflow: auto; display: none" id="fileContent" missingmessage="必填"
+            required="true">  @ViewBag.FileContent</textarea>
+    </div>
+</div>
+<div id="dd" style="width: 300px; height: 130px;" closed="false">
+    <div class="dd-content" style="padding: 20px">
+    </div>
+</div>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02977B61-72D9-4490-962E-F5ECC419C8F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.DataExpress</RootNamespace>
+    <AssemblyName>Dorado.DataExpress</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDbException.cs" />
+    <Compile Include="BaseQuery.cs" />
+    <Compile Include="ColumnsNotFoundExcpetion.cs" />
+    <Compile Include="ColumnWithValue.cs" />
+    <Compile Include="Configuration\ConfigurationWatcher.cs" />
+    <Compile Include="Configuration\ConnectionConfigurationElement.cs" />
+    <Compile Include="Configuration\FeaturesConfigurationElement.cs" />
+    <Compile Include="Configuration\IdleConfigElement.cs" />
+    <Compile Include="Configuration\InitiatorConfigurationElement.cs" />
+    <Compile Include="Configuration\PoolConfigurationCollection.cs" />
+    <Compile Include="Configuration\PoolConfigurationElement.cs" />
+    <Compile Include="Configuration\PoolConfigurationSection.cs" />
+    <Compile Include="DataAccessBase.cs" />
+    <Compile Include="DataAccessBaseExtension.cs" />
+    <Compile Include="DataAccessObject.cs" />
+    <Compile Include="DataAccessObjectExtension.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="DatabasePool.cs" />
+    <Compile Include="DbSession.cs" />
+    <Compile Include="DeleteStatement.cs" />
+    <Compile Include="Dialect\BaseDialect.cs" />
+    <Compile Include="Dialect\MsSql.cs" />
+    <Compile Include="Dialect\MySql.cs" />
+    <Compile Include="Dialect\Oracle.cs" />
+    <Compile Include="Driver\BaseDriver.cs" />
+    <Compile Include="Driver\BaseReflectionDriver.cs" />
+    <Compile Include="Driver\GeneralReflectionDriver.cs" />
+    <Compile Include="Driver\GeneralReflectionDriverConfig.cs" />
+    <Compile Include="Driver\MsSql2000.cs" />
+    <Compile Include="Driver\MsSql2005.cs" />
+    <Compile Include="Driver\MySql.cs" />
+    <Compile Include="Driver\NativeOracle.cs" />
+    <Compile Include="Driver\Odbc.cs" />
+    <Compile Include="Driver\OleDb.cs" />
+    <Compile Include="Driver\Oracle.cs" />
+    <Compile Include="HttpBindModule.cs" />
+    <Compile Include="IDataAccess.cs" />
+    <Compile Include="InsertStatement.cs" />
+    <Compile Include="InsertStatementExtension.cs" />
+    <Compile Include="JsonReader.cs" />
+    <Compile Include="LambdaExpressionHelper.cs" />
+    <Compile Include="Ldo\BinderManager.cs" />
+    <Compile Include="Ldo\DataProperty.cs" />
+    <Compile Include="Ldo\DataReaderField.cs" />
+    <Compile Include="Ldo\DataReaderHelper.cs" />
+    <Compile Include="Ldo\FieldAttribute.cs" />
+    <Compile Include="Ldo\IEntityBinder.cs" />
+    <Compile Include="Ldo\IgnorAttribute.cs" />
+    <Compile Include="Ldo\LdoClassInfo.cs" />
+    <Compile Include="Ldo\LdoEntityInfo.cs" />
+    <Compile Include="Ldo\LdoPropertyInfo.cs" />
+    <Compile Include="Ldo\PrimaryKeyAttribute.cs" />
+    <Compile Include="Ldo\ReflectionBinder.cs" />
+    <Compile Include="Ldo\ReflectionBinderExtension.cs" />
+    <Compile Include="Ldo\RelationAttribute.cs" />
+    <Compile Include="Ldo\Relationship.cs" />
+    <Compile Include="Ldo\TableAttribute.cs" />
+    <Compile Include="NamedQuery\QueryCache.cs" />
+    <Compile Include="NamedQuery\QueryFile.cs" />
+    <Compile Include="NamedQuery\QueryNode.cs" />
+    <Compile Include="NoDateSetNameException.cs" />
+    <Compile Include="NoTableNameException.cs" />
+    <Compile Include="OutOfRangeException.cs" />
+    <Compile Include="PagedDataTable.cs" />
+    <Compile Include="PagedEntity.cs" />
+    <Compile Include="PageDescriptor.cs" />
+    <Compile Include="PagerProvider\BasePager.cs" />
+    <Compile Include="PagerProvider\MsSql2000Pager.cs" />
+    <Compile Include="PagerProvider\MsSql2005Pager.cs" />
+    <Compile Include="PagerProvider\MySqlPager.cs" />
+    <Compile Include="PagerProvider\OraclePager.cs" />
+    <Compile Include="PagerProvider\PagerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryCollection.cs" />
+    <Compile Include="QueryStatement.cs" />
+    <Compile Include="QueryStatementExtension.cs" />
+    <Compile Include="RemoteMonitor.cs" />
+    <Compile Include="Resources\DataExpressResources.cs" />
+    <Compile Include="Schema\BaseDbSchema.cs" />
+    <Compile Include="Schema\ColumnSchema.cs" />
+    <Compile Include="Schema\CommandSchema.cs" />
+    <Compile Include="Schema\DatabaseSchema.cs" />
+    <Compile Include="Schema\IDbSchema.cs" />
+    <Compile Include="Schema\KeySchema.cs" />
+    <Compile Include="Schema\TableSchema.cs" />
+    <Compile Include="Schema\ViewSchema.cs" />
+    <Compile Include="SqlExpressions\AndExpression.cs" />
+    <Compile Include="SqlExpressions\AvgExpression.cs" />
+    <Compile Include="SqlExpressions\BaseColumnExpression.cs" />
+    <Compile Include="SqlExpressions\BaseCompareExpression.cs" />
+    <Compile Include="SqlExpressions\BaseExpression.cs" />
+    <Compile Include="SqlExpressions\BetweenExpression.cs" />
+    <Compile Include="SqlExpressions\ColumnOperator.cs" />
+    <Compile Include="SqlExpressions\CommandExpression.cs" />
+    <Compile Include="SqlExpressions\ComputeExpression.cs" />
+    <Compile Include="SqlExpressions\CountExpression.cs" />
+    <Compile Include="SqlExpressions\EqExpression.cs" />
+    <Compile Include="SqlExpressions\FilterParser.cs" />
+    <Compile Include="SqlExpressions\GeExpression.cs" />
+    <Compile Include="SqlExpressions\GtExpression.cs" />
+    <Compile Include="SqlExpressions\InExpression.cs" />
+    <Compile Include="SqlExpressions\IsNotNullExpression.cs" />
+    <Compile Include="SqlExpressions\IsNullExpression.cs" />
+    <Compile Include="SqlExpressions\JoinExpression.cs" />
+    <Compile Include="SqlExpressions\LeExpression.cs" />
+    <Compile Include="SqlExpressions\LikeExpression.cs" />
+    <Compile Include="SqlExpressions\LogicExpression.cs" />
+    <Compile Include="SqlExpressions\LtExpression.cs" />
+    <Compile Include="SqlExpressions\MaxExpression.cs" />
+    <Compile Include="SqlExpressions\MinExpression.cs" />
+    <Compile Include="SqlExpressions\NativeExpression.cs" />
+    <Compile Include="SqlExpressions\NeExpression.cs" />
+    <Compile Include="SqlExpressions\OrderExpression.cs" />
+    <Compile Include="SqlExpressions\OrderMethod.cs" />
+    <Compile Include="SqlExpressions\OrExpression.cs" />
+    <Compile Include="SqlExpressions\OriginalKeywordExpression.cs" />
+    <Compile Include="SqlExpressions\PreviousOperator.cs" />
+    <Compile Include="SqlExpressions\QuoteExpressoin.cs" />
+    <Compile Include="SqlExpressions\SimpleColumnExpression.cs" />
+    <Compile Include="SqlExpressions\SimpleNameExpression.cs" />
+    <Compile Include="SqlExpressions\SimpleValueExpression.cs" />
+    <Compile Include="SqlExpressions\SqlExpression.cs" />
+    <Compile Include="SqlExpressions\SubQueryExpression.cs" />
+    <Compile Include="SqlExpressions\SumExpression.cs" />
+    <Compile Include="SqlStatement.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="TransactionState.cs" />
+    <Compile Include="UpdateStatement.cs" />
+    <Compile Include="UpdateStatementExtension.cs" />
+    <Compile Include="Utility\BasePool.cs" />
+    <Compile Include="Utility\Converter.cs" />
+    <Compile Include="Utility\ConvertFailedException.cs" />
+    <Compile Include="Utility\Des.cs" />
+    <Compile Include="Utility\DesKey.cs" />
+    <Compile Include="Utility\IPool.cs" />
+    <Compile Include="Utility\ObjectOutofRangeExeception.cs" />
+    <Compile Include="Utility\ObtainTimeoutException.cs" />
+    <Compile Include="Utility\ToolLite.cs" />
+    <Compile Include="Utility\TripleDes.cs" />
+    <Compile Include="Utility\TypeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="DataExpress.config" />
+    <None Include="Ldo\LdoClass.vm" />
+    <None Include="Ldo\SimpleBinder.vm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DataExpressResources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dorado\Dorado.csproj">
+      <Project>{56cb9912-4ce8-4370-8b21-5eeef2123e9e}</Project>
+      <Name>Dorado</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="ResourceManagerHandler.ashx.cs" Class="Dorado.Configuration.ServerHost.ResourceManagerHandler" %>

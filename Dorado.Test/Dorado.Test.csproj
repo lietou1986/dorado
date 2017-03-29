@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD82823D-9C26-4B91-B4AB-7EA75B14FD1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.Test</RootNamespace>
+    <AssemblyName>Dorado.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\LoggerTest.cs" />
+    <Compile Include="Core\WebTest.cs" />
+    <Compile Include="MsmqTest.cs" />
+    <Compile Include="Package\PackageDaoTest.cs" />
+    <Compile Include="Package\PackageProviderTest.cs" />
+    <Compile Include="Package\UtilityHelperTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\CoreTest.cs" />
+    <Compile Include="Data\SFTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dorado.Config\Dorado.Configuration\Dorado.Configuration.csproj">
+      <Project>{9BCA8D0B-FED3-4494-90E9-0A18A527CC3C}</Project>
+      <Name>Dorado.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.Data\Dorado.Data\Dorado.Data.csproj">
+      <Project>{DFD39E62-6F6E-414A-8446-2EAAC02093C5}</Project>
+      <Name>Dorado.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.Package\Dorado.Package.ServiceImp\Dorado.Package.ServiceImp.csproj">
+      <Project>{1ad36e7b-db81-4582-b1b6-a32e577e8c15}</Project>
+      <Name>Dorado.Package.ServiceImp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.Package\Dorado.Package.ServiceInterface\Dorado.Package.ServiceInterface.csproj">
+      <Project>{81eded4b-f818-4d2e-9627-7140b5d804f5}</Project>
+      <Name>Dorado.Package.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado\Dorado.csproj">
+      <Project>{56CB9912-4CE8-4370-8B21-5EEEF2123E9E}</Project>
+      <Name>Dorado</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Config\connectionStrings.config" />
+    <None Include="Config\logging.production.config" />
+    <None Include="Config\PackageSettings.config" />
+    <None Include="Config\RelayComponents.config" />
+    <None Include="Config\RelayNode.config" />
+    <None Include="Config\RelayNodeMapping.config" />
+    <None Include="Config\RelayTypeSettings.config" />
+    <None Include="Config\RemoteConfigurationManager.config" />
+    <None Include="Config\SocketClient.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

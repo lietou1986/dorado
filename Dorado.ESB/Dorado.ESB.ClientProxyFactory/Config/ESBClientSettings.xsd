@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://Dorado.com/ESBClientSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ESBClientSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Services">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Service">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Protocols">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Protocol">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Nodes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Node">
+                                        <xs:complexType>
+                                          <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+                                          <xs:attribute name="Host" type="xs:string" use="required" />
+                                          <xs:attribute name="ListenPort" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="IsVIP" type="xs:boolean" use="required" />
+                                          <xs:attribute name="Weight" type="xs:decimal" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="LoadBalanceStrategy">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:enumeration value="Random"></xs:enumeration>
+                                          <xs:enumeration value="MinDelay"></xs:enumeration>
+                                          <xs:enumeration value="LeastConnections"></xs:enumeration>
+                                          <xs:enumeration value="WeightedRandom"></xs:enumeration>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="FailedStrategy">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:enumeration value="ImmediatelySwitch"></xs:enumeration>
+                                          <xs:enumeration value="TryToSwitch"></xs:enumeration>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="TryNumber" type="xs:integer" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ChannelPool">
+                                  <xs:complexType>
+                                    <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+                                    <xs:attribute name="PoolSize" type="xs:unsignedInt" use="required" />
+                                    <xs:attribute name="WaitingTimeout" type="xs:unsignedByte" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Bindings">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Binding">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ReaderQuotas">
+                                  <xs:complexType>
+                                    <xs:attribute name="MaxDepth" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="MaxStringContentLength" type="xs:unsignedInt" use="required" />
+                                    <xs:attribute name="MaxArrayLength" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="MaxBytesPerRead" type="xs:unsignedInt" use="required" />
+                                    <xs:attribute name="MaxNameTableCharCount" type="xs:unsignedShort" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Type" type="xs:string" use="required" />
+                              <xs:attribute name="CloseTimeout" type="xs:time" use="required" />
+                              <xs:attribute name="OpenTimeout" type="xs:time" use="required" />
+                              <xs:attribute name="ReceiveTimeout" type="xs:time" use="required" />
+                              <xs:attribute name="SendTimeout" type="xs:time" use="required" />
+                              <xs:attribute name="TransactionFlow" type="xs:boolean" use="required" />
+                              <xs:attribute name="TransferMode" type="xs:string" use="required" />
+                              <xs:attribute name="TransactionProtocol" type="xs:string" use="required" />
+                              <xs:attribute name="HostNameComparisonMode" type="xs:string" use="required" />
+                              <xs:attribute name="ListenBacklog" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="MaxBufferPoolSize" type="xs:unsignedInt" use="required" />
+                              <xs:attribute name="MaxBufferSize" type="xs:unsignedInt" use="required" />
+                              <xs:attribute name="MaxConnections" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="MaxReceivedMessageSize" type="xs:unsignedInt" use="required" />
+                              <xs:attribute name="BindingType" type="xs:string" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Providers">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Provider">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Methods">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Method">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="UseLocal" type="xs:boolean" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="NotConfiguredStrategy" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Heartbeat">
+                      <xs:complexType>
+                        <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+                        <xs:attribute name="Interval" type="xs:unsignedShort" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FileGeneration">
+                      <xs:complexType>
+                        <xs:attribute name="SourceFileTemplate" type="xs:string" use="required" />
+                        <xs:attribute name="SourceFactoryFileTemplate" type="xs:string" use="required" />
+                        <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+                  <xs:attribute name="ControlLevel">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Whole"></xs:enumeration>
+                        <xs:enumeration value="Single"></xs:enumeration>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+
+                  <xs:attribute name="Wrapper" type="xs:boolean" use="required" />
+                  <xs:attribute name="UseLocalService" type="xs:boolean" use="required" />
+                  <xs:attribute name="Type" type="xs:string" use="required" />
+                  <xs:attribute name="Namespace" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClientNodes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="ClientNode">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="CurrentProtocol">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="NetTcp"></xs:enumeration>
+                        <xs:enumeration value="Http"></xs:enumeration>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="VipChannel" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="majorVersion" type="xs:unsignedByte" use="required" />
+      <xs:attribute name="minorVersion" type="xs:unsignedByte" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

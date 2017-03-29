@@ -1,0 +1,7 @@
+D:\Projects\dorado\Build\Dorado.Web.dll
+D:\Projects\dorado\Build\Dorado.Web.pdb
+D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csprojResolveAssemblyReference.cache
+D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.Resource.resources
+D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.GenerateResource.Cache
+D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.dll
+D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.pdb

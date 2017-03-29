@@ -1,0 +1,10 @@
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\bin\Debug\Beisen.ESB.ServiceHost.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\bin\Debug\Beisen.ESB.ServiceHost.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\bin\Debug\Beisen.Configuration.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\bin\Debug\Wintellect.PowerThreading.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\bin\Debug\log4net.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\bin\Debug\Beisen.Configuration.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\bin\Debug\Beisen.Configuration.XmlSerializers.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\obj\Debug\ResolveAssemblyReference.cache
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\obj\Debug\Beisen.ESB.ServiceHost.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.ServiceHost\obj\Debug\Beisen.ESB.ServiceHost.pdb

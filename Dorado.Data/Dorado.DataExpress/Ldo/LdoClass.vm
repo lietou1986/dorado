@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using Tiwx.FastData.Ldo;
+
+namespace ${class.LdoNamespace}
+{
+    public class ${class.LdoClass}:${class.OwnerType.FullName},ILdoBinder
+    {
+		public ${class.LdoClass}()
+		{
+			_updateValues=new Dictionary<string,object>();
+		}
+		#region ILdoBinder 成员
+
+		bool _changed=false;
+        public bool Changed
+        {
+            get
+            {
+                return this._changed;
+            }
+            set
+            {
+                
+                this._changed=value;
+            }
+        }
+        bool _deleted=false;
+        public bool Deleted
+        {
+            get
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+            set
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+        }
+        Dictionary<string,object> _updateValues=null;
+        public Dictionary<string, object> UpdatedValues
+        {
+            get
+            {
+				return _updateValues;
+            }
+        }
+        #endregion
+#foreach($pi in ${class.Properties})
+        public override ${pi.TypeName} ${pi.OwnerProperty.Name}
+        {
+		get
+		{
+			return base.${pi.OwnerProperty.Name};
+		}
+		set
+		{
+			base.${pi.OwnerProperty.Name}=value;
+		}
+        }
+#end
+    }
+}

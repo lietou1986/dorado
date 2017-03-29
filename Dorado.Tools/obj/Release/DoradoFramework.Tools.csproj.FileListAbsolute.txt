@@ -1,0 +1,4 @@
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Tools\bin\Release\DoradoFramework.Tools.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Tools\bin\Release\DoradoFramework.Tools.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Tools\obj\Release\DoradoFramework.Tools.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.Tools\obj\Release\DoradoFramework.Tools.pdb

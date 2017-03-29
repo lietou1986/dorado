@@ -1,0 +1,7 @@
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.ActivityEngine\DoradoFramework.ActivityEngine.ServiceInterface\bin\Release\DoradoFramework.ActivityEngine.ServiceInterface.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.ActivityEngine\DoradoFramework.ActivityEngine.ServiceInterface\bin\Release\DoradoFramework.ActivityEngine.ServiceInterface.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.ActivityEngine\DoradoFramework.ActivityEngine.ServiceInterface\bin\Release\DoradoFramework.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.ActivityEngine\DoradoFramework.ActivityEngine.ServiceInterface\bin\Release\DoradoFramework.pdb
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.ActivityEngine\DoradoFramework.ActivityEngine.ServiceInterface\obj\Release\DoradoFramework.ActivityEngine.ServiceInterface.csprojResolveAssemblyReference.cache
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.ActivityEngine\DoradoFramework.ActivityEngine.ServiceInterface\obj\Release\DoradoFramework.ActivityEngine.ServiceInterface.dll
+D:\Project\TFS\NET\DoradoFramework\DoradoFramework.ActivityEngine\DoradoFramework.ActivityEngine.ServiceInterface\obj\Release\DoradoFramework.ActivityEngine.ServiceInterface.pdb

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ActivityEngine.ServiceImp", "Dorado.ActivityEngine.ServiceImp\Dorado.ActivityEngine.ServiceImp.csproj", "{D652B246-421E-4A3C-979E-A54F005CEB72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.ActivityEngine.ServiceInterface", "Dorado.ActivityEngine.ServiceInterface\Dorado.ActivityEngine.ServiceInterface.csproj", "{AD94C6D8-099A-450B-8A8A-6F98B4910CE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D652B246-421E-4A3C-979E-A54F005CEB72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D652B246-421E-4A3C-979E-A54F005CEB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D652B246-421E-4A3C-979E-A54F005CEB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D652B246-421E-4A3C-979E-A54F005CEB72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD94C6D8-099A-450B-8A8A-6F98B4910CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD94C6D8-099A-450B-8A8A-6F98B4910CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD94C6D8-099A-450B-8A8A-6F98B4910CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD94C6D8-099A-450B-8A8A-6F98B4910CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

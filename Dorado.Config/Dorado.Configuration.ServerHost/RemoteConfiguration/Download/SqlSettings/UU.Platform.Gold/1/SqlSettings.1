@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SqlSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" majorVersion="1" minorVersion="1">
+  <Sqls UseDB="Default">
+    <Sql Name="" Description="">
+      <Parameters>
+        <Parameter Name="id" DataType="int" />
+        <Parameter Name="type" DataType="tinyint" />
+      </Parameters>
+      <Body><![CDATA[SELECT TOP 1000 [ID]
+      ,[UserID]
+      ,[OccurTime]
+      ,[Type]
+      ,[IP]
+      ,[Description]
+  FROM [UU_Platform_Gold].[dbo].[sys_Event] WHERE id=@id and type=@Type]]></Body>
+    </Sql>
+  </Sqls>
+</SqlSettings>

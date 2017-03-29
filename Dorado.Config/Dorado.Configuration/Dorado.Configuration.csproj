@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BCA8D0B-FED3-4494-90E9-0A18A527CC3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.Configuration</RootNamespace>
+    <AssemblyName>Dorado.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseConfig.cs" />
+    <Compile Include="ConfigurationManager\BaseConfigurationManager.cs" />
+    <Compile Include="ConfigEntry.cs" />
+    <Compile Include="ConfigurationManager\ConfigurationManager.cs" />
+    <Compile Include="ConfigurationManager\CustomInit\Config.cs" />
+    <Compile Include="ConfigurationManager\CustomInit\ConfigSettings.cs" />
+    <Compile Include="ConfigurationManager\CustomInit\InitConfiguration.cs" />
+    <Compile Include="ConfigurationManager\CustomInit\InitConfigurationManager.cs" />
+    <Compile Include="ConfigurationManager\CustomInit\InitRemoteConfiguration.cs" />
+    <Compile Include="ConfigurationManager\CustomInit\InitRemoteConfigurationManager.cs" />
+    <Compile Include="RemoteConfigurationWrapper.cs" />
+    <Compile Include="ConfigurationVersionAttribute.cs" />
+    <Compile Include="ConfigUtility.cs" />
+    <Compile Include="ConfigWatcher.cs" />
+    <Compile Include="LocalConfigurationWrapper.cs" />
+    <Compile Include="AppSettingCollection.cs" />
+    <Compile Include="AppSettingProvider.cs" />
+    <Compile Include="ConnectionStringCollection.cs" />
+    <Compile Include="ConnectionStringProvider.cs" />
+    <Compile Include="EnvironmentRouter\IEnvironmentRouter.cs" />
+    <Compile Include="EnvironmentRouter\IPRouter.cs" />
+    <Compile Include="Exceptions\InvalidConfigurationException.cs" />
+    <Compile Include="Exceptions\NotFoundConfigurationException.cs" />
+    <Compile Include="IConfiguration.cs" />
+    <Compile Include="ICopyable.cs" />
+    <Compile Include="IPostSerializer.cs" />
+    <Compile Include="ConfigurationManager\LocalConfigurationManager.cs" />
+    <Compile Include="PerformanceCounters\ConfigCallPerfCounter.cs" />
+    <Compile Include="RawConfigurationManager.cs" />
+    <Compile Include="RemoteConfigKeyAttribute.cs" />
+    <Compile Include="RemoteConfigSection.cs" />
+    <Compile Include="ConfigurationManager\RemoteConfigurationManager.cs" />
+    <Compile Include="RemoteConfigurationManagerConfiguration.cs" />
+    <Compile Include="Sync\Synchronizer.cs" />
+    <Compile Include="VersionIncompatibleException.cs" />
+    <Compile Include="XmlSerializerSectionHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dorado\Dorado.csproj">
+      <Project>{56cb9912-4ce8-4370-8b21-5eeef2123e9e}</Project>
+      <Name>Dorado</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

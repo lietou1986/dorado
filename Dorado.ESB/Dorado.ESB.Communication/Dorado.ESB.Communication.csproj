@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0CB4A3B1-8CD9-414D-AD1A-F5163495B22E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.ESB.Communication</RootNamespace>
+    <AssemblyName>Dorado.ESB.Communication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dorado">
+      <HintPath>..\..\Build\Dorado.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\packages\protobuf-net.2.1.0\lib\net45\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Async\AsyncResult.cs" />
+    <Compile Include="Async\Common\ReceiveAsyncResult.cs" />
+    <Compile Include="Async\Common\SendAsyncResult.cs" />
+    <Compile Include="Async\Common\TryReceiveAsyncResult.cs" />
+    <Compile Include="Async\CompletedAsyncResult.cs" />
+    <Compile Include="Async\TypedAsyncResult.cs" />
+    <Compile Include="Async\TypedCompletedAsyncResult.cs" />
+    <Compile Include="Async\WseTcp\AcceptChannelAsyncResult.cs" />
+    <Compile Include="Async\WseTcp\ConnectAsyncResult.cs" />
+    <Compile Include="Async\WseTcp\ReadDataAsyncResult.cs" />
+    <Compile Include="Async\WseTcp\SocketReceiveAsyncResult.cs" />
+    <Compile Include="Async\WseTcp\SocketSendAsyncResult.cs" />
+    <Compile Include="Async\WseTcp\WriteDataAsyncResult.cs" />
+    <Compile Include="Behavior\CustomWebBehavior.cs" />
+    <Compile Include="Behavior\MessageFormatterInserter.cs" />
+    <Compile Include="Channel\CustomChannelFactory.cs" />
+    <Compile Include="Channel\CustomChannelListener.cs" />
+    <Compile Include="Channel\CustomDuplexSession.cs" />
+    <Compile Include="Channel\CustomDuplexSessionChannel.cs" />
+    <Compile Include="Channel\WseTcp\ClientWseTcpChannel.cs" />
+    <Compile Include="Channel\WseTcp\ServerWseTcpChannel.cs" />
+    <Compile Include="Channel\WseTcp\WseTcpChannel.cs" />
+    <Compile Include="Channel\WseTcp\WseTcpChannelFactory.cs" />
+    <Compile Include="Channel\WseTcp\WseTcpChannelListener.cs" />
+    <Compile Include="CustomEncodingBindingElement.cs" />
+    <Compile Include="CustomEncodingBindingSection.cs" />
+    <Compile Include="CustomTransportBindingElement.cs" />
+    <Compile Include="CustomTransportBindingSection.cs" />
+    <Compile Include="Encoder\CustomEncoder.cs" />
+    <Compile Include="Encoder\CustomEncoderFactory.cs" />
+    <Compile Include="Encoder\JsonpEncoder.cs" />
+    <Compile Include="Encoder\ProtoBufEncoder.cs" />
+    <Compile Include="Exception\DuplicateOperationException.cs" />
+    <Compile Include="Formatter\ClientMessageFormatter.cs" />
+    <Compile Include="Formatter\DispatchMessageFormatter.cs" />
+    <Compile Include="Formatter\JsonParametersFormatter.cs" />
+    <Compile Include="Formatter\PostParametersFormatter.cs" />
+    <Compile Include="Formatter\ProtoBufParametersFormatter.cs" />
+    <Compile Include="Formatter\UriParametersFormatter.cs" />
+    <Compile Include="Helper\MessageFormatHelper.cs" />
+    <Compile Include="Helper\UriTemplateHelper.cs" />
+    <Compile Include="MessageFilter\CustomAddressFilter.cs" />
+    <Compile Include="Message\InMessage.cs" />
+    <Compile Include="Message\MessageBase.cs" />
+    <Compile Include="Message\OutMessage.cs" />
+    <Compile Include="OperationSelector\CustomOperationSelector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\IObjectSerializer.cs" />
+    <Compile Include="Serialization\JsonObjectSerializer.cs" />
+    <Compile Include="Serialization\ProtoBufSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="serviceModel.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dorado.Config\Dorado.Configuration\Dorado.Configuration.csproj">
+      <Project>{9bca8d0b-fed3-4494-90e9-0a18a527cc3c}</Project>
+      <Name>Dorado.Configuration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

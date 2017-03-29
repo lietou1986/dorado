@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MainNoLayout.cshtml";
+}
+<link href="/Css/RemoteConfiguration/EditVersion.css" rel="stylesheet" type="text/css" />
+<div class="from-config">
+    <div class="editor-label">
+        <label for="SectionName">
+            配置文件节点 :</label>
+    </div>
+    <div class="editor-field">
+        <select id="sectionName" class="easyui-combobox easyui-validatebox" name="SectionName"
+            style="width: 200px;" required="true" missingmessage="必填">
+        </select>
+    </div>
+    <div class="editor-label">
+        <label for="Application">
+            应用程序:</label>
+    </div>
+    <div class="editor-field">
+        <select id="application" class="easyui-combobox easyui-validatebox" name="Application"
+            style="width: 200px;" required="true" missingmessage="必填">
+        </select>
+    </div>
+    <div class="editor-label">
+        <label for="Major">
+            主版本:</label>
+    </div>
+    <div class="editor-field">
+        <input type="hidden" id="CurrentSetting" name="CurrentSetting" value="@ViewBag.CurrentSetting" />
+    </div>
+    <div class="editor-field">
+        <input type="text" name="Major" class="easyui-numberspinner easyui-validatebox" min="1"
+            max="10" required="true" style="width: 80px;" id="major"></input>
+    </div>
+    <div class="editor-label">
+        <label for="fileName">
+            配置文件:</label>
+    </div>
+    <div class="editor-field">
+        <textarea cols="20" name="fileContent" rows="2" class="easyui-validatebox" style="height: 150px; width: 500px; overflow: auto"
+            required="true" missingmessage="必填" id="fileContent">
+                @ViewBag.FileContent
+            </textarea>
+    </div>
+    <div class="submit-label">
+        <div class="editor-field" border="false" style="text-align: center; height: 30px; line-height: 30px;">
+            <a class="easyui-linkbutton" iconcls="icon-ok" href="javascript:void(0)" id="formSubmit">Submit</a> <a class="easyui-linkbutton" iconcls="icon-cancel" href="javascript:void(0)"
+                id="formCancel">Cancel</a>
+        </div>
+    </div>
+</div>
+<div id="dd" style="width: 300px; height: 130px;" closed="false">
+    <div class="dd-content" style="padding: 20px">
+    </div>
+</div>
+<script src="/Js/RemoteConfiguration/EditVersion.js" type="text/javascript"></script>

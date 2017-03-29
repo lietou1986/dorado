@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beisen.ESB.ClientProxyFactory", "Beisen.ESB.ClientProxyFactory.csproj", "{B0803286-89DF-4D3E-9884-58D6AC2C6B45}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.2.55:8080/
+		SccProjectUniqueName0 = Beisen.ESB.ClientProxyFactory.csproj
+		SccProjectName0 = .
+		SccAuxPath0 = http://192.168.2.55:8080
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0803286-89DF-4D3E-9884-58D6AC2C6B45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

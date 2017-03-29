@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "远程配置管理客户端 v2.0";
+    ViewBag.Head = "Dorado Remote ConfigurationManager";
+    ViewBag.Version = "v2.0";
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title</title>
+    <script src="/scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="/jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <link href="/jquery-easyui/themes/bootstrap/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="/jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="/Css/Share/Share.css" rel="stylesheet" type="text/css" />
+    <link href="/Css/RemoteConfiguration/SimpleIndex.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="easyui-layout">
+    <div region="center" title="控制台" style="overflow: hidden;">
+        <div class="easyui-tabs" fit="true" border="false" id="tabs">
+            <div title="配置文件管理" style="padding: 20px; overflow: auto;" id="easyui-tabs-0">
+                <div>
+                    <table id="tt">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div region="south" split="false" style="height: 25px; margin-top: 2px;padding:2px 5px;">
+        <span><strong>远程配置 2.0</strong></span>
+    </div>
+    <div id="mm" class="easyui-menu" style="width: 120px;">
+        <div onclick="CreateConfig()" iconcls="icon-add">
+            新建配置
+        </div>
+        <div iconcls="icon-reload" onclick="RefreshConfigList()">
+            刷新列表
+        </div>
+        <div>
+            关闭
+        </div>
+    </div>
+    <div id="ctmenu" class="easyui-menu" style="width: 120px;">
+        <div onclick="CreateConfig()" iconcls="icon-add">
+            新建配置
+        </div>
+        <div iconcls="icon-reload" onclick="RefreshConfigList()">
+            刷新列表
+        </div>
+        <div>
+            关闭
+        </div>
+    </div>
+    <div id="w-create" class="easyui-window" title="新建配置" iconcls="icon-add" style="width: 500px;
+        height: 400px; padding: 5px; overflow: hidden" closed="true">
+        <div class="easyui-layout" fit="true">
+            <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
+            </div>
+        </div>
+    </div>
+    <div id="w-edituser" class="easyui-window" title="用户" iconcls="icon-user" style="width: 500px;
+        height: 500px; padding: 5px; overflow: hidden" closed="true">
+        <div class="easyui-layout" fit="true">
+            <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
+            </div>
+        </div>
+    </div>
+    <div id="w-editversion" class="easyui-window" title="修改版本" iconcls="icon-edit" style="width: 500px;
+        height: 500px; padding: 5px; overflow: hidden" closed="true">
+        <div class="easyui-layout" fit="true">
+            <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
+            </div>
+        </div>
+    </div>
+    <div id="w-createversion" class="easyui-window" title="新建版本" iconcls="icon-add" style="width: 500px;
+        height: 500px; padding: 5px; overflow: hidden" closed="true">
+        <div class="easyui-layout" fit="true">
+            <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
+            </div>
+        </div>
+    </div>
+    <div id="dd" style="width: 300px; height: 130px;" closed="false">
+        <div class="dd-content" style="padding: 20px">
+        </div>
+    </div>
+    <script src="/Js/RemoteConfiguration/SimpleIndex.js" type="text/javascript"></script>
+</body>
+</html>

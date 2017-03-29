@@ -1,0 +1,17 @@
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.ESB.GenerateServices.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.ESB.GenerateServices.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.ESB.Common.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.ESB.ServiceGenerateFactory.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.Logging.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.Configuration.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\log4net.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Wintellect.PowerThreading.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.ESB.Common.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.ESB.ServiceGenerateFactory.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.Logging.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.Configuration.pdb
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.Logging.XmlSerializers.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\bin\Debug\Beisen.Configuration.XmlSerializers.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\obj\Debug\ResolveAssemblyReference.cache
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\obj\Debug\Beisen.ESB.GenerateServices.dll
+D:\专业\Beisen\BS_Dev\Infrastructure\Beisen.ESB\Beisen.ESB.GenerateServices\obj\Debug\Beisen.ESB.GenerateServices.pdb

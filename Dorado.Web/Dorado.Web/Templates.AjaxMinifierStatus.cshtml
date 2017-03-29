@@ -1,0 +1,218 @@
+﻿@using Microsoft.Ajax.Utilities
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax Minifier Status</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        body {
+            font-size: .85em;
+            font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+            margin: 0;
+            padding: 0;
+            color: #696969;
+        }
+
+        a:link {
+            color: #29A151;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #29A151;
+        }
+
+        a:hover {
+            color: #29A151;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: #29A151;
+        }
+
+        p, ul {
+            margin-bottom: 20px;
+            line-height: 1.6em;
+        }
+
+        header,
+        footer,
+        nav,
+        section {
+            display: block;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 1.5em;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 2em;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            padding: 0 0 10px 0;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1.1em;
+        }
+
+        h5, h6 {
+            font-size: 1em;
+        }
+
+        /* PRIMARY LAYOUT ELEMENTS
+        ----------------------------------------------------------*/
+
+        /* you can specify a greater or lesser percentage for the
+        page width. Or, you can specify an exact pixel width. */
+        .page {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header, #header {
+            position: relative;
+            margin-bottom: 0px;
+            color: #000;
+            padding: 0;
+        }
+
+            header h1, #header h1 {
+                font-weight: bold;
+                padding: 5px 0;
+                margin: 0;
+                color: #fff;
+                border: none;
+                line-height: 2em;
+                font-size: 32px !important;
+                text-shadow: 1px 1px 2px #111;
+            }
+
+        #main {
+            padding: 30px 30px 15px 30px;
+            background-color: #fff;
+        }
+
+        footer,
+        #footer {
+            background-color: #fff;
+            color: #999;
+            padding: 10px 0;
+            text-align: center;
+            line-height: normal;
+            margin: 0 0 30px 0;
+            font-size: .9em;
+            border-radius: 0 0 4px 4px;
+            -webkit-border-radius: 0 0 4px 4px;
+            -moz-border-radius: 0 0 4px 4px;
+        }
+
+        /* TAB MENU
+        ----------------------------------------------------------*/
+        ul#menu {
+            border-bottom: 10px #F2F2F2 solid;
+            padding: 0 0 5px;
+            position: relative;
+            margin: 0;
+            text-align: right;
+        }
+
+            ul#menu li {
+                display: inline;
+                list-style: none;
+            }
+
+                ul#menu li#greeting {
+                    padding: 10px 20px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    line-height: 2.8em;
+                    color: #fff;
+                }
+
+                ul#menu li a {
+                    padding: 10px 20px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    line-height: 2.8em;
+                    background-color: #e8eef4;
+                    color: #29A151;
+                    border-radius: 4px 4px 0 0;
+                    -webkit-border-radius: 4px 4px 0 0;
+                    -moz-border-radius: 4px 4px 0 0;
+                }
+
+                    ul#menu li a:hover {
+                        background-color: #fff;
+                        text-decoration: none;
+                    }
+
+                    ul#menu li a:active {
+                        background-color: #29A151;
+                        text-decoration: none;
+                    }
+
+                ul#menu li.selected a {
+                    background-color: #fff;
+                    color: #29A151;
+                }
+
+        /* FORM LAYOUT ELEMENTS
+        ----------------------------------------------------------*/
+
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 0 1.4em 1.4em 1.4em;
+            margin: 0 5em 1.5em 5em;
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax Minifier Status
+        </h1>
+        <h2>
+            Warning Level:@Model.Level
+        </h2>
+        <h2>
+            EnableMinifier:@Model.EnableMinifier
+        </h2>
+    </center>
+    <fieldset>
+        <legend>Javascript minifier setting</legend>
+        <ul><li>StripDebugStatements:@Model.JavascriptSetting.StripDebugStatements</li></ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>Css minifier Setting</legend>
+        <ul>
+            <li>
+                Errors: @foreach (var error in Model.Errors)
+                {
+                    <span>@error.Message</span><br />
+                }
+            </li>
+        </ul>
+    </fieldset>
+
+</body>
+</html>
