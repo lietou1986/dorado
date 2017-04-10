@@ -2028,47 +2028,6 @@ namespace Dorado.Extensions
             return string.Format("<script type='text/javascript'>{0}</script>", message);
         }
 
-        /*
-
-        /// <summary>
-        /// 截取指定字节数的字符串
-        /// </summary>
-        /// <param name="Str">原字符串</param>
-        /// <param name="Num">要截取的字节数</param>
-        /// <returns>截取后的字符串</returns>
-        public static string CutStr(string Str, int Num)
-        {
-            if (Encoding.Default.GetBytes(Str).Length <= Num)
-            {
-                return Str;
-            }
-            else
-            {
-                int CutBytes = 0;
-                for (int i = 0; i < Str.Length; i++)
-                {
-                    if (Convert.ToInt32(Str.ToCharArray().GetValue(i)) > 255)
-                    {
-                        CutBytes = CutBytes + 2;
-                    }
-                    else
-                    {
-                        CutBytes = CutBytes + 1;
-                    }
-                    if (CutBytes == Num)
-                    {
-                        return Str.Substring(0, i + 1);
-                    }
-                    if (CutBytes == Num + 1)
-                    {
-                        return Str.Substring(0, i);
-                    }
-                }
-                return Str + "...";
-            }
-        }
-        */
-
         public static string DownLoadUrlFile(string urlInfo)
         {
             return string.Format("<script type='text/javascript'>$('#DownLoad').></a></script>", urlInfo);
@@ -2706,6 +2665,31 @@ namespace Dorado.Extensions
                 str = str.Substring(pos + 1);
             }
             return UpFirst(str);
+        }
+
+        /// <summary>
+        /// 压缩指定的字符串。
+        /// </summary>
+        /// <param name="str">要压缩的字符串。</param>
+        /// <returns>压缩后的byte数组。</returns>
+        public static byte[] Compress(this string str)
+        {
+            return str.Compress(Encoding.Unicode);
+        }
+
+        /// <summary>
+        /// 压缩指定的字符串。
+        /// </summary>
+        /// <param name="str">要压缩的字符串。</param>
+        /// <param name="encoding">字符串的编码。</param>
+        /// <returns>压缩后的byte数组。</returns>
+        public static byte[] Compress(this string str, Encoding encoding)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                throw new ArgumentException("str");
+            }
+            return (encoding ?? Encoding.Unicode).GetBytes(str).Compress();
         }
     }
 }

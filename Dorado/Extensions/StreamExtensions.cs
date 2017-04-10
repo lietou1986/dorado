@@ -73,5 +73,26 @@ namespace Dorado.Extensions
                 }
             }
         }
+
+        /// <summary>
+        /// 获取指定流中的所有字节。
+        /// </summary>
+        /// <param name="stream">指定流。</param>
+        /// <returns>所有字节。</returns>
+        /// <exception cref="T:System.ArgumentNullException">stream为null时引发。</exception>
+        public static byte[] ReadAllBytes(this Stream stream)
+        {
+            byte[] array;
+            if (stream == null)
+            {
+                throw new ArgumentNullException("stream");
+            }
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                stream.CopyTo(memoryStream);
+                array = memoryStream.ToArray();
+            }
+            return array;
+        }
     }
 }

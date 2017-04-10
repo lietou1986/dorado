@@ -71,7 +71,9 @@
     <Compile Include="Core\Cache\StorageStrategys\NullStorageStrategy.cs" />
     <Compile Include="Core\Cache\StorageStrategys\HttpRequestStorageStrategy.cs" />
     <Compile Include="Core\Collection\BlockingQueue.cs" />
+    <Compile Include="Core\Collection\DoubleKeyDictionary.cs" />
     <Compile Include="Core\Collection\LazyMultimap.cs" />
+    <Compile Include="Core\Collection\Loop.cs" />
     <Compile Include="Core\Collection\MostRecentlyUsedList.cs" />
     <Compile Include="Core\Collection\MultiMap.cs" />
     <Compile Include="Core\Collection\QuerystringBuilder.cs" />
@@ -145,6 +147,7 @@
     <Compile Include="Core\Threading\CountdownTimer.cs" />
     <Compile Include="Core\Threading\AsyncResultNoReturn.cs" />
     <Compile Include="Core\FileWatcher.cs" />
+    <Compile Include="Extensions\ByteArrayExtentions.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\LinqExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
