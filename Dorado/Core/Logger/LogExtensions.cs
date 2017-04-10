@@ -95,6 +95,20 @@ namespace Dorado.Core.Logger
         }
 
         /// <summary>
+        /// 记录信息
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="title"></param>
+        /// <param name="info"></param>
+        /// <param name = "args"></param>
+        public static void Info(this Logger<LogItem> logger, string title, Exception info)
+        {
+            Contract.Requires(logger != null);
+
+            LoggerWrapper.Logger.Log(new LogItem(LogType.Info, info.ToString(), title));
+        }
+
+        /// <summary>
         /// 记录跟踪
         /// </summary>
         /// <param name="logger"></param>
@@ -106,6 +120,34 @@ namespace Dorado.Core.Logger
             Contract.Requires(logger != null);
 
             LoggerWrapper.Logger.Log(new LogItem(LogType.Trace, string.Format(trace, args), title));
+        }
+
+        /// <summary>
+        /// 记录跟踪
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="title"></param>
+        /// <param name="trace"></param>
+        /// <param name = "args"></param>
+        public static void Trace(this Logger<LogItem> logger, string trace, params object[] args)
+        {
+            Contract.Requires(logger != null);
+
+            LoggerWrapper.Logger.Log(new LogItem(LogType.Trace, string.Format(trace, args), string.Empty));
+        }
+
+        /// <summary>
+        /// 记录跟踪
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="title"></param>
+        /// <param name="trace"></param>
+        /// <param name = "args"></param>
+        public static void Trace(this Logger<LogItem> logger, string title, Exception trace)
+        {
+            Contract.Requires(logger != null);
+
+            LoggerWrapper.Logger.Log(new LogItem(LogType.Trace, trace.ToString(), title));
         }
 
         /// <summary>
@@ -136,6 +178,20 @@ namespace Dorado.Core.Logger
         }
 
         /// <summary>
+        /// 记录警告信息
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="title"></param>
+        /// <param name="warn"></param>
+        /// <param name = "args"></param>
+        public static void Warn(this Logger<LogItem> logger, string title, Exception warn)
+        {
+            Contract.Requires(logger != null);
+
+            LoggerWrapper.Logger.Log(new LogItem(LogType.Warn, warn.ToString(), title));
+        }
+
+        /// <summary>
         /// 记录调试信息
         /// </summary>
         /// <param name="logger"></param>
@@ -160,6 +216,20 @@ namespace Dorado.Core.Logger
             Contract.Requires(logger != null);
 
             LoggerWrapper.Logger.Log(new LogItem(LogType.Debug, string.Format(debug, args), string.Empty));
+        }
+
+        /// <summary>
+        /// 记录调试信息
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="title"></param>
+        /// <param name="debug"></param>
+        /// <param name = "args"></param>
+        public static void Debug(this Logger<LogItem> logger, string title, Exception debug)
+        {
+            Contract.Requires(logger != null);
+
+            LoggerWrapper.Logger.Log(new LogItem(LogType.Debug, debug.ToString(), title));
         }
     }
 }
