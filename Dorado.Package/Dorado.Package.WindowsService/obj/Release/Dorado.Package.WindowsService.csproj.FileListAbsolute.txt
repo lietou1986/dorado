@@ -101,8 +101,3 @@ F:\快盘\Work\Dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\D
 F:\快盘\Work\Dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.exe
 F:\快盘\Work\Dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.pdb
 D:\Projects\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.csprojResolveAssemblyReference.cache
-D:\Projects\dorado\Build\Dorado.Package.WindowsService.exe.config
-D:\Projects\dorado\Build\Dorado.Package.WindowsService.exe
-D:\Projects\dorado\Build\Dorado.Package.WindowsService.pdb
-D:\Projects\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.exe
-D:\Projects\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.pdb

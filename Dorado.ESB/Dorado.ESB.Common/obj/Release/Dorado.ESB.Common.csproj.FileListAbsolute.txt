@@ -35,7 +35,3 @@ D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Common\bin\Release\Dorado.pdb
 D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.Common.dll
 D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.Common.pdb
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Common\obj\Release\Dorado.ESB.Common.csprojResolveAssemblyReference.cache
-D:\Projects\dorado\Build\Dorado.ESB.Common.dll
-D:\Projects\dorado\Build\Dorado.ESB.Common.pdb
-D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Common\obj\Release\Dorado.ESB.Common.dll
-D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Common\obj\Release\Dorado.ESB.Common.pdb

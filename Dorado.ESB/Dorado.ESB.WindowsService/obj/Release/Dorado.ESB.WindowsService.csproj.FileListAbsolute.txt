@@ -46,8 +46,3 @@ D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.WindowsService.exe.config
 D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.WindowsService.exe
 D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.WindowsService.pdb
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Release\Dorado.ESB.WindowsService.csprojResolveAssemblyReference.cache
-D:\Projects\dorado\Build\Dorado.ESB.WindowsService.exe.config
-D:\Projects\dorado\Build\Dorado.ESB.WindowsService.exe
-D:\Projects\dorado\Build\Dorado.ESB.WindowsService.pdb
-D:\Projects\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Release\Dorado.ESB.WindowsService.exe
-D:\Projects\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Release\Dorado.ESB.WindowsService.pdb

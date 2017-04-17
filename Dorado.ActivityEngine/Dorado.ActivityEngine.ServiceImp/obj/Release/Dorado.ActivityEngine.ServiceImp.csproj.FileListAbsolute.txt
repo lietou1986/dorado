@@ -71,8 +71,8 @@ F:\快盘\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj
 F:\快盘\Work\Dorado\Build\Dorado.ActivityEngine.ServiceImp.dll
 F:\快盘\Work\Dorado\Build\Dorado.ActivityEngine.ServiceImp.pdb
 F:\快盘\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.pdb
+D:\Projects\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Build\Dorado.ActivityEngine.ServiceImp.dll
 D:\Projects\dorado\Build\Dorado.ActivityEngine.ServiceImp.pdb
-D:\Projects\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.dll
 D:\Projects\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.pdb

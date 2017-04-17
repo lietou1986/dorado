@@ -73,7 +73,3 @@ D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Release\Dorado.Configura
 D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.Extensions.dll
 D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.Extensions.pdb
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.csprojResolveAssemblyReference.cache
-D:\Projects\dorado\Build\Dorado.ESB.Extensions.dll
-D:\Projects\dorado\Build\Dorado.ESB.Extensions.pdb
-D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.dll
-D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.pdb

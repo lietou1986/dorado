@@ -15,8 +15,3 @@ E:\快盘\Work\Dorado\Build\Dorado.SQLite.pdb
 E:\快盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csprojResolveAssemblyReference.cache
 E:\快盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.dll
 E:\快盘\Work\Dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.pdb
-D:\Projects\dorado\Build\Dorado.SQLite.dll
-D:\Projects\dorado\Build\Dorado.SQLite.pdb
-D:\Projects\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.dll
-D:\Projects\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.pdb
-D:\Projects\dorado\Build\Dorado.SQLite.dll.config

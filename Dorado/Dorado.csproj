@@ -193,6 +193,7 @@
     <Compile Include="Extensions\MiscExtensions.cs" />
     <Compile Include="Extensions\RouteValueDictionaryExtensions.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="MimeType.cs" />
     <Compile Include="OperateStatus.cs" />
     <Compile Include="OperateResult.cs" />
     <Compile Include="Core\Cache\CacheExpireDependencies\DynamicCacheExpireDependency.cs" />
@@ -258,6 +259,10 @@
     <Compile Include="Core\TaskExecutor.cs" />
     <Compile Include="Core\TaskFuncAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IJsonSerializer.cs" />
+    <Compile Include="Services\DefaultJsonSerializer.cs" />
+    <Compile Include="Services\RequestService.cs" />
+    <Compile Include="Services\RequestServiceExtension.cs" />
     <Compile Include="Utils\CommonUtility.cs" />
     <Compile Include="Utils\HashCodeCombiner.cs" />
     <Compile Include="Utils\JsonUtility.cs" />

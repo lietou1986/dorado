@@ -30,6 +30,5 @@ D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.Json.dll
 D:\Projects\dorado\Dorado.ESB\Build\Dorado.ESB.Json.pdb
 D:\Projects\dorado\Build\Dorado.ESB.Json.dll
 D:\Projects\dorado\Build\Dorado.ESB.Json.pdb
-D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.dll
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.pdb
