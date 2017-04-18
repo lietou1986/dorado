@@ -25,9 +25,5 @@ D:\快盘\Work\Dorado\Dorado.Tools\obj\Release\Dorado.Tools.dll
 D:\快盘\Work\Dorado\Dorado.Tools\obj\Release\Dorado.Tools.pdb
 D:\Projects\dorado\Dorado.Tools\bin\Release\Dorado.Tools.dll
 D:\Projects\dorado\Dorado.Tools\bin\Release\Dorado.Tools.pdb
-D:\Projects\dorado\Dorado.Tools\bin\Release\Newtonsoft.Json.dll
-D:\Projects\dorado\Dorado.Tools\bin\Release\System.Data.SQLite.dll
-D:\Projects\dorado\Dorado.Tools\bin\Release\Newtonsoft.Json.xml
-D:\Projects\dorado\Dorado.Tools\obj\Release\Dorado.Tools.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Tools\obj\Release\Dorado.Tools.dll
 D:\Projects\dorado\Dorado.Tools\obj\Release\Dorado.Tools.pdb

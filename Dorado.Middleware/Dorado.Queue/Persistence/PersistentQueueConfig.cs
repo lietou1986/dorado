@@ -1,4 +1,6 @@
 using Dorado.Configuration;
+using Dorado.Utils;
+using System;
 using System.Xml.Serialization;
 
 namespace Dorado.Queue.Persistence
@@ -11,7 +13,9 @@ namespace Dorado.Queue.Persistence
 
         public PersistentQueueConfig()
         {
-            this.PersistenceRootPath = "D:\\PersistentQueueData\\";
+            string queueRootPath = AppDomain.CurrentDomain.BaseDirectory + "QueueData\\";
+            IOUtility.CreateDirectory(queueRootPath);
+            this.PersistenceRootPath = queueRootPath;
         }
     }
 }
