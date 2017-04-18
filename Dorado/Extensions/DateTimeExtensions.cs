@@ -471,5 +471,44 @@ namespace Dorado.Extensions
         {
             return BeginOfEpoch.AddSeconds(unixTime);
         }
+
+        public static string Moment(this DateTime dateTime, string format = "yyyy-MM-dd")
+        {
+            TimeSpan ts = DateTime.Now.Subtract(dateTime);
+
+            double hourFormNow = ts.TotalHours;
+
+            if (hourFormNow <= 1)
+                return "刚刚";
+
+            if (hourFormNow > 1 && hourFormNow <= 2)
+                return "1小时前";
+
+            if (hourFormNow > 2 && hourFormNow <= 3)
+                return "2小时前";
+
+            if (hourFormNow > 3 && hourFormNow <= 4)
+                return "3小时前";
+
+            if (hourFormNow > 4 && hourFormNow <= 5)
+                return "4小时前";
+
+            if (hourFormNow > 5 && hourFormNow <= 6)
+                return "5小时前";
+
+            if (hourFormNow > 6 && hourFormNow <= 24)
+                return "今天";
+
+            if (hourFormNow > 24 && hourFormNow <= 48)
+                return "昨天";
+
+            if (hourFormNow > 48 && hourFormNow <= 72)
+                return "前天";
+
+            if (ts.TotalDays > 15)
+                return "15天前";
+
+            return dateTime.ToString(format);
+        }
     }
 }
