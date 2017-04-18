@@ -144,6 +144,7 @@
     <Compile Include="Core\SuperCache\IVolatileToken.cs" />
     <Compile Include="Core\SuperCache\Signals.cs" />
     <Compile Include="Core\SuperCache\Weak.cs" />
+    <Compile Include="Core\Threading\ConcurrentRandom.cs" />
     <Compile Include="Core\Threading\CountdownTimer.cs" />
     <Compile Include="Core\Threading\AsyncResultNoReturn.cs" />
     <Compile Include="Core\FileWatcher.cs" />

@@ -16,3 +16,13 @@ D:\Projects\Work\Dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\System
 D:\Projects\Work\Dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\Work\Dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\LumiSoft.Net.dll
 F:\云盘\Work\Dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.csprojResolveAssemblyReference.cache
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.dll.config
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.dll
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.pdb
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.dll
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.dll
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.pdb
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.pdb
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.csprojResolveAssemblyReference.cache
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.dll
+D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.pdb
