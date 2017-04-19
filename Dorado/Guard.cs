@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
@@ -362,9 +363,9 @@ namespace Dorado
         public static void ArgumentNotNull<T>(T value, string paramName) where T : class
         {
             ArgumentValuesNotNull<T>(paramName, new T[]
-			{
-				value
-			});
+            {
+                value
+            });
         }
 
         public static void ArgumentValuesNotNull<T>(params T?[] values) where T : struct
@@ -378,9 +379,9 @@ namespace Dorado
         public static void ArgumentNotNull<T>(T value) where T : class
         {
             ArgumentValuesNotNull<T>(new T[]
-			{
-				value
-			});
+            {
+                value
+            });
         }
 
         public static void ArgumentValuesNotNull<T>(string paramName, params T?[] values) where T : struct
@@ -394,17 +395,17 @@ namespace Dorado
         public static void ArgumentNotNull<T>(T? value, string paramName) where T : struct
         {
             ArgumentValuesNotNull<T>(paramName, new T?[]
-			{
-				value
-			});
+            {
+                value
+            });
         }
 
         public static void ArgumentNotNull<T>(T? value) where T : struct
         {
             ArgumentValuesNotNull<T>(new T?[]
-			{
-				value
-			});
+            {
+                value
+            });
         }
 
         public static void ArgumentValuesNotEmpty(params string[] values)
@@ -425,9 +426,9 @@ namespace Dorado
         public static void ArgumentNotEmpty(string value)
         {
             ArgumentValuesNotEmpty(new string[]
-			{
-				value
-			});
+            {
+                value
+            });
         }
 
         public static void ArgumentNotEmpty(IEnumerable arg)
@@ -467,17 +468,17 @@ namespace Dorado
         public static void ArgumentPositive(int value, string paramName)
         {
             ArgumentValuesPositive(paramName, new int[]
-			{
-				value
-			});
+            {
+                value
+            });
         }
 
         public static void ArgumentPositive(int value)
         {
             ArgumentValuesPositive(new int[]
-			{
-				value
-			});
+            {
+                value
+            });
         }
 
         public static void ArgumentInRange(string paramName, int value, int rangeBegin, int rangeEnd)
@@ -485,12 +486,12 @@ namespace Dorado
             if (value < rangeBegin || value > rangeEnd)
             {
                 throw new ArgumentOutOfRangeException(paramName, string.Format("{0} must be within the range {1} - {2}.  The value given was {3}.", new object[]
-				{
-					paramName,
-					rangeBegin,
-					rangeEnd,
-					value
-				}));
+                {
+                    paramName,
+                    rangeBegin,
+                    rangeEnd,
+                    value
+                }));
             }
         }
 
@@ -559,6 +560,16 @@ namespace Dorado
             if (!StringExtensions.IsEmail(email))
             {
                 throw new ArgumentException(string.Format("{0}不是合法的Email格式", email));
+            }
+        }
+
+        public static void ArgumentIsFile(string filePath)
+        {
+            ArgumentNotNullOrEmpty(filePath);
+
+            if (!File.Exists(filePath))
+            {
+                throw new ArgumentException(string.Format("{0}文件不存在", filePath));
             }
         }
 

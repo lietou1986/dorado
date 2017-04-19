@@ -65,13 +65,20 @@ namespace Dorado.Utils
         /// </summary>
         /// <param name="rootDirectory"></param>
         /// <param name = "fileHandler"></param>
-        public static void Traversing(IList<string> rootDirectory, Action<FileInfo> fileHandler)
+        public static void Traversing(IList<string> rootDirectory, Action<FileInfo> fileHandler, Func<FileInfo, bool> fileFilter = null, Func<DirectoryInfo, bool> directoryFilter = null)
         {
+            if (fileFilter == null)
+                fileFilter = x => { return true; };
+            if (directoryFilter == null)
+                directoryFilter = x => { return true; };
+
             Queue<string> pathQueue = new Queue<string>();
 
             foreach (string directory in rootDirectory)
             {
-                pathQueue.Enqueue(directory);
+                DirectoryInfo dir = new DirectoryInfo(directory);
+                if (directoryFilter(dir))
+                    pathQueue.Enqueue(directory);
             }
 
             while (pathQueue.Count > 0)
@@ -79,17 +86,19 @@ namespace Dorado.Utils
                 DirectoryInfo diParent = new DirectoryInfo(pathQueue.Dequeue());
                 foreach (DirectoryInfo diChild in diParent.GetDirectories())
                 {
-                    pathQueue.Enqueue(diChild.FullName);
+                    if (directoryFilter(diChild))
+                        pathQueue.Enqueue(diChild.FullName);
                 }
 
                 foreach (FileInfo fi in diParent.GetFiles())
-                    fileHandler?.Invoke(fi);
+                    if (fileFilter(fi))
+                        fileHandler?.Invoke(fi);
             }
         }
 
-        public static void Traversing(string rootDirectory, Action<FileInfo> fileHandler)
+        public static void Traversing(string rootDirectory, Action<FileInfo> fileHandler, Func<FileInfo, bool> fileFilter = null, Func<DirectoryInfo, bool> directoryFilter = null)
         {
-            Traversing(new List<string>() { rootDirectory }, fileHandler);
+            Traversing(new List<string>() { rootDirectory }, fileHandler, fileFilter, directoryFilter);
         }
 
         /// <summary>

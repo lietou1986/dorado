@@ -16,30 +16,33 @@ namespace Dorado.Core
         private List<string> pendingFileReloads;
         private int changeFileDelay;
         private string directory;
+        private FileSystemWatcher scareCrow;
+        private string filter;
 
-        public DirectoryWatcher(string directory, int changeDelay)
+        public DirectoryWatcher(string directory, int changeDelay, string filter)
         {
             filesLock = new RwLocker();
             files = new Dictionary<string, EventHandler>();
             this.directory = directory;
             pendingFileReloads = new List<string>();
             changeFileDelay = changeDelay;
-            InitWatcher(directory);
+            this.filter = filter;
+            InitWatcher();
         }
 
         /// <summary>
         /// 只在 DirectoryWatcher创建时执行一次
         /// </summary>
         /// <param name="directory"></param>
-        private void InitWatcher(string directory)
+        private void InitWatcher()
         {
-            FileSystemWatcher scareCrow = new FileSystemWatcher();
+            scareCrow = new FileSystemWatcher();
             scareCrow.Path = directory;
-            scareCrow.IncludeSubdirectories = false;
-            scareCrow.NotifyFilter = NotifyFilters.Attributes;
-
             scareCrow.Changed += scareCrow_Changed;
             scareCrow.EnableRaisingEvents = true;
+            scareCrow.IncludeSubdirectories = true;
+            if (!string.IsNullOrWhiteSpace(filter))
+                scareCrow.Filter = filter;
         }
 
         /// <summary>
@@ -85,6 +88,11 @@ namespace Dorado.Core
         private void scareCrow_Changed(object sender, FileSystemEventArgs e)
         {
             string fileName = e.Name.ToLower();
+
+            if (File.GetAttributes(e.FullPath) == FileAttributes.Directory)
+            {
+                return;
+            }
 
             using (filesLock.Upgrade())
             {
@@ -132,8 +140,8 @@ namespace Dorado.Core
     {
         private object dirsLock;
         private Dictionary<string, DirectoryWatcher> directories;
-
         private static FileWatcher instance = new FileWatcher();
+        public string Filter { get; set; }
 
         public static FileWatcher Instance
         {
@@ -149,16 +157,34 @@ namespace Dorado.Core
             directories = new Dictionary<string, DirectoryWatcher>();
         }
 
-        public void AddFile(string filePath, EventHandler handler, int changeFileDelay = 5000)
+        public FileWatcher(string filter)
         {
-            string dir = Path.GetDirectoryName(filePath).ToLower();
-            string fileName = Path.GetFileName(filePath).ToLower();
+            Filter = filter.ToLower();
+        }
+
+        public void AddFile(string filePath, EventHandler handler, int changeFileDelay = 5000, bool checkFile = false)
+        {
+            if (checkFile)
+            {
+                Guard.ArgumentIsFile(filePath);
+            }
+            FileInfo fileInfo = new FileInfo(filePath);
+            if (!string.IsNullOrWhiteSpace(Filter))
+            {
+                string ext = fileInfo.Extension.ToLower();
+                if (Filter.IndexOf(ext) < 0)
+                    throw new CoreException("监控的文件格式无效，因为文件监听过滤器中不包含这类文件类型，监听无效，文件路径:{0}", filePath);
+            }
+
+            string dir = fileInfo.DirectoryName;
+            string fileName = fileInfo.Name;
+
             DirectoryWatcher watcher;
             lock (dirsLock)
             {
                 if (!directories.TryGetValue(dir, out watcher))
                 {
-                    watcher = new DirectoryWatcher(dir, changeFileDelay);
+                    watcher = new DirectoryWatcher(dir, changeFileDelay, Filter);
                     directories.Add(dir, watcher);
                 }
             }
