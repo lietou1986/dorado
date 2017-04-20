@@ -11,7 +11,7 @@ namespace Dorado.Core.Collection
     /// <typeparam name="T">环中元素类型。</typeparam>
     public sealed class Loop<T> : IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable
     {
-        private readonly object m_LockObject;
+        private readonly object m_LockObject=new object();
 
         private readonly bool m_IsSynchronized;
 

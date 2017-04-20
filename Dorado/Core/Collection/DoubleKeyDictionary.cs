@@ -139,6 +139,7 @@ namespace Dorado.Core.Collection
             m_Thunk2 = thunk2 ?? throw new ArgumentNullException("thunk2");
             m_Key1Dictionary = new Dictionary<Key1, TValue>(comparer1);
             m_Key2Dictionary = new Dictionary<Key2, TValue>(comparer2);
+            m_InnerList = new List<TValue>();
             if (sourceList != null)
             {
                 AddRange(sourceList);

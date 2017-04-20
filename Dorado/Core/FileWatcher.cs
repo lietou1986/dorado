@@ -24,9 +24,9 @@ namespace Dorado.Core
             filesLock = new RwLocker();
             files = new Dictionary<string, EventHandler>();
             this.directory = directory;
+            this.filter = filter;
             pendingFileReloads = new List<string>();
             changeFileDelay = changeDelay;
-            this.filter = filter;
             InitWatcher();
         }
 
@@ -138,7 +138,7 @@ namespace Dorado.Core
 
     public class FileWatcher
     {
-        private object dirsLock;
+        private object dirsLock = new object();
         private Dictionary<string, DirectoryWatcher> directories;
         private static FileWatcher instance = new FileWatcher();
         public string Filter { get; set; }
@@ -157,7 +157,7 @@ namespace Dorado.Core
             directories = new Dictionary<string, DirectoryWatcher>();
         }
 
-        public FileWatcher(string filter)
+        public FileWatcher(string filter) : this()
         {
             Filter = filter.ToLower();
         }
