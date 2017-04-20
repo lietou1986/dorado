@@ -38,11 +38,12 @@ namespace Dorado.Core
         {
             scareCrow = new FileSystemWatcher();
             scareCrow.Path = directory;
+            if (!string.IsNullOrWhiteSpace(filter))
+                scareCrow.Filter = filter;
+            scareCrow.Created += scareCrow_Changed;
             scareCrow.Changed += scareCrow_Changed;
             scareCrow.EnableRaisingEvents = true;
             scareCrow.IncludeSubdirectories = true;
-            if (!string.IsNullOrWhiteSpace(filter))
-                scareCrow.Filter = filter;
         }
 
         /// <summary>
@@ -151,15 +152,13 @@ namespace Dorado.Core
             }
         }
 
-        protected FileWatcher()
+        public FileWatcher(string filter = "")
         {
+            if (!string.IsNullOrWhiteSpace(filter))
+                Filter = filter.ToLower();
+
             dirsLock = new object();
             directories = new Dictionary<string, DirectoryWatcher>();
-        }
-
-        public FileWatcher(string filter) : this()
-        {
-            Filter = filter.ToLower();
         }
 
         public void AddFile(string filePath, EventHandler handler, int changeFileDelay = 5000, bool checkFile = false)
