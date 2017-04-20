@@ -40,7 +40,6 @@ namespace Dorado.Core
             scareCrow.Path = directory;
             if (!string.IsNullOrWhiteSpace(filter))
                 scareCrow.Filter = filter;
-            scareCrow.Created += scareCrow_Changed;
             scareCrow.Changed += scareCrow_Changed;
             scareCrow.EnableRaisingEvents = true;
             scareCrow.IncludeSubdirectories = true;
