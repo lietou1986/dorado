@@ -23,7 +23,7 @@ namespace Dorado.PerformanceCounter
         {
             lock (_countsLocker)
             {
-                PerfCounter perfCounter = PerfCounterFactory._counters.FirstOrDefault(n => n.PerformanceObjectName == performanceObjectName && n.Name == perfCountName);
+                PerfCounter perfCounter = _counters.FirstOrDefault(n => n.PerformanceObjectName == performanceObjectName && n.Name == perfCountName);
                 return perfCounter.Counter;
             }
         }
@@ -32,8 +32,8 @@ namespace Dorado.PerformanceCounter
         {
             lock (_countsLocker)
             {
-                if (!PerfCounterFactory._counters.Any(n => n.PerformanceObjectName == counter.PerformanceObjectName && n.Name == counter.Name))
-                    PerfCounterFactory._counters.Add(counter);
+                if (!_counters.Any(n => n.PerformanceObjectName == counter.PerformanceObjectName && n.Name == counter.Name))
+                    _counters.Add(counter);
             }
         }
 

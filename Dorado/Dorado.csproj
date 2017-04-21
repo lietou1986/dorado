@@ -56,6 +56,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
@@ -264,6 +265,10 @@
     <Compile Include="Services\DefaultJsonSerializer.cs" />
     <Compile Include="Services\RequestService.cs" />
     <Compile Include="Services\RequestServiceExtension.cs" />
+    <Compile Include="SystemInfo\CPUInfo.cs" />
+    <Compile Include="SystemInfo\MemoryInfo.cs" />
+    <Compile Include="SystemInfo\SystemInfo.cs" />
+    <Compile Include="SystemInfo\SystemTimeInfo .cs" />
     <Compile Include="Utils\CommonUtility.cs" />
     <Compile Include="Utils\HashCodeCombiner.cs" />
     <Compile Include="Utils\JsonUtility.cs" />
