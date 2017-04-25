@@ -278,7 +278,7 @@ namespace Dorado.SQLite
             return result;
         }
 
-        public static int ExecuteNonQuery(SQLiteConnection cn, string commandText, params  object[] paramList)
+        public static int ExecuteNonQuery(SQLiteConnection cn, string commandText, params object[] paramList)
         {
             SQLiteCommand cmd = cn.CreateCommand();
             cmd.CommandText = commandText;
@@ -300,7 +300,7 @@ namespace Dorado.SQLite
         /// <param name="paramList">Param list.</param>
         /// <returns>Integer</returns>
         /// <remarks>user must examine Transaction Object and handle transaction.connection .Close, etc.</remarks>
-        public static int ExecuteNonQuery(SQLiteTransaction transaction, string commandText, params  object[] paramList)
+        public static int ExecuteNonQuery(SQLiteTransaction transaction, string commandText, params object[] paramList)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
             if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rolled back or committed,                                                        please provide an open transaction.", "transaction");
@@ -336,9 +336,30 @@ namespace Dorado.SQLite
         /// <param name="commandText">SQL statment with embedded "@param" style parameters</param>
         /// <param name="paramList">object[] array of param values</param>
         /// <returns></returns>
-        public static object ExecuteScalar(string connectionString, string commandText, params  object[] paramList)
+        public static object ExecuteScalar(string connectionString, string commandText, params object[] paramList)
         {
             SQLiteConnection cn = new SQLiteConnection(connectionString);
+            SQLiteCommand cmd = cn.CreateCommand();
+            cmd.CommandText = commandText;
+            AttachParameters(cmd, commandText, paramList);
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+            object result = cmd.ExecuteScalar();
+            cmd.Dispose();
+            cn.Close();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Shortcut to ExecuteScalar with Sql Statement embedded params and object[] param values
+        /// </summary>
+        /// <param name="connectionString">SQLite Connection String</param>
+        /// <param name="commandText">SQL statment with embedded "@param" style parameters</param>
+        /// <param name="paramList">object[] array of param values</param>
+        /// <returns></returns>
+        public static object ExecuteScalar(SQLiteConnection cn, string commandText, params object[] paramList)
+        {
             SQLiteCommand cmd = cn.CreateCommand();
             cmd.CommandText = commandText;
             AttachParameters(cmd, commandText, paramList);
@@ -387,7 +408,7 @@ namespace Dorado.SQLite
         /// <param name="paramList">object[] array of parameter values</param>
         /// <returns>SQLiteParameterCollection</returns>
         /// <remarks>Status experimental. Regex appears to be handling most issues. Note that parameter object array must be in same ///order as parameter names appear in SQL statement.</remarks>
-        private static SQLiteParameterCollection AttachParameters(SQLiteCommand cmd, string commandText, params  object[] paramList)
+        private static SQLiteParameterCollection AttachParameters(SQLiteCommand cmd, string commandText, params object[] paramList)
         {
             if (paramList == null || paramList.Length == 0) return null;
 
@@ -604,7 +625,7 @@ namespace Dorado.SQLite
         /// <param name="commandParameters">Array of IDataParameters to be assigned values</param>
         /// <param name="parameterValues">Array of objects holding the values to be assigned</param>
         /// <exception cref="System.ArgumentException">Thrown if an incorrect number of parameters are passed.</exception>
-        protected void AssignParameterValues(IDataParameter[] commandParameters, params  object[] parameterValues)
+        protected void AssignParameterValues(IDataParameter[] commandParameters, params object[] parameterValues)
         {
             if ((commandParameters == null) || (parameterValues == null))
             {
