@@ -25,7 +25,6 @@ namespace Dorado.SystemInfo
         private static extern void GetSystemTime(ref SystemTimeInfo sysInfo);
 
         /// <summary>
-
         /// 查询CPU编号
         /// </summary>
         /// <returns></returns>
@@ -43,7 +42,6 @@ namespace Dorado.SystemInfo
         }
 
         /// <summary>
-
         /// 查询硬盘编号
         /// </summary>
         /// <returns></returns>
@@ -60,7 +58,6 @@ namespace Dorado.SystemInfo
         }
 
         /// <summary>
-
         /// 获取Windows目录
         /// </summary>
         /// <returns></returns>
@@ -72,7 +69,6 @@ namespace Dorado.SystemInfo
         }
 
         /// <summary>
-
         /// 获取系统目录
         /// </summary>
         /// <returns></returns>
@@ -84,7 +80,6 @@ namespace Dorado.SystemInfo
         }
 
         /// <summary>
-
         /// 获取CPU信息
         /// </summary>
         /// <returns></returns>
@@ -96,7 +91,6 @@ namespace Dorado.SystemInfo
         }
 
         /// <summary>
-
         /// 获取系统内存信息
         /// </summary>
         /// <returns></returns>
@@ -108,7 +102,6 @@ namespace Dorado.SystemInfo
         }
 
         /// <summary>
-
         /// 获取系统时间信息
         /// </summary>
         /// <returns></returns>
@@ -120,7 +113,6 @@ namespace Dorado.SystemInfo
         }
 
         /// <summary>
-
         /// 获取系统名称
         /// </summary>
         /// <returns></returns>
@@ -164,6 +156,149 @@ namespace Dorado.SystemInfo
                     break;
             }
             return string.Format("{0},{1}", osName, os.Version.ToString());
+        }
+
+        /// <summary>
+        /// 获取mac地址
+        /// </summary>
+        /// <returns></returns>
+        public static string GetMacAddress()
+        {
+            try
+            {
+                //获取网卡硬件地址
+                string mac = "";
+                ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    if ((bool)mo["IPEnabled"] == true)
+                    {
+                        mac = mo["MacAddress"].ToString();
+                        break;
+                    }
+                }
+                return mac;
+            }
+            catch
+            {
+                return "unknow";
+            }
+        }
+
+        public static string GetIPAddress()
+        {
+            try
+            {
+                //获取IP地址
+                string st = "";
+                ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    if ((bool)mo["IPEnabled"] == true)
+                    {
+                        Array ar;
+                        ar = (Array)(mo.Properties["IpAddress"].Value);
+                        st = ar.GetValue(0).ToString();
+                        break;
+                    }
+                }
+
+                return st;
+            }
+            catch
+            {
+                return "unknow";
+            }
+        }
+
+        /// <summary>
+        /// 操作系统的登录用户名
+        /// </summary>
+        /// <returns></returns>
+        public static string GetUserName()
+        {
+            try
+            {
+                string st = "";
+                ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    st = mo["UserName"].ToString();
+                }
+
+                return st;
+            }
+            catch
+            {
+                return "unknow";
+            }
+        }
+
+        /// <summary>
+        /// PC类型
+        /// </summary>
+        /// <returns></returns>
+        public static string GetSystemType()
+        {
+            try
+            {
+                string st = "";
+                ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    st = mo["SystemType"].ToString();
+                }
+
+                return st;
+            }
+            catch
+            {
+                return "unknow";
+            }
+        }
+
+        /// <summary>
+        /// 物理内存
+        /// </summary>
+        /// <returns></returns>
+        public static string GetTotalPhysicalMemory()
+        {
+            try
+            {
+                string st = "";
+                ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    st = mo["TotalPhysicalMemory"].ToString();
+                }
+
+                return st;
+            }
+            catch
+            {
+                return "unknow";
+            }
+        }
+
+        /// <summary>
+        ///获取计算机名
+        /// </summary>
+        /// <returns></returns>
+        public static string GetComputerName()
+        {
+            try
+            {
+                return Environment.GetEnvironmentVariable("ComputerName");
+            }
+            catch
+            {
+                return "unknow";
+            }
         }
     }
 }

@@ -31,11 +31,11 @@ namespace Dorado.Core.Encrypt
             this.IV = iv;
         }
 
-        public string Decrypt(string MainString, string key)
+        public string Decrypt(string mainString, string key)
         {
             DecryptTransformer dt = new DecryptTransformer(this.AlgoritmID, this.IV);
             dt.SetSecurityKey(key);
-            byte[] buffer = Convert.FromBase64String(MainString.Trim());
+            byte[] buffer = Convert.FromBase64String(mainString.Trim());
             MemoryStream ms = new MemoryStream(buffer);
             CryptoStream encStream = new CryptoStream(ms, dt.GetCryptoTransform(), CryptoStreamMode.Read);
             StreamReader sr = new StreamReader(encStream);
