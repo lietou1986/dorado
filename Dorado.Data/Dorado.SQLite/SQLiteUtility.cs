@@ -292,6 +292,37 @@ namespace Dorado.SQLite
             return result;
         }
 
+        public static int Vacuum(SQLiteConnection cn)
+        {
+            string commandText = "VACUUM";
+            SQLiteCommand cmd = cn.CreateCommand();
+            cmd.CommandText = commandText;
+            AttachParameters(cmd, commandText);
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+            int result = cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            cn.Close();
+
+            return result;
+        }
+
+        public static int Vacuum(string connectionString)
+        {
+            string commandText = "VACUUM";
+            SQLiteConnection cn = new SQLiteConnection(connectionString);
+            SQLiteCommand cmd = cn.CreateCommand();
+            cmd.CommandText = commandText;
+            AttachParameters(cmd, commandText);
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+            int result = cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            cn.Close();
+
+            return result;
+        }
+
         /// <summary>
         /// Executes  non-query sql Statment with Transaction
         /// </summary>
@@ -683,6 +714,32 @@ namespace Dorado.SQLite
     public class SQLiteUtilityEx
     {
         #region ExecuteNonQuery
+
+        public static int Vacuum(string connectionString)
+        {
+            string commandText = "VACUUM";
+            int result = 0;
+            if (connectionString == null || connectionString.Length == 0)
+                throw new ArgumentNullException("connectionString");
+
+            SQLiteCommand cmd = new SQLiteCommand();
+            using (SQLiteConnection con = new SQLiteConnection(connectionString))
+            {
+                SQLiteTransaction trans = null;
+                PrepareCommand(cmd, con, ref trans, true, CommandType.Text, commandText);
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                    trans.Commit();
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    throw ex;
+                }
+            }
+            return result;
+        }
 
         /// <summary>
         /// 执行数据库操作(新增、更新或删除)
