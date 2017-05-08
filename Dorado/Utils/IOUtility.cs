@@ -66,12 +66,14 @@ namespace Dorado.Utils
         /// </summary>
         /// <param name="rootDirectory"></param>
         /// <param name = "fileHandler"></param>
-        public static void Traversing(IList<string> rootDirectory, Action<FileInfo> fileHandler, Func<FileInfo, bool> fileFilter = null, Func<DirectoryInfo, bool> directoryFilter = null)
+        public static void Traversing(IList<string> rootDirectory, Action<FileInfo> fileHandler, Func<FileInfo, bool> fileFilter = null, Func<DirectoryInfo, bool> directoryFilter = null, Action<Exception> errorHandler = null)
         {
             if (fileFilter == null)
                 fileFilter = x => { return true; };
             if (directoryFilter == null)
                 directoryFilter = x => { return true; };
+            if (errorHandler == null)
+                errorHandler = (n) => { };
 
             Queue<string> pathQueue = new Queue<string>();
 
@@ -97,13 +99,15 @@ namespace Dorado.Utils
                         if (fileFilter(fi))
                             fileHandler?.Invoke(fi);
                 }
-                catch (UnauthorizedAccessException ex) { }
+                catch (UnauthorizedAccessException ex) { errorHandler(ex); }
+                catch (PathTooLongException ex) { errorHandler(ex); }
+                catch (Exception ex) { errorHandler(ex); }
             }
         }
 
-        public static void Traversing(string rootDirectory, Action<FileInfo> fileHandler, Func<FileInfo, bool> fileFilter = null, Func<DirectoryInfo, bool> directoryFilter = null)
+        public static void Traversing(string rootDirectory, Action<FileInfo> fileHandler, Func<FileInfo, bool> fileFilter = null, Func<DirectoryInfo, bool> directoryFilter = null, Action<Exception> errorHandler = null)
         {
-            Traversing(new List<string>() { rootDirectory }, fileHandler, fileFilter, directoryFilter);
+            Traversing(new List<string>() { rootDirectory }, fileHandler, fileFilter, directoryFilter, errorHandler);
         }
 
         /// <summary>
