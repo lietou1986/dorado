@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EE10C51-6732-4D95-ACF5-572052A1B003}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.VWS.Admin</RootNamespace>
+    <AssemblyName>Dorado.VWS.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dorado, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Dorado.Configuration">
+      <HintPath>..\Lib\Dorado.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddResource.aspx" />
+    <Content Include="AddRole.aspx" />
+    <Content Include="ConfirmSync.aspx" />
+    <Content Include="DomainList.aspx" />
+    <Content Include="domainpermission.aspx" />
+    <Content Include="FilesCompare.aspx" />
+    <Content Include="getfilelist.aspx" />
+    <Content Include="ReadLog.aspx" />
+    <Content Include="RefuseService.aspx" />
+    <Content Include="RoleMember.aspx" />
+    <Content Include="EditResource.aspx" />
+    <Content Include="EditRole.aspx" />
+    <Content Include="Handler\FileListHandler.ashx" />
+    <Content Include="Help.aspx" />
+    <Content Include="ManageSql.aspx" />
+    <Content Include="My97DatePicker\calendar.js" />
+    <Content Include="My97DatePicker\config.js" />
+    <Content Include="My97DatePicker\lang\en.js" />
+    <Content Include="My97DatePicker\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\My97DatePicker.htm" />
+    <Content Include="My97DatePicker\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\skin\default\img.gif" />
+    <Content Include="My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="My97DatePicker\WdatePicker.js" />
+    <Content Include="OperateLogList.aspx" />
+    <Content Include="ResourceList.aspx" />
+    <Content Include="ScheduleTaskInfo.aspx" />
+    <Content Include="ScheduleTasks.aspx" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery.ffpager.js" />
+    <Content Include="Role.aspx" />
+    <Content Include="Scripts\jquery.MultiFile.pack.js" />
+    <Content Include="Scripts\jquery.ztree-2.6.js" />
+    <Content Include="Scripts\json.js" />
+    <Content Include="FileRevert.aspx" />
+    <Content Include="Handler\GetSourceIps.ashx" />
+    <Content Include="Handler\DownloadFile.ashx" />
+    <Content Include="Handler\GetInfoHandler.ashx" />
+    <Content Include="Handler\SubmitHandler.ashx" />
+    <Content Include="Scripts\servicecontrol.js" />
+    <Content Include="ServerControl.aspx" />
+    <Content Include="Styles\img\buttonbg.jpg" />
+    <Content Include="Styles\img\loading2.gif" />
+    <Content Include="Styles\img\navi.jpg" />
+    <Content Include="Styles\img\Page.png" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="SystemPermission.aspx" />
+    <Content Include="TestPage.aspx" />
+    <Content Include="Upload.aspx" />
+    <Content Include="UploadFile.aspx" />
+    <Content Include="SyncSelectFilesSimple.aspx" />
+    <Content Include="Handler\ScheduleHandler.ashx" />
+    <Content Include="UserPermission.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Handler\HeartBeat.ashx" />
+    <Content Include="Handler\UploadFile.ashx" />
+    <Content Include="Handler\GetAllDomains.ashx" />
+    <Content Include="Handler\ChangedFileListHandler.ashx" />
+    <Content Include="Handler\GetFileListByHostHandler.ashx" />
+    <Content Include="Handler\GetFileListByServerId.ashx" />
+    <Content Include="SyncExceptionList.aspx" />
+    <Content Include="Handler\SyncException.ashx" />
+    <None Include="Properties\DataSources\Vancl.Permission.HttpModule.PermissionWCF.ResourceDto.datasource" />
+    <Content Include="readme\同步系统二期使用手册.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="readme\同步系统二期维护手册.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\PublishSystemSite.pubxml" />
+    <None Include="readme\20111111 功能申请模板1.xltx" />
+    <Content Include="readme\update.zip" />
+    <Content Include="AddDomain.aspx" />
+    <Content Include="AddIDC.aspx" />
+    <Content Include="AddServer.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EditDomain.aspx" />
+    <Content Include="EditServer.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\fancydropdown.js" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery.fn.topLink.js" />
+    <Content Include="Scripts\jquery.scrollTo-1.4.0-min.js" />
+    <Content Include="Scripts\jquery.ztree-2.6.min.js" />
+    <Content Include="ServerList.aspx" />
+    <Content Include="Service\PublishSystemService.asmx" />
+    <Content Include="Styles\img\checkbox.png" />
+    <Content Include="Styles\img\edit.png" />
+    <Content Include="Styles\img\flag\10.png" />
+    <Content Include="Styles\img\flag\1_close.png" />
+    <Content Include="Styles\img\flag\1_open.png" />
+    <Content Include="Styles\img\flag\2.png" />
+    <Content Include="Styles\img\flag\3.png" />
+    <Content Include="Styles\img\flag\4.png" />
+    <Content Include="Styles\img\flag\5.png" />
+    <Content Include="Styles\img\flag\6.png" />
+    <Content Include="Styles\img\flag\7.png" />
+    <Content Include="Styles\img\flag\8.png" />
+    <Content Include="Styles\img\flag\9.png" />
+    <Content Include="Styles\img\folder_Close.gif" />
+    <Content Include="Styles\img\folder_Open.gif" />
+    <Content Include="Styles\img\line_bottom.gif" />
+    <Content Include="Styles\img\line_center.gif" />
+    <Content Include="Styles\img\line_conn.gif" />
+    <Content Include="Styles\img\line_top.gif" />
+    <Content Include="Styles\img\loading.gif" />
+    <Content Include="Styles\img\minus_bottom.gif" />
+    <Content Include="Styles\img\minus_center.gif" />
+    <Content Include="Styles\img\minus_noLine.gif" />
+    <Content Include="Styles\img\minus_root.gif" />
+    <Content Include="Styles\img\minus_top.gif" />
+    <Content Include="Styles\img\moveArrow.png" />
+    <Content Include="Styles\img\plus_bottom.gif" />
+    <Content Include="Styles\img\plus_center.gif" />
+    <Content Include="Styles\img\plus_noLine.gif" />
+    <Content Include="Styles\img\plus_root.gif" />
+    <Content Include="Styles\img\plus_top.gif" />
+    <Content Include="Styles\img\radio.png" />
+    <Content Include="Styles\img\remove.png" />
+    <Content Include="Styles\img\sim\10.png" />
+    <Content Include="Styles\img\sim\1_close.png" />
+    <Content Include="Styles\img\sim\1_open.png" />
+    <Content Include="Styles\img\sim\2.png" />
+    <Content Include="Styles\img\sim\3.png" />
+    <Content Include="Styles\img\sim\4.png" />
+    <Content Include="Styles\img\sim\5.png" />
+    <Content Include="Styles\img\sim\6.png" />
+    <Content Include="Styles\img\sim\7.png" />
+    <Content Include="Styles\img\sim\8.png" />
+    <Content Include="Styles\img\sim\9.png" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\zTreeIcons.css" />
+    <Content Include="Styles\zTreeStyle.css" />
+    <Content Include="SyncSelectFiles.aspx" />
+    <Content Include="SyncSelectTargets.aspx" />
+    <Content Include="TaskInfo.aspx" />
+    <Content Include="TaskRevert.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddDomain.aspx.cs">
+      <DependentUpon>AddDomain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDomain.aspx.designer.cs">
+      <DependentUpon>AddDomain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddIDC.aspx.cs">
+      <DependentUpon>AddIDC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddIDC.aspx.designer.cs">
+      <DependentUpon>AddIDC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddResource.aspx.cs">
+      <DependentUpon>AddResource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddResource.aspx.designer.cs">
+      <DependentUpon>AddResource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddRole.aspx.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddRole.aspx.designer.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddServer.aspx.cs">
+      <DependentUpon>AddServer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddServer.aspx.designer.cs">
+      <DependentUpon>AddServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmSync.aspx.cs">
+      <DependentUpon>ConfirmSync.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmSync.aspx.designer.cs">
+      <DependentUpon>ConfirmSync.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DomainList.aspx.cs">
+      <DependentUpon>DomainList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DomainList.aspx.designer.cs">
+      <DependentUpon>DomainList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="domainpermission.aspx.cs">
+      <DependentUpon>domainpermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="domainpermission.aspx.designer.cs">
+      <DependentUpon>domainpermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FilesCompare.aspx.cs">
+      <DependentUpon>FilesCompare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilesCompare.aspx.designer.cs">
+      <DependentUpon>FilesCompare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getfilelist.aspx.cs">
+      <DependentUpon>getfilelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getfilelist.aspx.designer.cs">
+      <DependentUpon>getfilelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\ChangedFileListHandler.ashx.cs">
+      <DependentUpon>ChangedFileListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\GetAllDomains.ashx.cs">
+      <DependentUpon>GetAllDomains.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\GetFileListByHostHandler.ashx.cs">
+      <DependentUpon>GetFileListByHostHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\GetFileListByServerId.ashx.cs">
+      <DependentUpon>GetFileListByServerId.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\HeartBeat.ashx.cs">
+      <DependentUpon>HeartBeat.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\SyncException.ashx.cs">
+      <DependentUpon>SyncException.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\UploadFile.ashx.cs">
+      <DependentUpon>UploadFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadLog.aspx.cs">
+      <DependentUpon>ReadLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadLog.aspx.designer.cs">
+      <DependentUpon>ReadLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RefuseService.aspx.cs">
+      <DependentUpon>RefuseService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RefuseService.aspx.designer.cs">
+      <DependentUpon>RefuseService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleMember.aspx.cs">
+      <DependentUpon>RoleMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleMember.aspx.designer.cs">
+      <DependentUpon>RoleMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditDomain.aspx.cs">
+      <DependentUpon>EditDomain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditDomain.aspx.designer.cs">
+      <DependentUpon>EditDomain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditResource.aspx.cs">
+      <DependentUpon>EditResource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditResource.aspx.designer.cs">
+      <DependentUpon>EditResource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditRole.aspx.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditRole.aspx.designer.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditServer.aspx.cs">
+      <DependentUpon>EditServer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditServer.aspx.designer.cs">
+      <DependentUpon>EditServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\DownloadFile.ashx.cs">
+      <DependentUpon>DownloadFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\FileListHandler.ashx.cs">
+      <DependentUpon>FileListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\GetInfoHandler.ashx.cs">
+      <DependentUpon>GetInfoHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\GetSourceIps.ashx.cs">
+      <DependentUpon>GetSourceIps.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\ScheduleHandler.ashx.cs">
+      <DependentUpon>ScheduleHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\SubmitHandler.ashx.cs">
+      <DependentUpon>SubmitHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ISyncTaskParams.cs" />
+    <Compile Include="ManageSql.aspx.cs">
+      <DependentUpon>ManageSql.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageSql.aspx.designer.cs">
+      <DependentUpon>ManageSql.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperateLogList.aspx.cs">
+      <DependentUpon>OperateLogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperateLogList.aspx.designer.cs">
+      <DependentUpon>OperateLogList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceList.aspx.cs">
+      <DependentUpon>ResourceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResourceList.aspx.designer.cs">
+      <DependentUpon>ResourceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleTaskInfo.aspx.cs">
+      <DependentUpon>ScheduleTaskInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScheduleTaskInfo.aspx.designer.cs">
+      <DependentUpon>ScheduleTaskInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleTasks.aspx.cs">
+      <DependentUpon>ScheduleTasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScheduleTasks.aspx.designer.cs">
+      <DependentUpon>ScheduleTasks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerList.aspx.cs">
+      <DependentUpon>ServerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerList.aspx.designer.cs">
+      <DependentUpon>ServerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\PublishSystemService.asmx.cs">
+      <DependentUpon>PublishSystemService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SyncSelectFiles.aspx.cs">
+      <DependentUpon>SyncSelectFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SyncSelectFiles.aspx.designer.cs">
+      <DependentUpon>SyncSelectFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SyncSelectTargets.aspx.cs">
+      <DependentUpon>SyncSelectTargets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SyncSelectTargets.aspx.designer.cs">
+      <DependentUpon>SyncSelectTargets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemPermission.aspx.cs">
+      <DependentUpon>SystemPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemPermission.aspx.designer.cs">
+      <DependentUpon>SystemPermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskInfo.aspx.cs">
+      <DependentUpon>TaskInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaskInfo.aspx.designer.cs">
+      <DependentUpon>TaskInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskRevert.aspx.cs">
+      <DependentUpon>TaskRevert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaskRevert.aspx.designer.cs">
+      <DependentUpon>TaskRevert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.aspx.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPage.aspx.designer.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileRevert.aspx.cs">
+      <DependentUpon>FileRevert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileRevert.aspx.designer.cs">
+      <DependentUpon>FileRevert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerControl.aspx.cs">
+      <DependentUpon>ServerControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerControl.aspx.designer.cs">
+      <DependentUpon>ServerControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadFile.aspx.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadFile.aspx.designer.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SyncSelectFilesSimple.aspx.cs">
+      <DependentUpon>SyncSelectFilesSimple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SyncSelectFilesSimple.aspx.designer.cs">
+      <DependentUpon>SyncSelectFilesSimple.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPermission.aspx.cs">
+      <DependentUpon>UserPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPermission.aspx.designer.cs">
+      <DependentUpon>UserPermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SyncExceptionList.aspx.cs">
+      <DependentUpon>SyncExceptionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SyncExceptionList.aspx.designer.cs">
+      <DependentUpon>SyncExceptionList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dorado.VWS.Services\Dorado.VWS.Services.csproj">
+      <Project>{1DDE7E63-49F4-4A87-8DE7-F55D4FA81DA8}</Project>
+      <Name>Dorado.VWS.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.VWS.Model\Dorado.VWS.Model.csproj">
+      <Project>{34C2CD22-C193-4CF4-992C-A67DC379DAFE}</Project>
+      <Name>Dorado.VWS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.VWS.Utils\Dorado.VWS.Utils.csproj">
+      <Project>{F34400E2-4E8D-4174-B602-E6CF94142451}</Project>
+      <Name>Dorado.VWS.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>29847</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://devvws2.vancloa.cn</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

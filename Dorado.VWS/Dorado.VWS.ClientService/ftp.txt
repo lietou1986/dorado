@@ -1,0 +1,8 @@
+open 192.168.11.108
+mahaizhen
+Dorado123
+cd Platform/Batch/Dorado.VWS.ClientHost
+binary
+prompt
+mget *.*
+bye

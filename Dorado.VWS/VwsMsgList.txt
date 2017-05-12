@@ -1,0 +1,36 @@
+1.	MessageName:updateclient	更新客户端服务
+2.	MessageName:iisstop			停止IIS
+3.	MessageName:iisstart		启动IIS
+4.	MessageName:winservicestop	停止Windows服务
+	WinServiceName:[XXXXXX]		Windows服务名
+5.	MessageName:winservicestart	启动Windows服务
+	WinServiceName:[XXXXXX]		Windows服务名
+6.	MessageName:getfilelist		获取文件列表
+	FolderPath:[XXXXXX]			文件列表的上级目录
+7.	MessageName:syncfiles		同步文件
+	SyncType:[HTTP\FTP]			同步类型
+	AddFiles:[XXXXXX]			需要添加的文件
+	DelFiles:[XXXXXX]			需要删除的文件
+	TaskId:[XXXXXX]				任务Id
+	CopyRoot:[XXXXXX]			复制的根(相对目录)
+	TargetRoot:[XXXXXX]			目标的根(绝对目录)
+	FtpIp:[XXXXXX]				
+	FtpUser:[XXXXXX]
+	FtpPwd:[XXXXXX]
+8.	MessageName:backupfiles		备份任务文件
+	SyncType:[HTTP\FTP]			同步类型
+	AddFiles:[XXXXXX]			需要添加的文件
+	DelFiles:[XXXXXX]			需要删除的文件
+	TaskId:[XXXXXX]				任务Id
+	CopyRoot:[XXXXXX]			复制的根(相对目录)
+	TargetRoot:[XXXXXX]			目标的根(绝对目录)
+	FtpIp:[XXXXXX]				
+	FtpUser:[XXXXXX]
+	FtpPwd:[XXXXXX]
+9.	MessageName:clearbkfiles	清理已备份的文件（考虑一下应该不需要）
+	SyncType:[HTTP\FTP]			同步类型
+	AddFiles:[XXXXXX]			需要添加的文件
+	DelFiles:[XXXXXX]			需要删除的文件
+	TaskId:[XXXXXX]				任务Id
+	CopyRoot:[XXXXXX]			复制的根(相对目录)
+	TargetRoot:[XXXXXX]			目标的根(绝对目录)

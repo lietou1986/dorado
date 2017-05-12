@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Vancl.IC.VWS.ClientService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Vancl.IC.VWS.ClientService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="VwsDirectoryInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VwsDirectoryInfo" nillable="true" type="tns:VwsDirectoryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VwsDirectoryInfoList" nillable="true" type="tns:VwsDirectoryInfoList" />
+  <xs:complexType name="VwsDirectoryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFolder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Length" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VwsDirectoryInfo" nillable="true" type="tns:VwsDirectoryInfo" />
+</xs:schema>

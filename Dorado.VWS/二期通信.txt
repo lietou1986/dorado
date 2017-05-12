@@ -1,0 +1,18 @@
+同步二期网络通信：
+一  文件和目录列表(WindowsService分布WCF服务)：
+	1. 	获取目录
+		参数：string folderPath 文件夹全路径[D:\work\ic\VIMOP\src\Vancl.IC.VIMOP.Site\] 
+		out参数：VwsServiceResult｛Code, Message｝
+		返回：VwsDirectoryInfoList
+	2. 	获取文件
+		参数：string filePath  文件全路径[c:\vwstest\vws.vancl.com\SyncSelectFiles.aspx]
+		返回：byte[]
+二  任务发布、签到等(ashx, 参数为json格式)
+	1.  签到
+		参数：ip, version, iisstatus, hostname
+		返回：interval(下回间隔时长)
+	2.  领任务
+		参数: ip
+		返回：taskid, msgname, winservicename, sourceip, sourceroot, targetroot, bkroot, addlist[string], dellist[string]
+	3.  任务结果
+		参数：ip, taskid, result

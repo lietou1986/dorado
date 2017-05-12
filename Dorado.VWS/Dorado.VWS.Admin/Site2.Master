@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.Master.cs" Inherits="Vancl.IC.VWS.SiteApp.SiteMaster2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>同步系统</title>
+    <script src="/Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/fancydropdown.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Scripts/jquery.scrollTo-1.4.0-min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.fn.topLink.js"></script>
+    <link href="/Styles/style.css" rel="Stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <!-- Header Start -->
+    <div id="divlogo" class="padding" style="width: 100%; background-color: rgb(255, 255, 255);
+        height: 53px;">
+        <div style="float: left;">
+            <img alt="凡客诚品同步系统" style="height: 53px;" src="../images/logo.jpg" /></div>
+        <div align="right" style="width: 500px; margin-left: auto; padding-top: 10px; padding-right: 10px;">
+            <div style="width: 200px; float: left; margin: 0 0 0 180px;">
+                您好：<asp:Label ID="LblName" runat="server" Text="Label"></asp:Label>&nbsp;
+            </div>
+            <div style="width: 120px; float: left; margin: 0;">
+                <asp:LinkButton ID="LbtnLogonOut" runat="server" OnClick="LbtnLogonOut_Click">【退出登录】</asp:LinkButton></div>
+        </div>
+    </div>
+    <div id="divmenu" style="width: 100%" class="nav">
+        <div class="navinner">
+            <ul class="menu" id="menu">
+                <li><a href="/Default.aspx" style="font-family: 'Microsoft YaHei'; font-size: 15px;
+                    color: #ffffff;" class="menulink">首 页</a></li>
+                <li><a href="/SyncSelectFiles.aspx" style="font-family: 'Microsoft YaHei'; font-size: 15px;
+                    color: #ffffff;" class="menulink">同 步</a></li>
+                <li id="limgr" runat="server" visible="false"><a href="#" style="font-family: 'Microsoft YaHei';
+                    font-size: 15px; color: #ffffff;" class="menulink">系统维护</a>
+                    <ul>
+                        <li><a href="/ServerList.aspx">服务器</a></li>
+                        <li><a href="/UserList.aspx">用户权限</a></li>
+                        <li><a href="/RoleList.aspx">角色配置</a></li>
+                        <li><a href="/PermissionList.aspx">资源配置</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Header End -->
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
+    <asp:UpdateProgress runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upMain">
+    <ProgressTemplate>
+    <div style="text-align:center; color:#FF0000;">
+        <asp:Image runat="server" ImageUrl="~/Images/loading.gif" /> 请稍后，系统正在执行请求……
+    </div>
+    </ProgressTemplate>
+    </asp:UpdateProgress>
+    <asp:UpdatePanel runat="server" ID="upMain">
+    <ContentTemplate>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </ContentTemplate>
+    </asp:UpdatePanel>
+    </form>
+    <script type="text/javascript">
+        var menu = new menu.dd("menu");
+        menu.init("menu", "menuhover");
+    </script>
+    <a href="#top" id="top-link">回顶部</a>
+</body>
+</html>

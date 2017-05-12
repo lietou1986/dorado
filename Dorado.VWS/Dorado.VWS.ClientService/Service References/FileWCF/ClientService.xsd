@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:11111/WinService/ClientService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Vancl.IC.VWS.ClientService.Model" />
+  <xs:element name="Download">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="md5" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Upload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileBytes" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="md5" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="folderPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Vancl.IC.VWS.ClientService.Model" minOccurs="0" name="GetFileListResult" nillable="true" type="q1:VwsDirectoryInfoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,210 @@
+﻿body
+{
+    font-family: "Microsoft YaHei";
+    color: #000000;
+    font-size: 12px;
+    margin: 0;
+}
+ul.menu
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.menu *
+{
+    margin: 0;
+    padding: 0;
+}
+ul.menu a
+{
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+ul.menu li
+{
+    position: relative;
+    float: left;
+    margin-right: 2px;
+}
+ul.menu ul
+{
+    position: absolute;
+    top: 26px;
+    left: 0;
+    background: #d1d1d1;
+    display: none;
+    opacity: 0;
+    list-style: none;
+}
+ul.menu ul li
+{
+    position: relative;
+    border: 1px solid #aaa;
+    border-top: none;
+    width: 148px;
+    margin: 0;
+}
+ul.menu ul li a
+{
+    display: block;
+    padding: 3px 7px 5px;
+    background-color: #d1d1d1;
+}
+ul.menu ul li a:hover
+{
+    background-color: #c5c5c5;
+}
+ul.menu ul ul
+{
+    left: 148px;
+    top: -1px;
+}
+ul.menu .menulink
+{
+    padding: 2px 7px 0px;
+    font-weight: bold;
+    width: 134px;
+}
+ul.menu .menulink:hover, ul.menu .menuhover
+{
+    background-color: #aeaeae;
+}
+ul.menu .sub
+{
+    background: #d1d1d1;
+}
+ul.menu .topline
+{
+    border-top: 1px solid #aaa;
+}
+.nav
+{
+    position: relative;
+    margin: 0 0px 0px;
+    background: url(img/navi.jpg) no-repeat 0 -36px;
+}
+.navinner
+{
+    background: url(img/navi.jpg);
+    height: 25px;
+    line-height: 20px;
+    padding-left: 20px;
+}
+.white
+{
+    font-family: "Microsoft YaHei";
+    font-size: 15px;
+    color: #ffffff;
+}
+#top-link
+{
+    display: none;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #FFFFFF;
+    background: #000000;
+    padding: 10px;
+}
+
+/*标准列表表格样式*/
+.listTable
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+.listTable th
+{
+    border: 1px solid #006488;
+    background-color: #CCCCCC;
+}
+.listTable td
+{
+    border: 1px solid #006488;
+}
+
+/*表格标题样式*/
+.tableTitle
+{
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/*页面上的提示消息类文本*/
+.tipMsg
+{
+    text-align: center;
+    color: #FF0000;
+}
+
+h3, h4 a, input[type="submit"], p.tip, ul.treeList > li, div.queryPanel span
+{
+    font-family: "微软雅黑" , "华文细黑" , "新宋体" , "宋体";
+}
+
+.help
+{
+    font-family: "Microsoft YaHei";
+    font-size: 19px;
+    color: #000000;
+    text-decoration: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+.helpen
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #dbddde;
+    font-style: italic;
+    font-weight: bold;
+}
+.helpcon
+{
+    font-family: "Microsoft YaHei";
+    font-size: 15px;
+    color: #7e7c7c;
+    line-height: 30px;
+    font-weight: 400;
+}
+p.tip
+{
+    background: none repeat scroll 0 0 #EAE9DF;
+    border: 1px dashed #333333;
+    line-height: 2.5em;
+    margin: 0 20px;
+    padding: 5px 10px;
+    width: auto;
+    text-align: left;
+}
+
+element.style
+{
+    height: 24px;
+    width: 60px;
+}
+input[type="submit"], input[type="button"]
+{
+    background: url("img/buttonbg.jpg") no-repeat scroll 0 0 #616161;
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 0.9em;
+    height: 21px;
+}
+
+input[type="submit"]:disabled, input[type="button"]:disabled
+{
+    background: url("img/buttonbg.jpg") no-repeat scroll 0 0 #616161;
+    border: 0 none;
+    color: #999999;
+    cursor: pointer;
+    font-size: 0.9em;
+    height: 21px;
+}

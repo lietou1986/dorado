@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34C2CD22-C193-4CF4-992C-A67DC379DAFE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.VWS.Model</RootNamespace>
+    <AssemblyName>Dorado.VWS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivatedUser.cs" />
+    <Compile Include="DomainEntity.cs" />
+    <Compile Include="DomainPermissionEntity.cs" />
+    <Compile Include="EmployeeResult.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="Enum\EnumCallType.cs" />
+    <Compile Include="Enum\EnumDomainType.cs" />
+    <Compile Include="Enum\EnumFWOperateType.cs" />
+    <Compile Include="Enum\EnumIISStatus.cs" />
+    <Compile Include="Enum\EnumManageType.cs" />
+    <Compile Include="Enum\EnumOperateType.cs" />
+    <Compile Include="Enum\EnumReplyFlag.cs" />
+    <Compile Include="Enum\EnumServerType.cs" />
+    <Compile Include="Enum\EnumSyncStatus.cs" />
+    <Compile Include="Enum\EnumTaskStatus.cs" />
+    <Compile Include="Enum\EnvironmentType.cs" />
+    <Compile Include="FileMD5Entity.cs" />
+    <Compile Include="FilesWatcherEntity.cs" />
+    <Compile Include="IC\ServerInfo.cs" />
+    <Compile Include="IdcEntity.cs" />
+    <Compile Include="OperationLogEntity.cs" />
+    <Compile Include="PermissionEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceEntity.cs" />
+    <Compile Include="RoleEntity.cs" />
+    <Compile Include="ServerEntity.cs" />
+    <Compile Include="SynctaskEntity.cs" />
+    <Compile Include="SynctaskSubEntity.cs" />
+    <Compile Include="SystemRoleEntity.cs" />
+    <Compile Include="TaskEntity.cs" />
+    <Compile Include="TimerSynctaskEntity.cs" />
+    <Compile Include="UserResoureEntity.cs" />
+    <Compile Include="UserRoleEntity.cs" />
+    <Compile Include="VersionFileEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dorado.VWS.Utils\Dorado.VWS.Utils.csproj">
+      <Project>{F34400E2-4E8D-4174-B602-E6CF94142451}</Project>
+      <Name>Dorado.VWS.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<services>
+  <service>test</service>
+  <service>mssql</service>
+</services>

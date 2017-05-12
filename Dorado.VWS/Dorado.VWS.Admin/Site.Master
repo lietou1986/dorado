@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Dorado.VWS.Admin.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>同步系统2.0-Beta</title>
+    <link href="/Styles/style.css" rel="Stylesheet" type="text/css" />
+    <script src="/Scripts/jquery-1.7.1.min.js" type="text/javascript"> </script>
+    <script src="/Scripts/fancydropdown.js" type="text/javascript"> </script>
+    <script type="text/javascript" src="Scripts/jquery.scrollTo-1.4.0-min.js"> </script>
+    <script type="text/javascript" src="Scripts/jquery.fn.topLink.js"> </script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            cache: false,
+            beforeSend: ShowProgress,
+            complete: HideProgress
+        });
+
+        function ShowProgress() {
+
+            $(".tipMsg").text("");
+            $("#mask").width($(window).width());
+            $("#mask").height($(window).height());
+            $("#mask").fadeTo(0, 0.5);
+            $("#mask").show();
+            $("#progress").show();
+        }
+
+        function HideProgress() {
+            $("#progress").hide();
+            $("#mask").hide();
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .styleDiv {
+            width: auto;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <form id="Form1" runat="server" enctype="multipart/form-data">
+        <!-- Header Start -->
+        <div id="divlogo" class="padding" style="width: 100%; background-color: rgb(255, 255, 255); height: 30px;">
+            <div style="float: left; font-size: 16px; padding: 4px 0 0 10px; font-weight: bold;">
+                同步系统2.0-Beta
+            </div>
+            <div align="right" style="width: 600px; margin-left: auto; padding: 5px;">
+                您好：<asp:Label ID="LblName" runat="server" Text="Label"></asp:Label>&nbsp;
+            <asp:LinkButton ID="LbtnLogonOut" runat="server" OnClick="LbtnLogonOut_Click">【退出登录】</asp:LinkButton>
+            </div>
+        </div>
+        <div id="divmenu" style="width: 100%" class="nav">
+            <div class="navinner">
+                <ul class="menu" id="menu">
+                    <li><a href="/SyncSelectFiles.aspx" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">同 步</a></li>
+                    <li><a href="#" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">回 滚</a>
+                        <ul>
+                            <li><a href="/TaskRevert.aspx">任务回滚</a></li>
+                            <li><a href="/FileRevert.aspx">文件回滚</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/SyncSelectFilesSimple.aspx" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">图片同步</a></li>
+                    <li><a href="/ScheduleTasks.aspx" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">计划任务</a></li>
+                    <li id="li1" runat="server"><a href="#" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">系统管理</a>
+                        <ul>
+                            <%if (CheckSysPermission(LblName.Text, new[] { Dorado.VWS.Model.Enum.SysytemRoleEnumType.SuperAdmin, Dorado.VWS.Model.Enum.SysytemRoleEnumType.Ops, Dorado.VWS.Model.Enum.SysytemRoleEnumType.Test }))
+                              { %>
+                            <li><a href="/ServerList.aspx">服务器</a></li>
+                            <li><a href="/Role.aspx">角色配置</a></li>
+                            <li><a href="/UserPermission.aspx">资源权限</a></li>
+                            <%} %>
+                            <%if (CheckSysPermission(LblName.Text, new[] { Dorado.VWS.Model.Enum.SysytemRoleEnumType.SuperAdmin, Dorado.VWS.Model.Enum.SysytemRoleEnumType.Ops, Dorado.VWS.Model.Enum.SysytemRoleEnumType.Test, Dorado.VWS.Model.Enum.SysytemRoleEnumType.Dev }))
+                              { %>
+                            <li><a href="/ServerControl.aspx">服务控制</a></li>
+                            <li><a href="/OperateLogList.aspx">操作日志</a></li>
+                            <%} %>
+                            <%if (IsAdmin)
+                              { %>
+                            <li><a href="/SystemPermission.aspx">系统权限</a></li>
+                            <%} %>
+                        </ul>
+                    </li>
+                    <%if (CheckSysPermission(LblName.Text, new[] { Dorado.VWS.Model.Enum.SysytemRoleEnumType.SuperAdmin, Dorado.VWS.Model.Enum.SysytemRoleEnumType.Ops, Dorado.VWS.Model.Enum.SysytemRoleEnumType.Test }))
+                      { %>
+                    <li id="limgr" runat="server" visible="false"><a href="#" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">系统运维</a>
+                        <ul>
+                            <li><a href="/AddIDC.aspx">添加IDC</a></li>
+                            <li><a href="/DomainList.aspx">域名管理</a></li>
+                            <li><a href="/ServerList.aspx">服务器</a></li>
+                            <li><a href="/getfilelist.aspx">域名文件列表</a></li>
+                            <li><a href="/RefuseService.aspx">安全-服务黑名单</a></li>
+                            <li><a href="/ServerControl.aspx">服务控制</a></li>
+                            <li><a href="/ResourceList.aspx">资源配置</a></li>
+                            <li><a href="/ReadLog.aspx">系统日志</a></li>
+                            <%if (CheckSysUser(LblName.Text))
+                              {%>
+                            <li><a href="/ManageSql.aspx">执行SQL</a></li>
+                            <%}%>
+                            <li><a href="/SyncExceptionList.aspx">异常同步任务</a></li>
+                        </ul>
+                    </li>
+                    <%} %>
+                    <li><a href="#" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">文件比对</a>
+                        <ul>
+                            <li><a href="/FilesCompare.aspx">文件比对</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Help.aspx" style="font-family: 'Microsoft YaHei'; font-size: 15px; color: #ffffff;"
+                        class="menulink">帮 助</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Header End -->
+        <div id="mask" style="position: fixed; left: 0px; right: 0px; background-color: #FFFFFF; display: none;">
+        </div>
+        <div id="progress" style="position: relative; display: none; text-align: center; font-size: 12px; color: #fff; background-color: #333333; padding: 5px;">
+            <asp:Image runat="server" ImageUrl="Styles/img/loading.gif" /><br />
+            请稍候，系统正在执行请求……
+        </div>
+        <div class="styleDiv">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div style="margin-top: 5px;">
+        </div>
+    </form>
+    <script type="text/javascript">
+        var menu = new menu.dd("menu");
+        menu.init("menu", "menuhover");
+    </script>
+    <a href="#top" id="top-link">回顶部</a>
+</body>
+</html>
