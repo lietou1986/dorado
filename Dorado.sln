@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dorado.Package", "Dorado.Package", "{32DEA407-F0A1-4E3A-BE86-795BDFC5283F}"
 EndProject
@@ -84,6 +84,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Web", "Dorado.Web\Dorado.Web\Dorado.Web.csproj", "{146499B2-113A-4BCB-B30C-860F8F1153A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.SQLite", "Dorado.Data\Dorado.SQLite\Dorado.SQLite.csproj", "{A4B3519A-940E-4A68-A405-D5F4F39AF5A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Spider", "Dorado.Spider\Dorado.Spider.csproj", "{632A1460-BB77-4DE8-A699-E828BD0B0864}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -586,6 +588,24 @@ Global
 		{A4B3519A-940E-4A68-A405-D5F4F39AF5A2}.Release-Combine|Mixed Platforms.Build.0 = Release|Any CPU
 		{A4B3519A-940E-4A68-A405-D5F4F39AF5A2}.Release-Combine|x86.ActiveCfg = Release|Any CPU
 		{A4B3519A-940E-4A68-A405-D5F4F39AF5A2}.Release-Combine|x86.Build.0 = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Debug|x86.Build.0 = Debug|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release|x86.ActiveCfg = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release|x86.Build.0 = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release-Combine|Any CPU.ActiveCfg = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release-Combine|Any CPU.Build.0 = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release-Combine|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release-Combine|Mixed Platforms.Build.0 = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release-Combine|x86.ActiveCfg = Release|Any CPU
+		{632A1460-BB77-4DE8-A699-E828BD0B0864}.Release-Combine|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
