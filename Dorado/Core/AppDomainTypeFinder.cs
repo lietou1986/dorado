@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -158,7 +159,7 @@ namespace Dorado.Core
 
         /// <summary>Gets the assemblies related to the current implementation.</summary>
         /// <returns>A list of assemblies that should be loaded by the SmartStore factory.</returns>
-        public virtual IList<Assembly> GetAssemblies()
+        public virtual IList<Assembly> GetAssemblies(Func<Assembly, bool> predicate=null)
         {
             var addedAssemblyNames = new List<string>();
             var assemblies = new List<Assembly>();
@@ -168,8 +169,14 @@ namespace Dorado.Core
                 AddAssembliesInAppDomain(addedAssemblyNames, assemblies);
             }
             AddCustomAssemblies(addedAssemblyNames, assemblies);
-
-            return assemblies;
+            if (predicate!=null)
+            {
+                return assemblies.Where(predicate).ToList();
+            }
+            else
+            {
+                return assemblies;
+            }
         }
 
         #endregion ITypeFinder
