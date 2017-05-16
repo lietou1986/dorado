@@ -151,6 +151,7 @@
     <Compile Include="Core\FileWatcher.cs" />
     <Compile Include="Extensions\ByteArrayExtentions.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\IOExtensions.cs" />
     <Compile Include="Extensions\LinqExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\NullableExtensions.cs" />
