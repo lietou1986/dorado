@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="Core\ActionDisposable.cs" />
     <Compile Include="Core\AppDomainTypeFinder.cs" />
     <Compile Include="Core\Cache\StorageStrategys\AspNetStorageStrategy.cs" />
     <Compile Include="Core\Cache\StorageStrategys\NullStorageStrategy.cs" />

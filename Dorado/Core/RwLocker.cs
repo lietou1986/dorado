@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace Dorado.Core
@@ -102,74 +103,161 @@ namespace Dorado.Core
             stub = null;
             return false;
         }
+    }
 
-        #region Class ReadLocker ...
-
-        private class ReadLocker : IDisposable
+    internal class ReadLocker : IDisposable
+    {
+        public ReadLocker(ReaderWriterLockSlim locker)
         {
-            public ReadLocker(ReaderWriterLockSlim locker)
-            {
-                _Locker = locker;
-            }
-
-            private readonly ReaderWriterLockSlim _Locker;
-
-            #region IDisposable Members
-
-            public void Dispose()
-            {
-                _Locker.ExitReadLock();
-            }
-
-            #endregion IDisposable Members
+            _Locker = locker;
         }
 
-        #endregion Class ReadLocker ...
+        private readonly ReaderWriterLockSlim _Locker;
 
-        #region Class WriteLocker ...
+        #region IDisposable Members
 
-        private class WriteLocker : IDisposable
+        public void Dispose()
         {
-            public WriteLocker(ReaderWriterLockSlim locker)
-            {
-                _Locker = locker;
-            }
-
-            private readonly ReaderWriterLockSlim _Locker;
-
-            #region IDisposable Members
-
-            public void Dispose()
-            {
-                _Locker.ExitWriteLock();
-            }
-
-            #endregion IDisposable Members
+            _Locker.ExitReadLock();
         }
 
-        #endregion Class WriteLocker ...
+        #endregion IDisposable Members
+    }
 
-        #region Class UpgradeLocker ...
-
-        private class UpgradeLocker : IDisposable
+    internal class WriteLocker : IDisposable
+    {
+        public WriteLocker(ReaderWriterLockSlim locker)
         {
-            public UpgradeLocker(ReaderWriterLockSlim locker)
-            {
-                _Locker = locker;
-            }
-
-            private readonly ReaderWriterLockSlim _Locker;
-
-            #region IDisposable Members
-
-            public void Dispose()
-            {
-                _Locker.ExitUpgradeableReadLock();
-            }
-
-            #endregion IDisposable Members
+            _Locker = locker;
         }
 
-        #endregion Class UpgradeLocker ...
+        private readonly ReaderWriterLockSlim _Locker;
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            _Locker.ExitWriteLock();
+        }
+
+        #endregion IDisposable Members
+    }
+
+    internal class UpgradeLocker : IDisposable
+    {
+        public UpgradeLocker(ReaderWriterLockSlim locker)
+        {
+            _Locker = locker;
+        }
+
+        private readonly ReaderWriterLockSlim _Locker;
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            _Locker.ExitUpgradeableReadLock();
+        }
+
+        #endregion IDisposable Members
+    }
+
+    public static class LockExtensions
+    {
+        /// <summary>
+        /// Acquires a disposable reader lock that can be used with a using statement.
+        /// </summary>
+        [DebuggerStepThrough]
+        public static IDisposable Read(this ReaderWriterLockSlim rwLock)
+        {
+            return rwLock.TryRead(-1);
+        }
+
+        /// <summary>
+        /// Acquires a disposable reader lock that can be used with a using statement.
+        /// </summary>
+        /// <param name="millisecondsTimeout">
+        /// The number of milliseconds to wait, or -1 to wait indefinitely.
+        /// </param>
+        [DebuggerStepThrough]
+        public static IDisposable TryRead(this ReaderWriterLockSlim rwLock, int millisecondsTimeout)
+        {
+            bool acquire = rwLock.IsReadLockHeld == false ||
+                           rwLock.RecursionPolicy == LockRecursionPolicy.SupportsRecursion;
+
+            if (acquire)
+            {
+                if (rwLock.TryEnterReadLock(millisecondsTimeout))
+                {
+                    return new ReadLocker(rwLock);
+                }
+            }
+
+            return ActionDisposable.Empty;
+        }
+
+        /// <summary>
+        /// Acquires a disposable and upgradeable reader lock that can be used with a using statement.
+        /// </summary>
+        [DebuggerStepThrough]
+        public static IDisposable Upgrade(this ReaderWriterLockSlim rwLock)
+        {
+            return rwLock.TryUpgrade(-1);
+        }
+
+        /// <summary>
+        /// Acquires a disposable and upgradeable reader lock that can be used with a using statement.
+        /// </summary>
+        /// <param name="millisecondsTimeout">
+        /// The number of milliseconds to wait, or -1 to wait indefinitely.
+        /// </param>
+        [DebuggerStepThrough]
+        public static IDisposable TryUpgrade(this ReaderWriterLockSlim rwLock, int millisecondsTimeout)
+        {
+            bool acquire = rwLock.IsUpgradeableReadLockHeld == false ||
+                           rwLock.RecursionPolicy == LockRecursionPolicy.SupportsRecursion;
+
+            if (acquire)
+            {
+                if (rwLock.TryEnterUpgradeableReadLock(millisecondsTimeout))
+                {
+                    return new UpgradeLocker(rwLock);
+                }
+            }
+
+            return ActionDisposable.Empty;
+        }
+
+        /// <summary>
+        /// Acquires a disposable writer lock that can be used with a using statement.
+        /// </summary>
+        [DebuggerStepThrough]
+        public static IDisposable Write(this ReaderWriterLockSlim rwLock)
+        {
+            return rwLock.TryWrite(-1);
+        }
+
+        /// <summary>
+        /// Tries to enter a disposable write lock that can be used with a using statement.
+        /// </summary>
+        /// <param name="millisecondsTimeout">
+        /// The number of milliseconds to wait, or -1 to wait indefinitely.
+        /// </param>
+        [DebuggerStepThrough]
+        public static IDisposable TryWrite(this ReaderWriterLockSlim rwLock, int millisecondsTimeout)
+        {
+            bool acquire = rwLock.IsWriteLockHeld == false ||
+                           rwLock.RecursionPolicy == LockRecursionPolicy.SupportsRecursion;
+
+            if (acquire)
+            {
+                if (rwLock.TryEnterWriteLock(millisecondsTimeout))
+                {
+                    return new WriteLocker(rwLock);
+                }
+            }
+
+            return ActionDisposable.Empty;
+        }
     }
 }
