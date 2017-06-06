@@ -59,3 +59,8 @@ D:\Projects\dorado\Build\Dorado.Configuration.pdb
 D:\Projects\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.dll
 D:\Projects\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.pdb
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.dll
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Configuration.dll
+D:\OneDrive\work\dorado\Build\Dorado.Configuration.pdb

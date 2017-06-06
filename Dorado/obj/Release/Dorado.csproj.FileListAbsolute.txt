@@ -7,4 +7,3 @@ D:\OneDrive\work\dorado\Dorado\obj\Release\Dorado.dll
 D:\OneDrive\work\dorado\Dorado\obj\Release\Dorado.pdb
 D:\OneDrive\work\dorado\Build\Dorado.dll
 D:\OneDrive\work\dorado\Build\Dorado.pdb
-D:\OneDrive\work\dorado\Dorado\obj\Release\Dorado.csprojResolveAssemblyReference.cache
