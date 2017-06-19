@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dorado.Test</RootNamespace>
     <AssemblyName>Dorado.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkProfile />
@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dorado.Config\Dorado.Configuration\Dorado.Configuration.csproj">
-      <Project>{9BCA8D0B-FED3-4494-90E9-0A18A527CC3C}</Project>
+      <Project>{9bca8d0b-fed3-4494-90e9-0a18a527cc3c}</Project>
       <Name>Dorado.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dorado.Data\Dorado.Data\Dorado.Data.csproj">
@@ -78,7 +78,7 @@
       <Name>Dorado.Package.ServiceInterface</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dorado\Dorado.csproj">
-      <Project>{56CB9912-4CE8-4370-8B21-5EEEF2123E9E}</Project>
+      <Project>{56cb9912-4ce8-4370-8b21-5eeef2123e9e}</Project>
       <Name>Dorado</Name>
     </ProjectReference>
   </ItemGroup>

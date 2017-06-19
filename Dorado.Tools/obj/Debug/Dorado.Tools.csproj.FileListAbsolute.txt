@@ -7,3 +7,17 @@ F:\云盘\Work\Dorado\Dorado.Tools\bin\Debug\Dorado.Tools.dll
 F:\云盘\Work\Dorado\Dorado.Tools\bin\Debug\Dorado.Tools.pdb
 F:\云盘\Work\Dorado\Dorado.Tools\obj\Debug\Dorado.Tools.dll
 F:\云盘\Work\Dorado\Dorado.Tools\obj\Debug\Dorado.Tools.pdb
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\Dorado.Tools.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\Dorado.Tools.pdb
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\Newtonsoft.Json.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\protobuf-net.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\RazorEngine.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\System.Data.SQLite.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\Newtonsoft.Json.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\protobuf-net.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\RazorEngine.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\System.Data.SQLite.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Debug\System.Data.SQLite.dll.config
+D:\OneDrive\work\dorado\Dorado.Tools\obj\Debug\Dorado.Tools.dll
+D:\OneDrive\work\dorado\Dorado.Tools\obj\Debug\Dorado.Tools.pdb
+D:\OneDrive\work\dorado\Dorado.Tools\obj\Debug\Dorado.Tools.csprojResolveAssemblyReference.cache

@@ -29,3 +29,8 @@ D:\Projects\dorado\Build\Dorado.Package.ServiceInterface.pdb
 D:\Projects\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Debug\Dorado.Package.ServiceInterface.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Debug\Dorado.Package.ServiceInterface.dll
 D:\Projects\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Debug\Dorado.Package.ServiceInterface.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Package.ServiceInterface.dll
+D:\OneDrive\work\dorado\Build\Dorado.Package.ServiceInterface.pdb
+D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Debug\Dorado.Package.ServiceInterface.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Debug\Dorado.Package.ServiceInterface.dll
+D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Debug\Dorado.Package.ServiceInterface.pdb

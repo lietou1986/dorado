@@ -29,3 +29,8 @@ D:\Projects\Work\NET\Dorado\Dorado.Middleware\Dorado.Queue\bin\Debug\Dorado.Conf
 D:\Projects\Work\NET\Dorado\Dorado.Middleware\Dorado.Queue\bin\Debug\Dorado.pdb
 D:\Projects\Work\NET\Dorado\Dorado.Middleware\Dorado.Queue\bin\Debug\Newtonsoft.Json.xml
 F:\云盘\Work\Dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Build\Dorado.Queue.dll
+D:\OneDrive\work\dorado\Build\Dorado.Queue.pdb
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.dll
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.pdb

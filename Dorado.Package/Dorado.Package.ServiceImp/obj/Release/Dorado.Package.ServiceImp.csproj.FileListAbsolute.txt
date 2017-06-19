@@ -93,3 +93,8 @@ F:\快盘\Work\Dorado\Build\Dorado.Package.ServiceImp.pdb
 F:\快盘\Work\Dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Release\Dorado.Package.ServiceImp.dll
 F:\快盘\Work\Dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Release\Dorado.Package.ServiceImp.pdb
 D:\Projects\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Release\Dorado.Package.ServiceImp.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Build\Dorado.Package.ServiceImp.dll
+D:\OneDrive\work\dorado\Build\Dorado.Package.ServiceImp.pdb
+D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Release\Dorado.Package.ServiceImp.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Release\Dorado.Package.ServiceImp.dll
+D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Release\Dorado.Package.ServiceImp.pdb

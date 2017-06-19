@@ -33,3 +33,8 @@ D:\Projects\dorado\Build\Dorado.ESB.ClientProxyFactory.pdb
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.dll
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.pdb
+D:\OneDrive\work\dorado\Build\Dorado.ESB.ClientProxyFactory.dll
+D:\OneDrive\work\dorado\Build\Dorado.ESB.ClientProxyFactory.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.pdb

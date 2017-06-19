@@ -31,3 +31,8 @@ F:\快盘\Work\Dorado\Build\Dorado.Data.pdb
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.csprojResolveAssemblyReference.cache
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.dll
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Data.dll
+D:\OneDrive\work\dorado\Build\Dorado.Data.pdb
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.dll
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.pdb

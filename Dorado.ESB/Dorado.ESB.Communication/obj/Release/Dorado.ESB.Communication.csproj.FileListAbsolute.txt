@@ -44,3 +44,8 @@ D:\Projects\dorado\Build\Dorado.ESB.Communication.pdb
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.dll
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.pdb
+D:\OneDrive\work\dorado\Build\Dorado.ESB.Communication.dll
+D:\OneDrive\work\dorado\Build\Dorado.ESB.Communication.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.pdb

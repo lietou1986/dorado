@@ -16,3 +16,8 @@ F:\云盘\Work\Dorado\Build\Dorado.Security.pdb
 F:\云盘\Work\Dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.csprojResolveAssemblyReference.cache
 F:\云盘\Work\Dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.dll
 F:\云盘\Work\Dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Security.dll
+D:\OneDrive\work\dorado\Build\Dorado.Security.pdb
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.dll
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.pdb
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.csprojResolveAssemblyReference.cache

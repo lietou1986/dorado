@@ -88,3 +88,13 @@ D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.pdb
 D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Release\Dorado.Configuration.ServerHost.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Release\Dorado.Configuration.ServerHost.dll
 D:\Projects\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Release\Dorado.Configuration.ServerHost.pdb
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.dll.config
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.dll
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.pdb
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.dll
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.dll
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.pdb
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.pdb
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Release\Dorado.Configuration.ServerHost.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Release\Dorado.Configuration.ServerHost.dll
+D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Release\Dorado.Configuration.ServerHost.pdb

@@ -41,3 +41,7 @@ D:\Projects\dorado\Build\Dorado.Security.pdb
 D:\Projects\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.dll
 D:\Projects\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Security.dll
+D:\OneDrive\work\dorado\Build\Dorado.Security.pdb
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.dll
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.pdb

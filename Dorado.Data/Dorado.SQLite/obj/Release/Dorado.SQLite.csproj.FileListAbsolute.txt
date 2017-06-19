@@ -7,3 +7,8 @@ D:\Projects\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.dll
 D:\Projects\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.pdb
 D:\Projects\dorado\Build\Dorado.SQLite.dll
 D:\Projects\dorado\Build\Dorado.SQLite.pdb
+D:\OneDrive\work\dorado\Build\Dorado.SQLite.dll
+D:\OneDrive\work\dorado\Build\Dorado.SQLite.pdb
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.dll
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.pdb

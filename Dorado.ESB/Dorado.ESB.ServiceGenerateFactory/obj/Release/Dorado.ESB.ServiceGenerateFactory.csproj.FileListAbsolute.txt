@@ -31,3 +31,8 @@ D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\bin\Release\Dora
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\bin\Release\Dorado.pdb
 D:\Projects\dorado\Build\Dorado.ESB.ServiceGenerateFactory.dll
 D:\Projects\dorado\Build\Dorado.ESB.ServiceGenerateFactory.pdb
+D:\OneDrive\work\dorado\Build\Dorado.ESB.ServiceGenerateFactory.dll
+D:\OneDrive\work\dorado\Build\Dorado.ESB.ServiceGenerateFactory.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.pdb

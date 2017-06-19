@@ -21,3 +21,9 @@ F:\快盘\Work\Dorado\Build\Dorado.DataExpress.pdb
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.csprojResolveAssemblyReference.cache
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.dll
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.pdb
+D:\OneDrive\work\dorado\Build\Dorado.DataExpress.dll.config
+D:\OneDrive\work\dorado\Build\Dorado.DataExpress.dll
+D:\OneDrive\work\dorado\Build\Dorado.DataExpress.pdb
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.dll
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.pdb

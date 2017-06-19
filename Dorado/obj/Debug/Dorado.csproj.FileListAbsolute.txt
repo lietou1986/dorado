@@ -37,3 +37,7 @@ D:\Projects\dorado\Build\Dorado.pdb
 D:\Projects\dorado\Dorado\obj\Debug\Dorado.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado\obj\Debug\Dorado.dll
 D:\Projects\dorado\Dorado\obj\Debug\Dorado.pdb
+D:\OneDrive\work\dorado\Build\Dorado.dll
+D:\OneDrive\work\dorado\Build\Dorado.pdb
+D:\OneDrive\work\dorado\Dorado\obj\Debug\Dorado.dll
+D:\OneDrive\work\dorado\Dorado\obj\Debug\Dorado.pdb

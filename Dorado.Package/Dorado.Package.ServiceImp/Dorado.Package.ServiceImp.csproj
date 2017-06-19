@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dorado.Package.ServiceImp</RootNamespace>
     <AssemblyName>Dorado.Package.ServiceImp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NoWin32Manifest>False</NoWin32Manifest>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
@@ -57,10 +57,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Build\Dorado.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Dorado.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -80,6 +76,10 @@
     <None Include="ConfigSettings\PackageSettings.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Dorado.Data\Dorado.Data\Dorado.Data.csproj">
+      <Project>{dfd39e62-6f6e-414a-8446-2eaac02093c5}</Project>
+      <Name>Dorado.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dorado.Package.Component\Dorado.Package.Component.csproj">
       <Project>{5A63DAAD-CECF-4F42-A118-BBCDFC24D9B8}</Project>
       <Name>Dorado.Package.Component</Name>

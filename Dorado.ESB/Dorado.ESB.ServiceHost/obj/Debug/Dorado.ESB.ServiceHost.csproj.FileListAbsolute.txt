@@ -18,3 +18,10 @@ F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.pdb
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csprojResolveAssemblyReference.cache
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.dll
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.ESB.ServiceHost.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.ESB.ServiceHost.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.pdb

@@ -72,3 +72,9 @@ D:\Projects\Work\NET\Dorado\Dorado.ESB\Dorado.ESB.WindowsService\Output\Dorado.E
 D:\Projects\Work\NET\Dorado\Dorado.ESB\Dorado.ESB.WindowsService\Output\Dorado.ESB.Common.pdb
 D:\Projects\Work\NET\Dorado\Dorado.ESB\Dorado.ESB.WindowsService\Output\Dorado.Configuration.pdb
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Debug\Dorado.ESB.WindowsService.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Debug\Dorado.ESB.WindowsService.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Build\Dorado.ESB.WindowsService.exe.config
+D:\OneDrive\work\dorado\Dorado.ESB\Build\Dorado.ESB.WindowsService.exe
+D:\OneDrive\work\dorado\Dorado.ESB\Build\Dorado.ESB.WindowsService.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Debug\Dorado.ESB.WindowsService.exe
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Debug\Dorado.ESB.WindowsService.pdb

@@ -21,3 +21,4 @@ D:\Project\TFS\NET\Dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Debug\Dorado.E
 D:\Project\TFS\NET\Dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Debug\Dorado.ESB.Communication.dll
 D:\Project\TFS\NET\Dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Debug\Dorado.ESB.Communication.pdb
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Debug\Dorado.ESB.Communication.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Debug\Dorado.ESB.Communication.csprojResolveAssemblyReference.cache

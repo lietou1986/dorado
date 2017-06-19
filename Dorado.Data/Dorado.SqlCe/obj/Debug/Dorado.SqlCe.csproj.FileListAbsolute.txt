@@ -10,3 +10,7 @@ F:\快盘\Work\Dorado\Build\Dorado.SqlCe.pdb
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.csprojResolveAssemblyReference.cache
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.dll
 F:\快盘\Work\Dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.pdb
+D:\OneDrive\work\dorado\Build\Dorado.SqlCe.dll
+D:\OneDrive\work\dorado\Build\Dorado.SqlCe.pdb
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.dll
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.pdb

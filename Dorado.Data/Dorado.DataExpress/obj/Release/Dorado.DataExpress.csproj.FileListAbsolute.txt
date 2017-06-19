@@ -45,3 +45,9 @@ D:\Projects\dorado\Build\Dorado.DataExpress.pdb
 D:\Projects\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.dll
 D:\Projects\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.pdb
+D:\OneDrive\work\dorado\Build\Dorado.DataExpress.dll.config
+D:\OneDrive\work\dorado\Build\Dorado.DataExpress.dll
+D:\OneDrive\work\dorado\Build\Dorado.DataExpress.pdb
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.dll
+D:\OneDrive\work\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.pdb

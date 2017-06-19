@@ -63,7 +63,7 @@ namespace Dorado.Web
             }
         }
 
-        public override IList<Assembly> GetAssemblies()
+        public override IList<Assembly> GetAssemblies(Func<Assembly, bool> predicate = null)
         {
             if (this.EnsureBinFolderAssembliesLoaded && !_binFolderAssembliesLoaded)
             {

@@ -20,3 +20,9 @@ F:\云盘\Work\Dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter
 F:\云盘\Work\Dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.csproj.GenerateResource.Cache
 F:\云盘\Work\Dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.dll
 F:\云盘\Work\Dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.pdb
+D:\OneDrive\work\dorado\Build\Dorado.UrlRewriter.dll
+D:\OneDrive\work\dorado\Build\Dorado.UrlRewriter.pdb
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.Messages.resources
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.csproj.GenerateResource.Cache
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.dll
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.pdb

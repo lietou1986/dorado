@@ -5,3 +5,10 @@ D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.Resource.resourc
 D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.GenerateResource.Cache
 D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.dll
 D:\Projects\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Web.dll
+D:\OneDrive\work\dorado\Build\Dorado.Web.pdb
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.Resource.resources
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.GenerateResource.Cache
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.dll
+D:\OneDrive\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.pdb

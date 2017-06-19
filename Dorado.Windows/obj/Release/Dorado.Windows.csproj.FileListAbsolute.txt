@@ -34,3 +34,9 @@ D:\Projects\dorado\Dorado.Windows\obj\Release\Interop.IWshRuntimeLibrary.dll
 D:\Projects\dorado\Dorado.Windows\obj\Release\Dorado.Windows.csproj.ResolveComReference.cache
 D:\Projects\dorado\Dorado.Windows\obj\Release\Dorado.Windows.dll
 D:\Projects\dorado\Dorado.Windows\obj\Release\Dorado.Windows.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Windows.dll
+D:\OneDrive\work\dorado\Build\Dorado.Windows.pdb
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Release\Interop.IWshRuntimeLibrary.dll
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Release\Dorado.Windows.csproj.ResolveComReference.cache
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Release\Dorado.Windows.dll
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Release\Dorado.Windows.pdb

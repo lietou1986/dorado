@@ -14,3 +14,9 @@ F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Interop.IWshRuntimeLibrary.dll
 F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.ResolveComReference.cache
 F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.dll
 F:\云盘\Work\Dorado\Dorado.Windows\obj\Debug\Dorado.Windows.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Windows.dll
+D:\OneDrive\work\dorado\Build\Dorado.Windows.pdb
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Debug\Interop.IWshRuntimeLibrary.dll
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.ResolveComReference.cache
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.dll
+D:\OneDrive\work\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.pdb

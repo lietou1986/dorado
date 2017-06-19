@@ -27,3 +27,16 @@ D:\Projects\dorado\Dorado.Tools\bin\Release\Dorado.Tools.dll
 D:\Projects\dorado\Dorado.Tools\bin\Release\Dorado.Tools.pdb
 D:\Projects\dorado\Dorado.Tools\obj\Release\Dorado.Tools.dll
 D:\Projects\dorado\Dorado.Tools\obj\Release\Dorado.Tools.pdb
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\Dorado.Tools.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\Dorado.Tools.pdb
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\Newtonsoft.Json.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\protobuf-net.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\RazorEngine.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\System.Data.SQLite.dll
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\Newtonsoft.Json.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\protobuf-net.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\RazorEngine.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\System.Data.SQLite.xml
+D:\OneDrive\work\dorado\Dorado.Tools\bin\Release\System.Data.SQLite.dll.config
+D:\OneDrive\work\dorado\Dorado.Tools\obj\Release\Dorado.Tools.dll
+D:\OneDrive\work\dorado\Dorado.Tools\obj\Release\Dorado.Tools.pdb

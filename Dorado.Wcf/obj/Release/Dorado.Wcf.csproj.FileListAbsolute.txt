@@ -8,3 +8,7 @@ D:\Projects\dorado\Build\Dorado.Wcf.pdb
 D:\Projects\dorado\Dorado.Wcf\obj\Release\Dorado.Wcf.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Wcf\obj\Release\Dorado.Wcf.dll
 D:\Projects\dorado\Dorado.Wcf\obj\Release\Dorado.Wcf.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Wcf.dll
+D:\OneDrive\work\dorado\Build\Dorado.Wcf.pdb
+D:\OneDrive\work\dorado\Dorado.Wcf\obj\Release\Dorado.Wcf.dll
+D:\OneDrive\work\dorado\Dorado.Wcf\obj\Release\Dorado.Wcf.pdb

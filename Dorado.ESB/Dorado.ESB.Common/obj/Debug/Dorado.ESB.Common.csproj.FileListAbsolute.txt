@@ -23,3 +23,10 @@ D:\Project\TFS\NET\Dorado\Dorado.ESB\Dorado.ESB.Common\obj\Debug\Dorado.ESB.Comm
 D:\Project\TFS\NET\Dorado\Dorado.ESB\Dorado.ESB.Common\obj\Debug\Dorado.ESB.Common.dll
 D:\Project\TFS\NET\Dorado\Dorado.ESB\Dorado.ESB.Common\obj\Debug\Dorado.ESB.Common.pdb
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.Common\obj\Debug\Dorado.ESB.Common.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Common\obj\Debug\Dorado.ESB.Common.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Common\bin\Debug\Dorado.ESB.Common.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Common\bin\Debug\Dorado.ESB.Common.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Common\bin\Debug\Dorado.Configuration.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Common\bin\Debug\Dorado.Configuration.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Common\obj\Debug\Dorado.ESB.Common.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Common\obj\Debug\Dorado.ESB.Common.pdb

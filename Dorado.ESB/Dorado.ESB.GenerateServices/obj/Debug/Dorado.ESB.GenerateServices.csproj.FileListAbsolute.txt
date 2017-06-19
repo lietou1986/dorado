@@ -29,3 +29,8 @@ F:\云盘\Work\Dorado\Dorado.ESB\Build\Dorado.ESB.GenerateServices.pdb
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.csprojResolveAssemblyReference.cache
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.dll
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Build\Dorado.ESB.GenerateServices.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Build\Dorado.ESB.GenerateServices.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.pdb

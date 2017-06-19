@@ -37,3 +37,8 @@ D:\Projects\Work\NET\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceI
 D:\Projects\Work\NET\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\bin\Debug\Dorado.pdb
 D:\Projects\Work\NET\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\bin\Debug\Dorado.ActivityEngine.ServiceInterface.pdb
 F:\云盘\Work\Dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Build\Dorado.ActivityEngine.ServiceImp.dll
+D:\OneDrive\work\dorado\Build\Dorado.ActivityEngine.ServiceImp.pdb
+D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.dll
+D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.pdb

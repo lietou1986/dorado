@@ -68,3 +68,8 @@ D:\Projects\dorado\Build\Dorado.Queue.pdb
 D:\Projects\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.dll
 D:\Projects\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.pdb
+D:\OneDrive\work\dorado\Build\Dorado.Queue.dll
+D:\OneDrive\work\dorado\Build\Dorado.Queue.pdb
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.dll
+D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.pdb

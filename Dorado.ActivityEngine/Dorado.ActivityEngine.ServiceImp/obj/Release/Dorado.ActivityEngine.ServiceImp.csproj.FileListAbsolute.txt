@@ -76,3 +76,8 @@ D:\Projects\dorado\Build\Dorado.ActivityEngine.ServiceImp.dll
 D:\Projects\dorado\Build\Dorado.ActivityEngine.ServiceImp.pdb
 D:\Projects\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.dll
 D:\Projects\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.pdb
+D:\OneDrive\work\dorado\Build\Dorado.ActivityEngine.ServiceImp.dll
+D:\OneDrive\work\dorado\Build\Dorado.ActivityEngine.ServiceImp.pdb
+D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.dll
+D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Release\Dorado.ActivityEngine.ServiceImp.pdb

@@ -27,3 +27,8 @@ D:\Projects\dorado\Build\Dorado.ESB.ServiceHost.pdb
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csprojResolveAssemblyReference.cache
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.dll
 D:\Projects\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.pdb
+D:\OneDrive\work\dorado\Build\Dorado.ESB.ServiceHost.dll
+D:\OneDrive\work\dorado\Build\Dorado.ESB.ServiceHost.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.pdb

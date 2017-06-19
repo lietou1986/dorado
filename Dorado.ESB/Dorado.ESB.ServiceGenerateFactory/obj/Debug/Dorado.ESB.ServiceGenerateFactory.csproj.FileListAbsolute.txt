@@ -19,3 +19,10 @@ F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\bin\Debug\Dor
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Debug\Dorado.ESB.ServiceGenerateFactory.csprojResolveAssemblyReference.cache
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Debug\Dorado.ESB.ServiceGenerateFactory.dll
 F:\云盘\Work\Dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Debug\Dorado.ESB.ServiceGenerateFactory.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Debug\Dorado.ESB.ServiceGenerateFactory.csprojResolveAssemblyReference.cache
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\bin\Debug\Dorado.ESB.ServiceGenerateFactory.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\bin\Debug\Dorado.ESB.ServiceGenerateFactory.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\bin\Debug\Dorado.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\bin\Debug\Dorado.pdb
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Debug\Dorado.ESB.ServiceGenerateFactory.dll
+D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Debug\Dorado.ESB.ServiceGenerateFactory.pdb
