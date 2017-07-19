@@ -255,13 +255,6 @@ namespace Dorado.Core
                     {
                         App.Load(an);
                     }
-
-                    //old loading stuff
-                    //Assembly a = Assembly.ReflectionOnlyLoadFrom(dllPath);
-                    //if (Matches(a.FullName) && !loadedAssemblyNames.Contains(a.FullName))
-                    //{
-                    //    App.Load(a.FullName);
-                    //}
                 }
                 catch (BadImageFormatException ex)
                 {

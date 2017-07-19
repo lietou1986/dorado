@@ -69,11 +69,10 @@ namespace Dorado.Web
             {
                 _binFolderAssembliesLoaded = true;
                 string binPath = GetBinDirectory();
-                //binPath = _webHelper.MapPath("~/bin");
                 LoadMatchingAssemblies(binPath);
             }
 
-            return base.GetAssemblies();
+            return base.GetAssemblies(predicate);
         }
 
         #endregion Methods
