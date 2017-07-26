@@ -23,7 +23,7 @@ namespace Dorado.Core.Data
         private bool _reading;
 
         public DataArray()
-            : this("Data", 20)
+            : this("data", 20)
         {
         }
 
