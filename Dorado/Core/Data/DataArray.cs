@@ -14,7 +14,7 @@ namespace Dorado.Core.Data
     {
         private int _rowsize;//当前定义的行数
         private int _count;
-        private string _name;//名称
+        private string _name = "data";//名称
         private int _cursor;//当前下标
         private int _page = 1;//页数
         private int _pagesize;	//每页显示数据
@@ -584,8 +584,8 @@ namespace Dorado.Core.Data
 
         public string ToString(string name)
         {
-            if (_count == 0) return "T" + (name == null ? "" : "." + name) + "={};";
-            StringBuilder ret = new StringBuilder((name == null ? "T" : "T." + name) + "=");
+            if (_count == 0) return "T" + (name == null ? ".data" : "." + name) + "={};";
+            StringBuilder ret = new StringBuilder((name == null ? "T.data" : "T." + name) + "=");
             StringBuilder tmp = new StringBuilder();
 
             if (_pagesize == 0)
@@ -623,6 +623,34 @@ namespace Dorado.Core.Data
                 ret.Append("T.pageturn=\"" + _page.ToString() + "|" + maxpage.ToString() + "\";");
             }
 
+            return ret.ToString();
+        }
+
+        public string ToJson()
+        {
+            return ToJson(_name);
+        }
+
+        public string ToJson(string name)
+        {
+            if (_count == 0) return "T" + (name == null ? ".data" : "." + name) + "=[];";
+            StringBuilder ret = new StringBuilder((name == null ? "T.data" : "T." + name) + "=[");
+
+            for (int i = 0; i < _count; i++)
+            {
+                StringBuilder tmp = new StringBuilder();
+                ret.Append("{");
+                foreach (DataArrayColumn col in _cols)
+                {
+                    if (tmp.Length > 0) tmp.Append(",");
+                    tmp.Append("\"" + col.Name + "\"" + ":" + col[i].ToSafeString());
+                }
+                ret.Append(tmp);
+                ret.Append("}");
+                if (i < _count - 1)
+                    ret.Append(",");
+            }
+            ret.Append("]");
             return ret.ToString();
         }
 
