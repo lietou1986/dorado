@@ -18,7 +18,7 @@ namespace Dorado.Web.FastViewEngine
 
         public static string Success(string value, params object[] args)
         {
-            return Write(OutputType.Success, string.Format(value, args));
+            return Write(OutputType.Success, value, args);
         }
 
         public static string Error(Exception ex)
@@ -54,12 +54,12 @@ namespace Dorado.Web.FastViewEngine
         public static string Error(string ex, params object[] args)
         {
             LoggerWrapper.Logger.Error(ex);
-            return Write(OutputType.Alert, string.Format(ex, args));
+            return Write(OutputType.Alert, ex, args);
         }
 
         public static string Script(string value, params object[] args)
         {
-            return Write(OutputType.Script, string.Format(value, args));
+            return Write(OutputType.Script, value, args);
         }
 
         public static string Login()
@@ -69,7 +69,7 @@ namespace Dorado.Web.FastViewEngine
 
         public static string Login(string value, params object[] args)
         {
-            return "T.login=" + DataTypeExtensions.ToSafeString(string.Format(value, args)) + ";";
+            return Write(OutputType.Login, value, args);
         }
 
         public static string Logout()
@@ -79,7 +79,7 @@ namespace Dorado.Web.FastViewEngine
 
         public static string Logout(string value, params object[] args)
         {
-            return "T.logout=" + DataTypeExtensions.ToSafeString(string.Format(value, args)) + ";";
+            return Write(OutputType.Logout, value, args);
         }
 
         public static string Alert(int value)
@@ -144,7 +144,7 @@ namespace Dorado.Web.FastViewEngine
 
         public static string Write(OutputType type, string value, params object[] args)
         {
-            return "T." + type.GetDefaultDescription() + "=" + DataTypeExtensions.ToSafeString(string.Format(value, args)) + ";";
+            return "T." + type.GetDefaultDescription() + "=" + DataTypeExtensions.ToSafeString(args.Length > 0 ? string.Format(value, args) : value) + ";";
         }
 
         public static string Write(OutputType type, object value)
@@ -162,6 +162,12 @@ namespace Dorado.Web.FastViewEngine
         Alert,
 
         [Description("script")]
-        Script
+        Script,
+
+        [Description("login")]
+        Login,
+
+        [Description("logout")]
+        Logout
     }
 }
