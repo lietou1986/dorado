@@ -28,6 +28,7 @@
     <IISExpressUseClassicPipelineMode />
     <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -922,8 +923,15 @@
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
