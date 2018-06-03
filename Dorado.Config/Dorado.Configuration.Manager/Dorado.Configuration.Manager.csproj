@@ -62,6 +62,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -177,6 +180,7 @@
     <Content Include="jquery-easyui\demo\accordion\basic.html" />
     <Content Include="jquery-easyui\demo\accordion\expandable.html" />
     <Content Include="jquery-easyui\demo\accordion\fluid.html" />
+    <Content Include="jquery-easyui\demo\accordion\horizontal.html" />
     <Content Include="jquery-easyui\demo\accordion\multiple.html" />
     <Content Include="jquery-easyui\demo\accordion\tools.html" />
     <Content Include="jquery-easyui\demo\accordion\_content.html" />
@@ -298,6 +302,7 @@
     <Content Include="jquery-easyui\demo\linkbutton\size.html" />
     <Content Include="jquery-easyui\demo\linkbutton\style.html" />
     <Content Include="jquery-easyui\demo\linkbutton\toggle.html" />
+    <Content Include="jquery-easyui\demo\maskedbox\basic.html" />
     <Content Include="jquery-easyui\demo\menubutton\actions.html" />
     <Content Include="jquery-easyui\demo\menubutton\alignment.html" />
     <Content Include="jquery-easyui\demo\menubutton\basic.html" />
@@ -330,6 +335,7 @@
     <Content Include="jquery-easyui\demo\panel\customtools.html" />
     <Content Include="jquery-easyui\demo\panel\fluid.html" />
     <Content Include="jquery-easyui\demo\panel\footer.html" />
+    <Content Include="jquery-easyui\demo\panel\halign.html" />
     <Content Include="jquery-easyui\demo\panel\loadcontent.html" />
     <Content Include="jquery-easyui\demo\panel\nestedpanel.html" />
     <Content Include="jquery-easyui\demo\panel\paneltools.html" />
@@ -453,6 +459,7 @@
     <Content Include="jquery-easyui\locale\easyui-lang-el.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-en.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-es.js" />
+    <Content Include="jquery-easyui\locale\easyui-lang-fa.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-fr.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-it.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-jp.js" />
@@ -463,6 +470,7 @@
     <Content Include="jquery-easyui\locale\easyui-lang-ru.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-sv_SE.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-tr.js" />
+    <Content Include="jquery-easyui\locale\easyui-lang-ua.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-zh_CN.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-zh_TW.js" />
     <Content Include="jquery-easyui\plugins\jquery.accordion.js" />
@@ -484,6 +492,7 @@
     <Content Include="jquery-easyui\plugins\jquery.form.js" />
     <Content Include="jquery-easyui\plugins\jquery.layout.js" />
     <Content Include="jquery-easyui\plugins\jquery.linkbutton.js" />
+    <Content Include="jquery-easyui\plugins\jquery.maskedbox.js" />
     <Content Include="jquery-easyui\plugins\jquery.menu.js" />
     <Content Include="jquery-easyui\plugins\jquery.menubutton.js" />
     <Content Include="jquery-easyui\plugins\jquery.messager.js" />
@@ -529,8 +538,10 @@
     <Content Include="jquery-easyui\src\jquery.slider.js" />
     <Content Include="jquery-easyui\src\jquery.tabs.js" />
     <Content Include="jquery-easyui\src\jquery.window.js" />
+    <Content Include="jquery-easyui\themes\angular.css" />
     <Content Include="jquery-easyui\themes\black\accordion.css" />
     <Content Include="jquery-easyui\themes\black\calendar.css" />
+    <Content Include="jquery-easyui\themes\black\checkbox.css" />
     <Content Include="jquery-easyui\themes\black\combo.css" />
     <Content Include="jquery-easyui\themes\black\combobox.css" />
     <Content Include="jquery-easyui\themes\black\datagrid.css" />
@@ -572,6 +583,7 @@
     <Content Include="jquery-easyui\themes\black\passwordbox.css" />
     <Content Include="jquery-easyui\themes\black\progressbar.css" />
     <Content Include="jquery-easyui\themes\black\propertygrid.css" />
+    <Content Include="jquery-easyui\themes\black\radiobutton.css" />
     <Content Include="jquery-easyui\themes\black\searchbox.css" />
     <Content Include="jquery-easyui\themes\black\slider.css" />
     <Content Include="jquery-easyui\themes\black\spinner.css" />
@@ -586,6 +598,7 @@
     <Content Include="jquery-easyui\themes\black\window.css" />
     <Content Include="jquery-easyui\themes\bootstrap\accordion.css" />
     <Content Include="jquery-easyui\themes\bootstrap\calendar.css" />
+    <Content Include="jquery-easyui\themes\bootstrap\checkbox.css" />
     <Content Include="jquery-easyui\themes\bootstrap\combo.css" />
     <Content Include="jquery-easyui\themes\bootstrap\combobox.css" />
     <Content Include="jquery-easyui\themes\bootstrap\datagrid.css" />
@@ -627,6 +640,7 @@
     <Content Include="jquery-easyui\themes\bootstrap\passwordbox.css" />
     <Content Include="jquery-easyui\themes\bootstrap\progressbar.css" />
     <Content Include="jquery-easyui\themes\bootstrap\propertygrid.css" />
+    <Content Include="jquery-easyui\themes\bootstrap\radiobutton.css" />
     <Content Include="jquery-easyui\themes\bootstrap\searchbox.css" />
     <Content Include="jquery-easyui\themes\bootstrap\slider.css" />
     <Content Include="jquery-easyui\themes\bootstrap\spinner.css" />
@@ -642,6 +656,7 @@
     <Content Include="jquery-easyui\themes\color.css" />
     <Content Include="jquery-easyui\themes\default\accordion.css" />
     <Content Include="jquery-easyui\themes\default\calendar.css" />
+    <Content Include="jquery-easyui\themes\default\checkbox.css" />
     <Content Include="jquery-easyui\themes\default\combo.css" />
     <Content Include="jquery-easyui\themes\default\combobox.css" />
     <Content Include="jquery-easyui\themes\default\datagrid.css" />
@@ -683,6 +698,7 @@
     <Content Include="jquery-easyui\themes\default\passwordbox.css" />
     <Content Include="jquery-easyui\themes\default\progressbar.css" />
     <Content Include="jquery-easyui\themes\default\propertygrid.css" />
+    <Content Include="jquery-easyui\themes\default\radiobutton.css" />
     <Content Include="jquery-easyui\themes\default\searchbox.css" />
     <Content Include="jquery-easyui\themes\default\slider.css" />
     <Content Include="jquery-easyui\themes\default\spinner.css" />
@@ -697,6 +713,7 @@
     <Content Include="jquery-easyui\themes\default\window.css" />
     <Content Include="jquery-easyui\themes\gray\accordion.css" />
     <Content Include="jquery-easyui\themes\gray\calendar.css" />
+    <Content Include="jquery-easyui\themes\gray\checkbox.css" />
     <Content Include="jquery-easyui\themes\gray\combo.css" />
     <Content Include="jquery-easyui\themes\gray\combobox.css" />
     <Content Include="jquery-easyui\themes\gray\datagrid.css" />
@@ -738,6 +755,7 @@
     <Content Include="jquery-easyui\themes\gray\passwordbox.css" />
     <Content Include="jquery-easyui\themes\gray\progressbar.css" />
     <Content Include="jquery-easyui\themes\gray\propertygrid.css" />
+    <Content Include="jquery-easyui\themes\gray\radiobutton.css" />
     <Content Include="jquery-easyui\themes\gray\searchbox.css" />
     <Content Include="jquery-easyui\themes\gray\slider.css" />
     <Content Include="jquery-easyui\themes\gray\spinner.css" />
@@ -782,8 +800,66 @@
     <Content Include="jquery-easyui\themes\icons\sum.png" />
     <Content Include="jquery-easyui\themes\icons\tip.png" />
     <Content Include="jquery-easyui\themes\icons\undo.png" />
+    <Content Include="jquery-easyui\themes\material-teal\accordion.css" />
+    <Content Include="jquery-easyui\themes\material-teal\calendar.css" />
+    <Content Include="jquery-easyui\themes\material-teal\checkbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\combo.css" />
+    <Content Include="jquery-easyui\themes\material-teal\combobox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\datagrid.css" />
+    <Content Include="jquery-easyui\themes\material-teal\datalist.css" />
+    <Content Include="jquery-easyui\themes\material-teal\datebox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\dialog.css" />
+    <Content Include="jquery-easyui\themes\material-teal\easyui.css" />
+    <Content Include="jquery-easyui\themes\material-teal\filebox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\images\accordion_arrows.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\blank.gif" />
+    <Content Include="jquery-easyui\themes\material-teal\images\calendar_arrows.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\combo_arrow.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\datagrid_icons.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\datebox_arrow.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\layout_arrows.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\linkbutton_bg.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\loading.gif" />
+    <Content Include="jquery-easyui\themes\material-teal\images\menu_arrows.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\messager_icons.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\pagination_icons.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\panel_tools.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\passwordbox_close.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\passwordbox_open.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\searchbox_button.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\slider_handle.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\spinner_arrows.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\tabs_icons.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\tagbox_icons.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\tree_icons.png" />
+    <Content Include="jquery-easyui\themes\material-teal\images\validatebox_warning.png" />
+    <Content Include="jquery-easyui\themes\material-teal\layout.css" />
+    <Content Include="jquery-easyui\themes\material-teal\linkbutton.css" />
+    <Content Include="jquery-easyui\themes\material-teal\menu.css" />
+    <Content Include="jquery-easyui\themes\material-teal\menubutton.css" />
+    <Content Include="jquery-easyui\themes\material-teal\messager.css" />
+    <Content Include="jquery-easyui\themes\material-teal\numberbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\pagination.css" />
+    <Content Include="jquery-easyui\themes\material-teal\panel.css" />
+    <Content Include="jquery-easyui\themes\material-teal\passwordbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\progressbar.css" />
+    <Content Include="jquery-easyui\themes\material-teal\propertygrid.css" />
+    <Content Include="jquery-easyui\themes\material-teal\radiobutton.css" />
+    <Content Include="jquery-easyui\themes\material-teal\searchbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\slider.css" />
+    <Content Include="jquery-easyui\themes\material-teal\spinner.css" />
+    <Content Include="jquery-easyui\themes\material-teal\splitbutton.css" />
+    <Content Include="jquery-easyui\themes\material-teal\switchbutton.css" />
+    <Content Include="jquery-easyui\themes\material-teal\tabs.css" />
+    <Content Include="jquery-easyui\themes\material-teal\tagbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\textbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\tooltip.css" />
+    <Content Include="jquery-easyui\themes\material-teal\tree.css" />
+    <Content Include="jquery-easyui\themes\material-teal\validatebox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\window.css" />
     <Content Include="jquery-easyui\themes\material\accordion.css" />
     <Content Include="jquery-easyui\themes\material\calendar.css" />
+    <Content Include="jquery-easyui\themes\material\checkbox.css" />
     <Content Include="jquery-easyui\themes\material\combo.css" />
     <Content Include="jquery-easyui\themes\material\combobox.css" />
     <Content Include="jquery-easyui\themes\material\datagrid.css" />
@@ -825,6 +901,7 @@
     <Content Include="jquery-easyui\themes\material\passwordbox.css" />
     <Content Include="jquery-easyui\themes\material\progressbar.css" />
     <Content Include="jquery-easyui\themes\material\propertygrid.css" />
+    <Content Include="jquery-easyui\themes\material\radiobutton.css" />
     <Content Include="jquery-easyui\themes\material\searchbox.css" />
     <Content Include="jquery-easyui\themes\material\slider.css" />
     <Content Include="jquery-easyui\themes\material\spinner.css" />
@@ -839,6 +916,7 @@
     <Content Include="jquery-easyui\themes\material\window.css" />
     <Content Include="jquery-easyui\themes\metro\accordion.css" />
     <Content Include="jquery-easyui\themes\metro\calendar.css" />
+    <Content Include="jquery-easyui\themes\metro\checkbox.css" />
     <Content Include="jquery-easyui\themes\metro\combo.css" />
     <Content Include="jquery-easyui\themes\metro\combobox.css" />
     <Content Include="jquery-easyui\themes\metro\datagrid.css" />
@@ -880,6 +958,7 @@
     <Content Include="jquery-easyui\themes\metro\passwordbox.css" />
     <Content Include="jquery-easyui\themes\metro\progressbar.css" />
     <Content Include="jquery-easyui\themes\metro\propertygrid.css" />
+    <Content Include="jquery-easyui\themes\metro\radiobutton.css" />
     <Content Include="jquery-easyui\themes\metro\searchbox.css" />
     <Content Include="jquery-easyui\themes\metro\slider.css" />
     <Content Include="jquery-easyui\themes\metro\spinner.css" />
@@ -924,6 +1003,7 @@
     <Content Include="jquery-easyui\demo\treegrid\treegrid_data3.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data1.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data2.json" />
+    <Content Include="jquery-easyui\themes\material-teal\images\Thumbs.db" />
     <Content Include="jquery-easyui\themes\material\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />

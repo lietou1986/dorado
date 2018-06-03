@@ -1,7 +1,7 @@
 /**
- * jQuery EasyUI 1.5.1
+ * EasyUI for jQuery 1.5.5.2
  * 
- * Copyright (c) 2009-2016 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -18,34 +18,35 @@ _4.onChange.call(_2,_5,_6);
 },onResizing:function(_8,_9){
 var _a=$(this).combobox("textbox");
 var tb=$(this).data("textbox").textbox;
+var _b=tb.outerWidth();
 tb.css({height:"",paddingLeft:_a.css("marginLeft"),paddingRight:_a.css("marginRight")});
 _a.css("margin",0);
-tb._size({width:_4.width},$(this).parent());
+tb._outerWidth(_b);
 _23(_2);
 _12(this);
 _4.onResizing.call(_2,_8,_9);
-},onLoadSuccess:function(_b){
+},onLoadSuccess:function(_c){
 _7();
-_4.onLoadSuccess.call(_2,_b);
+_4.onLoadSuccess.call(_2,_c);
 }}));
 _7();
 _23(_2);
 function _7(){
 $(_2).next().find(".tagbox-label").remove();
-var _c=$(_2).tagbox("textbox");
+var _d=$(_2).tagbox("textbox");
 var ss=[];
-$.map($(_2).tagbox("getValues"),function(_d,_e){
-var _f=_4.finder.getRow(_2,_d);
-var _10=_4.tagFormatter.call(_2,_d,_f);
+$.map($(_2).tagbox("getValues"),function(_e,_f){
+var row=_4.finder.getRow(_2,_e);
+var _10=_4.tagFormatter.call(_2,_e,row);
 var cs={};
-var css=_4.tagStyler.call(_2,_d,_f)||"";
+var css=_4.tagStyler.call(_2,_e,row)||"";
 if(typeof css=="string"){
 cs={s:css};
 }else{
 cs={c:css["class"]||"",s:css["style"]||""};
 }
-var _11=$("<span class=\"tagbox-label\"></span>").insertBefore(_c).html(_10);
-_11.attr("tagbox-index",_e);
+var _11=$("<span class=\"tagbox-label\"></span>").insertBefore(_d).html(_10);
+_11.attr("tagbox-index",_f);
 _11.attr("style",cs.s).addClass(cs.c);
 $("<a href=\"javascript:;\" class=\"tagbox-remove\"></a>").appendTo(_11);
 });
@@ -126,9 +127,6 @@ return tmp.outerWidth();
 function _2c(_2d){
 var t=$(_2d);
 var _2e=t.tagbox("options");
-if(!$(_2d).tagbox("isValid")){
-return;
-}
 if(_2e.limitToList){
 var _2f=t.tagbox("panel");
 var _30=_2f.children("div.combobox-item-hover");
@@ -153,6 +151,7 @@ $(_34).combobox("setText","");
 _23(_34);
 $(_34).combobox("setValues",_35);
 $(_34).combobox("setText","");
+$(_34).tagbox("validate");
 };
 $.fn.tagbox=function(_36,_37){
 if(typeof _36=="string"){
@@ -182,33 +181,43 @@ return $.extend($.data(jq[0],"tagbox").options,{width:_3a.width,height:_3a.heigh
 return jq.each(function(){
 _33(this,_3b);
 });
+},reset:function(jq){
+return jq.each(function(){
+$(this).combobox("reset").combobox("setText","");
+});
 }};
 $.fn.tagbox.parseOptions=function(_3c){
 return $.extend({},$.fn.combobox.parseOptions(_3c),$.parser.parseOptions(_3c,[]));
 };
-$.fn.tagbox.defaults=$.extend({},$.fn.combobox.defaults,{hasDownArrow:false,multiple:true,reversed:true,selectOnNavigation:false,tipOptions:$.extend({},$.fn.textbox.defaults.tipOptions,{showDelay:200}),inputEvents:$.extend({},$.fn.combo.defaults.inputEvents,{blur:function(e){
-var _3d=e.data.target;
-var _3e=$(_3d).tagbox("options");
-if(_3e.limitToList){
-_2c(_3d);
+$.fn.tagbox.defaults=$.extend({},$.fn.combobox.defaults,{hasDownArrow:false,multiple:true,reversed:true,selectOnNavigation:false,tipOptions:$.extend({},$.fn.textbox.defaults.tipOptions,{showDelay:200}),val:function(_3d){
+var vv=$(_3d).parent().prev().tagbox("getValues");
+if($(_3d).is(":focus")){
+vv.push($(_3d).val());
+}
+return vv.join(",");
+},inputEvents:$.extend({},$.fn.combo.defaults.inputEvents,{blur:function(e){
+var _3e=e.data.target;
+var _3f=$(_3e).tagbox("options");
+if(_3f.limitToList){
+_2c(_3e);
 }
 }}),keyHandler:$.extend({},$.fn.combobox.defaults.keyHandler,{enter:function(e){
 _2c(this);
 },query:function(q,e){
-var _3f=$(this).tagbox("options");
-if(_3f.limitToList){
+var _40=$(this).tagbox("options");
+if(_40.limitToList){
 $.fn.combobox.defaults.keyHandler.query.call(this,q,e);
 }else{
 $(this).combobox("hidePanel");
 }
-}}),tagFormatter:function(_40,row){
-var _41=$(this).tagbox("options");
-return row?row[_41.textField]:_40;
-},tagStyler:function(_42,row){
+}}),tagFormatter:function(_41,row){
+var _42=$(this).tagbox("options");
+return row?row[_42.textField]:_41;
+},tagStyler:function(_43,row){
 return "";
-},onClickTag:function(_43){
-},onBeforeRemoveTag:function(_44){
-},onRemoveTag:function(_45){
+},onClickTag:function(_44){
+},onBeforeRemoveTag:function(_45){
+},onRemoveTag:function(_46){
 }});
 })(jQuery);
 

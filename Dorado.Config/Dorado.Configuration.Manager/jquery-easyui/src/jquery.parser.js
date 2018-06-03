@@ -1,14 +1,14 @@
 /**
- * jQuery EasyUI 1.5.1
+ * EasyUI for jQuery 1.5.5.2
  * 
- * Copyright (c) 2009-2016 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
  *
  */
 /**
- * parser - jQuery EasyUI
+ * parser - EasyUI for jQuery
  * 
  */
 
@@ -83,7 +83,7 @@
 		onComplete: function(context){},
 		plugins:['draggable','droppable','resizable','pagination','tooltip',
 		         'linkbutton','menu','menubutton','splitbutton','switchbutton','progressbar',
-				 'tree','textbox','passwordbox','filebox','combo','combobox','combotree','combogrid','combotreegrid','tagbox','numberbox','validatebox','searchbox',
+				 'tree','textbox','passwordbox','maskedbox','filebox','combo','combobox','combotree','combogrid','combotreegrid','tagbox','numberbox','validatebox','searchbox',
 				 'spinner','numberspinner','timespinner','datetimespinner','calendar','datebox','datetimebox','slider',
 				 'layout','panel','datagrid','propertygrid','treegrid','datalist','tabs','accordion','window','dialog','form'
 		],
@@ -127,7 +127,7 @@
 			var v = $.trim(String(value||''));
 			var endchar = v.substr(v.length-1, 1);
 			if (endchar == '%'){
-				v = parseInt(v.substr(0, v.length-1));
+				v = parseFloat(v.substr(0, v.length-1));
 				if (property.toLowerCase().indexOf('width') >= 0){
 					v = Math.floor((parent.width()-delta) * v / 100.0);
 				} else {
