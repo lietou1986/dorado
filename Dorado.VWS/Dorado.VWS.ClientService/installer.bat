@@ -1,10 +1,10 @@
-@echo ÕıÔÚ°²×°WindowService
+@echo æ­£åœ¨å®‰è£…WindowService
 @Set Path=C:\Windows\Microsoft.NET\Framework\v4.0.30319;
 @Set svn_dir=%~dp0
 installutil %svn_dir%Dorado.VWS.ClientHost.exe
 
-@echo ÕıÔÚÆô¶¯ServiceWindowService
+@echo æ­£åœ¨å¯åŠ¨ServiceWindowService
 C:\WINDOWS\system32\net.exe start "Dorado.VWS.ClientHost"
 
 pause
-@echo ³É¹¦£¡
+@echo æˆåŠŸï¼

@@ -1,10 +1,10 @@
 /*-------------------------------------------------------------------------
- * °æÈ¨ËùÓĞ£ºDorado
- * Ê±¼ä£º 2011/10/25 14:43:04
- * ×÷Õß£º
- * °æ±¾            Ê±¼ä                  ×÷Õß                 ÃèÊö
- * v 1.0    2011/10/25 14:43:04               ´´½¨
- * ±¾ÀàÖ÷ÒªÓÃÍ¾ÃèÊö£º
+ * ç‰ˆæƒæ‰€æœ‰ï¼šDorado
+ * æ—¶é—´ï¼š 2011/10/25 14:43:04
+ * ä½œè€…ï¼š
+ * ç‰ˆæœ¬            æ—¶é—´                  ä½œè€…                 æè¿°
+ * v 1.0    2011/10/25 14:43:04               åˆ›å»º
+ * æœ¬ç±»ä¸»è¦ç”¨é€”æè¿°ï¼š
  *  -------------------------------------------------------------------------*/
 
 using System.Collections.Generic;
@@ -16,32 +16,32 @@ namespace Dorado.VWS.Services
     public class DomainProvider
     {
         /// <summary>
-        ///     ¶¨ÒåÓòÃûÊı¾İ·ÃÎÊ²Ù×÷¶ÔÏó
+        ///     å®šä¹‰åŸŸåæ•°æ®è®¿é—®æ“ä½œå¯¹è±¡
         /// </summary>
         private readonly DomainDao _domainDao = new DomainDao();
 
         /// <summary>
-        ///     »ñÈ¡ÓòÃûĞÅÏ¢
+        ///     è·å–åŸŸåä¿¡æ¯
         /// </summary>
-        /// <param name = "domainId">ÓòÃûId</param>
-        /// <returns>ÓòÃûÊµÌå</returns>
+        /// <param name = "domainId">åŸŸåId</param>
+        /// <returns>åŸŸåå®ä½“</returns>
         public IList<DomainEntity> GetAllDomains()
         {
             return _domainDao.GetAllDomains();
         }
 
         /// <summary>
-        ///     »ñÈ¡ÓòÃûĞÅÏ¢
+        ///     è·å–åŸŸåä¿¡æ¯
         /// </summary>
-        /// <param name = "domainId">ÓòÃûId</param>
-        /// <returns>ÓòÃûÊµÌå</returns>
+        /// <param name = "domainId">åŸŸåId</param>
+        /// <returns>åŸŸåå®ä½“</returns>
         public DomainEntity GetDomainById(int domainId)
         {
             return _domainDao.GetDomainById(domainId);
         }
 
         /// <summary>
-        /// ¸ù¾İÓòÃû»ñÈ¡ĞÅÏ¢
+        /// æ ¹æ®åŸŸåè·å–ä¿¡æ¯
         /// </summary>
         /// <param name="domainName"></param>
         public DomainEntity GetDomainByName(string domainName)
@@ -49,17 +49,17 @@ namespace Dorado.VWS.Services
             return _domainDao.GetDomainByName(domainName);
         }
 
-        #region °²È«¿ØÖÆ
+        #region å®‰å…¨æ§åˆ¶
 
         /// <summary>
-        ///     »ñÈ¡Ö¸¶¨ipËùÓĞÓòÃûÁĞ±í
+        ///     è·å–æŒ‡å®šipæ‰€æœ‰åŸŸååˆ—è¡¨
         /// </summary>
-        /// <returns>ÓòÃûÊµÌåÁĞ±í</returns>
+        /// <returns>åŸŸåå®ä½“åˆ—è¡¨</returns>
         public IList<DomainEntity> GetDomains(string ip)
         {
             return _domainDao.GetDomains(ip);
         }
 
-        #endregion °²È«¿ØÖÆ
+        #endregion å®‰å…¨æ§åˆ¶
     }
 }

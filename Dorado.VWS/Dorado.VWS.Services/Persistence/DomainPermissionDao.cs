@@ -1,10 +1,10 @@
 /*-------------------------------------------------------------------------
- * °æÈ¨ËùÓĞ£ºDorado
- * Ê±¼ä£º 2011/11/24 11:04:36
- * ×÷Õß£º
- * °æ±¾            Ê±¼ä                  ×÷Õß                 ÃèÊö
- * v 1.0    2011/11/24 11:04:36               ´´½¨
- * ±¾ÀàÖ÷ÒªÓÃÍ¾ÃèÊö£º
+ * ç‰ˆæƒæ‰€æœ‰ï¼šDorado
+ * æ—¶é—´ï¼š 2011/11/24 11:04:36
+ * ä½œè€…ï¼š
+ * ç‰ˆæœ¬            æ—¶é—´                  ä½œè€…                 æè¿°
+ * v 1.0    2011/11/24 11:04:36               åˆ›å»º
+ * æœ¬ç±»ä¸»è¦ç”¨é€”æè¿°ï¼š
  *  -------------------------------------------------------------------------*/
 
 #region using
@@ -22,7 +22,7 @@ namespace Dorado.VWS.Services.Persistence
     public class DomainPermissionDao : DBbase<DomainPermissionEntity>
     {
         /// <summary>
-        /// »ñÈ¡Ä³ÓÃ»§µÄËùÓĞÓòÃû
+        /// è·å–æŸç”¨æˆ·çš„æ‰€æœ‰åŸŸå
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
@@ -34,7 +34,7 @@ namespace Dorado.VWS.Services.Persistence
         }
 
         /// <summary>
-        /// »ñÈ¡Ä³ÓòÃûºÍÈ¨ÏŞµÄËùÓĞÓÃ»§
+        /// è·å–æŸåŸŸåå’Œæƒé™çš„æ‰€æœ‰ç”¨æˆ·
         /// </summary>
         /// <param name="domianID"></param>
         /// <param name="permissionType"></param>
@@ -71,7 +71,7 @@ namespace Dorado.VWS.Services.Persistence
         }
 
         /// <summary>
-        /// Ìí¼ÓÈ¨ÏŞ
+        /// æ·»åŠ æƒé™
         /// </summary>
         /// <param name="domainPermissionEntity"></param>
         /// <returns></returns>
@@ -103,7 +103,7 @@ namespace Dorado.VWS.Services.Persistence
             return Convert.ToInt32(ExecuteScalar(CommandType.Text, sql, parameters));
         }
 
-        #region ¿ìËÙÉ¾³ıÈ¨ÏŞ
+        #region å¿«é€Ÿåˆ é™¤æƒé™
 
         //public int DeleteByDomainID(int domainID)
         //{
@@ -133,10 +133,10 @@ namespace Dorado.VWS.Services.Persistence
         //    return Convert.ToInt32(ExecuteScalar(CommandType.Text, sql, parameters));
         //}
 
-        #endregion ¿ìËÙÉ¾³ıÈ¨ÏŞ
+        #endregion å¿«é€Ÿåˆ é™¤æƒé™
 
         /// <summary>
-        /// É¾³ıÊÚÈ¨
+        /// åˆ é™¤æˆæƒ
         /// </summary>
         /// <param name="domainID"></param>
         /// <param name="userName"></param>

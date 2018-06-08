@@ -1,11 +1,11 @@
-@echo ÕıÔÚÍ£Ö¹ServiceWindowService
+@echo æ­£åœ¨åœæ­¢ServiceWindowService
 C:\WINDOWS\system32\net.exe stop "Dorado.VWS.ClientHost"
 
-@echo ÕıÔÚĞ¶ÔØWindowService
+@echo æ­£åœ¨å¸è½½WindowService
 
 @Set Path=C:\Windows\Microsoft.NET\Framework\v4.0.30319;
 @Set svn_dir=%~dp0
 installutil %svn_dir%Dorado.VWS.ClientHost.exe /u
 
 pause
-@echo ³É¹¦£¡
+@echo æˆåŠŸï¼

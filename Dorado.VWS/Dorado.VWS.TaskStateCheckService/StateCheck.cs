@@ -71,13 +71,13 @@ namespace Dorado.VWS.TaskStateCheckService
             string title = string.Format(mailTitle, task.TaskId);
             string body = string.Format(mailBody, task.DomainName).Replace("&lt;", "<").Replace("&gt;", ">");
             string rec = task.UserName + "@dorado.com";
-            string cc = "";//³­ËÍÁĞ±í
-            var managers = GetManger(task.DomainId);//³­ËÍÁĞ±íÔö¼ÓÓòÃû¹ÜÀí
+            string cc = "";//æŠ„é€åˆ—è¡¨
+            var managers = GetManger(task.DomainId);//æŠ„é€åˆ—è¡¨å¢åŠ åŸŸåç®¡ç†
             foreach (string m in managers)
             {
                 cc += m + "@dorado.com" + ",";
             }
-            cc += mailCC;//³­ËÍÁĞ±íÔö¼ÓwebconfigÖĞÅäÖÃµÄÍ¬²½ÏµÍ³¹ÜÀíÔ±
+            cc += mailCC;//æŠ„é€åˆ—è¡¨å¢åŠ webconfigä¸­é…ç½®çš„åŒæ­¥ç³»ç»Ÿç®¡ç†å‘˜
             //Common.MailSender.Send(System.Net.Mail.MailPriority.High, rec, cc, title, body, true, null);
         }
 

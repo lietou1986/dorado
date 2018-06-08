@@ -1,10 +1,10 @@
 /*-------------------------------------------------------------------------
- * °æÈ¨ËùÓĞ£ºDorado
- * Ê±¼ä£º 2011/11/24 10:19:52
- * ×÷Õß£º
- * °æ±¾            Ê±¼ä                  ×÷Õß                 ÃèÊö
- * v 1.0    2011/11/24 10:19:52               ´´½¨
- * ±¾ÀàÖ÷ÒªÓÃÍ¾ÃèÊö£º
+ * ç‰ˆæƒæ‰€æœ‰ï¼šDorado
+ * æ—¶é—´ï¼š 2011/11/24 10:19:52
+ * ä½œè€…ï¼š
+ * ç‰ˆæœ¬            æ—¶é—´                  ä½œè€…                 æè¿°
+ * v 1.0    2011/11/24 10:19:52               åˆ›å»º
+ * æœ¬ç±»ä¸»è¦ç”¨é€”æè¿°ï¼š
  *  -------------------------------------------------------------------------*/
 
 using System;
@@ -14,7 +14,7 @@ namespace Dorado.VWS.Model
 {
     public class DomainPermissionEntity : EntityBase<DomainPermissionEntity>, IConvertToEntity<DomainPermissionEntity>
     {
-        /*×Ö¶Î
+        /*å­—æ®µ
          [ID]
       ,[DomainID]
       ,[UserName]
@@ -29,42 +29,42 @@ namespace Dorado.VWS.Model
         public int ID { get; set; }
 
         /// <summary>
-        /// ÓòÃûid
+        /// åŸŸåid
         /// </summary>
         public int DomainID { get; set; }
 
         /// <summary>
-        /// ±»ÊÚÈ¨µÄÓòÕËºÅ
+        /// è¢«æˆæƒçš„åŸŸè´¦å·
         /// </summary>
         public string UserName { get; set; }
 
         /// <summary>
-        /// È¨ÏŞÀàĞÍ Dorado.VWS.Model.Enum. EnumManageType
+        /// æƒé™ç±»å‹ Dorado.VWS.Model.Enum. EnumManageType
         /// </summary>
         public int PermissionType { get; set; }
 
         /// <summary>
-        /// É¾³ı±ê¼Ç
+        /// åˆ é™¤æ ‡è®°
         /// </summary>
         public bool DeleteFlag { get; set; }
 
         /// <summary>
-        /// Ìí¼ÓÊ±¼ä
+        /// æ·»åŠ æ—¶é—´
         /// </summary>
         public DateTime AddTime { get; set; }
 
         /// <summary>
-        /// ½øĞĞÊÚÈ¨µÄÓÃ»§
+        /// è¿›è¡Œæˆæƒçš„ç”¨æˆ·
         /// </summary>
         public string AddUserName { get; set; }
 
         /// <summary>
-        /// ¸üĞÂÊÚÈ¨µÄÊ±¼ä
+        /// æ›´æ–°æˆæƒçš„æ—¶é—´
         /// </summary>
         public DateTime UpdateTime { get; set; }
 
         /// <summary>
-        /// ¸úĞÂÊÚÈ¨µÄÓÃ»§
+        /// è·Ÿæ–°æˆæƒçš„ç”¨æˆ·
         /// </summary>
         public string UpdateUserName { get; set; }
 

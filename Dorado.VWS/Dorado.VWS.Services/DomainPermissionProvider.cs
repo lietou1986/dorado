@@ -1,10 +1,10 @@
 /*-------------------------------------------------------------------------
- * °æÈ¨ËùÓĞ£ºDorado
- * Ê±¼ä£º 2011/11/24 15:31:11
- * ×÷Õß£º
- * °æ±¾            Ê±¼ä                  ×÷Õß                 ÃèÊö
- * v 1.0    2011/11/24 15:31:11               ´´½¨
- * ±¾ÀàÖ÷ÒªÓÃÍ¾ÃèÊö£º
+ * ç‰ˆæƒæ‰€æœ‰ï¼šDorado
+ * æ—¶é—´ï¼š 2011/11/24 15:31:11
+ * ä½œè€…ï¼š
+ * ç‰ˆæœ¬            æ—¶é—´                  ä½œè€…                 æè¿°
+ * v 1.0    2011/11/24 15:31:11               åˆ›å»º
+ * æœ¬ç±»ä¸»è¦ç”¨é€”æè¿°ï¼š
  *  -------------------------------------------------------------------------*/
 
 using System.Collections.Generic;
@@ -17,14 +17,14 @@ namespace Dorado.VWS.Services
     public class DomainPermissionProvider
     {
         /// <summary>
-        ///     ¶¨ÒåÓòÃûÊı¾İ·ÃÎÊ²Ù×÷¶ÔÏó
+        ///     å®šä¹‰åŸŸåæ•°æ®è®¿é—®æ“ä½œå¯¹è±¡
         /// </summary>
         private readonly DomainPermissionDao _domainPermissionDao = new DomainPermissionDao();
 
         /// <summary>
-        /// »ñÈ¡ÓòÃû¹ÜÀíÔ±ÁĞ±í
+        /// è·å–åŸŸåç®¡ç†å‘˜åˆ—è¡¨
         /// </summary>
-        /// <param name="domainName">ÓòÃû</param>
+        /// <param name="domainName">åŸŸå</param>
         /// <returns></returns>
         public static List<string> GetManageUserListByDomainName(string domainName)
         {
@@ -63,7 +63,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// »ñÈ¡ÒÑÊÚÈ¨ÓÃ»§ÁĞ±í
+        /// è·å–å·²æˆæƒç”¨æˆ·åˆ—è¡¨
         /// </summary>
         /// <param name="domianID"></param>
         /// <param name="permissionType"></param>
@@ -74,7 +74,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// »ñÈ¡ÓÃ»§ÒÑÊÚÈ¨ÁĞ±í
+        /// è·å–ç”¨æˆ·å·²æˆæƒåˆ—è¡¨
         /// </summary>
         /// <param name="domianID"></param>
         /// <param name="userName"></param>
@@ -85,7 +85,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// »ñÈ¡ÓÃ»§ÒÑÊÚÈ¨ÁĞ±í
+        /// è·å–ç”¨æˆ·å·²æˆæƒåˆ—è¡¨
         /// </summary>
         /// <param name="domianID"></param>
         /// <param name="userName"></param>
@@ -96,7 +96,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÈ¨ÏŞ
+        /// åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰æƒé™
         /// </summary>
         /// <param name="domianID"></param>
         /// <param name="userName"></param>
@@ -108,7 +108,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// ÅĞ¶ÏÓÃ»§ÊÇ·ñÓĞÈ¨ÏŞ
+        /// åˆ¤æ–­ç”¨æˆ·æ˜¯å¦æœ‰æƒé™
         /// </summary>
         /// <param name="domianID"></param>
         /// <param name="userName"></param>
@@ -120,7 +120,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// »ñÈ¡Ä³ÓÃ»§µÄËùÓĞÓòÃû
+        /// è·å–æŸç”¨æˆ·çš„æ‰€æœ‰åŸŸå
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
@@ -130,7 +130,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// Ìí¼ÓÓÃ»§
+        /// æ·»åŠ ç”¨æˆ·
         /// </summary>
         /// <param name="domainPermissionEntity"></param>
         /// <returns></returns>
@@ -140,7 +140,7 @@ namespace Dorado.VWS.Services
         }
 
         /// <summary>
-        /// É¾³ıÊÚÈ¨
+        /// åˆ é™¤æˆæƒ
         /// </summary>
         /// <param name="domainID"></param>
         /// <param name="userName"></param>
@@ -152,7 +152,7 @@ namespace Dorado.VWS.Services
         //}
 
         /// <summary>
-        /// É¾³ıÊÚÈ¨
+        /// åˆ é™¤æˆæƒ
         /// </summary>
         /// <param name="domainPermissionEntity"></param>
         /// <returns></returns>
