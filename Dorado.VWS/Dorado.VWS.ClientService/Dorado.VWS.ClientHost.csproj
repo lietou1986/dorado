@@ -96,9 +96,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices">
-      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.DirectoryServices.dll</HintPath>
-    </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
@@ -182,7 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dorado.VWS.Utils\Dorado.VWS.Utils.csproj">
-      <Project>{F34400E2-4E8D-4174-B602-E6CF94142451}</Project>
+      <Project>{f34400e2-4e8d-4174-b602-e6cf94142451}</Project>
       <Name>Dorado.VWS.Utils</Name>
     </ProjectReference>
   </ItemGroup>

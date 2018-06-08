@@ -34,3 +34,10 @@ D:\OneDrive\work\dorado\Build\Dorado.Queue.pdb
 D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csprojResolveAssemblyReference.cache
 D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.dll
 D:\OneDrive\work\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.pdb
+D:\Work\_learn\dorado\Build\Dorado.Queue.dll
+D:\Work\_learn\dorado\Build\Dorado.Queue.pdb
+D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csprojAssemblyReference.cache
+D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csproj.CopyComplete
+D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.dll
+D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.pdb

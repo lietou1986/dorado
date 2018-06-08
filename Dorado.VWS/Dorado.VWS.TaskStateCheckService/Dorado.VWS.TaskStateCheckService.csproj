@@ -82,8 +82,8 @@
     <Reference Include="Dorado.Configuration">
       <HintPath>..\Lib\Dorado.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
+      <HintPath>..\..\packages\NLog.4.5.6\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
@@ -95,11 +95,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
-    <Reference Include="Topshelf">
-      <HintPath>..\..\packages\Topshelf.4.0.3\lib\net452\Topshelf.dll</HintPath>
+    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b">
+      <HintPath>..\..\packages\Topshelf.4.0.4\lib\net452\Topshelf.dll</HintPath>
     </Reference>
-    <Reference Include="Topshelf.NLog">
-      <HintPath>..\..\packages\Topshelf.NLog.4.0.3\lib\net452\Topshelf.NLog.dll</HintPath>
+    <Reference Include="Topshelf.NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b">
+      <HintPath>..\..\packages\Topshelf.NLog.4.0.4\lib\net452\Topshelf.NLog.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -140,13 +140,13 @@
     <Content Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dorado.VWS.Services\Dorado.VWS.Services.csproj">
-      <Project>{1DDE7E63-49F4-4A87-8DE7-F55D4FA81DA8}</Project>
-      <Name>Dorado.VWS.Services</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Dorado.VWS.Model\Dorado.VWS.Model.csproj">
       <Project>{34c2cd22-c193-4cf4-992c-a67dc379dafe}</Project>
       <Name>Dorado.VWS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.VWS.Services\Dorado.VWS.Services.csproj">
+      <Project>{1dde7e63-49f4-4a87-8de7-f55d4fa81da8}</Project>
+      <Name>Dorado.VWS.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

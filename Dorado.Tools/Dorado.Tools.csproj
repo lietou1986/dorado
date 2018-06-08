@@ -42,7 +42,6 @@
     <Content Include="References\Ionic.Zip.dll" />
     <Content Include="References\Microsoft.Ccr.Core.dll" />
     <Content Include="References\PowerCollections.dll" />
-    <Content Include="References\System.Data.SqlServerCe.dll" />
     <Content Include="References\Wintellect.Threading.dll" />
     <Content Include="Tools\ConfigGenerator\xsd.exe" />
     <Content Include="Tools\ILMerge-GUI\Devv.Core.Erroo.dll" />

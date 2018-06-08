@@ -14,7 +14,7 @@
 [Dd]ebug/
 [Rr]elease/
 x64/
-build/
+[Bb]uild/
 [Bb]in/
 [Oo]bj/
 
@@ -58,3 +58,4 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 /Build
+/.idea

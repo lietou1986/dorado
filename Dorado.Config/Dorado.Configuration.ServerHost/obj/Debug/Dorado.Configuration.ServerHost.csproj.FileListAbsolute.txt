@@ -36,3 +36,15 @@ D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado
 D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.pdb
 D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.dll
 D:\OneDrive\work\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.pdb
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.dll.config
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.dll
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.ServerHost.pdb
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.dll
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.dll
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.Configuration.pdb
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\bin\Dorado.pdb
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.csprojAssemblyReference.cache
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.csproj.CopyComplete
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.dll
+D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.ServerHost\obj\Debug\Dorado.Configuration.ServerHost.pdb

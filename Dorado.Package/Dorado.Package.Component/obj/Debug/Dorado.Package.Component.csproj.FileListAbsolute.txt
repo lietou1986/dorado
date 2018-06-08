@@ -41,3 +41,10 @@ D:\OneDrive\work\dorado\Build\Dorado.Package.Component.pdb
 D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.csprojResolveAssemblyReference.cache
 D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.dll
 D:\OneDrive\work\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.pdb
+D:\Work\_learn\dorado\Build\Dorado.Package.Component.dll
+D:\Work\_learn\dorado\Build\Dorado.Package.Component.pdb
+D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.csprojAssemblyReference.cache
+D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.csproj.CopyComplete
+D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.dll
+D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.pdb

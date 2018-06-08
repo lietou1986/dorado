@@ -13,3 +13,9 @@ D:\OneDrive\work\dorado\Build\Dorado.Wcf.pdb
 D:\OneDrive\work\dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.dll
 D:\OneDrive\work\dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.pdb
 D:\OneDrive\work\dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.csprojResolveAssemblyReference.cache
+D:\Work\_learn\dorado\Build\Dorado.Wcf.dll
+D:\Work\_learn\dorado\Build\Dorado.Wcf.pdb
+D:\Work\_learn\dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.csprojAssemblyReference.cache
+D:\Work\_learn\dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.dll
+D:\Work\_learn\dorado\Dorado.Wcf\obj\Debug\Dorado.Wcf.pdb

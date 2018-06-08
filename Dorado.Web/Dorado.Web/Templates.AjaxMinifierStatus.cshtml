@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Ajax Minifier Status</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <style type="text/css">
         body {
             font-size: .85em;
@@ -20,18 +20,14 @@
             text-decoration: none;
         }
 
-        a:visited {
-            color: #29A151;
-        }
+        a:visited { color: #29A151; }
 
         a:hover {
             color: #29A151;
             text-decoration: none;
         }
 
-        a:active {
-            color: #29A151;
-        }
+        a:active { color: #29A151; }
 
         p, ul {
             margin-bottom: 20px;
@@ -41,9 +37,7 @@
         header,
         footer,
         nav,
-        section {
-            display: block;
-        }
+        section { display: block; }
 
         h1, h2, h3, h4, h5, h6 {
             font-size: 1.5em;
@@ -56,27 +50,20 @@
             margin-bottom: 0;
         }
 
-        h2 {
-            padding: 0 0 10px 0;
-        }
+        h2 { padding: 0 0 10px 0; }
 
-        h3 {
-            font-size: 1.2em;
-        }
+        h3 { font-size: 1.2em; }
 
-        h4 {
-            font-size: 1.1em;
-        }
+        h4 { font-size: 1.1em; }
 
-        h5, h6 {
-            font-size: 1em;
-        }
+        h5, h6 { font-size: 1em; }
 
         /* PRIMARY LAYOUT ELEMENTS
         ----------------------------------------------------------*/
 
         /* you can specify a greater or lesser percentage for the
         page width. Or, you can specify an exact pixel width. */
+
         .page {
             width: 90%;
             margin-left: auto;
@@ -90,16 +77,16 @@
             padding: 0;
         }
 
-            header h1, #header h1 {
-                font-weight: bold;
-                padding: 5px 0;
-                margin: 0;
-                color: #fff;
-                border: none;
-                line-height: 2em;
-                font-size: 32px !important;
-                text-shadow: 1px 1px 2px #111;
-            }
+        header h1, #header h1 {
+            font-weight: bold;
+            padding: 5px 0;
+            margin: 0;
+            color: #fff;
+            border: none;
+            line-height: 2em;
+            font-size: 32px !important;
+            text-shadow: 1px 1px 2px #111;
+        }
 
         #main {
             padding: 30px 30px 15px 30px;
@@ -122,6 +109,7 @@
 
         /* TAB MENU
         ----------------------------------------------------------*/
+
         ul#menu {
             border-bottom: 10px #F2F2F2 solid;
             padding: 0 0 5px;
@@ -130,45 +118,45 @@
             text-align: right;
         }
 
-            ul#menu li {
-                display: inline;
-                list-style: none;
-            }
+        ul#menu li {
+            display: inline;
+            list-style: none;
+        }
 
-                ul#menu li#greeting {
-                    padding: 10px 20px;
-                    font-weight: bold;
-                    text-decoration: none;
-                    line-height: 2.8em;
-                    color: #fff;
-                }
+        ul#menu li#greeting {
+            padding: 10px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: 2.8em;
+            color: #fff;
+        }
 
-                ul#menu li a {
-                    padding: 10px 20px;
-                    font-weight: bold;
-                    text-decoration: none;
-                    line-height: 2.8em;
-                    background-color: #e8eef4;
-                    color: #29A151;
-                    border-radius: 4px 4px 0 0;
-                    -webkit-border-radius: 4px 4px 0 0;
-                    -moz-border-radius: 4px 4px 0 0;
-                }
+        ul#menu li a {
+            padding: 10px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: 2.8em;
+            background-color: #e8eef4;
+            color: #29A151;
+            border-radius: 4px 4px 0 0;
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+        }
 
-                    ul#menu li a:hover {
-                        background-color: #fff;
-                        text-decoration: none;
-                    }
+        ul#menu li a:hover {
+            background-color: #fff;
+            text-decoration: none;
+        }
 
-                    ul#menu li a:active {
-                        background-color: #29A151;
-                        text-decoration: none;
-                    }
+        ul#menu li a:active {
+            background-color: #29A151;
+            text-decoration: none;
+        }
 
-                ul#menu li.selected a {
-                    background-color: #fff;
-                    color: #29A151;
-                }
+        ul#menu li.selected a {
+            background-color: #fff;
+            color: #29A151;
+        }
 
         /* FORM LAYOUT ELEMENTS
         ----------------------------------------------------------*/
@@ -186,33 +174,37 @@
     </style>
 </head>
 <body>
-    <center>
-        <h1>
-            Ajax Minifier Status
-        </h1>
-        <h2>
-            Warning Level:@Model.Level
-        </h2>
-        <h2>
-            EnableMinifier:@Model.EnableMinifier
-        </h2>
-    </center>
-    <fieldset>
-        <legend>Javascript minifier setting</legend>
-        <ul><li>StripDebugStatements:@Model.JavascriptSetting.StripDebugStatements</li></ul>
-    </fieldset>
+<center>
+    <h1>
+        Ajax Minifier Status
+    </h1>
+    <h2>
+        Warning Level:@Model.Level
+    </h2>
+    <h2>
+        EnableMinifier:@Model.EnableMinifier
+    </h2>
+</center>
+<fieldset>
+    <legend>Javascript minifier setting</legend>
+    <ul>
+        <li>StripDebugStatements:@Model.JavascriptSetting.StripDebugStatements</li>
+    </ul>
+</fieldset>
 
-    <fieldset>
-        <legend>Css minifier Setting</legend>
-        <ul>
-            <li>
-                Errors: @foreach (var error in Model.Errors)
-                {
-                    <span>@error.Message</span><br />
-                }
-            </li>
-        </ul>
-    </fieldset>
+<fieldset>
+    <legend>Css minifier Setting</legend>
+    <ul>
+        <li>
+            Errors:
+            @foreach (var error in Model.Errors)
+            {
+                <span>@error.Message</span>
+                <br/>
+            }
+        </li>
+    </ul>
+</fieldset>
 
 </body>
 </html>
