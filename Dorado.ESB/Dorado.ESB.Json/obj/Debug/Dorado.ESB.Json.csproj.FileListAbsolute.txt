@@ -33,14 +33,3 @@ D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.pdb
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.Configuration.pdb
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.dll
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.ESB.Json.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.ESB.Json.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.Configuration.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Newtonsoft.Json.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.Configuration.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.csproj.CoreCompileInputs.cache
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.csproj.CopyComplete
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.pdb

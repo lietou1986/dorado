@@ -25,11 +25,3 @@ D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.dll
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.pdb
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.dll
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.ESB.ServiceHost.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.ESB.ServiceHost.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csproj.CoreCompileInputs.cache
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csproj.CopyComplete
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.dll
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.pdb
