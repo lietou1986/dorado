@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.5.5.1
+ * EasyUI for jQuery 1.6.3
  * 
  * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
@@ -1122,7 +1122,7 @@ item.state="open";
 }
 item.domId="_easyui_tree_"+_11d++;
 cc.push("<li>");
-cc.push("<div id=\""+item.domId+"\" class=\"tree-node\">");
+cc.push("<div id=\""+item.domId+"\" class=\"tree-node"+(item.nodeCls?" "+item.nodeCls:"")+"\">");
 for(var j=0;j<_125;j++){
 cc.push("<span class=\"tree-indent\"></span>");
 }

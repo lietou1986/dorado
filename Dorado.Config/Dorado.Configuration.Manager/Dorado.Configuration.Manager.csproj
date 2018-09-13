@@ -352,7 +352,7 @@
     <Content Include="jquery-easyui\demo\searchbox\category.html" />
     <Content Include="jquery-easyui\demo\searchbox\fluid.html" />
     <Content Include="jquery-easyui\demo\sidemenu\basic.html" />
-    <Content Include="jquery-easyui\demo\sidemenu\style.css" />
+    <Content Include="jquery-easyui\demo\sidemenu\sidemenu_style.css" />
     <Content Include="jquery-easyui\demo\sidemenu\style.html" />
     <Content Include="jquery-easyui\demo\slider\basic.html" />
     <Content Include="jquery-easyui\demo\slider\fluid.html" />
@@ -1016,6 +1016,8 @@
     <Content Include="jquery-easyui\demo\treegrid\treegrid_data3.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data1.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data2.json" />
+    <Content Include="jquery-easyui\themes\material-teal\images\Thumbs.db" />
+    <Content Include="jquery-easyui\themes\material\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

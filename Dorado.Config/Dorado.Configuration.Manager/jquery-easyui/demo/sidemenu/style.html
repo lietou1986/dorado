@@ -2,13 +2,21 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Basic SideMenu - jQuery EasyUI Demo</title>
+	<title>SideMenu Style - jQuery EasyUI Demo</title>
 	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="../demo.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="../../jquery.min.js"></script>
 	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>SideMenu Style</h2>
+	<p>Collapse the side menu to display the main icon.</p>
+	<div style="margin:20px 0;">
+		<a href="javascript:;" class="easyui-linkbutton" onclick="toggle()">Toggle</a>
+	</div>
+	<div id="sm" class="easyui-sidemenu" data-options="data:data"></div>
+	<link rel="stylesheet" type="text/css" href="sidemenu_style.css">
 	<script type="text/javascript">
 		var data = [{
 	        text: 'Forms',
@@ -58,13 +66,5 @@
 			})
 		}
 	</script>
-</head>
-<body>
-	<h2>Basic SideMenu</h2>
-	<p>Collapse the side menu to display the main icon.</p>
-	<div style="margin:20px 0;">
-		<a href="javascript:;" class="easyui-linkbutton" onclick="toggle()">Toggle</a>
-	</div>
-	<div id="sm" class="easyui-sidemenu" data-options="data:data"></div>
 </body>
 </html>

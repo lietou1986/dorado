@@ -1,7 +1,23 @@
-Version 1.5.5.x
----------------
+Version 1.6.x
+-------------
+* Bug
+ * sidemenu: The tooltip has a wrong position when the 'floatMenuPosition' is set to 'left'. fixed.
+ 
+Version 1.6.0
+-------------
 * Bug
  * maskedbox: The component does not accept numeric keypad. fixed.
+ * combogrid: When selecting multiple records, the datagrid will scroll to the last checked record. fixed.
+* Improvement
+ * Compatible with jQuery 3.x.
+ * tabs: The 'toolPosition' property can accept 'top' and 'bottom' values.
+ * textbox: The textbox label has the animating feature when focus or blur on it.
+ * tooltip: Add 'valign' property.
+ * tree: The node class can be initialized by setting the 'nodeCls' in the data.
+* New Plugins
+ * sidemenu: The sidemenu is created from accordion and tree plugins. It builds a collapsible menu with some categories.
+ * radiobutton: This plugin provides a round interface to select one option from a number of options.
+ * checkbox: This plugin allows a user to select a value from a small set of options.
 
 Version 1.5.5
 -------------

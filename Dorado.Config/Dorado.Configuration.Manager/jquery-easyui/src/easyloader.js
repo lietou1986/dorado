@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.5.5.1
+ * EasyUI for jQuery 1.6.3
  * 
  * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
@@ -132,6 +132,19 @@
 			js:'jquery.filebox.js',
 			css:'filebox.css',
 			dependencies:['textbox']
+		},
+		radiobutton:{
+			js:'jquery.radiobutton.js',
+			css:'radiobutton.css'
+		},
+		checkbox:{
+			js:'jquery.checkbox.js',
+			css:'checkbox.css'
+		},
+		sidemenu:{
+			js:'jquery.sidemenu.js',
+			css:'sidemenu.css',
+			dependencies:['accordion','tree','tooltip']
 		},
 		combo:{
 			js:'jquery.combo.js',

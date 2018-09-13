@@ -1,6 +1,10 @@
 *{
 	box-sizing: border-box;
 }
+.f-block{
+	display: block;
+	position: relative;
+}
 .f-row{
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -86,14 +90,18 @@
 	-ms-flex-negative: 0;
 	flex-shrink: 0;
 }
+.f-animate{
+    transition: all .3s;
+}
 
 .scroll-body{
 	overflow: auto;
 	position: relative;
 }
 
-.textbox-text{
+.textbox .textbox-text{
 	width: 100%;
+	height: auto;
 	overflow: hidden;
 }
 .textbox-addon{
@@ -168,6 +176,9 @@
 }
 .l-btn-empty{
 	height: 28px;
+}
+.l-btn-large .l-btn-empty{
+	height: 44px;
 }
 .l-btn-left{
 	overflow: visible;
@@ -332,7 +343,8 @@ eui-button-group eui-linkbutton:last-child .l-btn{
 	z-index: 9999;
 }
 .combo-panel eui-virtual-scroll,
-.combo-panel eui-datagrid{
+.combo-panel eui-datagrid,
+.combo-panel eui-treegrid{
 	width: 100%;
 	height: 100%;
 }
@@ -554,9 +566,6 @@ eui-menu> .menu-container{
 .calendar-menu-month-inner{
 	position: relative;
 }
-.calendar-title span{
-	position1: static;
-}
 
 .f-field{
 	width: 12em;
@@ -627,3 +636,4 @@ eui-layout{
 .layout-panel-south.layout-collapsed{
 	transform: translate3d(0, 100%, 0)
 }
+

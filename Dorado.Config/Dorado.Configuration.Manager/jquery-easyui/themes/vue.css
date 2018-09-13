@@ -354,7 +354,7 @@
 	height: 200px;
 	z-index: 9999;
 }
-.combo-panel eui-virtual-scroll,
+.combo-panel .tree,
 .combo-panel eui-datagrid,
 .combo-panel eui-treegrid{
 	width: 100%;
@@ -381,11 +381,7 @@
 	line-height: 20px;
 }
 
-.datagrid,eui-datagrid,
-eui-datagrid-view,eui-datagrid-body,
-eui-treegrid-view,eui-treegrid-body{
-	overflow: hidden;
-}
+.datagrid,
 .datagrid-view,.datagrid-view1,.datagrid-view2{
 	position: relative;
 }
@@ -582,15 +578,6 @@ eui-treegrid-view,eui-treegrid-body{
 	position: relative;
 }
 
-eui-tagbox{
-	width: 12em;
-	height: auto;
-	min-height: 30px;
-}
-eui-switchbutton{
-	width: 70px;
-	height: 30px;
-}
 .radiobutton{
 	width: 20px;
 	height: 20px;
@@ -605,9 +592,6 @@ eui-switchbutton{
 .pagination1{
 	height: 34px;
 	padding: 2px;
-}
-eui-layout{
-	display: block;
 }
 .layout{
 	height: 100%;

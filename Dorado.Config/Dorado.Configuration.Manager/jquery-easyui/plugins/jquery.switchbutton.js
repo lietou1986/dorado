@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.5.5.1
+ * EasyUI for jQuery 1.6.3
  * 
  * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
@@ -100,11 +100,11 @@ var _26=_24.switchbutton;
 var _27=_26.find(".switchbutton-value");
 if(_23){
 _25.disabled=true;
-$(_22).add(_27).attr("disabled","disabled");
+$(_22).add(_27)._propAttr("disabled",true);
 _26.addClass("switchbutton-disabled");
 }else{
 _25.disabled=false;
-$(_22).add(_27).removeAttr("disabled");
+$(_22).add(_27)._propAttr("disabled",false);
 _26.removeClass("switchbutton-disabled");
 }
 };

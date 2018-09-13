@@ -8,6 +8,14 @@
 	<link rel="stylesheet" type="text/css" href="../demo.css">
 	<script type="text/javascript" src="../../jquery.min.js"></script>
 	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Basic SideMenu</h2>
+	<p>Collapse the side menu to display the main icon.</p>
+	<div style="margin:20px 0;">
+		<a href="javascript:;" class="easyui-linkbutton" onclick="toggle()">Toggle</a>
+	</div>
+	<div id="sm" class="easyui-sidemenu" data-options="data:data"></div>
 	<script type="text/javascript">
 		var data = [{
 	        text: 'Item1',
@@ -46,13 +54,5 @@
 			})
 		}
 	</script>
-</head>
-<body>
-	<h2>Basic SideMenu</h2>
-	<p>Collapse the side menu to display the main icon.</p>
-	<div style="margin:20px 0;">
-		<a href="javascript:;" class="easyui-linkbutton" onclick="toggle()">Toggle</a>
-	</div>
-	<div id="sm" class="easyui-sidemenu" data-options="data:data"></div>
 </body>
 </html>

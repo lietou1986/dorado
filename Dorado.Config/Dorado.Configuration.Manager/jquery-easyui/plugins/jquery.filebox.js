@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.5.5.1
+ * EasyUI for jQuery 1.6.3
  * 
  * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
@@ -21,9 +21,9 @@ var _8=$(_3).filebox("button");
 if(_8.length){
 $("<label class=\"filebox-label\" for=\""+_5.fileboxId+"\"></label>").appendTo(_8);
 if(_8.linkbutton("options").disabled){
-_6.attr("disabled","disabled");
+_6._propAttr("disabled",true);
 }else{
-_6.removeAttr("disabled");
+_6._propAttr("disabled",false);
 }
 }
 };
