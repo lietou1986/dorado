@@ -187,6 +187,7 @@
     <Content Include="jquery-easyui\demo\calendar\firstday.html" />
     <Content Include="jquery-easyui\demo\calendar\fluid.html" />
     <Content Include="jquery-easyui\demo\calendar\weeknumber.html" />
+    <Content Include="jquery-easyui\demo\checkbox\basic.html" />
     <Content Include="jquery-easyui\demo\combobox\actions.html" />
     <Content Include="jquery-easyui\demo\combobox\basic.html" />
     <Content Include="jquery-easyui\demo\combobox\customformat.html" />
@@ -345,10 +346,14 @@
     <Content Include="jquery-easyui\demo\propertygrid\basic.html" />
     <Content Include="jquery-easyui\demo\propertygrid\customcolumns.html" />
     <Content Include="jquery-easyui\demo\propertygrid\groupformat.html" />
+    <Content Include="jquery-easyui\demo\radiobutton\basic.html" />
     <Content Include="jquery-easyui\demo\resizable\basic.html" />
     <Content Include="jquery-easyui\demo\searchbox\basic.html" />
     <Content Include="jquery-easyui\demo\searchbox\category.html" />
     <Content Include="jquery-easyui\demo\searchbox\fluid.html" />
+    <Content Include="jquery-easyui\demo\sidemenu\basic.html" />
+    <Content Include="jquery-easyui\demo\sidemenu\style.css" />
+    <Content Include="jquery-easyui\demo\sidemenu\style.html" />
     <Content Include="jquery-easyui\demo\slider\basic.html" />
     <Content Include="jquery-easyui\demo\slider\fluid.html" />
     <Content Include="jquery-easyui\demo\slider\formattip.html" />
@@ -472,6 +477,7 @@
     <Content Include="jquery-easyui\locale\easyui-lang-zh_TW.js" />
     <Content Include="jquery-easyui\plugins\jquery.accordion.js" />
     <Content Include="jquery-easyui\plugins\jquery.calendar.js" />
+    <Content Include="jquery-easyui\plugins\jquery.checkbox.js" />
     <Content Include="jquery-easyui\plugins\jquery.combo.js" />
     <Content Include="jquery-easyui\plugins\jquery.combobox.js" />
     <Content Include="jquery-easyui\plugins\jquery.combogrid.js" />
@@ -502,8 +508,10 @@
     <Content Include="jquery-easyui\plugins\jquery.passwordbox.js" />
     <Content Include="jquery-easyui\plugins\jquery.progressbar.js" />
     <Content Include="jquery-easyui\plugins\jquery.propertygrid.js" />
+    <Content Include="jquery-easyui\plugins\jquery.radiobutton.js" />
     <Content Include="jquery-easyui\plugins\jquery.resizable.js" />
     <Content Include="jquery-easyui\plugins\jquery.searchbox.js" />
+    <Content Include="jquery-easyui\plugins\jquery.sidemenu.js" />
     <Content Include="jquery-easyui\plugins\jquery.slider.js" />
     <Content Include="jquery-easyui\plugins\jquery.spinner.js" />
     <Content Include="jquery-easyui\plugins\jquery.splitbutton.js" />
@@ -582,6 +590,7 @@
     <Content Include="jquery-easyui\themes\black\propertygrid.css" />
     <Content Include="jquery-easyui\themes\black\radiobutton.css" />
     <Content Include="jquery-easyui\themes\black\searchbox.css" />
+    <Content Include="jquery-easyui\themes\black\sidemenu.css" />
     <Content Include="jquery-easyui\themes\black\slider.css" />
     <Content Include="jquery-easyui\themes\black\spinner.css" />
     <Content Include="jquery-easyui\themes\black\splitbutton.css" />
@@ -639,6 +648,7 @@
     <Content Include="jquery-easyui\themes\bootstrap\propertygrid.css" />
     <Content Include="jquery-easyui\themes\bootstrap\radiobutton.css" />
     <Content Include="jquery-easyui\themes\bootstrap\searchbox.css" />
+    <Content Include="jquery-easyui\themes\bootstrap\sidemenu.css" />
     <Content Include="jquery-easyui\themes\bootstrap\slider.css" />
     <Content Include="jquery-easyui\themes\bootstrap\spinner.css" />
     <Content Include="jquery-easyui\themes\bootstrap\splitbutton.css" />
@@ -697,6 +707,7 @@
     <Content Include="jquery-easyui\themes\default\propertygrid.css" />
     <Content Include="jquery-easyui\themes\default\radiobutton.css" />
     <Content Include="jquery-easyui\themes\default\searchbox.css" />
+    <Content Include="jquery-easyui\themes\default\sidemenu.css" />
     <Content Include="jquery-easyui\themes\default\slider.css" />
     <Content Include="jquery-easyui\themes\default\spinner.css" />
     <Content Include="jquery-easyui\themes\default\splitbutton.css" />
@@ -754,6 +765,7 @@
     <Content Include="jquery-easyui\themes\gray\propertygrid.css" />
     <Content Include="jquery-easyui\themes\gray\radiobutton.css" />
     <Content Include="jquery-easyui\themes\gray\searchbox.css" />
+    <Content Include="jquery-easyui\themes\gray\sidemenu.css" />
     <Content Include="jquery-easyui\themes\gray\slider.css" />
     <Content Include="jquery-easyui\themes\gray\spinner.css" />
     <Content Include="jquery-easyui\themes\gray\splitbutton.css" />
@@ -843,6 +855,7 @@
     <Content Include="jquery-easyui\themes\material-teal\propertygrid.css" />
     <Content Include="jquery-easyui\themes\material-teal\radiobutton.css" />
     <Content Include="jquery-easyui\themes\material-teal\searchbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\sidemenu.css" />
     <Content Include="jquery-easyui\themes\material-teal\slider.css" />
     <Content Include="jquery-easyui\themes\material-teal\spinner.css" />
     <Content Include="jquery-easyui\themes\material-teal\splitbutton.css" />
@@ -900,6 +913,7 @@
     <Content Include="jquery-easyui\themes\material\propertygrid.css" />
     <Content Include="jquery-easyui\themes\material\radiobutton.css" />
     <Content Include="jquery-easyui\themes\material\searchbox.css" />
+    <Content Include="jquery-easyui\themes\material\sidemenu.css" />
     <Content Include="jquery-easyui\themes\material\slider.css" />
     <Content Include="jquery-easyui\themes\material\spinner.css" />
     <Content Include="jquery-easyui\themes\material\splitbutton.css" />
@@ -957,6 +971,7 @@
     <Content Include="jquery-easyui\themes\metro\propertygrid.css" />
     <Content Include="jquery-easyui\themes\metro\radiobutton.css" />
     <Content Include="jquery-easyui\themes\metro\searchbox.css" />
+    <Content Include="jquery-easyui\themes\metro\sidemenu.css" />
     <Content Include="jquery-easyui\themes\metro\slider.css" />
     <Content Include="jquery-easyui\themes\metro\spinner.css" />
     <Content Include="jquery-easyui\themes\metro\splitbutton.css" />
@@ -969,6 +984,7 @@
     <Content Include="jquery-easyui\themes\metro\validatebox.css" />
     <Content Include="jquery-easyui\themes\metro\window.css" />
     <Content Include="jquery-easyui\themes\mobile.css" />
+    <Content Include="jquery-easyui\themes\vue.css" />
     <Content Include="Js\RemoteConfiguration\Index.js" />
     <Content Include="Js\RemoteConfiguration\ViewHistory.js" />
     <Content Include="Js\RemoteConfiguration\CreateVersion.js" />
@@ -1000,8 +1016,6 @@
     <Content Include="jquery-easyui\demo\treegrid\treegrid_data3.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data1.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data2.json" />
-    <Content Include="jquery-easyui\themes\material-teal\images\Thumbs.db" />
-    <Content Include="jquery-easyui\themes\material\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

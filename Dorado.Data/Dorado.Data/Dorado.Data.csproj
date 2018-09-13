@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\BadDataException.cs" />
-    <Compile Include="Exceptions\BeisenDataException.cs" />
+    <Compile Include="Exceptions\DoradoDataException.cs" />
     <Compile Include="Exceptions\DatabaseDownException.cs" />
     <Compile Include="Exceptions\DatabaseExecutionException.cs" />
     <Compile Include="Exceptions\DatabaseNotConfiguredException.cs" />

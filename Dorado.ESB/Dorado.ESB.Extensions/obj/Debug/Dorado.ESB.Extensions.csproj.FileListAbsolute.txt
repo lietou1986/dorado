@@ -39,3 +39,16 @@ D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.ESB.Co
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.pdb
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Debug\Dorado.ESB.Extensions.dll
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Debug\Dorado.ESB.Extensions.pdb
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.ESB.Extensions.dll
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.ESB.Extensions.pdb
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.Configuration.dll
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.dll
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.ESB.Common.dll
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.Configuration.pdb
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.ESB.Common.pdb
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\bin\Debug\Dorado.pdb
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Debug\Dorado.ESB.Extensions.csprojAssemblyReference.cache
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Debug\Dorado.ESB.Extensions.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Debug\Dorado.ESB.Extensions.csproj.CopyComplete
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Debug\Dorado.ESB.Extensions.dll
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Debug\Dorado.ESB.Extensions.pdb

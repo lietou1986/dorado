@@ -1,7 +1,11 @@
+using Dorado.Core.Logger;
+using Dorado.Extensions;
 using System;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 
 namespace Dorado.Core.Data
 {
@@ -26,7 +30,7 @@ namespace Dorado.Core.Data
     /// <summary>
     /// Conn连接基础类
     /// </summary>
-    public static class ConnBase
+    public static class ConnExtension
     {
         public static DataArray Exec(this IDataReader reader, DataArray data, bool back)
         {

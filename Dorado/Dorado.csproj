@@ -100,6 +100,7 @@
     <Compile Include="Core\ComponentModel\TypeConversion\TypeConverterBase.cs" />
     <Compile Include="Core\ComponentModel\TypeConversion\TypeConverterFactory.cs" />
     <Compile Include="Core\ContextState.cs" />
+    <Compile Include="Core\Data\ConnExtension.cs" />
     <Compile Include="Core\DisposableObject.cs" />
     <Compile Include="Core\Email\DefaultEmailSender.cs" />
     <Compile Include="Core\Email\EmailAccount.cs" />
@@ -112,7 +113,6 @@
     <Compile Include="Core\Data\DataType\TreeName.cs" />
     <Compile Include="Core\Data\DataType\TreeNameNode.cs" />
     <Compile Include="Core\Data\Conn.cs" />
-    <Compile Include="Core\Data\ConnBase.cs" />
     <Compile Include="Core\Data\DataArray.cs" />
     <Compile Include="Core\Data\DataArrayColumns.cs" />
     <Compile Include="Core\Data\DataArrayList.cs" />
