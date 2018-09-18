@@ -331,6 +331,16 @@ namespace Dorado.Core.Data
             return ToDateTime(null);
         }
 
+        public string ToDateTimeString()
+        {
+            return ToDateTimeString("yyyy-MM-dd");
+        }
+
+        public string ToDateTimeString(string format)
+        {
+            return ToDateTime(null).ToString(format);
+        }
+
         public byte ToByte()
         {
             return ToByte(null);
