@@ -636,13 +636,13 @@ namespace Dorado
         [DebuggerStepThrough]
         public static Exception ArgumentOutOfRange(string argName, string message, params object[] args)
         {
-            return new ArgumentOutOfRangeException(argName, String.Format(CultureInfo.CurrentCulture, message, args));
+            return new ArgumentOutOfRangeException(argName, string.Format(CultureInfo.CurrentCulture, message, args));
         }
 
         [DebuggerStepThrough]
         public static Exception Argument(string argName, string message, params object[] args)
         {
-            return new ArgumentException(String.Format(CultureInfo.CurrentCulture, message, args), argName);
+            return new ArgumentException(string.Format(CultureInfo.CurrentCulture, message, args), argName);
         }
 
         [DebuggerStepThrough]
@@ -712,7 +712,7 @@ namespace Dorado
         [DebuggerStepThrough]
         public static Exception ObjectDisposed(string objectName, string message, params object[] args)
         {
-            return new ObjectDisposedException(objectName, String.Format(CultureInfo.CurrentCulture, message, args));
+            return new ObjectDisposedException(objectName, string.Format(CultureInfo.CurrentCulture, message, args));
         }
 
         [DebuggerStepThrough]

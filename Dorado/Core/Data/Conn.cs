@@ -103,7 +103,7 @@ namespace Dorado.Core.Data
 
         public Conn Add(string name, string sql, params object[] para)
         {
-            Add(name, String.Format(sql, para));
+            Add(name, string.Format(sql, para));
             return this;
         }
 
@@ -489,7 +489,7 @@ namespace Dorado.Core.Data
         {
             if (_where == null) _where = new StringBuilder();
             _where.Append(_where.Length > 0 ? " and " : " where ");
-            _where.Append("(" + String.Format(sql, para) + ")");
+            _where.Append("(" + string.Format(sql, para) + ")");
             return this;
         }
 
@@ -501,7 +501,7 @@ namespace Dorado.Core.Data
             {
                 if (para[i] is string) para[i] = para[i].ToString();
             }
-            _where.Append("(" + String.Format(sql, para) + ")");
+            _where.Append("(" + string.Format(sql, para) + ")");
             return this;
         }
 
@@ -557,7 +557,7 @@ namespace Dorado.Core.Data
                 if (para[i] is string) para[i] = para[i].ToString();
             }
             Open();
-            using (SqlCommand cmd = new SqlCommand(String.Format(sql, para), _conn))
+            using (SqlCommand cmd = new SqlCommand(string.Format(sql, para), _conn))
             {
                 if (Transaction != null) cmd.Transaction = Transaction;
                 return cmd.ExecuteNonQuery();
@@ -581,7 +581,7 @@ namespace Dorado.Core.Data
                 if (para[i] is string) para[i] = para[i].ToString();
             }
             Open();
-            using (SqlCommand cmd = new SqlCommand(String.Format(sql, para), _conn))
+            using (SqlCommand cmd = new SqlCommand(string.Format(sql, para), _conn))
             {
                 if (Transaction != null) cmd.Transaction = Transaction;
                 return cmd.ExecuteScalar();
@@ -739,7 +739,7 @@ namespace Dorado.Core.Data
             {
                 if (para[i] is string) para[i] = para[i].ToString();
             }
-            return Select(String.Format(sql, para));
+            return Select(string.Format(sql, para));
         }
 
         public DataArray Select(string sql = "")

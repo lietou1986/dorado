@@ -192,7 +192,7 @@ namespace Dorado.Utils
             const int byteSize = 0x100;
             var allowedCharSet = new HashSet<char>(allowedChars).ToArray();
             if (byteSize < allowedCharSet.Length)
-                throw new ArgumentException(String.Format("allowedChars may contain no more than {0} characters.", byteSize));
+                throw new ArgumentException(string.Format("allowedChars may contain no more than {0} characters.", byteSize));
 
             using (var rng = new RNGCryptoServiceProvider())
             {

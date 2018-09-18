@@ -2334,8 +2334,8 @@ namespace Dorado.Extensions
                        ? String.Empty
                        : text
                              .Replace("\r\n", "\r\r")
-                             .Replace("\n", String.Format(replacement, "\r\n"))
-                             .Replace("\r\r", String.Format(replacement, "\r\n"));
+                             .Replace("\n", string.Format(replacement, "\r\n"))
+                             .Replace("\r\r", string.Format(replacement, "\r\n"));
         }
 
         public static string ToHexString(this byte[] bytes)
@@ -2625,7 +2625,7 @@ namespace Dorado.Extensions
             const int byteSize = 0x100;
             var allowedCharSet = new HashSet<char>(allowedChars).ToArray();
             if (byteSize < allowedCharSet.Length)
-                throw new ArgumentException(String.Format("allowedChars may contain no more than {0} characters.", byteSize));
+                throw new ArgumentException(string.Format("allowedChars may contain no more than {0} characters.", byteSize));
 
             using (var rng = new RNGCryptoServiceProvider())
             {
