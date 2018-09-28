@@ -39,3 +39,10 @@ D:\OneDrive\work\dorado\Build\Dorado.ActivityEngine.ServiceInterface.pdb
 D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.csprojResolveAssemblyReference.cache
 D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.dll
 D:\OneDrive\work\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.pdb
+D:\Work\_learn\dorado\Build\Dorado.ActivityEngine.ServiceInterface.dll
+D:\Work\_learn\dorado\Build\Dorado.ActivityEngine.ServiceInterface.pdb
+D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.csprojAssemblyReference.cache
+D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.csproj.CopyComplete
+D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.dll
+D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Release\Dorado.ActivityEngine.ServiceInterface.pdb

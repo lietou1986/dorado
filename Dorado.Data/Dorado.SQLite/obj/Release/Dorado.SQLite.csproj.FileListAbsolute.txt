@@ -12,3 +12,9 @@ D:\OneDrive\work\dorado\Build\Dorado.SQLite.pdb
 D:\OneDrive\work\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csprojResolveAssemblyReference.cache
 D:\OneDrive\work\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.dll
 D:\OneDrive\work\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.pdb
+D:\Work\_learn\dorado\Build\Dorado.SQLite.dll
+D:\Work\_learn\dorado\Build\Dorado.SQLite.pdb
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csproj.CopyComplete
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.dll
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.pdb

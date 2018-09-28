@@ -131,7 +131,7 @@ namespace Dorado.Services
             }
         }
 
-        public static OperateResult<T> Request<T>(this RequestService requestService, int timeout = 5)
+        public static Result<T> Request<T>(this RequestService requestService, int timeout = 5)
         {
             try
             {
@@ -190,20 +190,20 @@ namespace Dorado.Services
 
                 var result = requestService.Convert<T>(httpResult);
 
-                return new OperateResult<T>(OperateStatus.Success, "", result);
+                return new Result<T>(ResultStatus.OK, "", result);
             }
             catch (Exception ex)
             {
-                return new OperateResult<T>(OperateStatus.Failure, ex.Message);
+                return new Result<T>(ResultStatus.Error, ex.Message);
             }
         }
 
-        public static OperateResult<T> Request<T, M>(this RequestService requestService, M jsonBody, int timeout = 5) where M : class
+        public static Result<T> Request<T, M>(this RequestService requestService, M jsonBody, int timeout = 5) where M : class
         {
             return Request<T>(requestService, MimeType.Json, requestService.JsonSerializer.Serialize(jsonBody), timeout);
         }
 
-        public static OperateResult<T> Request<T>(this RequestService requestService, string contentType, string data, int timeout = 5)
+        public static Result<T> Request<T>(this RequestService requestService, string contentType, string data, int timeout = 5)
         {
             try
             {
@@ -253,11 +253,11 @@ namespace Dorado.Services
 
                 var result = requestService.Convert<T>(httpResult);
 
-                return new OperateResult<T>(OperateStatus.Success, "", result);
+                return new Result<T>(ResultStatus.OK, "", result);
             }
             catch (Exception ex)
             {
-                return new OperateResult<T>(OperateStatus.Failure, ex.Message);
+                return new Result<T>(ResultStatus.Error, ex.Message);
             }
         }
     }

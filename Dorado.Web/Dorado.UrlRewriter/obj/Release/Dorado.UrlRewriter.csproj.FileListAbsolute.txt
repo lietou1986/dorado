@@ -72,3 +72,10 @@ D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewr
 D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.csproj.GenerateResource.Cache
 D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.dll
 D:\OneDrive\work\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.pdb
+D:\Work\_learn\dorado\Build\Dorado.UrlRewriter.dll
+D:\Work\_learn\dorado\Build\Dorado.UrlRewriter.pdb
+D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.Messages.resources
+D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.csproj.GenerateResource.cache
+D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.dll
+D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.pdb

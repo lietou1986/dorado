@@ -52,3 +52,5 @@ D:\OneDrive\work\dorado\Build\Dorado.ESB.WindowsService.exe
 D:\OneDrive\work\dorado\Build\Dorado.ESB.WindowsService.pdb
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Release\Dorado.ESB.WindowsService.exe
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Release\Dorado.ESB.WindowsService.pdb
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Release\Dorado.ESB.WindowsService.csprojAssemblyReference.cache
+D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.WindowsService\obj\Release\Dorado.ESB.WindowsService.csproj.CoreCompileInputs.cache

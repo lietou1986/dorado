@@ -25,3 +25,9 @@ D:\OneDrive\work\dorado\Build\Dorado.SqlCe.pdb
 D:\OneDrive\work\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.dll
 D:\OneDrive\work\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.pdb
 D:\OneDrive\work\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.csprojResolveAssemblyReference.cache
+D:\Work\_learn\dorado\Build\Dorado.SqlCe.dll
+D:\Work\_learn\dorado\Build\Dorado.SqlCe.pdb
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.csproj.CoreCompileInputs.cache
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.csproj.CopyComplete
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.dll
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.pdb

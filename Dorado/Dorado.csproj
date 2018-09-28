@@ -198,8 +198,7 @@
     <Compile Include="Extensions\RouteValueDictionaryExtensions.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="MimeType.cs" />
-    <Compile Include="OperateStatus.cs" />
-    <Compile Include="OperateResult.cs" />
+    <Compile Include="ResultStatus.cs" />
     <Compile Include="Core\Cache\CacheExpireDependencies\DynamicCacheExpireDependency.cs" />
     <Compile Include="Core\GlobalTimer.cs" />
     <Compile Include="Core\GlobalTimer\GlobalTimerTaskHandle.cs" />
@@ -291,7 +290,10 @@
     <Compile Include="Utils\ThreadUtility.cs" />
     <Compile Include="Core\XmlSerializerWrapper.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Result.cs" />
+    <Compile Include="ResultList.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
