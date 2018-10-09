@@ -1,0 +1,143 @@
+﻿@*----------------------------------------
+-- Create By CodeSmith 6.5.0
+-- Template:       Add.cst
+-- Description:
+-- Date Generated: 2013-08-18 19:12
+----------------------------------------*@
+
+@model DataArray
+@{
+
+    ViewBag.Title = "新增分类数据";
+    DataArray parentKindData = ViewBag.ParentKindData as DataArray;
+}
+@section Style{}
+@section HeadScript{
+}
+<div class="container">
+    <div id="info" control="info" class="row">
+        <form class="form-horizontal span24">
+            <div class="row">
+                <div class="control-group">
+                    <label class="control-label" for="parentid">
+                        <s>*</s>
+                        父类名称：</label>
+                    <div class="controls">
+                        @Html.Hidden("parentid", parentKindData == null ? "0" : parentKindData["id"].ToString())
+                        @Html.Raw(parentKindData == null ? "已是顶级分类" : parentKindData["name"].ToString()) </div> </div></div>
+            <div class="row">
+                <div class="control-group">
+                    <label class="control-label" for="name">
+                        <s>*</s>
+                        名称：</label>
+                    <div class="controls">
+                        @Html.TextBox("name", string.Empty, new {placeholder = "名称", @class = "input-large", need = "请输入名称", maxlength = "50"})<span class="class-error" id="warn_name"></span>
+                    </div> </div></div>
+            <div class="row">
+                <div class="control-group">
+                    <label class="control-label" for="code">
+                        <s>*</s>
+                        分类编码：</label>
+                    <div class="controls">
+                        @Html.TextBox("code", string.Empty, new {placeholder = "分类编码", @class = "input-large", need = "请输入分类编码", maxlength = "50", kind = "en"})<span class="class-error" id="warn_code"></span>
+                    </div> </div></div>
+            <div class="row">
+                <div class="control-group">
+                    <label class="control-label" for="displayorder">
+                        <s>*</s>
+                        排序号：</label>
+                    <div class="controls">
+                        @Html.TextBox("displayorder", string.Empty, new {placeholder = "排序号", @class = "input-mini", need = "请输入排序号", kind = "number"})<span class="class-error" id="warn_displayorder"></span>
+                    </div> </div></div>
+            <div class="row">
+                <div class="control-group">
+                    <label class="control-label" for="issystem">
+                        <s>*</s>
+                        系统分类：</label>
+                    <div class="controls">
+                        @Html.BoolDropDownList("issystem", null, new {need = "请选择系统分类"})<span class="class-error" id="warn_issystem"></span>
+                    </div> </div></div>
+            <div class="row">
+                <div class="control-group">
+                    <label class="control-label" for="slug">
+                        搜索引擎友好名称：</label>
+                    <div class="controls">
+                        @Html.TextBox("slug", string.Empty, new {placeholder = "搜索引擎友好名称",maxlength = "100", @class = "input-large"})
+                    </div> </div></div>
+
+            <div class="row">
+                <div class="control-group control-row4">
+                    <label class="control-label" for="description">
+                        描述：</label>
+                    <div class="controls">
+                        @Html.TextArea("description", string.Empty, new {placeholder = "描述", @class = "input-large"})
+                    </div> </div></div>
+            <div class="row form-actions actions-bar actionbar">
+                <div class="span13 offset3 ">
+                    <a  id="add"  href="#" act="submit" cmd="mvc.admin.content.kindadd" class="button button-primary">
+                        保存</a>
+                    <input  type="reset" class="button" value="重置" />
+                    <a  id="close"  href="#" act="direct" class="button">
+                        关闭</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="noticeOk" class="row notice">
+        <div class="tips tips-large tips-success">
+            <span class="x-icon x-icon-success"><i class="icon icon-ok icon-white"></i></span>
+            <div class="tips-content">
+                <h2>操作成功</h2>
+                <p class="auxiliary-text">
+                    你可以继续操作以下内容：
+                </p>
+                <p>
+                    <a href="#" title="关闭页面" onclick="closeTab();">关闭页面</a>
+                    <a href="#" title="继续添加" onclick="reloadTab();">继续添加</a>
+                    <a href="#" id="editResult" title="编辑分类" data-href="#" data-id="" class="page-action direct-lnk">编辑分类</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section FootScript
+{
+    @{ Html.Import("PinYin"); }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#name").bind("change blur", function () {
+                var name = $(this);
+                $("#code,#Slug").each(function (i, e) {
+                    if (e.value.length == 0)
+                        e.value = name.toPinyin().toLowerCase().substr(0, 100);
+                });
+            });
+           F.init("info");
+        });
+
+        function Act_Before(o, c, p) {
+            switch (o.id) {
+            case "add":
+                break;
+            case "close":
+                closeTab();
+                return false;
+            }
+            return true;
+        }
+
+        function Act_After(o, c, p) {
+            switch (o.id) {
+            case "add":
+                if (p.success) {
+                    var id = p.success;
+                    $("#editResult").attr("data-href", "/admin/content/kindedit?id=" + id).attr("data-id", "content_kindedit" + id);
+                    F.$("info").style.display = "none";
+                    F.$("noticeOk").style.display = "block";
+                }
+                break;
+            }
+        }
+    </script>
+}

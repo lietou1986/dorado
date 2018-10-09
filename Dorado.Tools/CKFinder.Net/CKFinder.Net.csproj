@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5376ADF-309A-48DE-904C-B1FE1965C370}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>CKFinder.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CKFinder</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CKFinder</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>false</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\Build\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\Build\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessControlRules.cs" />
+    <Compile Include="Connector\CKFinderEvent.cs" />
+    <Compile Include="Connector\CKFinderEventArgs.cs" />
+    <Compile Include="Connector\CKFinderPlugin.cs" />
+    <Compile Include="Connector\CommandHandlers\CopyFilesCommandHandler.cs" />
+    <Compile Include="Connector\CommandHandlers\MoveFilesCommandHandler.cs" />
+    <Compile Include="Connector\Config.cs" />
+    <Compile Include="Connector\ImageTools.cs" />
+    <Compile Include="Connector\Lang.cs" />
+    <Compile Include="Connector\OctreeQuantizer.cs" />
+    <Compile Include="Connector\Quantizer.cs" />
+    <Compile Include="Connector\RestartModule.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="Plugins\FileEditor\SaveFile.cs" />
+    <Compile Include="Plugins\ImageResize\ImageResize.cs" />
+    <Compile Include="Plugins\Watermark\Watermark.cs" />
+    <Compile Include="Settings\AccessControlManager.cs" />
+    <Compile Include="Settings\ConfigFile.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\CommandHandlerBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\ErrorCommandHandler.cs" />
+    <Compile Include="Connector\CommandHandlers\InitCommandHandler.cs" />
+    <Compile Include="Connector\CommandHandlers\QuickUploadCommandHandler.cs" />
+    <Compile Include="Connector\CommandHandlers\RenameFolderCommandHandler.cs" />
+    <Compile Include="Connector\CommandHandlers\DownloadFileCommandHandler.cs" />
+    <Compile Include="Connector\CommandHandlers\CreateFolderCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\DeleteFilesCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\DeleteFolderCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\FileUploadCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\GetFilesCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\GetFoldersCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\RenameFileCommandHandler.cs" />
+    <Compile Include="Connector\CommandHandlers\ThumbnailCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\CommandHandlers\XmlCommandHandlerBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\Connector.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connector\ConnectorException.cs" />
+    <Compile Include="Connector\Errors.cs" />
+    <Compile Include="Connector\FolderHandler.cs" />
+    <Compile Include="Connector\RegexLib.cs" />
+    <Compile Include="Connector\Util.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connector\XmlUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileBrowser.cs" />
+    <Compile Include="FileBrowserDesigner.cs" />
+    <Compile Include="Settings\AccessControl.cs" />
+    <Compile Include="Settings\Images.cs" />
+    <Compile Include="Settings\ResourceType.cs" />
+    <Compile Include="Settings\ResourceTypeManager.cs" />
+    <Compile Include="Settings\Thumbnails.cs" />
+    <Compile Include="TriStateBool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CKFinder.ico" />
+    <Content Include="Plugins\FileEditor\CKFinder.ico" />
+    <Content Include="Plugins\ImageResize\CKFinder.ico" />
+    <Content Include="Plugins\Watermark\CKFinder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\FileEditor\Properties\" />
+    <Folder Include="Plugins\ImageResize\Properties\" />
+    <Folder Include="Plugins\Watermark\Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

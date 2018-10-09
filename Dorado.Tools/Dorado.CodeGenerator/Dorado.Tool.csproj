@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dorado.Tool</RootNamespace>
+    <AssemblyName>Dorado Tool</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\Tool\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\Tool\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>main.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FDbTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDbTool.Designer.cs">
+      <DependentUpon>FDbTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTool.Designer.cs">
+      <DependentUpon>FTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlSettings\Parameter.cs" />
+    <Compile Include="SqlSettings\Sql.cs" />
+    <Compile Include="SqlSettings\Sqls.cs" />
+    <Compile Include="SqlSettings\SqlSettingsConfiguration.cs" />
+    <Compile Include="SqlSettings\SqlSettingsConfigurationManager.cs" />
+    <Compile Include="SqlSettings\SqlSettingsRemoteConfiguration.cs" />
+    <Compile Include="SqlSettings\SqlSettingsRemoteConfigurationManager.cs" />
+    <Compile Include="TranType.cs" />
+    <Compile Include="GenProcClass.cs" />
+    <Compile Include="GenSqlClass.cs" />
+    <Content Include="main.ico" />
+    <Content Include="ConfigGenerator\xsd.exe" />
+    <Content Include="ILMerge-GUI\Devv.Core.Erroo.dll" />
+    <Content Include="ILMerge-GUI\Devv.Core.Utils.dll" />
+    <Content Include="ILMerge-GUI\Devv.Core.Utils.xml" />
+    <Content Include="ILMerge-GUI\ILMerge-GUI.exe" />
+    <Content Include="ILMerge-GUI\ILMerge.exe" />
+    <EmbeddedResource Include="FDbTool.resx">
+      <DependentUpon>FDbTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTool.resx">
+      <DependentUpon>FTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="CodeSmith\Add.cst" />
+    <None Include="CodeSmith\Cache.cst" />
+    <None Include="CodeSmith\Controller.cst" />
+    <None Include="CodeSmith\Controller.Partial.cst" />
+    <None Include="CodeSmith\Edit.cst" />
+    <None Include="CodeSmith\Entity.cst" />
+    <None Include="CodeSmith\Init.cst" />
+    <None Include="CodeSmith\List.cst" />
+    <None Include="CodeSmith\Menu.cst" />
+    <None Include="CodeSmith\Proc.cst" />
+    <None Include="CodeSmith\Table.cst" />
+    <None Include="CodeSmith\View.cst" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="References\dic\main.dic" />
+    <None Include="References\dic\preposition.dic" />
+    <None Include="References\dic\quantifier.dic" />
+    <None Include="References\dic\stopword.dic" />
+    <None Include="References\dic\suffix.dic" />
+    <None Include="References\dic\surname.dic" />
+    <None Include="References\ext_stopword.dic" />
+    <None Include="SqlSettings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="References\EffiProz.dll" />
+    <Content Include="References\IKAnalyzer.cfg.xml" />
+    <Content Include="References\IKAnalyzer.Net.dll" />
+    <Content Include="References\Ionic.Zip.dll" />
+    <None Include="References\ManagedOpenSsl.dll" />
+    <Content Include="References\Microsoft.Ccr.Core.dll" />
+    <Content Include="References\PowerCollections.dll" />
+    <Content Include="References\Wintellect.Threading.dll" />
+    <Content Include="Template\Kind\Kind.cshtml" />
+    <Content Include="Template\Kind\KindAdd.cshtml" />
+    <Content Include="Template\Kind\KindEdit.cshtml" />
+    <Content Include="Template\Kind\KindIndex.cshtml" />
+    <Content Include="Template\Kind\KindManager.cshtml" />
+    <Content Include="Template\Kind\KindView.cshtml" />
+    <None Include="ConfigGenerator\ConfigGenerator.bat" />
+    <None Include="ILMerge-GUI\ILMerge-GUI.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dorado.Config\Dorado.Configuration\Dorado.Configuration.csproj">
+      <Project>{9bca8d0b-fed3-4494-90e9-0a18a527cc3c}</Project>
+      <Name>Dorado.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dorado\Dorado.csproj">
+      <Project>{56cb9912-4ce8-4370-8b21-5eeef2123e9e}</Project>
+      <Name>Dorado</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,95 @@
+﻿@{
+
+    ViewBag.Title = "分类管理";
+}
+@section Style{
+}
+<table class="table table-condensed" style="padding: 5px;" height="99%">
+    <thead>
+        <tr>
+            <th class="span5" style="height: 10px" id="info" control="info">
+                分类 <a id="reload" title="刷新节点" class="button button-small" href="#">
+                    刷新
+                </a>
+                <a id="init" title="生成Js" class="button button-small" href="#" act="keylist" cmd="mvc.admin.content.InitAssetKindJson">
+                    生成Js
+                </a>
+            </th>
+            <th>
+                分类列表
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="t1"></td>
+            <td>
+                <iframe id="main" src="/admin/content/kindindex" style="height: 100%; visibility: inherit; width: 100%; z-index: 1" scrolling="auto" frameborder="0"></iframe>
+            </td>
+        </tr>
+    </tbody>
+</table>
+@section FootScript
+{
+<script type="text/javascript">
+    function Act_Before(o, c, p) {
+        switch (o.id) {
+            case "init":
+                return true;
+        }
+        return true;
+    }
+
+    function Act_After(o, c, p) {
+        switch (o.id) {
+            case "init":
+                if (p.success) {
+                    Alert("生成成功");
+                } else {
+                    Alert("生成失败");
+                }
+
+                break;
+        }
+    }
+
+    $(document).ready(function () {
+       F.init("info");
+    });
+
+    BUI.use(['bui/tree', 'bui/data'], function (Tree, Data) {
+        var store = new Data.TreeStore({
+            root: {
+                id: '0',
+                text: '分类'
+            },
+            url: '/content/asynckindjson'
+        });
+
+        var tree = new Tree.TreeList({
+            render: '#t1',
+            showLine: true,
+            height:350,
+            store: store,
+            showRoot: true
+        });
+        tree.render();
+        store.load({ id: '0' });
+        tree.on('itemclick', function (ev) {
+            var item = ev.item;
+            var src = "/admin/content/kindindex?id=";
+            document.getElementById("main").src = src + item.id;
+        });
+        $('#reload').on('click', function () {
+            var node = tree.getSelected();
+            if (!node) {
+                node = tree.findNode('0');
+            }
+            tree.collapseNode(node);
+            node.children = [];
+            node.loaded = false;
+            store.loadNode(node);
+        });
+    });
+</script>
+}

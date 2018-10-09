@@ -1,0 +1,617 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="The table to use for this sample." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Assembly Name="mscorlib" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+@*----------------------------------------
+-- Create By Len.zhang
+-- Template:       Add.cst
+-- Description: 
+-- Date Generated: <%=GetDateTime()%>
+----------------------------------------*@
+@model DataArray
+@{
+    ViewBag.Title ="新增<%=GetTableDescription()%>数据";
+}
+@section Style{
+  <%if(IsHasImageColumn()) {%>  
+   <style>
+        #imagecontainer {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+<%} %>
+}
+@section HeadScript{
+}
+   <div class="container">
+<div id="info" control="info" class="row">
+<form class="form-horizontal span24">
+ <% foreach (ColumnSchema column in SourceTable.Columns) { %>
+ <%if(!column.IsPrimaryKeyMember&&!column.Description.Contains("即时更新")&&!column.Description.Contains("逻辑")&&column.Name.ToLower()!="autoid") {%>
+ <div class="row">
+  <%if(column.Description.Contains("text")) {%>
+ <div class="control-group control-row4">
+ <%}else{ %>
+ <div class="control-group">
+ <%} %>
+         <label class="control-label" for="<%=column.Name.ToLower()%>">
+         <%if(!column.AllowDBNull) {%>
+            <s>*</s>
+            <%}%>
+            <%=GetColumnDescription(column)%>：</label>
+            <%if(column.Description.Contains("image")) {%>
+             <div class="controls" style="width: 150px; height: 150px">
+              <%} else if(column.Description.Contains("editor")) {%>
+             <div class="controls" style="height: 400px">
+            <%}
+               else if(column.Description.Contains("location")) {%>
+             <div class="controls" id="citycontainer">
+            <%}
+              else{ %>
+        <div class="controls">
+        <%} %>
+             <%switch(column.NativeType) {%>
+    <%default: %>
+    <%if(column.Description.Contains("text")) {%>
+    <%if(!column.AllowDBNull) {%>
+     @Html.TextArea("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-large",need="请输入<%=GetColumnDescription(column) %>",maxlength="<%=column.Size %>" })<span class="class-error" id="warn_<%=column.Name.ToLower()%>"></span>
+   <%}else{ %>
+      @Html.TextArea("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-large" })
+   <%}}else if(column.Description.Contains("editor")){ %>
+    @Html.Hidden("<%=column.Name.ToLower()%>")
+    @Html.TextArea("editor", string.Empty)
+ <%}else if(column.Description.Contains("file")){ %>
+  @Html.Hidden("<%=column.Name.ToLower()%>")
+                        <a id="filecontainer" href="#" class="nodisplay" target="_brank"></a>
+                        <a id="deleteFile" act="keylist" href="#" class="button  button-small nodisplay" style="margin-right: 5px;">删除</a>
+                        <a id="uploadFile" act="keylist" href="#" class="button  button-small">上传</a>
+ 
+ <%}else if(column.Description.Contains("image")){ %>
+    <img id="<%=column.Name.ToLower()%>container" src="/assets/img/default.jpg" class="img-polaroid uploadcontainer" style="width: 100px; height: 100px" />
+                        @Html.Hidden("<%=column.Name.ToLower()%>")
+                        <br />
+<a id="upload<%=column.Name.ToLower()%>" act="keylist" href="#" class="button  button-small">上传</a>
+ <%} 
+ else if(column.Description.Contains("location")){ %>
+                            <select class="province" id="province" name="province"></select>
+                            <select class="city" id="city" name="city"></select>
+                            <select class="area" id="region" name="region"></select>
+ <%}
+ else{%>
+     <%if(!column.AllowDBNull) {%>
+       @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-large",need="请输入<%=GetColumnDescription(column) %>",maxlength="<%=column.Size %>" })<span class="class-error" id="warn_<%=column.Name.ToLower()%>"></span>
+  <%}else{ %>
+        @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-large" })
+  
+    <%}}%>
+   
+    <%break; %>
+    <%case "bit": %>
+     <%if(!column.AllowDBNull) {%>
+            @Html.BoolDropDownList("<%=column.Name.ToLower()%>",null,new{need="请选择<%=GetColumnDescription(column) %>"})<span class="class-error" id="warn_<%=column.Name.ToLower()%>"></span>
+    <%}else{ %>
+            @Html.BoolDropDownList("<%=column.Name.ToLower()%>",null,new{need="请选择<%=GetColumnDescription(column) %>"})
+    <%} %>
+    <%break; %>
+    <%case "decimal": %>
+	<%case "float": %>
+    <%if(!column.AllowDBNull) {%>
+         @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-mini",need="请输入<%=GetColumnDescription(column) %>",kind="number" })<span class="class-error" id="warn_<%=column.Name.ToLower()%>"></span>
+    <%}else{ %>
+          @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-mini",kind="number" })
+    <% }%>
+    <%break; %>
+    <%case "int": %>
+    <%if(!column.AllowDBNull) {%>
+         @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-mini",need="请输入<%=GetColumnDescription(column) %>",kind="number" })<span class="class-error" id="warn_<%=column.Name.ToLower()%>"></span>
+    <%}else{ %>
+          @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "input-mini",kind="number" })
+    <% }%>
+    <%break; %>
+    <%case "datetime": %>
+     <%if(!column.AllowDBNull) {%>
+           @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "calendar calendar-time",need="请输入<%=GetColumnDescription(column) %>" })<span class="class-error" id="warn_<%=column.Name.ToLower()%>"></span>
+    <%}else{ %>
+            @Html.TextBox("<%=column.Name.ToLower()%>", string.Empty, new { placeholder = "<%=GetColumnDescription(column) %>", @class = "calendar calendar-time" })
+    <%} %>
+    <%break; %>
+    <%case "tinyint": %>
+     <%if(!column.AllowDBNull) {%>
+      @Html.DictDropDownList("<%=column.Name.ToLower()%>", "<%=SourceTable.Name.ToLower()%>_<%=column.Name.ToLower()%>",null,new{need="请选择<%=GetColumnDescription(column) %>"})<span class="class-error" id="warn_<%=column.Name.ToLower()%>"></span>
+    <%}else{ %>
+      @Html.DictDropDownList("<%=column.Name.ToLower()%>","<%=SourceTable.Name.ToLower()%>_<%=column.Name.ToLower()%>",null,new{need="请选择<%=GetColumnDescription(column) %>"})
+    <%} %>
+    <%break; %>
+    <%} %>
+    </div> </div></div>
+     <%} %>
+     <%} %>
+    <div class="row form-actions actions-bar">
+        <div class="span13 offset3 ">
+            <a  id="add"  href="#" act="submit" cmd="mvc.<%=GetClassName(SourceTable.Name).ToLower()%>.<%=GetShortName(SourceTable.Name).ToLower()%>add" class="button button-primary">
+                保存</a>
+             <input  type="reset" class="button" value="重置"/>
+             <a  id="close"  href="#" act="keylist" class="button">
+                关闭</a>
+        </div>
+    </div>
+   </form>
+</div>
+<div id="noticeOk" class="row notice">
+      <div class="tips tips-large tips-success">
+        <span class="x-icon x-icon-success"><i class="icon icon-ok icon-white"></i></span>
+        <div class="tips-content">
+          <h2>操作成功</h2>
+          <p class="auxiliary-text">
+            你可以继续操作以下内容：
+           </p>
+           <p>
+             <a href="#" title="关闭页面" onclick="closeTab();">关闭页面</a> 
+             <a href="#" title="继续添加" onclick="reloadTab();">继续添加</a>
+             <a href="#" id="editResult" title="编辑<%=GetTableDescription()%>" data-href="#" data-id="" class="page-action direct-lnk">编辑<%=GetTableDescription()%></a>
+           </p>
+         </div>
+       </div>
+ </div>  
+</div>
+
+@section FootScript
+{
+ <%if(IsHasEditorColumn()) {%>  
+  @{ Html.Import("CKSource");}
+ <%} %>
+  <%if(IsHasLocationColumn()) {%>  
+  @{ Html.Import("MultiLevelSelector");}
+ <%} %>
+    <script type="text/javascript">
+ <%if(IsHasDateColumn()) {%>  
+ BUI.use(['bui/calendar'], function (Calendar) {
+            var datepicker = new Calendar.DatePicker({
+                trigger: '.calendar', dateMask: 'yyyy-mm-dd',
+                autoRender: true
+            });
+        });
+ <%} %>
+        
+        <%if(IsHasEditorColumn()) {%>  
+    function charLen(str) {
+            var l = 0;
+            for (i = 0; i < str.length; i++) {
+                if (str.charCodeAt(i) > 255) l += 2;
+                else l++;
+            }
+            return l;
+        }
+
+        function onEditorBlur() {
+            var str = editor.getData();
+            $("#<%=GetEditorColumn().Name.ToLower()%>").val(str);
+        }
+
+        var editor = CKEDITOR.replace('editor', {
+            on: {
+                blur: onEditorBlur
+            },
+            height: 310
+        });
+        editor.setData();
+        CKFinder.setupCKEditor(editor, '/web/ckfinder/');
+        <%} %>
+        
+         <%if(IsHasImageColumn()) {%>  
+        var Overlay = BUI.Overlay;
+        var imageDialog = new Overlay.Dialog({
+            title: '上传图片',
+            width: 600,
+            height: 400,
+            buttons: [],
+            bodyContent: '<iframe id="main" src="/tool/uploader?successCallBack=uploadImageSuccess&errorCallBack=uploadImageError&max=1&exts=jpg|gif|png|jpeg" style="height: 100%; visibility: inherit;width: 100%; z-index: 1" scrolling="auto" frameborder="0"></iframe>',
+            success: function() {
+                this.hide();
+            }
+        });
+        
+        function deleteImage() {
+            F.call("mvc.tool.deletefile", '<data><row url="' + $("#<%=GetImageColumn().Name.ToLower()%>").val() + '" flag="<%=GetImageColumn().Name.ToLower()%>" /></data>', deleteImageOver);
+        }
+
+        function deleteImageOver(p) {
+            if (p.success) {
+                $("#<%=GetImageColumn().Name.ToLower()%>").val("");
+                $("#imagecontainer").attr("src", "/assets/img/default.jpg");
+                $("#deleteImage").hide();
+
+            } else {
+                Alert("图片删除失败");
+            }
+        }
+
+        function uploadImageSuccess(result) {
+            $("#<%=GetImageColumn().Name.ToLower()%>").val(result);
+            $("#imagecontainer").attr("src", result);
+            $("#deleteImage").show();
+            imageDialog.hide();
+        }
+
+        function uploadImageError(result) {
+           Alert(result);
+        }
+        <%} %>
+        
+         <%if(IsHasFileColumn()) {%>  
+        var Overlay = BUI.Overlay;
+        var fileDialog = new Overlay.Dialog({
+            title: '上传文件',
+            width: 600,
+            height: 400,
+            buttons: [],
+            bodyContent: '<iframe id="main" src="/tool/uploader?successCallBack=uploadFileSuccess&errorCallBack=uploadFileError&max=1&exts=jpg|gif|png|jpeg" style="height: 100%; visibility: inherit;width: 100%; z-index: 1" scrolling="auto" frameborder="0"></iframe>',
+            success: function() {
+                this.hide();
+            }
+        });
+        
+
+       function deleteFile() {
+            F.call("mvc.tool.deletefile", '<data><row url="' + $("#<%=GetFileColumn().Name.ToLower()%>").val() + '" flag="<%=GetFileColumn().Name.ToLower()%>" /></data>', deleteFileOver);
+        }
+
+        function deleteFileOver(p) {
+            if (p.success) {
+                $("#<%=GetFileColumn().Name.ToLower()%>").val("");
+                $("#filecontainer").hide();
+                $("#deleteFile").hide();
+            } else {
+                alert("文件删除失败");
+            }
+        }
+
+        function uploadFileSuccess(result) {
+            $("#<%=GetFileColumn().Name.ToLower()%>").val(result);
+            $("#filecontainer").attr("href", result).html("查看文件").show();
+            $("#deleteFile").show();
+            fileDialog.hide();
+        }
+        
+          function uploadFileError(result) {
+           Alert(result);
+        }
+        <%} %>
+        
+        function Act_Before(o, c, p) {
+             switch (o.id) {
+               <%if(IsHasImageColumn()) {%>  
+                case "deleteImage":
+                deleteImage();
+                return false;
+            case "uploadimage":
+                imageDialog.show();
+                return false;
+               <%} %>
+                <%if(IsHasFileColumn()) {%>  
+                case "deleteFile":
+                deleteFile();
+                return false;
+            case "uploadFile":
+                fileDialog.show();
+                return false;
+               <%} %>
+                case "add":
+                  <%if(IsHasImageColumn()) {%>  
+               if ($("#<%=GetImageColumn().Name.ToLower()%>").val() == "") {
+                    Alert("请选择或上传图片");
+                    return false;
+                }
+               <%} %>
+               <%if(IsHasFileColumn()) {%>  
+               if ($("#<%=GetFileColumn().Name.ToLower()%>").val() == "") {
+                    alert("请选择或上传文件");
+                    return false;
+                }
+               <%} %>
+                    break;
+                case "close":
+                closeTab();
+                    return false;
+            }
+            return true;
+        }
+
+        function Act_After(o, c, p) {
+            switch (o.id) {
+                case "add":
+                    if (p.success) {
+                        var id = p.success;
+                        $("#editResult").attr("data-href","/<%=GetClassName(SourceTable.Name).ToLower()%>/<%=GetShortName(SourceTable.Name).ToLower()%>edit?id="+id).attr("data-id","<%=SourceTable.Name.ToLower()%>edit"+id);
+                        F.$("info").style.display = "none";
+                        F.$("noticeOk").style.display = "block";
+                   }
+                    break;
+            }
+        }
+         $(document).ready(function () {
+           F.init("info");
+            <%if(IsHasLocationColumn()) {%>  
+   $('#citycontainer').cxSelect({
+                 url: '/assets/js/appdata/location.json',
+                 selects: ['province', 'city', 'area'],
+                 nodata: 'none',
+                 required: true
+             });
+ <%} %>
+        });
+    </script>
+}
+
+
+<script runat="template">
+private bool IsHasDateColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("date"))
+      {
+          return true;
+      }
+}
+return false;
+}
+private bool IsHasLocationColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("location"))
+      {
+          return true;
+      }
+}
+return false;
+}
+private bool IsHasImageColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("image"))
+      {
+          return true;
+      }
+}
+return false;
+}
+private ColumnSchema GetImageColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("image"))
+      {
+          return column;
+      }
+}
+return null;
+}
+private bool IsHasFileColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("file"))
+      {
+          return true;
+      }
+}
+return false;
+}
+
+private ColumnSchema GetFileColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("file"))
+      {
+          return column;
+      }
+}
+return null;
+}
+
+private bool IsHasEditorColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("editor"))
+      {
+          return true;
+      }
+}
+return false;
+}
+
+private ColumnSchema GetEditorColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("editor"))
+      {
+          return column;
+      }
+}
+return null;
+}
+
+private bool IsHasDataTimeColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.NativeType=="datetime")
+      {
+          return true;
+      }
+}
+return false;
+}
+private List<ColumnSchema> GetSearchColumns(){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("search"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
+public string GetColumnSize(ColumnSchema column){
+	if(column.NativeType=="varchar" || column.NativeType=="nvarchar"){
+		return string.Format("	({0})",column.Size);
+	}else{
+		return "";
+	}
+}
+public string GetDateTime(){
+	return DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+	}
+public string GetPrimarykeyColumnName(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return column.Name.ToString();
+  }
+ }
+ return "";
+
+}
+public string GetPrimarykeyColumnDataType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return GetColumnDataType(column);
+  }
+ }
+ return "";
+}
+public string SetInBox(ColumnSchema column){
+switch (column.NativeType)
+ {
+  
+	case "tinyint" : return " inbox=\"set"+column.Name+"\"";
+ }
+ 
+ return ""; 
+}
+public string GetPrimarykeyColumnValueType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   	return column.NativeType;
+  }
+ }
+ return "object";
+}
+
+public string GetUpdateSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "update "+ SourceTable.Name.ToString() +" set";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  " "+column.Name+"="+"@"+column.Name+",";
+ }
+ return sql.Substring(0,sql.Length-1);
+ 
+}
+
+public string GetInserSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "insert into "+SourceTable.Name.ToString()+" ( ";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " ) values (";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql += "@"+column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " )";
+ return sql;
+}
+
+
+public string GetColumnDataType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "DbType.Int32";
+  case "char": return "DbType.Char";
+  case "money": return "DbType.Money";
+  case "datetime": return "DbType.DateTime";
+  case "nvarchar" : return "DbType.NVarChar,"+column.Size.ToString();
+  case "bigint" : return "DbType.Int64";
+  case "float" : return "DbType.Float";
+  default: return column.NativeType.ToString();
+ }
+ 
+ return ""; 
+}
+public string GetColumnDescription(ColumnSchema column)
+{
+string des=column.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetTableDescription()
+{
+string des=SourceTable.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetColumnValueType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "int";
+  case "char": return "char";
+         case "nchar" : return "string";
+  case "money": return "decimal";
+  case "datetime": return "DateTime";
+  case "nvarchar" : return "string";
+  case "varchar" : return "string";
+  case "bigint" : return "long";
+  case "float" : return "float";
+	case "bit" : return "bool";
+	case "smallint" : return "short";
+	case "tinyint" : return "byte";
+	case "ntext" : return "string";
+	
+  default: return "object";
+ }
+ 
+ return ""; 
+}
+private string GetShortName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(index+1);
+}
+return tableName;
+}
+private string GetClassName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(0,index);
+}
+return "Main";
+}
+</script>

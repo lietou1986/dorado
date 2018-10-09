@@ -83,18 +83,14 @@ namespace Dorado.Services
             return this;
         }
 
-        public RequestService AddParams(string name, string value, bool isThrowErrorIfParamExist = false)
+        public RequestService AddParams(string name, string value)
         {
-            if (GetParameters.ContainsKey(name) && isThrowErrorIfParamExist)
-                throw new Exception("Get序列中已包含有此名称的参数");
             GetParameters[name] = value;
             return this;
         }
 
-        public RequestService AddPostParams(string name, string value, bool isThrowErrorIfParamExist = false)
+        public RequestService AddPostParams(string name, string value)
         {
-            if (PostParameters.ContainsKey(name) && isThrowErrorIfParamExist)
-                throw new Exception("Post序列中已包含有此名称的参数");
             PostParameters[name] = value;
             return this;
         }

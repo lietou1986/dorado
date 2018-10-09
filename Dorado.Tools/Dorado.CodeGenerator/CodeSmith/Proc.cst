@@ -1,0 +1,424 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="The table to use for this sample." %>
+<%@ Property Name="NamePlaceName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Assembly Name="mscorlib" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Linq" %>
+/*----------------------------------------
+-- Create By Len.zhang
+-- Template:       Data.cst
+-- Description: 
+-- Date Generated: <%=GetDateTime()%>
+----------------------------------------*/
+namespace <%=NamePlaceName%>.Data.Table
+{
+    using Dorado.Core.Data;
+    using Dorado.Utils;
+    using System;
+    using System.Data.SqlClient;
+    using System.Text;
+    
+    /// <summary>
+    /// 表 <%=SourceTable.Name%> 的自动生成类。
+    /// </summary>
+    public partial class T_<%=SourceTable.Name%>
+    {
+        /// <summary><%=GetTableDescription()%></summary>
+        private const string TableName = "dbo.<%=SourceTable.Name%>";
+
+        private struct Field
+        {
+        <% foreach (ColumnSchema column in SourceTable.Columns) { %>
+            /// <summary>【<%=GetColumnDescription(column)%>】<%=column.AllowDBNull?"":"|必填"%></summary>
+    		private const string <%=column.Name%>="<%=column.Name.ToLower()%>";
+   		<% } %>
+        }
+        
+        private static string _insert_sql(DataArray data, bool isStrict)
+        {
+            StringBuilder fld = new StringBuilder();
+            StringBuilder var = new StringBuilder();
+            DataArrayColumn field = null;
+            <% foreach (ColumnSchema column in SourceTable.Columns) { %>
+		
+           <%if(!column.Description.Contains("即时更新")&&!column.IsPrimaryKeyMember) {%>
+            field=data[Field.<%=column.Name%>];
+            <%if(!column.AllowDBNull) {%>
+			if (field == null || (isStrict && string.IsNullOrWhiteSpace(field.ToString())))
+				throw new ApplicationException("请您输入<%=GetColumnDescription(column)%>");
+
+			fld.Append(Field.<%=column.Name%> + "," );
+			var.Append(field<%=GetTranType(column)%> + "," );
+           <% } else{%>
+           if (field!=null)
+			{
+				fld.Append(Field.<%=column.Name%> + "," );
+				var.Append(field<%=GetTranType(column)%> + "," );
+			}
+            <% } %>
+           <% } %>
+   		<% } %>
+
+            if (fld.Length == 0) return string.Empty;
+            return "insert into " + TableName + " with (rowlock) (" +
+                fld.ToString(0, fld.Length - 1) + ") values (" +
+                var.ToString(0, var.Length - 1) + ");\n";
+        }
+
+        private static string _update_sql(DataArray data)
+        {
+            if (!data.Contains(Field.ID)) return string.Empty;
+            StringBuilder var = new StringBuilder();
+            DataArrayColumn field = null;
+            <% foreach (ColumnSchema column in SourceTable.Columns) { %>
+		
+         <% if(!column.IsPrimaryKeyMember) { %>
+            field = data[<%=column.Name%>];
+            if (field != null)
+            {
+                var.Append(Field.<%=column.Name%> + "=" + data[Field.<%=column.Name%>]<%=GetTranType(column)%> + ",");
+            }
+         <% } %>   
+   		<% } %>
+
+            if (var.Length == 0) return string.Empty;
+            return var.ToString(0, var.Length - 1) + " where " + Field.ID + "=" + data[Field.ID].ToSQL();
+        }
+
+       public static DataArray Get(Conn conn, long id, string fields = "*")
+        {
+            string sql = string.Format("select {0} from {1} with (nolock) where id={2}", fields, TableName, id);
+            return conn.Select(sql);
+        }
+
+        public static DataArray Select(Conn conn, string fields, string sql, params object[] para)
+        {
+            for (int i = 0; i < para.Length; i++)
+            {
+                if (para[i] is string) para[i] = para[i].ToString().Replace("'", "''");
+            }
+            sql = string.Format("select {0} from {1} with (nolock) where {2}", fields, TableName, string.Format(sql, para));
+            return conn.Select(sql);
+        }
+
+        public static long Insert(Conn conn, DataArray data, bool isStrict = true)
+        {
+            if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
+
+            long primaryKey = CommonUtility.GeneratePrimaryKey();
+            if (!data.Contains(Field.ID))
+                data.Columns.Add(Field.ID);
+            data[Field.ID].Set(primaryKey);
+
+            string sql = _insert_sql(data, isStrict);
+
+            if (sql == string.Empty) return 0;
+
+            conn.ExecuteNonQuery(sql);
+            return primaryKey;
+        }
+
+        public static int Update(Conn conn, DataArray data)
+        {
+            if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
+            string sql = _update_sql(data);
+            if (sql == string.Empty) return 0;
+            int ret = Update(conn, sql);
+            return ret;
+        }
+
+        public static int Update(Conn conn, string sql, params object[] para)
+        {
+            for (int i = 0; i < para.Length; i++)
+            {
+                if (para[i] is string) para[i] = para[i].ToString().Replace("'", "''");
+            }
+            sql = string.Format("update {0} with (rowlock) set {1}", TableName, string.Format(sql, para));
+            return conn.ExecuteNonQuery(sql);
+        }
+
+        public static int Delete(Conn conn, DataArray data)
+        {
+            if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
+            int ret = Delete(conn, Field.ID + " in (" + data[Field.ID].ToList() + ")");
+            return ret;
+        }
+
+        public static int Delete(Conn conn, string sql, params object[] para)
+        {
+            for (int i = 0; i < para.Length; i++)
+            {
+                if (para[i] is string) para[i] = para[i].ToString().Replace("'", "''");
+            }
+            sql = string.Format("delete {0} with (rowlock) where {1}", TableName, string.Format(sql, para));
+            return conn.ExecuteNonQuery(sql);
+        }
+     }
+}
+
+<script runat="template">
+private bool IsHasImageColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("image"))
+      {
+          return true;
+      }
+}
+return false;
+}
+private string GetImageColumnName(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("image"))
+      {
+          return column.Name;
+      }
+}
+return "";
+}
+private bool IsHasFileColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("file"))
+      {
+          return true;
+      }
+}
+return false;
+}
+
+private string GetFileColumnName(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("file"))
+      {
+          return column.Name;
+      }
+}
+return "";
+}
+
+private bool IsHasEditorColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("editor"))
+      {
+          return true;
+      }
+}
+return false;
+}
+
+private string GetEditorColumnName(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("editor"))
+      {
+          return column.Name;
+      }
+}
+return "";
+}
+private List<ColumnSchema> GetSearchColumns(){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains(" [Search]"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
+public string GetColumnSize(ColumnSchema column){
+	if(column.NativeType=="varchar" || column.NativeType=="nvarchar"){
+		return string.Format("	({0})",column.Size);
+	}else{
+		return "";
+	}
+}
+public string GetDateTime(){
+	return DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+	}
+public string GetPrimarykeyColumnName(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return column.Name.ToString();
+  }
+ }
+ return "";
+
+}
+public string GetPrimarykeyColumnDataType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return GetColumnDataType(column);
+  }
+ }
+ return "";
+}
+public string SetInBox(ColumnSchema column){
+switch (column.NativeType)
+ {
+  
+	case "tinyint" : return " inbox=\"set"+column.Name+"\"";
+ }
+ 
+ return ""; 
+}
+public string GetPrimarykeyColumnValueType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   	return column.NativeType;
+  }
+ }
+ return "object";
+}
+
+public string GetUpdateSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "update "+ SourceTable.Name.ToString() +" set";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  " "+column.Name+"="+"@"+column.Name+",";
+ }
+ return sql.Substring(0,sql.Length-1);
+ 
+}
+
+public string GetInserSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "insert into "+SourceTable.Name.ToString()+" ( ";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " ) values (";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql += "@"+column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " )";
+ return sql;
+}
+
+
+public string GetColumnDataType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "DbType.Int32";
+  case "char": return "DbType.Char";
+  case "money": return "DbType.Money";
+  case "datetime": return "DbType.DateTime";
+  case "nvarchar" : return "DbType.NVarChar,"+column.Size.ToString();
+  case "bigint" : return "DbType.Int64";
+  case "float" : return "DbType.Float";
+  default: return column.NativeType.ToString();
+ }
+ 
+ return ""; 
+}
+public string GetColumnDescription(ColumnSchema column)
+{
+string des=column.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetTableDescription()
+{
+string des=SourceTable.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetColumnValueType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "int";
+  case "char": return "char";
+         case "nchar" : return "string";
+  case "money": return "decimal";
+  case "datetime": return "DateTime";
+  case "nvarchar" : return "string";
+  case "varchar" : return "string";
+  case "bigint" : return "long";
+  case "float" : return "float";
+	case "bit" : return "bool";
+	case "smallint" : return "short";
+	case "tinyint" : return "byte";
+	case "ntext" : return "string";
+	
+  default: return "object";
+ }
+ 
+ return ""; 
+}
+private string GetShortName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(index+1);
+}
+return tableName;
+}
+private string GetClassName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(0,index);
+}
+return "Main";
+}
+
+public string GetTranType(ColumnSchema column)
+{
+ switch (column.NativeType)
+            {
+                case "bit": return ".ToByte().ToString()";
+                case "bigint": return ".ToLong().ToString()";
+                case "char": return ".ToSQL()";
+                case "datetime": return ".ToSQL()";
+                case "decimal": return ".ToDecimal().ToString()";
+                case "float": return ".ToDouble().ToString()";
+                case "int": return ".ToInt().ToString()";
+                case "money": return ".ToDecimal().ToString()";
+                case "nchar": return ".ToSQL()";
+                case "nvarchar": return ".ToSQL()";
+                case "numeric": return ".ToDecimal().ToString()";
+                case "smalldatetime": return ".ToSQL()";
+                case "smallint": return ".ToShort().ToString()";
+                case "smallmoney": return ".ToDecimal().ToString()";
+                case "tinyint": return ".ToByte().ToString()";
+                case "varchar": return ".ToSQL()";
+                case "text": return ".ToSQL()";
+                case "binary": return ".ToBinary()";
+                case "varbinary": return ".ToBinary()";
+                case "uniqueidentifier": return ".ToSQL()";
+                default: return ".ToSQL()";
+            };
+}
+</script>

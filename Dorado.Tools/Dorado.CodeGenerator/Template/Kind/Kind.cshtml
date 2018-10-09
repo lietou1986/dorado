@@ -1,0 +1,245 @@
+﻿@*----------------------------------------
+    -- Create By CodeSmith 6.5.0
+    -- Template:       List.cst
+    -- Description:
+    -- Date Generated: 2013-08-18 19:12
+    ----------------------------------------*@
+@{
+
+    ViewBag.Title = "分类管理";
+    DataArray parentKindData = ViewBag.ParentKindData as DataArray;
+}
+@section Style{}
+@section HeadScript{
+    <script type="text/javascript" src="/ui/section.js"> </script>
+}
+<div class="container">
+    @if (parentKindData != null)
+    {
+        <table class="table table-striped table-condensed table-baseinfo">
+            <tbody>
+                <tr>
+                    <td>
+                        父类名称：@parentKindData["name"].ToString()
+                    </td>
+                    <td>
+                        父类编码：@parentKindData["code"].ToString()
+                    </td>
+
+                    <td>
+                        父类描述：@parentKindData["description"].ToString()
+                    </td>
+                </tr>
+            </tbody>
+</table>
+    }
+    <div class="mdiv" id="main" control="main" select="mvc.admin.content.kind">
+        <div class="breadcrumb" id="sear" search="common">
+            <input type="hidden" id="kind0" name="kind0" value="@(parentKindData == null ? "0" : parentKindData["id"].ToString())">
+            名称：
+            <input type="text" id="key0" name="key0" placeholder=" 名称" class="input-normal">
+            系统分类：
+            <select id="kind1" name="kind1" class="input-normal">
+                <option value="-1">请选择...</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <a act="search" id="search" href="#" class="button button-small">搜索</a> <a act="reset" id="reset" href="#" class="button button-small">清空</a>
+        </div>
+        <table id="mlist" name="mlist" list="auto" loading="true" class="table table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th colspan="17">
+                        <ul class="toolbar">
+                            <li>
+                                <a href="#" title="新增分类" data-href="/admin/content/kindadd?id=@(parentKindData == null ? "0" : parentKindData["id"].ToString())" data-id="content_kindadd-@(parentKindData == null ? "0" : parentKindData["id"].ToString())" class="button button-small page-action">
+                                    新增
+                                </a>
+                            </li>
+                            <li>
+                                <a id="edit" act="keylist" href="#" class="button button-small">
+                                    编辑
+                                </a>
+                            </li>
+                            <li>
+                                <a id="view" act="keylist" href="#" class="button button-small">
+                                    查看
+                                </a>
+                            </li>
+                            <li>
+                                <a id="del" act="keylist" cmd="mvc.admin.content.kinddelete" href="#" class="button button-small">
+                                    删除
+                                </a>
+                            </li>
+                        </ul>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="span1">
+                        <input id="key_select" type="checkbox" onclick="F.selectAll('mlist', this);" name="key_select" />
+                    </td>
+                    <td>
+                        名称
+                    </td>
+                    <td>
+                        分类编码
+                    </td>
+                    <td>
+                        父分类
+                    </td>
+                    <td>
+                        系统分类
+                    </td>
+                    <td>
+                        排序号
+                    </td>
+                    <td class="span8">
+                        操作
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input id="key" type="checkbox" name="id">
+                    </td>
+                    <td name="name" inbox="setViewEntry"></td>
+                    <td name="code"></td>
+                    <td name="parentkindname"></td>
+                    <td name="issystem" inbox="setIsSystem"></td>
+                    <td>
+                        <input type="text" name="displayorder" kind="number" placeholder="排序号" class="editable" readonly="true" style="width: 50px;" />
+                    </td>
+                    <td id="operation">
+                        <a id="fastedit" act="submit" cmd="mvc.admin.content.kindfastedit" href="#">[快速编辑]</a>
+                        <a id="cancelfastedit" href="#" onclick="endEdit(this, false);return false;" class="nodisplay">
+                            [取消]
+                        </a>
+                        <a id="setchildkind1" act="key" href="#">[子分类]</a>
+
+                        <a id="edit1" act="key" href="#">[编辑]</a>
+                        <a id="del1" act="key" cmd="mvc.admin.content.kinddelete" href="">[删除]</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody name="empty">
+                <tr>
+                    <td colspan="17" id="empty" style="text-align: center; padding: 20px">
+                        没有找到相关数据
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <ul class="toolbar pull-left" style="padding-left: 6px">
+                <li>
+                    <a href="#" title="新增分类" data-href="/admin/content/kindadd?id=@(parentKindData == null ? "0" : parentKindData["id"].ToString())" data-id="content_kindadd-@(parentKindData == null ? "0" : parentKindData["id"].ToString())" class="button button-small page-action">
+                        新增
+                    </a>
+                </li>
+                <li>
+                    <a id="edit" act="keylist" href="#" class="button button-small">
+                        编辑
+                    </a>
+                </li>
+                <li>
+                    <a id="view" act="keylist" href="#" class="button button-small">
+                        查看
+                    </a>
+                </li>
+                <li>
+                    <a id="del" act="keylist" cmd="mvc.admin.content.kinddelete" href="#" class="button button-small">
+                        删除
+                    </a>
+                </li>
+            </ul>
+            <ul group="page" class="pagination pull-right" id="pagenav">
+                <li class="disabled">
+                    <script type="text/javascript"> drawPage(); </script>
+                </li>
+            </ul>
+            <ul id="pageturn" group="pageturn" free="true" scale="6" class="pagination pull-right"></ul>
+        </div>
+    </div>
+</div>
+
+@section FootScript
+{
+    <script type="text/javascript">
+
+        function setViewEntry(v) {
+            var id = F.top(this).getElementsByTagName("INPUT")[0].value;
+            this.innerHTML = '<a href="#" title="查看分类" data-href="/admin/content/kindview?id=' + id + '" data-id="content_kindview?id=' + id + '" class="page-action">' + v + '</a>';
+        }
+
+        //BoolIsSystem类型转换
+        function setIsSystem(v) {
+            this.innerHTML = v == "1" ? "是" : "否";
+        }
+
+        function Act_Before(o, c, p) {
+            switch (o.id) {
+                case "setchildkind1":
+                    openTab("content_kindsetchildkind" + p, "/admin/content/kind?id=" + p, "子分类");
+                    return false;
+                case "view":
+                    if (p == "") {
+                        Alert("请选择要操作的数据");
+                        return false;
+                    }
+                    var arr = p.split(",");
+                    for (var i = 0; i < arr.length; i++) {
+                        openTab("content_kindview" + arr[i], "/admin/content/kindview?id=" + arr[i], "查看分类");
+                    }
+                    return false;
+                case "edit1":
+                    openTab("content_kindedit" + p, "/admin/content/kindedit?id=" + p, "编辑分类");
+                    return false;
+                case "edit":
+                    if (p == "") {
+                        Alert("请选择要操作的数据");
+                        return false;
+                    }
+                    var arr = p.split(",");
+                    for (var i = 0; i < arr.length; i++) {
+                        openTab("content_kindedit" + arr[i], "/admin/content/kindedit?id=" + arr[i], "编辑分类");
+                    }
+                    return false;
+                case "del1":
+                    return (confirm("确定要删除所选数据吗?"));
+                case "del":
+                    if (p == "") {
+                        Alert("请选择要操作的数据");
+                        return false;
+                    }
+                    return (confirm("确定要删除所选数据吗?"));
+                case "fastedit":
+                    if (o.innerHTML == "[快速编辑]") return beginEdit(o);
+                    break;
+            }
+            return true;
+        }
+
+        function Act_After(o, c, p) {
+            var main = Control.main;
+            switch (o.id) {
+                case "del1":
+                case "del":
+                    if (p.success) {
+                        rePage();
+                        main.fresh();
+                    }
+                    break;
+                case "fastedit":
+                    if (p.success) endEdit(o, true);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $(document).ready(function () {
+            F.init("main");
+        });
+    </script>
+}

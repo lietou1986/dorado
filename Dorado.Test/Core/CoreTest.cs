@@ -4,6 +4,7 @@ using Dorado.Core;
 using Dorado.Core.Cache;
 using Dorado.Core.GlobalTimer.TimerStrategies;
 using Dorado.Core.Logger;
+using Dorado.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Dorado.Test.Core
@@ -71,8 +72,8 @@ namespace Dorado.Test.Core
         [TestMethod]
         public void Main()
         {
-            LoggerWrapper.Logger.Error( "Hellow World!");
-            
+            LoggerWrapper.Logger.Error("Hellow World!");
+
             // 1、缓存
             _memory.AddOfRelative("aaa", new object(), TimeSpan.FromSeconds(60));
             _memory.AddOfTermly("bbb", new object(), DateTime.Now.AddHours(1));
@@ -108,6 +109,13 @@ namespace Dorado.Test.Core
             return new object();
         }
 
-        
+        [TestMethod]
+        public void Test1()
+        {
+            Guid guid = CommonUtility.GenerateGuid();
+            string value = guid.ToString();
+            Console.WriteLine(value);
+            Assert.IsNotNull(value);
+        }
     }
 }

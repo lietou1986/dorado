@@ -1,0 +1,245 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
+<%@ Property Name="SourceTables" Type="Dictionary<string,List<TableSchema>>" Category="Context" Description="The tables to use for this sample." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="mscorlib" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+    <script type="text/javascript">
+BUI.use('common/main', function () {
+            var config = [
+             {
+                    id: 'Index',
+                    menu: [
+                {
+                    text: '快速入口',
+                    items: [
+			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
+             ]
+                }]
+                },
+    <%  foreach(KeyValuePair<string,List<TableSchema>> tables in SourceTables){%>
+    {
+                id: '<%=tables.Key%>',
+                menu: [
+                <%foreach(TableSchema table  in tables.Value) {%>
+                <%if(!table.Description.Contains("逻辑")){ %>
+                {
+                    text: '<%=GetTableDescription(table)%>管理',
+                    items: [
+			    { id: '<%=table.Name%>', text: '<%=GetTableDescription(table)%>', href: '/<%=tables.Key%>/<%=GetShortName(table.Name)%>' },
+                <%if(!table.Description.Contains("view")) {%>
+                { id: '<%=table.Name%>add', text: '新增<%=GetTableDescription(table)%>', href:  '/<%=tables.Key%>/<%=GetShortName(table.Name)%>add'}
+             <%}%>
+              ]
+                },
+            <%}%><%}%>]
+               },<%}%>
+               {
+                    id: 'SEO',
+                    menu: [
+                {
+                    text: '待添加',
+                    items: [
+			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
+             ]
+                }]
+                },
+                {
+                    id: 'Statistics',
+                    menu: [
+                {
+                    text: '待添加',
+                    items: [
+			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
+             ]
+                }]
+                }
+            ];
+            new PageUtil.MainPage({
+                modulesConfig: config
+            });
+        });
+  </script>
+<script runat="template">
+
+private List<ColumnSchema> GetSearchColumns(SchemaExplorer.TableSchema SourceTable){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("search"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
+public string GetColumnSize(ColumnSchema column){
+	if(column.NativeType=="varchar" || column.NativeType=="nvarchar"){
+		return string.Format("	({0})",column.Size);
+	}else{
+		return "";
+	}
+}
+public string GetDateTime(){
+	return DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+	}
+public string GetPrimarykeyColumnName(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return column.Name.ToString();
+  }
+ }
+ return "";
+
+}
+public string GetPrimarykeyColumnDataType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return GetColumnDataType(column);
+  }
+ }
+ return "";
+}
+
+public string GetPrimarykeyColumnValueType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   	return column.NativeType;
+  }
+ }
+ return "object";
+}
+public string GetColumnDescription(ColumnSchema column)
+{
+string des=column.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetTableDescription(SchemaExplorer.TableSchema SourceTable)
+{
+string des=SourceTable.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetUpdateSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "update "+ SourceTable.Name.ToString() +" set";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  " "+column.Name+"="+"@"+column.Name+",";
+ }
+ return sql.Substring(0,sql.Length-1);
+ 
+}
+
+public string GetInserSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "insert into "+SourceTable.Name.ToString()+" ( ";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " ) values (";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql += "@"+column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " )";
+ return sql;
+}
+public string GetAllColumn(SchemaExplorer.TableSchema SourceTable)
+{
+ string columns = "";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  columns +=  column.Name + ",";
+ }
+ columns = columns.Substring(0,columns.Length-1);
+ 
+ return columns;
+}
+public string GetColumnDataType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "DbType.Int32";
+  case "char": return "DbType.Char";
+  case "money": return "DbType.Money";
+  case "datetime": return "DbType.DateTime";
+  case "nvarchar" : return "DbType.NVarChar,"+column.Size.ToString();
+  case "bigint" : return "DbType.Int64";
+  case "float" : return "DbType.Float";
+  default: return column.NativeType.ToString();
+ }
+ 
+ return ""; 
+}
+public string GetColumnValueType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "int";
+  case "char": return "char";
+  case "money": return "decimal";
+  case "datetime": return "DateTime";
+  case "nvarchar" : return "string";
+  case "varchar" : return "string";
+  case "bigint" : return "long";
+  case "float" : return "float";
+	case "bit" : return "bool";
+	case "smallint" : return "short";
+	case "tinyint" : return "byte";
+	case "ntext" : return "string";
+	
+  default: return "object";
+ }
+ 
+ return ""; 
+}
+private string GetShortName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(index+1);
+}
+return tableName;
+}
+private string GetClassName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(0,index);
+}
+return "Main";
+}
+</script>

@@ -1,0 +1,38 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKFinder.Net", "CKFinder.Net.csproj", "{C5376ADF-309A-48DE-904C-B1FE1965C370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileEditor", "Resources\Plugins\FileEditor\FileEditor.csproj", "{1380B7AE-6A9F-4116-A27A-57A7A0B3851A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageResize", "Resources\Plugins\ImageResize\ImageResize.csproj", "{F545FCE3-C5AD-41D7-AA66-754A31C2A737}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watermark", "Resources\Plugins\Watermark\Watermark.csproj", "{B707C9F1-1846-4009-9A85-C00822AB7018}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5376ADF-309A-48DE-904C-B1FE1965C370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5376ADF-309A-48DE-904C-B1FE1965C370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5376ADF-309A-48DE-904C-B1FE1965C370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5376ADF-309A-48DE-904C-B1FE1965C370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1380B7AE-6A9F-4116-A27A-57A7A0B3851A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1380B7AE-6A9F-4116-A27A-57A7A0B3851A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1380B7AE-6A9F-4116-A27A-57A7A0B3851A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1380B7AE-6A9F-4116-A27A-57A7A0B3851A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F545FCE3-C5AD-41D7-AA66-754A31C2A737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F545FCE3-C5AD-41D7-AA66-754A31C2A737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F545FCE3-C5AD-41D7-AA66-754A31C2A737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F545FCE3-C5AD-41D7-AA66-754A31C2A737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B707C9F1-1846-4009-9A85-C00822AB7018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B707C9F1-1846-4009-9A85-C00822AB7018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B707C9F1-1846-4009-9A85-C00822AB7018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B707C9F1-1846-4009-9A85-C00822AB7018}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

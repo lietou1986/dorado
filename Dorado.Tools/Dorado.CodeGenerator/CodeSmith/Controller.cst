@@ -1,0 +1,470 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
+<%@ Property Name="SourceTables" Type="System.Collections.Generic.List<SchemaExplorer.TableSchema>" Category="Context" Description="The tables to use for this sample." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Property Name="NamePlaceName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
+<%@ Property Name="BSName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="mscorlib" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+/*----------------------------------------
+-- Create By Len.zhang
+-- Template:       Controller.cst
+-- Description: 
+-- Date Generated: <%=GetDateTime()%>
+----------------------------------------*/
+using Dorado.Configuration;
+using Dorado.Core.Data;
+using Dorado.Platform.Admin.Filters;
+using Dorado.Platform.Data.Table;
+using Dorado.Platform.WebCore.Context.Cookies;
+using Dorado.Web;
+using Dorado.Web.Extensions;
+using Dorado.Web.FastViewEngine;
+
+using System;
+using System.Web.Mvc;
+namespace <%=NamePlaceName%>.Admin.Controllers.Admin
+{
+    public partial class <%=BSName%>Controller : BaseController
+    {
+    <% foreach (SchemaExplorer.TableSchema SourceTable in SourceTables) { %>
+        #region <%=GetTableDescription(SourceTable)%>数据管理
+        
+        /// <summary>
+        /// <%=GetTableDescription(SourceTable) %>数据查询入口
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult <%=GetShortName(SourceTable.Name) %>()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 查询<%=GetTableDescription(SourceTable) %>数据
+        /// </summary>
+        /// <param name="para">查询参数</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Description("查询[<%=GetTableDescription(SourceTable) %>]数据")]
+        public ActionResult <%=GetShortName(SourceTable.Name) %>(SearchPara para)
+        {
+            try
+            {
+                using (Conn conn = GetConn())
+                {
+                conn.PageSize = PageSize;
+                
+                conn.Page = para.page;
+                conn.Name = DataName;
+
+                <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=GetListColumn(SourceTable) %>");
+ <%}else{ %>
+            conn.Field("<%=GetListColumn(SourceTable) %>");
+            <%}%>
+                conn.From("<%=SourceTable.Name %>");
+                  <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+            conn.LeftJoin("sys_user cUser", "<%=SourceTable.Name%>.createuserid=cUser.id");
+            conn.LeftJoin("sys_user eUser", "<%=SourceTable.Name%>.edituserid=eUser.id");
+             <%}%>
+                <% for (int i=0;i<GetSearchColumns(SourceTable).Count; i++) {%>
+                <%switch(GetSearchColumns(SourceTable)[i].NativeType) {%>
+                <%case "nvarchar": %>
+                <%case "varchar": %>
+                 if (!string.IsNullOrEmpty(para.key<%=i%>))
+                conn.Where( "<%=SourceTable.Name %>.<%=GetSearchColumns(SourceTable)[i].Name%> like '%{0}%'" , para.key<%=i%> );
+                <%break; %>
+                <%case "bit": %>
+                 if(para.kind<%=i%>>-1)
+                conn.Where( "<%=SourceTable.Name %>.<%=GetSearchColumns(SourceTable)[i].Name%>={0}" , para.kind<%=i%> );
+                <%break; %>
+                <%case "tinyint": %>
+                if(para.kind<%=i%>>-1)
+                conn.Where( "<%=SourceTable.Name %>.<%=GetSearchColumns(SourceTable)[i].Name%>={0}" , para.kind<%=i%> );
+                <%break; %>
+                <% }%> <% }%>
+                <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="isdeleted")) {%>
+                  conn.Where("<%=SourceTable.Name %>.IsDeleted=0");
+                <%} %>
+                conn.Order("<%=SourceTable.Name %>.autoid desc");
+
+                DataArray data = conn.SelectPage();
+
+                return new FastResult(data.ToString());
+			}
+            }
+            catch (Exception ex)
+            {
+                return new FastResult(Output.Error(ex));
+            }
+         }
+        
+        <%if(!SourceTable.Description.Contains("view")) {%>
+        /// <summary>
+        /// <%=GetTableDescription(SourceTable) %>数据新增入口
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>Add()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 新增<%=GetTableDescription(SourceTable) %>数据
+        /// </summary>
+        /// <param name="data">数据体</param>
+        /// <returns></returns>
+        [HttpPost]
+        <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+        [UserTrace]
+        <%}%>
+        [Description("新增[<%=GetTableDescription(SourceTable) %>]数据")]
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>Add(DataArray data)
+        {
+            try
+            {
+                using (Conn conn = GetConn())
+                {
+             <%--<% foreach (ColumnSchema column in SourceTable.Columns) { %>
+             <% if(!column.AllowDBNull&&!column.IsPrimaryKeyMember&&!column.Description.Contains("即时更新")&&!column.Description.Contains("逻辑")){ %>
+               if ( !data.Contains( "<%=column.Name.ToLower()%>" ) ) throw new ApplicationException( "请输入<%=GetColumnDescription(column)%>！" );
+             <%}} %>--%>
+                long id=0;
+                id = Convert.ToInt64(T_<%=SourceTable.Name %>.Insert(conn, data));
+                return new FastResult(Output.Success(id.ToString()));
+				}
+            }
+            catch (Exception ex)
+            {
+                return new FastResult(Output.Error(ex));
+            }
+         }
+
+        /// <summary>
+        /// <%=GetTableDescription(SourceTable) %>数据修改入口
+        /// </summary>
+        /// <param name="id">数据记录标识</param>
+        /// <returns></returns>
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>Edit(string id)
+        {
+             using (Conn conn = GetConn())
+                {
+ <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=GetAllColumn(SourceTable) %>");
+ <%}else{ %>
+            conn.Field("<%=GetAllColumn(SourceTable) %>");
+            <%}%>
+            conn.From("<%=SourceTable.Name%>");
+             <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+            conn.LeftJoin("sys_user cUser", "<%=SourceTable.Name%>.createuserid=cUser.id");
+            conn.LeftJoin("sys_user eUser", "<%=SourceTable.Name%>.edituserid=eUser.id");
+             <%}%>
+            conn.Where("<%=SourceTable.Name%>.ID={0}", id);
+            DataArray data = conn.Select();
+            return View(data);
+			}
+         }
+
+        /// <summary>
+        /// 修改<%=GetTableDescription(SourceTable) %>数据
+        /// </summary>
+        /// <param name="data">数据体</param>
+        /// <returns></returns>
+        [HttpPost]
+        <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="edituserid")) {%>
+        [UserTrace(false)]
+        <%}%>
+        [Description("修改[<%=GetTableDescription(SourceTable) %>]数据")]
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>Edit(DataArray data)
+        {
+            try
+            {
+                 using (Conn conn = GetConn())
+                {
+                T_<%=SourceTable.Name%>.Update(conn, data);
+                return new FastResult(Output.Success(data["id"].ToString()));}
+            }
+            catch (Exception ex)
+            {
+                return new FastResult(Output.Error(ex));
+            }
+        }
+        <%} %>
+        
+        
+         <%if(!SourceTable.Description.Contains("view")) {%>
+        /// <summary>
+        /// 删除<%=GetTableDescription(SourceTable) %>数据
+        /// </summary>
+        /// <param name="para">数据记录标识</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Description("删除[<%=GetTableDescription(SourceTable) %>]数据")]
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>Delete(KeyPara para)
+        {
+            
+            try
+            {
+              using (Conn conn = GetConn())
+                {
+               <%if(SourceTable.Columns.Contains("IsDeleted")){%>
+                T_<%=SourceTable.Name%>.Update(conn, "isdeleted=1 where id in ({0})", para.id);
+               <%}else { %>
+                T_<%=SourceTable.Name%>.Delete(conn, "id in ({0})", para.id);
+                    <%} %>
+               return new FastResult(Output.Success("数据删除成功"));
+			   }
+            }
+            catch (Exception ex)
+            {
+                return new FastResult(Output.Error(ex));
+            }
+
+        }
+        <%} %>
+        /// <summary>
+        /// 浏览<%=GetTableDescription(SourceTable) %>数据
+        /// </summary>
+        /// <param name="id">数据记录标识</param>
+        /// <returns></returns>
+         [Description("浏览[<%=GetTableDescription(SourceTable) %>]数据")]
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>View(string id)
+        {
+                 using (Conn conn = GetConn())
+                {
+ <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=GetAllColumn(SourceTable) %>");
+ <%}else{ %>
+            conn.Field("<%=GetAllColumn(SourceTable) %>");
+            <%}%>
+            conn.From("<%=SourceTable.Name%>");
+             <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+            conn.LeftJoin("sys_user cUser", "<%=SourceTable.Name%>.createuserid=cUser.id");
+            conn.LeftJoin("sys_user eUser", "<%=SourceTable.Name%>.edituserid=eUser.id");
+             <%}%>
+            conn.Where("<%=SourceTable.Name%>.ID={0}", id);
+            DataArray data = conn.Select();
+            return View(data);}
+        }
+
+        
+        
+       #endregion <%=GetTableDescription(SourceTable)%>管理
+       
+       <% }%> 
+    }
+}
+
+<script runat="template">
+
+     private List<ColumnSchema> GetListColumns(SchemaExplorer.TableSchema SourceTable){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(!column.Description.Contains("listnoshow"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
+     
+private List<ColumnSchema> GetSearchColumns(SchemaExplorer.TableSchema SourceTable){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("search"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
+public string GetColumnSize(ColumnSchema column){
+	if(column.NativeType=="varchar" || column.NativeType=="nvarchar"){
+		return string.Format("	({0})",column.Size);
+	}else{
+		return "";
+	}
+}
+public string GetDateTime(){
+	return DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+	}
+public string GetPrimarykeyColumnName(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return column.Name.ToString();
+  }
+ }
+ return "";
+
+}
+public string GetPrimarykeyColumnDataType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return GetColumnDataType(column);
+  }
+ }
+ return "";
+}
+
+public string GetPrimarykeyColumnValueType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   	return column.NativeType;
+  }
+ }
+ return "object";
+}
+public string GetColumnDescription(ColumnSchema column)
+{
+string des=column.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetTableDescription(SchemaExplorer.TableSchema SourceTable)
+{
+string des=SourceTable.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetUpdateSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "update "+ SourceTable.Name.ToString() +" set";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  " "+column.Name+"="+"@"+column.Name+",";
+ }
+ return sql.Substring(0,sql.Length-1);
+ 
+}
+
+public string GetInserSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "insert into "+SourceTable.Name.ToString()+" ( ";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " ) values (";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql += "@"+column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " )";
+ return sql;
+}
+public string GetEditColumn(SchemaExplorer.TableSchema SourceTable)
+{
+ string columns = "";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+     if(!column.Description.Contains("逻辑"))
+  columns += SourceTable.Name+".["+column.Name + "],";
+ }
+ columns = columns.Substring(0,columns.Length-1);
+ 
+ return columns;
+}
+public string GetAllColumn(SchemaExplorer.TableSchema SourceTable)
+{
+ string columns = "";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  columns += SourceTable.Name+".["+column.Name + "],";
+ }
+ columns = columns.Substring(0,columns.Length-1);
+ 
+ return columns;
+}
+public string GetListColumn(SchemaExplorer.TableSchema SourceTable)
+{
+ string columns = "";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+      if(!column.Description.Contains("listnoshow"))
+  columns += SourceTable.Name+".["+column.Name + "],";
+ }
+ columns = columns.Substring(0,columns.Length-1);
+ 
+ return columns;
+}
+public string GetColumnDataType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "DbType.Int32";
+  case "char": return "DbType.Char";
+  case "money": return "DbType.Money";
+  case "datetime": return "DbType.DateTime";
+  case "nvarchar" : return "DbType.NVarChar,"+column.Size.ToString();
+  case "bigint" : return "DbType.Int64";
+  case "float" : return "DbType.Float";
+  default: return column.NativeType.ToString();
+ }
+ 
+ return ""; 
+}
+public string GetColumnValueType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "int";
+  case "char": return "char";
+         case "nchar" : return "string";
+  case "money": return "decimal";
+  case "datetime": return "DateTime";
+  case "nvarchar" : return "string";
+  case "varchar" : return "string";
+  case "bigint" : return "long";
+  case "float" : return "float";
+	case "bit" : return "bool";
+	case "smallint" : return "short";
+	case "tinyint" : return "byte";
+	case "ntext" : return "string";
+	
+  default: return "object";
+ }
+ 
+ return ""; 
+}
+private string GetShortName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(index+1);
+}
+return tableName;
+}
+private string GetClassName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(0,index);
+}
+return "Main";
+}
+</script>

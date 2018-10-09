@@ -1,0 +1,199 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="C#" ResponseEncoding="UTF-8" Description="Generates a DMMIS EntityClass." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="The table to use for this sample." %>
+<%@ Property Name="NamePlaceName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+/*----------------------------------------
+-- Create By Len.zhang
+-- Template:       Entity.cst
+-- Description: 
+-- Date Generated: <%=GetDateTime()%>
+----------------------------------------*/
+namespace <%=NamePlaceName%>.Model.Entity
+{
+    using Core.Data;
+    using Newtonsoft.Json;
+    using System;
+    
+    /// <summary>
+	/// 实体类<%=SourceTable.Name%> 
+	/// </summary>
+    [Serializable]
+ 	public partial class <%=SourceTable.Name%>
+ 	{
+		<% foreach (ColumnSchema column in SourceTable.Columns) { %>
+		
+        /// <summary>
+    	/// <%=GetColumnDescription(column)%> 
+	    /// </summary>
+		public <%=GetColumnValueType(column)%> <%=column.Name%>{ get; set; }
+   		<% } %>
+        
+        /// <summary>
+        /// 生成Json串
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
+
+        /// <summary>
+        /// 生成DataArray
+        /// </summary>
+        /// <returns></returns>
+		public DataArray ToDataArray()
+        {
+            DataArray data = new DataArray();
+			data.AddRow();
+           <% foreach (ColumnSchema column in SourceTable.Columns) { %>
+            data.Columns.Add("<%=column.Name.ToLower()%>").Set(<%=column.Name%>);
+        <% } %>
+            return data;
+        }
+	}
+}
+<script runat="template">
+public string GetDateTime(){
+	return DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+	}
+public string GetPrimarykeyColumnName(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return column.Name.ToString();
+  }
+ }
+ return "";
+
+}
+public string GetPrimarykeyColumnDataType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return GetColumnDataType(column);
+  }
+ }
+ return "";
+}
+
+public string GetPrimarykeyColumnValueType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   	return column.NativeType;
+  }
+ }
+ return "object";
+}
+
+public string GetUpdateSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "update "+ SourceTable.Name.ToString() +" set";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  " "+column.Name+"="+"@"+column.Name+",";
+ }
+ return sql.Substring(0,sql.Length-1);
+ 
+}
+
+public string GetInserSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "insert into "+SourceTable.Name.ToString()+" ( ";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " ) values (";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql += "@"+column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " )";
+ return sql;
+}
+public string GetColumnDescription(ColumnSchema column)
+{
+string des=column.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetColumnDataType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "DbType.Int32";
+  case "char": return "DbType.Char";
+  case "money": return "DbType.Money";
+  case "datetime": return "DbType.DateTime";
+  case "nvarchar" : return "DbType.NVarChar,"+column.Size.ToString();
+  case "bigint" : return "DbType.Int64";
+  case "float" : return "DbType.Float";
+  default: return column.NativeType.ToString();
+ }
+ 
+ return ""; 
+}
+public string GetColumnValueType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "int";
+  case "char": return "char";
+  case "money": return "decimal";
+  case "decimal": return "decimal";
+  case "datetime": return "DateTime";
+  case "nvarchar" : return "string";
+  case "varchar" : return "string";
+case "nchar" : return "string";
+  case "bigint" : return "long";
+  case "float" : return "float";
+	case "bit" : return "bool";
+	case "smallint" : return "short";
+	case "tinyint" : return "byte";
+	case "ntext" : return "string";
+	
+  default: return "object";
+ }
+ 
+ return ""; 
+}
+
+public string GetColumnDefault(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "0";
+  case "char": return "''";
+  case "money": return "0";
+  case "datetime": return "DateTime.Now";
+  case "nvarchar" : return "string.Empty";
+  case "varchar" : return "string.Empty";
+  case "bigint" : return "0";
+  case "float" : return "0";
+	case "bit" : return "false";
+	case "smallint" : return "0";
+	case "tinyint" : return "0";
+  default: return "string.Empty";
+ }
+ 
+ return ""; 
+}
+</script>
+
+
+
+

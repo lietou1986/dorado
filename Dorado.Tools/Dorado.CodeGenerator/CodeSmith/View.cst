@@ -1,0 +1,351 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="The table to use for this sample." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Assembly Name="mscorlib" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Linq" %>
+@*----------------------------------------
+-- Create By Len.zhang
+-- Template:       View.cst
+-- Description: 
+-- Date Generated: <%=GetDateTime()%>
+----------------------------------------*@
+@model DataArray
+@{
+     ViewBag.Title ="查看<%=GetTableDescription()%>数据";
+}
+@section Style{}
+@section HeadScript{
+}
+   <div class="container">
+<%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+ @Html.Action("EditorInfo", "Partial", new { area = string.Empty, data = Model })
+<%} %>
+<div id="info" control="info" class="row span24 form-horizontal">
+ <% foreach (ColumnSchema column in SourceTable.Columns) { %>
+ <%if(column.IsPrimaryKeyMember) {%>
+ <%} else if(!column.Description.Contains("即时更新")&&!column.Description.Contains("逻辑")&&column.Name.ToLower()!="autoid"){%>
+ <div class="row">
+  <%if(column.Description.Contains("text")) {%>
+ <div class="control-group control-row4">
+ <%}else{ %>
+ <div class="control-group">
+ <%} %>
+        <label class="control-label">
+            <%=GetColumnDescription(column)%>：</label>
+       <%if(column.Description.Contains("image")) {%>
+             <div class="controls" style="width: 150px; height: 150px">
+              <%}else if(column.Description.Contains("editor")) {%>
+             <div class="controls" style="height: 350px; overflow: auto">
+            <%}else{ %>
+        <div class="controls">
+        <%} %>
+             <%switch(column.NativeType) {%>
+    <%default: %>
+    <%if(column.Description.Contains("image")){ %>
+          <img id="<%=column.Name.ToLower()%>container" src ="@Model["<%=column.Name.ToLower()%>"].ToString()" class="img-polaroid uploadcontainer" style="width: 100px; height: 100px" />
+    <%}
+	else if(column.Description.Contains("file")){ %>
+         <a id="<%=column.Name.ToLower()%>container" href="@Model["<%=column.Name.ToLower()%>"].ToString()" target="_brank">查看文件</a>
+ <%}
+    else if(column.Description.Contains("location")){ %>
+         @Html.LocationLabel(Model["province"].ToString()) @Html.LocationLabel(Model["city"].ToString()) @Html.LocationLabel(Model["region"].ToString())   
+ <%}
+    else{ %>
+             @Html.Raw(Model["<%=column.Name.ToLower()%>"].ToString())
+             <%} %>
+<%break; %>
+    <%case "bit": %>
+     @Html.Raw(Model["<%=column.Name.ToLower()%>"].ToBool()?"是":"否")
+    <%break; %>
+    <%case "tinyint": %>
+     @Html.DictLabel("<%=SourceTable.Name.ToLower()%>_<%=column.Name.ToLower()%>",Model["<%=column.Name.ToLower()%>"].ToString())
+    <%break; %>
+    <%} %>
+    </div> </div> </div>
+     <%} }%> 
+     <div class="row form-actions actions-bar">
+        <div class="span13 offset3 ">
+               <a  id="close"  href="#" act="submit" class="button">
+                关闭</a>
+                  <a  id="reload"  href="#" act="keylist" class="button">
+                刷新</a>
+                <%if(!SourceTable.Description.Contains("view")) {%>
+                       <a href="#" title="新增<%=GetTableDescription()%>" data-href="/<%=GetClassName(SourceTable.Name).ToLower()%>/<%=GetShortName(SourceTable.Name).ToLower()%>add" data-id="<%=SourceTable.Name.ToLower()%>add" class="button button-primary page-action direct-lnk">
+                           新增</a>
+                           <a href="#" title="编辑<%=GetTableDescription()%>" data-href="/<%=GetClassName(SourceTable.Name).ToLower()%>/<%=GetShortName(SourceTable.Name).ToLower()%>edit?id=@Model["id"].ToString()" data-id="<%=SourceTable.Name.ToLower()%>edit@Model["id"].ToString()" class="button button-primary page-action direct-lnk">编辑</a>
+                            <%} %>
+        </div>
+    </div>
+</div>
+</div>
+@section FootScript
+{
+    <script type="text/javascript">
+       
+        function Act_Before(o, c, p) {
+             switch (o.id) {
+                    case "close":
+                closeTab();
+                    return false;
+                    case "reload":
+                reloadTab();
+                    return false;
+            }
+            return true;
+        }
+
+        function Act_After(o, c, p) {
+        }
+        $(document).ready(function () {
+           F.init("info");
+        });
+    </script>
+}
+<script runat="template">
+private bool IsHasLocationColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("location"))
+      {
+          return true;
+      }
+}
+return false;
+}
+private bool IsHasImageColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("image"))
+      {
+          return true;
+      }
+}
+return false;
+}
+private string GetImageColumnName(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("image"))
+      {
+          return column.Name;
+      }
+}
+return "";
+}
+private bool IsHasFileColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("file"))
+      {
+          return true;
+      }
+}
+return false;
+}
+
+private string GetFileColumnName(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("file"))
+      {
+          return column.Name;
+      }
+}
+return "";
+}
+
+private bool IsHasEditorColumn(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("editor"))
+      {
+          return true;
+      }
+}
+return false;
+}
+
+private string GetEditorColumnName(){
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("editor"))
+      {
+          return column.Name;
+      }
+}
+return "";
+}
+private List<ColumnSchema> GetSearchColumns(){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains(" [Search]"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
+public string GetColumnSize(ColumnSchema column){
+	if(column.NativeType=="varchar" || column.NativeType=="nvarchar"){
+		return string.Format("	({0})",column.Size);
+	}else{
+		return "";
+	}
+}
+public string GetDateTime(){
+	return DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+	}
+public string GetPrimarykeyColumnName(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return column.Name.ToString();
+  }
+ }
+ return "";
+
+}
+public string GetPrimarykeyColumnDataType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   return GetColumnDataType(column);
+  }
+ }
+ return "";
+}
+public string SetInBox(ColumnSchema column){
+switch (column.NativeType)
+ {
+  
+	case "tinyint" : return " inbox=\"set"+column.Name+"\"";
+ }
+ 
+ return ""; 
+}
+public string GetPrimarykeyColumnValueType(SchemaExplorer.TableSchema SourceTable)
+{
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  if(column.IsPrimaryKeyMember)
+  {
+   	return column.NativeType;
+  }
+ }
+ return "object";
+}
+
+public string GetUpdateSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "update "+ SourceTable.Name.ToString() +" set";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  " "+column.Name+"="+"@"+column.Name+",";
+ }
+ return sql.Substring(0,sql.Length-1);
+ 
+}
+
+public string GetInserSql(SchemaExplorer.TableSchema SourceTable)
+{
+ string sql = "insert into "+SourceTable.Name.ToString()+" ( ";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql +=  column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " ) values (";
+ foreach(ColumnSchema column in SourceTable.Columns)
+ {
+  sql += "@"+column.Name + ",";
+ }
+ sql = sql.Substring(0,sql.Length-1);
+ sql += " )";
+ return sql;
+}
+
+
+public string GetColumnDataType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "DbType.Int32";
+  case "char": return "DbType.Char";
+  case "money": return "DbType.Money";
+  case "datetime": return "DbType.DateTime";
+  case "nvarchar" : return "DbType.NVarChar,"+column.Size.ToString();
+  case "bigint" : return "DbType.Int64";
+  case "float" : return "DbType.Float";
+  default: return column.NativeType.ToString();
+ }
+ 
+ return ""; 
+}
+public string GetColumnDescription(ColumnSchema column)
+{
+string des=column.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetTableDescription()
+{
+string des=SourceTable.Description;
+    int index=des.IndexOf("||");
+    if(index>-1)
+    return des.Substring(0,index);
+    else
+ return des;
+}
+public string GetColumnValueType(ColumnSchema column)
+{
+ switch (column.NativeType)
+ {
+  case "int" : return "int";
+  case "char": return "char";
+         case "nchar" : return "string";
+  case "money": return "decimal";
+  case "datetime": return "DateTime";
+  case "nvarchar" : return "string";
+  case "varchar" : return "string";
+  case "bigint" : return "long";
+  case "float" : return "float";
+	case "bit" : return "bool";
+	case "smallint" : return "short";
+	case "tinyint" : return "byte";
+	case "ntext" : return "string";
+	
+  default: return "object";
+ }
+ 
+ return ""; 
+}
+private string GetShortName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(index+1);
+}
+return tableName;
+}
+private string GetClassName(string tableName){
+    int index=tableName.IndexOf("_");
+if(index>-1)
+{
+    return tableName.Substring(0,index);
+}
+return "Main";
+}
+</script>
