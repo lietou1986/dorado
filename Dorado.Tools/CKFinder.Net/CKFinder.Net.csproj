@@ -172,15 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CKFinder.ico" />
-    <Content Include="Plugins\FileEditor\CKFinder.ico" />
-    <Content Include="Plugins\ImageResize\CKFinder.ico" />
-    <Content Include="Plugins\Watermark\CKFinder.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Plugins\FileEditor\Properties\" />
-    <Folder Include="Plugins\ImageResize\Properties\" />
-    <Folder Include="Plugins\Watermark\Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
