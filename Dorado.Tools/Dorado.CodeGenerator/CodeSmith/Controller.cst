@@ -230,7 +230,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         /// <param name="id">数据记录标识</param>
         /// <returns></returns>
          [Description("浏览[<%=GetTableDescription(SourceTable) %>]数据")]
-        public ActionResult  <%=GetShortName(SourceTable.Name) %>View(string id)
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>View(string id, int viewOnly = 0)
         {
                  using (Conn conn = GetConn())
                 {
@@ -246,6 +246,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
              <%}%>
             conn.Where("<%=SourceTable.Name%>.ID={0}", id);
             DataArray data = conn.Select();
+             ViewBag.ViewOnly = viewOnly >= 0;
             return View(data);}
         }
 

@@ -15,6 +15,7 @@
 @model DataArray
 @{
      ViewBag.Title ="查看<%=GetTableDescription()%>数据";
+    bool viewOnly = ViewBag.ViewOnly;
 }
 @section Style{}
 @section HeadScript{
@@ -73,10 +74,13 @@
                   <a  id="reload"  href="#" act="keylist" class="button">
                 刷新</a>
                 <%if(!SourceTable.Description.Contains("view")) {%>
+                 @if (!viewOnly)
+                {
                        <a href="#" title="新增<%=GetTableDescription()%>" data-href="/<%=GetClassName(SourceTable.Name).ToLower()%>/<%=GetShortName(SourceTable.Name).ToLower()%>add" data-id="<%=SourceTable.Name.ToLower()%>add" class="button button-primary page-action direct-lnk">
                            新增</a>
                            <a href="#" title="编辑<%=GetTableDescription()%>" data-href="/<%=GetClassName(SourceTable.Name).ToLower()%>/<%=GetShortName(SourceTable.Name).ToLower()%>edit?id=@Model["id"].ToString()" data-id="<%=SourceTable.Name.ToLower()%>edit@Model["id"].ToString()" class="button button-primary page-action direct-lnk">编辑</a>
                             <%} %>
+                            }
         </div>
     </div>
 </div>
