@@ -36,7 +36,7 @@ namespace <%=NamePlaceName%>.Data.Table
    		<% } %>
         }
         
-        private static string _insert_sql(DataArray data, bool isStrict)
+        private static string _insert_sql(DataArray data, bool strict)
         {
             StringBuilder fld = new StringBuilder();
             StringBuilder var = new StringBuilder();
@@ -46,7 +46,7 @@ namespace <%=NamePlaceName%>.Data.Table
            <%if(!column.Description.Contains("即时更新")&&!IsIdentity(column)) {%>
             field=data[Field.<%=column.Name%>];
             <%if(!column.AllowDBNull&&!IsHasDefaultValue(column)) {%>
-			if (field == null || (isStrict && string.IsNullOrWhiteSpace(field.ToString())))
+			if (field == null || (strict && string.IsNullOrWhiteSpace(field.ToString())))
 				throw new ApplicationException("请您输入<%=GetColumnDescription(column)%>");
 
 			fld.Append(Field.<%=column.Name%> + "," );
@@ -103,19 +103,19 @@ namespace <%=NamePlaceName%>.Data.Table
             return conn.Select(sql);
         }
         
-        public static long Insert(Conn conn, DataArray data, bool isStrict = true)
+        public static bool Exist(Conn conn, string sql, params object[] para)
+        {
+            DataArray data = Select(conn, "id", sql, para);
+            return data.Count > 0;
+        }
+        
+        public static long Insert(Conn conn, DataArray data, bool strict = true)
         {
             if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
-
             long primaryKey = CommonUtility.GeneratePrimaryKey();
-            if (!data.Contains(Field.<%=GetPrimarykeyColumnName()%>))
-                data.Columns.Add(Field.<%=GetPrimarykeyColumnName()%>);
-            data[Field.<%=GetPrimarykeyColumnName()%>].Set(primaryKey);
-
-            string sql = _insert_sql(data, isStrict);
-
+            data.Columns.Add(Field.<%=GetPrimarykeyColumnName()%>).Set(primaryKey);
+            string sql = _insert_sql(data, strict);
             if (sql == string.Empty) return 0;
-
             conn.ExecuteNonQuery(sql);
             return primaryKey;
         }
