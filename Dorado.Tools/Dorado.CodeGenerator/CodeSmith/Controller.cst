@@ -131,8 +131,8 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
              <% if(!column.AllowDBNull&&!column.IsPrimaryKeyMember&&!column.Description.Contains("即时更新")&&!column.Description.Contains("逻辑")){ %>
                if ( !data.Contains( "<%=column.Name.ToLower()%>" ) ) throw new ApplicationException( "请输入<%=GetColumnDescription(column)%>！" );
              <%}} %>--%>
-                long id=0;
-                id = Convert.ToInt64(T_<%=SourceTable.Name %>.Insert(conn, data));
+               
+                long id= T_<%=SourceTable.Name %>.Insert(conn, data);
                 return new FastResult(Output.Success(id.ToString()));
 				}
             }
