@@ -693,6 +693,11 @@ namespace Dorado.Core.Data
             Set(value, _cursor);
         }
 
+        public void Set(Enum value)
+        {
+            Set(value, _cursor);
+        }
+
         public void Set(bool value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
@@ -1744,6 +1749,76 @@ namespace Dorado.Core.Data
         }
 
         public void Set(object value, int index)
+        {
+            switch (Type.GetTypeCode((Type)_type))
+            {
+                case TypeCode.Boolean:
+                    ((bool[])_data)[index] = DataTypeExtensions.ToBool(value);
+                    break;
+
+                case TypeCode.Char:
+                    ((char[])_data)[index] = DataTypeExtensions.ToChar(value);
+                    break;
+
+                case TypeCode.Byte:
+                    ((byte[])_data)[index] = DataTypeExtensions.ToByte(value);
+                    break;
+
+                case TypeCode.SByte:
+                    ((sbyte[])_data)[index] = DataTypeExtensions.ToSByte(value);
+                    break;
+
+                case TypeCode.Int16:
+                    ((short[])_data)[index] = DataTypeExtensions.ToShort(value);
+                    break;
+
+                case TypeCode.UInt16:
+                    ((ushort[])_data)[index] = DataTypeExtensions.ToUShort(value);
+                    break;
+
+                case TypeCode.Int32:
+                    ((int[])_data)[index] = DataTypeExtensions.ToInt(value);
+                    break;
+
+                case TypeCode.UInt32:
+                    ((uint[])_data)[index] = DataTypeExtensions.ToUInt(value);
+                    break;
+
+                case TypeCode.Int64:
+                    ((long[])_data)[index] = DataTypeExtensions.ToLong(value);
+                    break;
+
+                case TypeCode.UInt64:
+                    ((ulong[])_data)[index] = DataTypeExtensions.ToULong(value);
+                    break;
+
+                case TypeCode.Decimal:
+                    ((decimal[])_data)[index] = DataTypeExtensions.ToDecimal(value);
+                    break;
+
+                case TypeCode.Double:
+                    ((double[])_data)[index] = DataTypeExtensions.ToDouble(value);
+                    break;
+
+                case TypeCode.Single:
+                    ((float[])_data)[index] = DataTypeExtensions.ToFloat(value);
+                    break;
+
+                case TypeCode.DateTime:
+                    ((DateTime[])_data)[index] = DataTypeExtensions.ToDateTime(value);
+                    break;
+
+                case TypeCode.String:
+                    ((string[])_data)[index] = DataTypeExtensions.ToString(value);
+                    break;
+
+                case TypeCode.Object:
+                    ((Array)_data).SetValue(value, index);
+                    break;
+            }
+        }
+
+        public void Set(Enum value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
