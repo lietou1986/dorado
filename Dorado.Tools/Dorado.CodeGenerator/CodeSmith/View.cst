@@ -39,7 +39,7 @@
        <%if(column.Description.Contains("image")) {%>
              <div class="controls" style="width: 150px; height: 150px">
               <%}else if(column.Description.Contains("editor")) {%>
-             <div class="controls" style="height: 350px; overflow: auto">
+             <div class="controls content">
             <%}else{ %>
         <div class="controls">
         <%} %>
