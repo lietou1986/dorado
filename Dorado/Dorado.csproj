@@ -118,6 +118,7 @@
     <Compile Include="Core\Data\DataArrayList.cs" />
     <Compile Include="Core\Data\DataArrayRows.cs" />
     <Compile Include="Core\Data\IConn.cs" />
+    <Compile Include="Core\Encrypt\Base64.cs" />
     <Compile Include="Core\ICloneable.cs" />
     <Compile Include="Core\IOrdered.cs" />
     <Compile Include="Core\ITypeFinder.cs" />
