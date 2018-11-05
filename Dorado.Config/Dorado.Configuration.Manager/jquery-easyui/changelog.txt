@@ -2,7 +2,9 @@ Version 1.6.x
 -------------
 * Bug
  * sidemenu: The tooltip has a wrong position when the 'floatMenuPosition' is set to 'left'. fixed.
- 
+ * datagrid: The horizontal scrollbar has a wrong state when the 'showHeader' is set to true. fixed.
+ * combo: The initialized value will trigger the form's 'onChange' event when the 'multiple' is set to true. fixed.
+
 Version 1.6.0
 -------------
 * Bug

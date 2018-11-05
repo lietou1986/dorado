@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.6.3
+ * EasyUI for jQuery 1.6.6
  * 
  * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
@@ -80,6 +80,7 @@
 
 	$.parser = {
 		auto: true,
+		emptyFn: function(){},
 		onComplete: function(context){},
 		plugins:['draggable','droppable','resizable','pagination','tooltip',
 		         'linkbutton','menu','sidemenu','menubutton','splitbutton','switchbutton','progressbar','radiobutton','checkbox',

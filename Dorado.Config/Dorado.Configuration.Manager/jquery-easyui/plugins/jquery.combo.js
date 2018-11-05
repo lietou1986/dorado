@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.6.3
+ * EasyUI for jQuery 1.6.6
  * 
  * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
  *
@@ -254,6 +254,9 @@ _43.attr("disabled","disabled");
 _43.val(_41);
 };
 var _44=(function(){
+if(_3e.onChange==$.parser.emptyFn){
+return false;
+}
 if(_3f.length!=_3b.length){
 return true;
 }
@@ -284,8 +287,7 @@ _39(_49,[_4a]);
 function _4b(_4c){
 var _4d=$.data(_4c,"combo").options;
 var _4e=_4d.onChange;
-_4d.onChange=function(){
-};
+_4d.onChange=$.parser.emptyFn;
 if(_4d.multiple){
 _39(_4c,_4d.value?_4d.value:[]);
 }else{
