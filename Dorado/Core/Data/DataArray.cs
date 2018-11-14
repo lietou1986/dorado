@@ -195,6 +195,11 @@ namespace Dorado.Core.Data
             return !Contains(name) || string.IsNullOrWhiteSpace(this[name].ToString());
         }
 
+        public bool IsDataEqual(string name, string value)
+        {
+            return this[name].ToString() == value;
+        }
+
         public bool IsMobile(string name)
         {
             return !IsDataEmpty(name) && RegularExpressions.IsMobile.IsMatch(this[name].ToString());
