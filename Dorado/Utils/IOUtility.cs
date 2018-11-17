@@ -146,6 +146,17 @@ namespace Dorado.Utils
             }
         }
 
+        public static void Delete(params string[] paths)
+        {
+            foreach (string path in paths)
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+            }
+        }
+
         /// <summary>
         /// 通过MD5CryptoServiceProvider类中的ComputeHash方法直接传入一个FileStream类实现计算MD5
         /// 操作简单，代码少，调用即可

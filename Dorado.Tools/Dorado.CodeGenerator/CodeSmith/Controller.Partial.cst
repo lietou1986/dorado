@@ -20,7 +20,6 @@ using Dorado.Platform.Admin.Filters;
 using Dorado.Platform.Data.Table;
 using Dorado.Platform.Model;
 using Dorado.Platform.Model.Enums;
-using Dorado.Platform.WebCore.Context.Cookies;
 using Dorado.Web.Extensions;
 using Dorado.Web.FastViewEngine;
 using System;

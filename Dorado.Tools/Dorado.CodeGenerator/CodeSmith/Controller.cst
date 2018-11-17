@@ -18,12 +18,12 @@ using Dorado.Configuration;
 using Dorado.Core.Data;
 using Dorado.Platform.Admin.Filters;
 using Dorado.Platform.Data.Table;
-using Dorado.Platform.WebCore.Context.Cookies;
 using Dorado.Web;
 using Dorado.Web.Extensions;
 using Dorado.Web.FastViewEngine;
 
 using System;
+using System.ComponentModel;
 using System.Web.Mvc;
 namespace <%=NamePlaceName%>.Admin.Controllers.Admin
 {
@@ -147,7 +147,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         /// </summary>
         /// <param name="id">数据记录标识</param>
         /// <returns></returns>
-        public ActionResult  <%=GetShortName(SourceTable.Name) %>Edit(string id)
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>Edit(long id)
         {
              using (Conn conn = GetConn())
                 {
@@ -230,7 +230,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         /// <param name="id">数据记录标识</param>
         /// <returns></returns>
          [Description("浏览[<%=GetTableDescription(SourceTable) %>]数据")]
-        public ActionResult  <%=GetShortName(SourceTable.Name) %>View(string id, int viewOnly = 0)
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>View(long id, int viewOnly = 0)
         {
                  using (Conn conn = GetConn())
                 {
