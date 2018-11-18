@@ -17,9 +17,7 @@ namespace Dorado.Core
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                XmlSerializer ser = new XmlSerializer(typeof(T), new Type[]
-                    {
-                    });
+                XmlSerializer ser = new XmlSerializer(typeof(T), new Type[]{});
                 ser.Serialize(stream, obj);
                 string xml = Encoding.UTF8.GetString(stream.GetBuffer());
                 xml = xml.Replace("\r", string.Empty).Replace("\n", string.Empty);
