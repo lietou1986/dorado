@@ -14,6 +14,11 @@ namespace Dorado.Extensions
             list.Add(string.Format(item, args));
         }
 
+        public static void AddEmpty(this IList<string> list)
+        {
+            list.Add(string.Empty);
+        }
+
         public static string ToSeparatedString<T>(this IList<T> value)
         {
             return ToSeparatedString(value, ",");
