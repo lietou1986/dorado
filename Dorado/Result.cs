@@ -97,7 +97,7 @@ namespace Dorado
     }
 
     [DataContract]
-    public class Result<T> : Result
+    public class Result<T>:Result
     {
         public new static readonly Result<T> OK = new Result<T>(ResultStatus.OK);
         public new static readonly Result<T> BAD_REQUEST = new Result<T>(ResultStatus.BadRequest);
@@ -112,12 +112,19 @@ namespace Dorado
         [DataMember]
         public T Data { get; set; }
 
-        public Result(T data = default(T)) : base()
+        public Result(T data = default(T)) : this(ResultStatus.OK)
         {
             this.Data = data;
         }
 
-        public Result(int code, string message, T data = default(T)) : base(code, message)
+        public Result(int code, string message)
+        {
+            this.Code = code;
+            this.Message = message;
+            this.DebugInfo = new List<string>();
+        }
+
+        public Result(int code, string message, T data = default(T)) : this(code, message)
         {
             this.Data = data;
         }
@@ -146,6 +153,32 @@ namespace Dorado
             result.Code = 200;
             result.Data = data;
             result.Message = message;
+            return result;
+        }
+
+        public new static Result<T> OfFail(string message)
+        {
+            return OfFail(500, message);
+        }
+
+        public new static Result<T> OfFail(int code, string message)
+        {
+            Result<T> result = new Result<T>();
+            result.Code = code;
+            result.Message = message;
+            return result;
+        }
+
+        public new static Result<T> OfException(Exception exception)
+        {
+            return OfException(500, exception);
+        }
+
+        public new static Result<T> OfException(int code, Exception exception)
+        {
+            Result<T> result = new Result<T>();
+            result.Code = code;
+            result.Message = exception.GetType().Name + ", " + exception.Message;
             return result;
         }
     }
