@@ -178,11 +178,10 @@
  <%} %>
     <script type="text/javascript">
     <%if(IsHasDateColumn()) {%>  
- BUI.use(['bui/calendar'], function (Calendar) {
-            var datepicker = new Calendar.DatePicker({
-                trigger: '.calendar', dateMask: 'yyyy-mm-dd',
-                autoRender: true
-            });
+var datepicker = new BUI.Calendar.DatePicker({
+            trigger: '.calendar',
+            dateMask: 'yyyy-mm-dd',
+            autoRender: true
         });
  <%} %>
         
@@ -212,8 +211,7 @@
         <%} %>
         
          <%if(IsHasImageColumn()) {%>  
-        var Overlay = BUI.Overlay;
-        var imageDialog = new Overlay.Dialog({
+        var imageDialog = new BUI.Overlay.Dialog({
             title: '上传图片',
             width: 600,
             height: 400,
@@ -252,8 +250,7 @@
         <%} %>
         
          <%if(IsHasFileColumn()) {%>  
-        var Overlay = BUI.Overlay;
-        var fileDialog = new Overlay.Dialog({
+        var fileDialog = new BUI.Overlay.Dialog({
             title: '上传文件',
             width: 600,
             height: 400,

@@ -9,6 +9,11 @@ namespace Dorado.Extensions
 {
     public static class ListExtensions
     {
+        public static void AddFormat(this IList<string> list, string item, params object[] args)
+        {
+            list.Add(string.Format(item, args));
+        }
+
         public static string ToSeparatedString<T>(this IList<T> value)
         {
             return ToSeparatedString(value, ",");

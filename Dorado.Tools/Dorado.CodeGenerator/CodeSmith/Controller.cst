@@ -214,7 +214,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
                <%}else { %>
                 T_<%=SourceTable.Name%>.Delete(conn, "id in ({0})", para.id);
                     <%} %>
-               return new FastResult(Output.Success("数据删除成功"));
+               return new FastResult(Output.Success());
 			   }
             }
             catch (Exception ex)
@@ -246,7 +246,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
              <%}%>
             conn.Where("<%=SourceTable.Name%>.ID={0}", id);
             DataArray data = conn.Select();
-             ViewBag.ViewOnly = viewOnly >= 0;
+             ViewBag.ViewOnly = viewOnly > 0;
             return View(data);}
         }
 

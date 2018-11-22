@@ -188,7 +188,7 @@
                         Alert("请选择要操作的数据");
                         return false;
                     }
-                    return (confirm("确定要删除吗?"));
+                    return (confirm("确定要删除吗?该操作不可恢复"));
                     <%} %>
             }
             return true;
