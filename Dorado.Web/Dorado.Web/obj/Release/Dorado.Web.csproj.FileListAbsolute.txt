@@ -20,4 +20,3 @@ D:\Work\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.pdb
 D:\Work\_learn\dorado\Build\Dorado.Web.dll
 D:\Work\_learn\dorado\Build\Dorado.Web.pdb
 D:\Work\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.CopyComplete
-D:\Work\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csprojAssemblyReference.cache

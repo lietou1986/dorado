@@ -38,4 +38,3 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.S
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.pdb
-D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csprojAssemblyReference.cache

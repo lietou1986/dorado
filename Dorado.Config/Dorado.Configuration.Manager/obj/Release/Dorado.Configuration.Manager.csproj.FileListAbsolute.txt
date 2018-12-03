@@ -184,3 +184,5 @@ D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.Manager\bin\System.Web.
 D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.Manager\bin\System.Web.WebPages.Deployment.xml
 D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.Manager\bin\System.Web.WebPages.Razor.xml
 D:\Work\_learn\dorado\Dorado.Config\Dorado.Configuration.Manager\obj\Release\Dorado.Configuration.Manager.csproj.CopyComplete
+D:\work\_learn\dorado\Dorado.Config\Dorado.Configuration.Manager\bin\Newtonsoft.Json.pdb
+D:\work\_learn\dorado\Dorado.Config\Dorado.Configuration.Manager\obj\Release\Dorado.Configuration.Manager.csprojAssemblyReference.cache
