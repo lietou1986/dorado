@@ -11,6 +11,11 @@ namespace Dorado.Web.FastViewEngine
     /// </summary>
     public class Output
     {
+        public static string Success(object value)
+        {
+            return Success(value.ToString());
+        }
+
         public static string Success()
         {
             return Success("ok");

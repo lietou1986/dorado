@@ -21,3 +21,12 @@ D:\Work\_learn\dorado\Build\Dorado.Web.dll
 D:\Work\_learn\dorado\Build\Dorado.Web.pdb
 D:\Work\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.CopyComplete
 D:\work\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csprojAssemblyReference.cache
+E:\_learn\dorado\Build\Dorado.Web.dll
+E:\_learn\dorado\Build\Dorado.Web.pdb
+E:\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.Resource.resources
+E:\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.GenerateResource.cache
+E:\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.CopyComplete
+E:\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.dll
+E:\_learn\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.pdb
