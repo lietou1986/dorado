@@ -1,3 +1,4 @@
+using Dorado.Core.Data;
 using System;
 using System.Text;
 using System.Web.Mvc;
@@ -6,6 +7,16 @@ namespace Dorado.Web.FastViewEngine
 {
     public static class FastResultExtension
     {
+        public static FastResult FastResult(this Controller controller, DataArray data)
+        {
+            return new FastResult(data.ToString());
+        }
+
+        public static FastResult FastResult(this Controller controller, DataArray data, Encoding contentEncoding)
+        {
+            return new FastResult(data.ToString(), contentEncoding);
+        }
+
         public static FastResult FastResult(this Controller controller, string data)
         {
             return new FastResult(data);
