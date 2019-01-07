@@ -1,50 +1,52 @@
 ﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
-<%@ Property Name="SourceTables" Type="System.Collections.Generic.List<SchemaExplorer.TableSchema>" Category="Context" Description="The tables to use for this sample." %>
+<%@ Property Name="SourceTables" Type="Dictionary<string,List<TableSchema>>" Category="Context" Description="The tables to use for this sample." %>
+<%@ Property Name="NamePlaceName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
 <%@ Assembly Name="SchemaExplorer" %>
 <%@ Import Namespace="SchemaExplorer" %>
 <%@ Import Namespace="System.Data" %>
-<%@ Property Name="NamePlaceName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
-<%@ Property Name="BSName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
 <%@ Assembly Name="SchemaExplorer" %>
 <%@ Assembly Name="mscorlib" %>
 <%@ Import Namespace="System.Collections.Generic" %>
 /*----------------------------------------
 -- Create By Len.zhang
--- Template:       Controller.cst
+-- Template:       TableEnm.cst
 -- Description: 
 -- Date Generated: <%=GetDateTime()%>
 ----------------------------------------*/
-using Dorado.Core.Data;
-using Dorado.Extensions;
-using Dorado.Platform.Admin.Filters;
-using Dorado.Platform.Model;
-using Dorado.Platform.Model.Enums;
-using Dorado.Platform.Services.Data;
-using Dorado.Web.Extensions;
-using Dorado.Web.FastViewEngine;
-using System;
-using System.Collections.Generic;
-using System.Web.Mvc;
-namespace <%=NamePlaceName%>.Admin.Controllers.Admin
+namespace <%=NamePlaceName%>.Model.Enum
 {
+    using System.ComponentModel;
+    
     /// <summary>
-    /// <%=BSName%>Controller的业务操作
+    ///  数据表枚举
     /// </summary>
-    /// <returns></returns>
-    public partial class <%=BSName%>Controller
+    public enum TableEnum
     {
-    <% foreach (SchemaExplorer.TableSchema SourceTable in SourceTables) { %>
+        [Description("")] Normal = 0,
+    <%  foreach(KeyValuePair<string,List<TableSchema>> tables in SourceTables){%>
+                <%foreach(TableSchema table  in tables.Value) {%>
+                [Description("<%=GetTableDescription(table)%>")] <%=table.Name%>,
+               <%}%>
+<% } %>    
+        [Description("")] None = -1
 
-       #region <%=GetTableDescription(SourceTable)%>业务操作
-       
-       #endregion <%=GetTableDescription(SourceTable)%>业务操作
-       
-       <% }%> 
-    }
+   }           
 }
-
 <script runat="template">
 
+private List<ColumnSchema> GetSearchColumns(SchemaExplorer.TableSchema SourceTable){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("search"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
 public string GetColumnSize(ColumnSchema column){
 	if(column.NativeType=="varchar" || column.NativeType=="nvarchar"){
 		return string.Format("	({0})",column.Size);

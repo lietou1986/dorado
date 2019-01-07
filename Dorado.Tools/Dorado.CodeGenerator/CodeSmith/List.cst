@@ -39,7 +39,7 @@
         @Html.DictDropDownList("kind<%=i%>", "<%=SourceTable.Name.ToLower()%>_<%=GetSearchColumns()[i].Name.ToLower()%>")
     <%break; %>
     <% }%> <% }%>
-        <a act="search" id="search" href="#" class="button button-small">搜索</a> <a act="reset" id="reset" href="#" class="button button-small">清空</a></div>
+        <a act="search" id="search" href="#" class="button button-small"><i class="icon-search"></i> 搜索</a> <a act="reset" id="reset" href="#" class="button button-small">清空</a></div>
     <table id="mlist" name="mlist" list="auto" loading="true" class="table table-striped table-condensed">
         <thead>
             <tr>

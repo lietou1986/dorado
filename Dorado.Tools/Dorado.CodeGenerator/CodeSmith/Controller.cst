@@ -17,7 +17,7 @@
 using Dorado.Configuration;
 using Dorado.Core.Data;
 using Dorado.Platform.Admin.Filters;
-using Dorado.Platform.Data.Table;
+using Dorado.Platform.Services.Data;
 using Dorado.Web;
 using Dorado.Web.Extensions;
 using Dorado.Web.FastViewEngine;

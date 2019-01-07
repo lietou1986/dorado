@@ -1,50 +1,91 @@
 ﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
-<%@ Property Name="SourceTables" Type="System.Collections.Generic.List<SchemaExplorer.TableSchema>" Category="Context" Description="The tables to use for this sample." %>
+<%@ Property Name="SourceTables" Type="Dictionary<string,List<TableSchema>>" Category="Context" Description="The tables to use for this sample." %>
 <%@ Assembly Name="SchemaExplorer" %>
 <%@ Import Namespace="SchemaExplorer" %>
 <%@ Import Namespace="System.Data" %>
-<%@ Property Name="NamePlaceName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
-<%@ Property Name="BSName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
 <%@ Assembly Name="SchemaExplorer" %>
 <%@ Assembly Name="mscorlib" %>
 <%@ Import Namespace="System.Collections.Generic" %>
-/*----------------------------------------
--- Create By Len.zhang
--- Template:       Controller.cst
--- Description: 
--- Date Generated: <%=GetDateTime()%>
-----------------------------------------*/
-using Dorado.Core.Data;
-using Dorado.Extensions;
-using Dorado.Platform.Admin.Filters;
-using Dorado.Platform.Model;
-using Dorado.Platform.Model.Enums;
-using Dorado.Platform.Services.Data;
-using Dorado.Web.Extensions;
-using Dorado.Web.FastViewEngine;
-using System;
-using System.Collections.Generic;
-using System.Web.Mvc;
-namespace <%=NamePlaceName%>.Admin.Controllers.Admin
-{
-    /// <summary>
-    /// <%=BSName%>Controller的业务操作
-    /// </summary>
-    /// <returns></returns>
-    public partial class <%=BSName%>Controller
+    <script type="text/javascript">
+BUI.use('common/main', function () {
+            var config = [
+             {
+                    id: 'Index',
+                    menu: [
+                {
+                    text: '快速入口',
+                    items: [
+			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
+             ]
+                }]
+                },
+    <%  foreach(KeyValuePair<string,List<TableSchema>> tables in SourceTables){%>
     {
-    <% foreach (SchemaExplorer.TableSchema SourceTable in SourceTables) { %>
-
-       #region <%=GetTableDescription(SourceTable)%>业务操作
-       
-       #endregion <%=GetTableDescription(SourceTable)%>业务操作
-       
-       <% }%> 
-    }
-}
-
+                id: '<%=tables.Key%>',
+                menu: [
+                <%foreach(TableSchema table  in tables.Value) {%>
+                <%if(!table.Description.Contains("逻辑")){ %>
+                {
+                    text: '<%=GetTableDescription(table)%>管理',
+                    items: [
+			    { id: '<%=table.Name%>', text: '<%=GetTableDescription(table)%>', href: '/<%=tables.Key%>/<%=GetShortName(table.Name)%>' },
+                <%if(!table.Description.Contains("view")) {%>
+                { id: '<%=table.Name%>add', text: '新增<%=GetTableDescription(table)%>', href:  '/<%=tables.Key%>/<%=GetShortName(table.Name)%>add'}
+             <%}%>
+              ]
+                },
+            <%}%><%}%>]
+               },<%}%>
+               {
+                    id: 'SEO',
+                    menu: [
+                {
+                    text: '待添加',
+                    items: [
+			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
+             ]
+                }]
+                },
+                {
+                    id: 'Statistics',
+                    menu: [
+                {
+                    text: '待添加',
+                    items: [
+			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
+                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
+             ]
+                }]
+                }
+            ];
+            new PageUtil.MainPage({
+                modulesConfig: config
+            });
+        });
+  </script>
 <script runat="template">
 
+private List<ColumnSchema> GetSearchColumns(SchemaExplorer.TableSchema SourceTable){
+
+List<ColumnSchema> groupTables=new List<ColumnSchema>();
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+    if(column.Description.Contains("search"))
+      {
+          groupTables.Add(column);
+      }
+}
+return groupTables;
+}
 public string GetColumnSize(ColumnSchema column){
 	if(column.NativeType=="varchar" || column.NativeType=="nvarchar"){
 		return string.Format("	({0})",column.Size);

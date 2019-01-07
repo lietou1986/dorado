@@ -31,3 +31,4 @@ D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.csproj.C
 D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.dll
 D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.pdb
+D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Release\Dorado.SqlCe.csprojAssemblyReference.cache

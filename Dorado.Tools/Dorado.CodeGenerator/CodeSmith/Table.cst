@@ -13,7 +13,7 @@
 -- Description: 
 -- Date Generated: <%=GetDateTime()%>
 ----------------------------------------*/
-namespace <%=NamePlaceName%>.Data.Table
+namespace <%=NamePlaceName%>.Services.Data
 {
     using Dorado.Core.Data;
     using Dorado.Utils;

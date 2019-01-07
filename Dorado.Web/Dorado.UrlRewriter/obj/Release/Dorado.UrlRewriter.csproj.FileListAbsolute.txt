@@ -79,3 +79,4 @@ D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewrit
 D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.csproj.CoreCompileInputs.cache
 D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.dll
 D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.pdb
+D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Release\Dorado.UrlRewriter.csprojAssemblyReference.cache

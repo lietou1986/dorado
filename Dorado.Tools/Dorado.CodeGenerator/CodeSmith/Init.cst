@@ -15,128 +15,22 @@
 <%@ Register Name="EntityTemplate" Template="Entity.cst" MergeProperties="False" ExcludeProperties="" %>
 <%@ Register Name="TableTemplate" Template="Table.cst" MergeProperties="False" ExcludeProperties="" %>
 <%@ Register Name="CacheTemplate" Template="Cache.cst" MergeProperties="False" ExcludeProperties="" %>
+<%@ Register Name="TableEnumTemplate" Template="TableEnum.cst" MergeProperties="False" ExcludeProperties="" %>
+<%@ Register Name="TableDictTemplate" Template="TableDict.cst" MergeProperties="False" ExcludeProperties="" %>
 
 <script runat="template">
-private string _ListDirectory=string.Empty;
-private string _AddDirectory=string.Empty;
-private string _ViewDirectory=string.Empty;
-private string _EditDirectory=string.Empty;
-private string _ControllerDirectory=string.Empty;
-private string _MenuDirectory=string.Empty;
-private string _EntityDirectory=string.Empty;
-private string _TableDirectory=string.Empty;
-private string _CacheDirectory=string.Empty;
+  private string _CodeDirectory=string.Empty;
 
 [Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
 [Optional,NotChecked]
 [DefaultValue("")]
-public string CacheOutputDirectory
+public string CodeDirectory
 {
-      get {return _CacheDirectory;}
+      get {return _CodeDirectory;}
       set {
         if(value.EndsWith("\\"))
         value=value.Substring(0,value.Length-1);
-        _CacheDirectory= value;
-        }
-}
-
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string ListOutputDirectory
-{
-      get {return _ListDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _ListDirectory= value;
-        }
-}
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string AddOutputDirectory
-{
-      get {return _AddDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _AddDirectory= value;
-        }
-}
-
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string ViewOutputDirectory
-{
-      get {return _ViewDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _ViewDirectory= value;
-        }
-}
-
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string EditOutputDirectory
-{
-      get {return _EditDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _EditDirectory= value;
-        }
-}
-
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string ControllerOutputDirectory
-{
-      get {return _ControllerDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _ControllerDirectory= value;
-        }
-}
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string MenuOutputDirectory
-{
-      get {return _MenuDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _MenuDirectory= value;
-        }
-}
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string EntityOutputDirectory
-{
-      get {return _EntityDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _EntityDirectory= value;
-        }
-}
-[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-[Optional,NotChecked]
-[DefaultValue("")]
-public string TableOutputDirectory
-{
-      get {return _TableDirectory;}
-      set {
-        if(value.EndsWith("\\"))
-        value=value.Substring(0,value.Length-1);
-        _TableDirectory= value;
+        _CodeDirectory= value;
         }
 }
 </script>
@@ -147,7 +41,7 @@ private void GenerateListCode()
     ListTemplate template=new ListTemplate();
     foreach(TableSchema table in this.SourceDatabase.Tables)
     {
-        string fileDirectory=ListOutputDirectory+"\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+".cshtml";
+        string fileDirectory=CodeDirectory+"\\UI\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+".cshtml";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTable",table);
         template.RenderToFile(fileDirectory,true);
@@ -160,7 +54,7 @@ private void GenerateAddCode()
     foreach(TableSchema table in this.SourceDatabase.Tables)
     {
         if(!table.Description.Contains("view")){
-        string fileDirectory=AddOutputDirectory+"\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+"Add.cshtml";
+        string fileDirectory=CodeDirectory+"\\UI\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+"Add.cshtml";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTable",table);
         template.RenderToFile(fileDirectory,true);
@@ -173,7 +67,7 @@ private void GenerateViewCode()
     ViewTemplate template=new ViewTemplate();
     foreach(TableSchema table in this.SourceDatabase.Tables)
     {
-        string fileDirectory=ViewOutputDirectory+"\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+"View.cshtml";
+        string fileDirectory=CodeDirectory+"\\UI\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+"View.cshtml";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTable",table);
         template.RenderToFile(fileDirectory,true);
@@ -186,7 +80,7 @@ private void GenerateEditCode()
     foreach(TableSchema table in this.SourceDatabase.Tables)
     {
          if(!table.Description.Contains("view")){
-        string fileDirectory=EditOutputDirectory+"\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+"Edit.cshtml";
+        string fileDirectory=CodeDirectory+"\\UI\\"+GetClassName(table.Name)+"\\"+GetShortName(table.Name)+"Edit.cshtml";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTable",table);
         template.RenderToFile(fileDirectory,true);}
@@ -199,7 +93,7 @@ private void GenerateControllerCode()
  ControllerTemplate template=new ControllerTemplate();
     Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
     foreach(KeyValuePair<string,List<TableSchema>> table in groupTables){
-    string fileDirectory=ControllerOutputDirectory+"\\"+table.Key+"Controller.cs";
+    string fileDirectory=CodeDirectory+"\\Controller\\"+table.Key+"Controller.cs";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTables",table.Value);
     template.SetProperty("BSName",table.Key);
@@ -209,10 +103,10 @@ private void GenerateControllerCode()
  
 private void GenerateControllerPartialCode()
 {
- ControllerPartialTemplate template=new ControllerPartialTemplate();
+    ControllerPartialTemplate template=new ControllerPartialTemplate();
     Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
     foreach(KeyValuePair<string,List<TableSchema>> table in groupTables){
-    string fileDirectory=ControllerOutputDirectory+"\\"+table.Key+"Controller.Partial.cs";
+    string fileDirectory=CodeDirectory+"\\Controller\\"+table.Key+"Controller.Partial.cs";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTables",table.Value);
     template.SetProperty("BSName",table.Key);
@@ -224,16 +118,15 @@ private void GenerateMenuCode()
 {
  MenuTemplate template=new MenuTemplate();
     Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
-    string fileDirectory=MenuOutputDirectory+"\\menu.txt";
+    string fileDirectory=CodeDirectory+"\\menu.txt";
     template.SetProperty("SourceTables",groupTables);
-    template.RenderToFile(fileDirectory,true);
-    
+    template.RenderToFile(fileDirectory,true); 
 }
 private void GenerateEntityCode()
 {
     EntityTemplate template=new EntityTemplate();
     foreach(TableSchema table in this.SourceDatabase.Tables)
-    {string fileDirectory=EntityOutputDirectory+"\\"+table.Name+".cs";
+    {string fileDirectory=CodeDirectory+"\\Model\\Entity\\"+table.Name+".cs";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTable",table);
         template.RenderToFile(fileDirectory,true);
@@ -244,7 +137,7 @@ private void GenerateTableCode()
 {
     TableTemplate template=new TableTemplate();
     foreach(TableSchema table in this.SourceDatabase.Tables)
-    {string fileDirectory=TableOutputDirectory+"\\T_"+table.Name+".cs";
+    {string fileDirectory=CodeDirectory+"\\Service\\Data\\T_"+table.Name+".cs";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTable",table);
         template.RenderToFile(fileDirectory,true);
@@ -257,7 +150,7 @@ private void GenerateCacheCode()
  CacheTemplate template=new CacheTemplate();
     Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
     foreach(KeyValuePair<string,List<TableSchema>> table in groupTables){
-    string fileDirectory=CacheOutputDirectory+"\\"+table.Key+"CacheProvider.cs";
+    string fileDirectory=CodeDirectory+"\\Service\\Cache\\"+table.Key+"CacheProvider.cs";
     template.SetProperty("NamePlaceName",this.NamePlaceName);
     template.SetProperty("SourceTables",table.Value);
     template.SetProperty("BSName",table.Key);
@@ -265,7 +158,34 @@ private void GenerateCacheCode()
     }
 }
 
- 
+ private void GenerateDictCode()
+{
+ MenuTemplate template=new MenuTemplate();
+    Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
+    string fileDirectory=CodeDirectory+"\\Dict.json";
+    template.SetProperty("SourceTables",groupTables);
+    template.RenderToFile(fileDirectory,true); 
+}
+
+private void GenerateTableEnumCode()
+{
+ TableEnumTemplate template=new TableEnumTemplate();
+    Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
+    string fileDirectory=CodeDirectory+"\\Model\\Enum\\TableEnum.cs";
+     template.SetProperty("NamePlaceName",this.NamePlaceName);
+    template.SetProperty("SourceTables",groupTables);
+    template.RenderToFile(fileDirectory,true); 
+}
+
+private void GenerateTableDictCode()
+{
+ TableDictTemplate template=new TableDictTemplate();
+    Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
+    string fileDirectory=CodeDirectory+"\\TableDict.sql";
+     template.SetProperty("NamePlaceName",this.NamePlaceName);
+    template.SetProperty("SourceTables",groupTables);
+    template.RenderToFile(fileDirectory,true); 
+}
 private string GetClassName(string tableName){
     int index=tableName.IndexOf("_");
 if(index>-1)
@@ -314,55 +234,33 @@ return groupTables1;
 
 </script>
 <%
-ListOutputDirectory=@"c:\DoradoCode\Interface\";
-AddOutputDirectory=@"c:\DoradoCode\Interface\";
-ViewOutputDirectory=@"c:\DoradoCode\Interface\";
-EditOutputDirectory=@"c:\DoradoCode\Interface\";
-ControllerOutputDirectory=@"c:\DoradoCode\Controller\";
-MenuOutputDirectory=@"c:\DoradoCode\Menu\";
-EntityOutputDirectory=@"c:\DoradoCode\Entity\";
-TableOutputDirectory=@"c:\DoradoCode\Table\";
-CacheOutputDirectory=@"c:\DoradoCode\Cache\";
+
+CodeDirectory=@"c:\DoradoCode\";
 
 Response.WriteLine("\nCode Generate Begin\n");
-this.GenerateListCode();
-Response.WriteLine("List层代码生成完毕");
-Response.WriteLine(new string('-',50));
-
-this.GenerateAddCode();
-Response.WriteLine("Add层代码生成完毕");
-Response.WriteLine(new string('-',50));
-
-this.GenerateViewCode();
-Response.WriteLine("View层代码生成完毕");
-Response.WriteLine(new string('-',50));
-
-this.GenerateEditCode();
-Response.WriteLine("Edit层代码生成完毕");
-Response.WriteLine(new string('-',50));
-
-this.GenerateControllerCode();
-Response.WriteLine("Controller代码生成完毕");
-Response.WriteLine(new string('-',50));
-
-this.GenerateControllerPartialCode();
-Response.WriteLine("Controller扩展代码生成完毕");
-Response.WriteLine(new string('-',50));
 
 this.GenerateMenuCode();
 Response.WriteLine("菜单代码生成完毕");
 Response.WriteLine(new string('-',50));
 
-this.GenerateEntityCode();
-Response.WriteLine("Entity代码生成完毕");
+this.GenerateListCode();
+this.GenerateAddCode();
+this.GenerateViewCode();
+this.GenerateEditCode();
+Response.WriteLine("UI代码生成完毕");
+Response.WriteLine(new string('-',50));
+
+this.GenerateControllerCode();
+this.GenerateControllerPartialCode();
+Response.WriteLine("Controller代码生成完毕");
 Response.WriteLine(new string('-',50));
 
 this.GenerateTableCode();
-Response.WriteLine("Table代码生成完毕");
-Response.WriteLine(new string('-',50));
-
+this.GenerateTableEnumCode();
+this.GenerateTableDictCode();
+this.GenerateEntityCode();
 this.GenerateCacheCode();
-Response.WriteLine("Cache代码生成完毕");
+Response.WriteLine("Data代码生成完毕");
 Response.WriteLine(new string('-',50));
 
 Response.WriteLine("\nCode Generate Over");
