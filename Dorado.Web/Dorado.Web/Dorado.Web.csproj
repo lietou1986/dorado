@@ -132,6 +132,7 @@
     <Compile Include="FastViewEngine\Binder\KeyParaBinder.cs" />
     <Compile Include="EasyFile.cs" />
     <Compile Include="FastViewEngine\FastErrorResult.cs" />
+    <Compile Include="FastViewEngine\FastResultExtension.cs" />
     <Compile Include="FastViewEngine\FastSuccessResult.cs" />
     <Compile Include="FastViewEngine\FastViewFileEngine.cs" />
     <Compile Include="FastViewEngine\FastViewContext.cs" />
