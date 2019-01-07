@@ -18,7 +18,7 @@ namespace Dorado.Web.FastViewEngine
 
         public static string Success()
         {
-            return Success("ok");
+            return Success("²Ù×÷³É¹¦");
         }
 
         public static string Success(string value, params object[] args)
@@ -65,26 +65,6 @@ namespace Dorado.Web.FastViewEngine
         public static string Script(string value, params object[] args)
         {
             return Write(OutputType.Script, value, args);
-        }
-
-        public static string Login()
-        {
-            return "T.login=\"ok\";";
-        }
-
-        public static string Login(string value, params object[] args)
-        {
-            return Write(OutputType.Login, value, args);
-        }
-
-        public static string Logout()
-        {
-            return "T.logout=\"ok\";";
-        }
-
-        public static string Logout(string value, params object[] args)
-        {
-            return Write(OutputType.Logout, value, args);
         }
 
         public static string Alert(int value)
@@ -167,12 +147,6 @@ namespace Dorado.Web.FastViewEngine
         Alert,
 
         [Description("script")]
-        Script,
-
-        [Description("login")]
-        Login,
-
-        [Description("logout")]
-        Logout
+        Script
     }
 }
