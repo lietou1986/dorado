@@ -17,7 +17,7 @@ namespace Dorado.Core.Data
         private static string _default;
         private SqlConnection _conn;
         private SqlTransaction _trans;
-        private string _name;
+        private string _name = "mlist";
         private string _tablename;
         private int _top;
         private int _page = 1;
@@ -36,25 +36,13 @@ namespace Dorado.Core.Data
         public Conn(string connectionString, int commandTimeOut = 60)
         {
             if (!connectionString.HasValue())
+            {
                 throw new CoreException("数据库连接串不能为空");
-
+            }
             _commandTimeOut = commandTimeOut;
             _default = connectionString;
             _conn = new SqlConnection(connectionString);
         }
-
-        /// <summary>
-        /// 改成连接的数据库
-        /// </summary>
-        /// <param name="databaseName">数据库名</param>
-        public Conn ChangeDatabase(string databaseName)
-        {
-            Open();
-            _conn.ChangeDatabase(databaseName);
-            return this;
-        }
-
-        //公共属性
 
         /// <summary>
         /// 当前查询集名称
@@ -72,39 +60,10 @@ namespace Dorado.Core.Data
             }
         }
 
-        public int CommandTimeOut { get { return _commandTimeOut; } set { _commandTimeOut = value; } }
-
-        public Conn Add()
+        public int CommandTimeOut
         {
-            Add(Name, Sql());
-            return this;
-        }
-
-        public Conn Add(string name)
-        {
-            Add(name, Sql());
-            return this;
-        }
-
-        public Conn Add(string name, string sql)
-        {
-            if (name == null) throw new CoreException("对不起，添加数据集时，名称不能为空！");
-            if (_batchName == null)
-            {
-                _batchName = new ArrayList();
-                _batchSql = new ArrayList();
-            }
-            _batchName.Add(name);
-            _batchSql.Add(sql);
-
-            Clear();
-            return this;
-        }
-
-        public Conn Add(string name, string sql, params object[] para)
-        {
-            Add(name, string.Format(sql, para));
-            return this;
+            get { return _commandTimeOut; }
+            set { _commandTimeOut = value; }
         }
 
         public int Top
@@ -158,6 +117,92 @@ namespace Dorado.Core.Data
                 return _conn.Database;
             }
             set { ChangeDatabase(value); }
+        }
+
+        public Conn SetTop(int top)
+        {
+            Top = top;
+            return this;
+        }
+
+        public Conn SetPage(int page)
+        {
+            Page = page;
+            return this;
+        }
+
+        public Conn SetPageSize(int pageSize)
+        {
+            PageSize = pageSize;
+            return this;
+        }
+
+        public Conn SetMaxCount(int maxCount)
+        {
+            MaxCount = maxCount;
+            return this;
+        }
+
+        public Conn SetDataBaseName(string dataBaseName)
+        {
+            DataBaseName = dataBaseName;
+            return this;
+        }
+
+        public Conn SetName(string name)
+        {
+            Name = name;
+            return this;
+        }
+
+        public Conn SetCommandTimeOut(int commandTimeOut)
+        {
+            CommandTimeOut = commandTimeOut;
+            return this;
+        }
+
+        public Conn Add()
+        {
+            Add(Name, Sql());
+            return this;
+        }
+
+        public Conn Add(string name)
+        {
+            Add(name, Sql());
+            return this;
+        }
+
+        public Conn Add(string name, string sql)
+        {
+            if (name == null) throw new CoreException("对不起，添加数据集时，名称不能为空！");
+            if (_batchName == null)
+            {
+                _batchName = new ArrayList();
+                _batchSql = new ArrayList();
+            }
+            _batchName.Add(name);
+            _batchSql.Add(sql);
+
+            Clear();
+            return this;
+        }
+
+        public Conn Add(string name, string sql, params object[] para)
+        {
+            Add(name, string.Format(sql, para));
+            return this;
+        }
+
+        /// <summary>
+        /// 改成连接的数据库
+        /// </summary>
+        /// <param name="databaseName">数据库名</param>
+        public Conn ChangeDatabase(string databaseName)
+        {
+            Open();
+            _conn.ChangeDatabase(databaseName);
+            return this;
         }
 
         public SqlConnection Connection

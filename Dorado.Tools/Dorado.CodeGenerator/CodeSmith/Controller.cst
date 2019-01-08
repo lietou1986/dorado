@@ -69,6 +69,10 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
             conn.LeftJoin("sys_user cUser", "<%=SourceTable.Name%>.createuserid=cUser.id");
             conn.LeftJoin("sys_user eUser", "<%=SourceTable.Name%>.edituserid=eUser.id");
              <%}%>
+                  conn.Order("<%=SourceTable.Name %>.autoid desc");
+              <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="isdeleted")) {%>
+                  conn.Where("<%=SourceTable.Name %>.IsDeleted=0");
+                <%} %>
                 <% for (int i=0;i<GetSearchColumns(SourceTable).Count; i++) {%>
                 <%switch(GetSearchColumns(SourceTable)[i].NativeType) {%>
                 <%case "nvarchar": %>
@@ -85,19 +89,15 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
                 conn.Where( "<%=SourceTable.Name %>.<%=GetSearchColumns(SourceTable)[i].Name%>={0}" , para.kind<%=i%> );
                 <%break; %>
                 <% }%> <% }%>
-                <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="isdeleted")) {%>
-                  conn.Where("<%=SourceTable.Name %>.IsDeleted=0");
-                <%} %>
-                conn.Order("<%=SourceTable.Name %>.autoid desc");
-
+               
                 DataArray data = conn.SelectPage();
 
-                return new FastResult(data.ToString());
+                return this.FastSuccessResult(data);
 			}
             }
             catch (Exception ex)
             {
-                return new FastResult(Output.Error(ex));
+                return this.FastErrorResult(ex);
             }
          }
         
@@ -125,6 +125,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         {
             try
             {
+                long id=0;
                 using (Conn conn = GetConn())
                 {
              <%--<% foreach (ColumnSchema column in SourceTable.Columns) { %>
@@ -132,13 +133,16 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
                if ( !data.Contains( "<%=column.Name.ToLower()%>" ) ) throw new ApplicationException( "请输入<%=GetColumnDescription(column)%>！" );
              <%}} %>--%>
                
-                long id= T_<%=SourceTable.Name %>.Insert(conn, data);
-                return new FastResult(Output.Success(id.ToString()));
+                 id= T_<%=SourceTable.Name %>.Insert(conn, data);
 				}
+                
+                this.BuildEvent(TableEnum.<%=SourceTable.Name%>, id, "新增<%=GetTableDescription(SourceTable) %>", "新增成功");
+
+                return this.FastSuccessResult(id);
             }
             catch (Exception ex)
             {
-                return new FastResult(Output.Error(ex));
+                return this.FastErrorResult(ex);
             }
          }
 
@@ -152,7 +156,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
              using (Conn conn = GetConn())
                 {
  <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
-  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=GetAllColumn(SourceTable) %>");
+  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=SourceTable.Name%>.*");
  <%}else{ %>
             conn.Field("<%=GetAllColumn(SourceTable) %>");
             <%}%>
@@ -181,14 +185,19 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         {
             try
             {
-                 using (Conn conn = GetConn())
+                long id=data["id"].ToLong();
+                using (Conn conn = GetConn())
                 {
                 T_<%=SourceTable.Name%>.Update(conn, data);
-                return new FastResult(Output.Success(data["id"].ToString()));}
+                }
+                
+                this.BuildEvent(TableEnum.<%=SourceTable.Name%>, id, "修改<%=GetTableDescription(SourceTable) %>", "修改成功");
+
+                return this.FastSuccessResult(id);
             }
             catch (Exception ex)
             {
-                return new FastResult(Output.Error(ex));
+               return this.FastErrorResult(ex);
             }
         }
         <%} %>
@@ -210,16 +219,24 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
               using (Conn conn = GetConn())
                 {
                <%if(SourceTable.Columns.Contains("IsDeleted")){%>
+               <%if(SourceTable.Columns.Contains("EditUserId")){%>
+                T_<%=SourceTable.Name%>.Update(conn, "isdeleted=1,edituserid={0},edittime='{1}' where id in ({2})",
+                        UserCookie.UserId, DateTime.Now.ToString(), para.id);
+                <%}else { %>
                 T_<%=SourceTable.Name%>.Update(conn, "isdeleted=1 where id in ({0})", para.id);
+                    <%} %>
+			   }
                <%}else { %>
                 T_<%=SourceTable.Name%>.Delete(conn, "id in ({0})", para.id);
                     <%} %>
-               return new FastResult(Output.Success());
 			   }
+               para.ids.ForEach(id => {this.BuildEvent(TableEnum.<%=SourceTable.Name%>, id.Long(), "删除<%=GetTableDescription(SourceTable) %>", "删除成功"); });
+
+             return this.FastSuccessResult();
             }
             catch (Exception ex)
             {
-                return new FastResult(Output.Error(ex));
+               return this.FastErrorResult(ex);
             }
 
         }
@@ -232,10 +249,11 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
          [Description("浏览[<%=GetTableDescription(SourceTable) %>]数据")]
         public ActionResult  <%=GetShortName(SourceTable.Name) %>View(long id, int viewOnly = 0)
         {
+             ViewBag.ViewOnly = viewOnly > 0;
                  using (Conn conn = GetConn())
                 {
  <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
-  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=GetAllColumn(SourceTable) %>");
+  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=SourceTable.Name%>.*");
  <%}else{ %>
             conn.Field("<%=GetAllColumn(SourceTable) %>");
             <%}%>
@@ -246,7 +264,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
              <%}%>
             conn.Where("<%=SourceTable.Name%>.ID={0}", id);
             DataArray data = conn.Select();
-             ViewBag.ViewOnly = viewOnly > 0;
+
             return View(data);}
         }
 
@@ -406,11 +424,15 @@ public string GetListColumn(SchemaExplorer.TableSchema SourceTable)
  string columns = "";
  foreach(ColumnSchema column in SourceTable.Columns)
  {
-      if(!column.Description.Contains("listnoshow"))
+      if(column.Description.Contains("listshow"))
   columns += SourceTable.Name+".["+column.Name + "],";
  }
+ if(columns.Length>0){
  columns = columns.Substring(0,columns.Length-1);
- 
+ }
+ else{
+     columns=SourceTable.Name+".*";
+ }
  return columns;
 }
 public string GetColumnDataType(ColumnSchema column)
