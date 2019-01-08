@@ -21,7 +21,7 @@ namespace Dorado.Core.Data
         private string _tablename;
         private int _top;
         private int _page = 1;
-        private int _pagesize;
+        private int _pagesize = 10;
         private int _maxcount;
         private ArrayList _field;
         private ArrayList _idx;
