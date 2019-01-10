@@ -2691,5 +2691,30 @@ namespace Dorado.Extensions
             }
             return (encoding ?? Encoding.Unicode).GetBytes(str).Compress();
         }
+
+        public static string GetDefaultValue(this string input, string defaultValue = "")
+        {
+            return GetDefaultValue(input, (string s) => { return !string.IsNullOrWhiteSpace(s); }, defaultValue);
+        }
+
+        public static string GetDefaultValue(this string input, Func<string, bool> func, string defaultValue = "")
+        {
+            return func(input) ? input : defaultValue;
+        }
+
+        public static int GetDefaultValue(this int input, Func<int, bool> func, int defaultValue = 0)
+        {
+            return func(input) ? input : defaultValue;
+        }
+
+        public static long GetDefaultValue(this long input, Func<long, bool> func, long defaultValue = 0)
+        {
+            return func(input) ? input : defaultValue;
+        }
+
+        public static object GetDefaultValue(this object input, Func<object, bool> func, object defaultValue)
+        {
+            return func(input) ? input : defaultValue;
+        }
     }
 }

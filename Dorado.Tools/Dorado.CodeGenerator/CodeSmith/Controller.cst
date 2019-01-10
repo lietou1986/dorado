@@ -218,8 +218,8 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
             {
               using (Conn conn = GetConn())
                 {
-               <%if(SourceTable.Columns.Contains("IsDeleted")){%>
-               <%if(SourceTable.Columns.Contains("EditUserId")){%>
+               <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="isdeleted")){%>
+               <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="edi")){%>
                 T_<%=SourceTable.Name%>.Update(conn, "isdeleted=1,edituserid={0},edittime='{1}' where id in ({2})",
                         UserCookie.UserId, DateTime.Now.ToString(), para.id);
                 <%}else { %>
