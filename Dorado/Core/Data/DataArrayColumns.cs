@@ -204,6 +204,16 @@ namespace Dorado.Core.Data
             return DataTypeExtensions.Trim(ToString(null), len);
         }
 
+        public string ToMD5(int len)
+        {
+            return ToString(null).ToMD5(len);
+        }
+
+        public string ToMD5()
+        {
+            return ToString(null).ToMD5();
+        }
+
         public string ToSafeString()
         {
             switch (Type.GetTypeCode((Type)_type))

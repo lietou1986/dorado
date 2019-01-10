@@ -1,4 +1,5 @@
 ﻿using Dorado.Core;
+using Dorado.Core.Encrypt;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -2715,6 +2716,15 @@ namespace Dorado.Extensions
         public static object GetDefaultValue(this object input, Func<object, bool> func, object defaultValue)
         {
             return func(input) ? input : defaultValue;
+        }
+
+        public static string ToMD5(this string str)
+        {
+            return Cryption.MD5(str);
+        }
+        public static string ToMD5(this string str, int length)
+        {
+            return Cryption.MD5(str, length);
         }
     }
 }
