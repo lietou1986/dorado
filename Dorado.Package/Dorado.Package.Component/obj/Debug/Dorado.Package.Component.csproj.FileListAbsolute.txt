@@ -48,3 +48,5 @@ D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.P
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.dll
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.pdb
+D:\Projects\.Net\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.Package\Dorado.Package.Component\obj\Debug\Dorado.Package.Component.csproj.CoreCompileInputs.cache

@@ -21,3 +21,5 @@ D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.csproj.Cor
 D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.dll
 D:\Work\_learn\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.pdb
+D:\Projects\.Net\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.Data\Dorado.SqlCe\obj\Debug\Dorado.SqlCe.csproj.CoreCompileInputs.cache

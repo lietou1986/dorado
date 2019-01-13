@@ -27,3 +27,5 @@ D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Securit
 D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.dll
 D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.pdb
+D:\Projects\.Net\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.Middleware\Dorado.Security\obj\Debug\Dorado.Security.csproj.CoreCompileInputs.cache

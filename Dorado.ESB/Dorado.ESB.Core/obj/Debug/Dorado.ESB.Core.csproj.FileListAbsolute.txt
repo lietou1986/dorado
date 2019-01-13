@@ -68,3 +68,5 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Core\obj\Debug\Dorado.ESB.Core.cspro
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Core\obj\Debug\Dorado.ESB.Core.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Core\obj\Debug\Dorado.ESB.Core.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Core\obj\Debug\Dorado.ESB.Core.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Core\obj\Debug\Dorado.ESB.Core.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Core\obj\Debug\Dorado.ESB.Core.csproj.CoreCompileInputs.cache

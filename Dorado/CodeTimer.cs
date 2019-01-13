@@ -56,7 +56,7 @@ namespace Dorado
         // 返回计时器经过时间(单位：秒)
         public double Duration(int iterations = 1)
         {
-            return ((((double)(_stopTime - _startTime - _check) * (double)_multiplier) / (double)_freq) / iterations);
+            return (_stopTime - _startTime - _check) * (double)_multiplier / _freq / iterations;
         }
     }
 }

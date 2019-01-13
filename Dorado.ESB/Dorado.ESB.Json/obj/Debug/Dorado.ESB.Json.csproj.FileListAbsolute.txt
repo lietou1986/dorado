@@ -44,3 +44,15 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.cspro
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.ESB.Json.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.ESB.Json.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.Configuration.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\bin\Debug\Dorado.Configuration.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.csproj.CoreCompileInputs.cache
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.csproj.CopyComplete
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Debug\Dorado.ESB.Json.pdb

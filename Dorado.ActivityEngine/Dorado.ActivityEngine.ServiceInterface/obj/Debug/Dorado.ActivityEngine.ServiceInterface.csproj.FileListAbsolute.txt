@@ -21,3 +21,9 @@ D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterfa
 D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.dll
 D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.pdb
+D:\Projects\.Net\dorado\Build\Dorado.ActivityEngine.ServiceInterface.dll
+D:\Projects\.Net\dorado\Build\Dorado.ActivityEngine.ServiceInterface.pdb
+D:\Projects\.Net\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.csproj.CoreCompileInputs.cache
+D:\Projects\.Net\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.csproj.CopyComplete
+D:\Projects\.Net\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.dll
+D:\Projects\.Net\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceInterface\obj\Debug\Dorado.ActivityEngine.ServiceInterface.pdb

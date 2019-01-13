@@ -34,3 +34,11 @@ D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter
 D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.csproj.CoreCompileInputs.cache
 D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.dll
 D:\Work\_learn\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.pdb
+D:\Projects\.Net\dorado\Build\Dorado.UrlRewriter.dll
+D:\Projects\.Net\dorado\Build\Dorado.UrlRewriter.pdb
+D:\Projects\.Net\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.Messages.resources
+D:\Projects\.Net\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.csproj.GenerateResource.cache
+D:\Projects\.Net\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.csproj.CoreCompileInputs.cache
+D:\Projects\.Net\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.dll
+D:\Projects\.Net\dorado\Dorado.Web\Dorado.UrlRewriter\obj\Debug\Dorado.UrlRewriter.pdb

@@ -44,3 +44,10 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Build\Dorado.ESB.ClientProxyFactory.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Build\Dorado.ESB.ClientProxyFactory.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.csproj.CoreCompileInputs.cache
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.csproj.CopyComplete
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Debug\Dorado.ESB.ClientProxyFactory.pdb

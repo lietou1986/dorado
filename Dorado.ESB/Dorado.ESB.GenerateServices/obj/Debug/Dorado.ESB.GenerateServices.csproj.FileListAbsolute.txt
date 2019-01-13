@@ -45,3 +45,14 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ES
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\bin\Dorado.ESB.GenerateServices.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\bin\Dorado.ESB.GenerateServices.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\bin\Dorado.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\bin\Dorado.ESB.ServiceGenerateFactory.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\bin\Dorado.ESB.ServiceGenerateFactory.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\bin\Dorado.pdb
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.csprojAssemblyReference.cache
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.csproj.CoreCompileInputs.cache
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.csproj.CopyComplete
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.dll
+D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Debug\Dorado.ESB.GenerateServices.pdb
