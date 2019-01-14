@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.6.6
+ * EasyUI for jQuery 1.7.1
  * 
- * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -61,7 +61,10 @@ _9._outerWidth(_11)._outerHeight(_13);
 _12._outerWidth(_9.height());
 _a._outerWidth(_8.width()-_11-_b._outerWidth())._outerHeight(_13);
 _b._outerHeight(_13);
-_a.css({left:"",right:""}).css(_7.halign,(_9.position()[_7.halign]+_11)+"px");
+_a.css({left:"",right:""});
+if(_9.length){
+_a.css(_7.halign,(_9.position()[_7.halign]+_11)+"px");
+}
 _7.panelCssWidth=_8.css("width");
 if(_7.collapsed){
 _8._outerWidth(_11+_b._outerWidth());

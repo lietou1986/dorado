@@ -1,9 +1,22 @@
-Version 1.6.x
+Version 1.7.x
+-------------
+* Improvement
+ * switchbutton: Add the 'label','labelAlign','labelPosition','labelWidth' properties.
+
+Version 1.7.0
 -------------
 * Bug
  * sidemenu: The tooltip has a wrong position when the 'floatMenuPosition' is set to 'left'. fixed.
  * datagrid: The horizontal scrollbar has a wrong state when the 'showHeader' is set to true. fixed.
  * combo: The initialized value will trigger the form's 'onChange' event when the 'multiple' is set to true. fixed.
+ * panel: The horizontal panel doesn't work normally when 'noheader' property is set to true. fixed.
+ * pagination: The extended buttons may lose in IE when rebuild the component. fixed.
+* Improvement
+ * tree: Add 'findBy' method to find a node by any fields.
+ * tree: The 'find' method is enhanced to find a node easily.
+ * combo: Add 'panelValign' property.
+ * datagrid: The sorting parameters will be ignored when the 'remoteSort' is set to false.
+ * timespinner: Add 'hour12' property to display in 12 hour format.
 
 Version 1.6.0
 -------------

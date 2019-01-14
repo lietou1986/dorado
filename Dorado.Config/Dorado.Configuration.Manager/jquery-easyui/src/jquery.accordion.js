@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.6.6
+ * EasyUI for jQuery 1.7.1
  * 
- * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -80,7 +80,8 @@
 		var headers = cc.find('>.panel>.accordion-header');
 		if (headers.length){
 			if (isHorizontal){
-				$(panels[0]).panel('resize', {width:cc.width(),height:cc.height()});
+				// $(panels[0]).panel('resize', {width:cc.width(),height:cc.height()});
+				$(headers[0]).next().panel('resize', {width:cc.width(),height:cc.height()});
 				headerHeight = $(headers[0])._outerWidth();
 			} else {
 				headerHeight = $(headers[0]).css('height', '')._outerHeight();
@@ -93,7 +94,7 @@
 				bodyHeight = cc.height() - headerHeight*headers.length;
 			}
 		}
-		
+
 		// _resize(true, bodyHeight - _resize(false) + 1);
 		_resize(true, bodyHeight - _resize(false));
 		

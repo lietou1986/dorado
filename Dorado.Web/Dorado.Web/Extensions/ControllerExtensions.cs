@@ -1,5 +1,6 @@
 using Dorado.Core.Data;
 using Dorado.Extensions;
+using Dorado.Ioc;
 using Dorado.Web.Exceptions;
 using Dorado.Web.Filters;
 using System;
@@ -32,6 +33,41 @@ namespace Dorado.Web.Extensions
             if (srv == null)
                 throw new ConnUnvailableException(connName, controller);
             return (Conn)srv;
+        }
+
+        internal static ServiceContainer GetContainer(this ControllerBase controller)
+        {
+            object containerObj = null;
+            if (!controller.TempData.TryGetValue(ServiceContainer.Consts.ServiceContainerName, out containerObj))
+            {
+                containerObj = new ServiceContainer();
+                controller.TempData.Add(ServiceContainer.Consts.ServiceContainerName, containerObj);
+            }
+            return (ServiceContainer)containerObj;
+        }
+        /// <summary>
+        /// 获取根据Controller或Action中指定的服务类型的实例。
+        /// </summary>
+        /// <typeparam name="T">服务的类型</typeparam>
+        /// <param name="controller">控制器</param>
+        /// <returns>服务的实例</returns>
+        public static T GetService<T>(this Controller controller)
+            where T : class
+        {
+            ServiceContainer container = controller.GetContainer();
+            if (container.ContainsKey(typeof(T)))
+            {
+                object srv = container[typeof(T)];
+                if (srv == null)
+                {
+                    throw new ServiceUnvailableException(typeof(T));
+                }
+                return (T)srv;
+            }
+            else
+            {
+                throw new ServiceNotFountException(typeof(T));
+            }
         }
 
         /// <summary>

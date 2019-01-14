@@ -399,6 +399,7 @@
     <Content Include="jquery-easyui\demo\timespinner\actions.html" />
     <Content Include="jquery-easyui\demo\timespinner\basic.html" />
     <Content Include="jquery-easyui\demo\timespinner\fluid.html" />
+    <Content Include="jquery-easyui\demo\timespinner\hour12.html" />
     <Content Include="jquery-easyui\demo\timespinner\range.html" />
     <Content Include="jquery-easyui\demo\tooltip\ajax.html" />
     <Content Include="jquery-easyui\demo\tooltip\basic.html" />
@@ -984,6 +985,7 @@
     <Content Include="jquery-easyui\themes\metro\validatebox.css" />
     <Content Include="jquery-easyui\themes\metro\window.css" />
     <Content Include="jquery-easyui\themes\mobile.css" />
+    <Content Include="jquery-easyui\themes\react.css" />
     <Content Include="jquery-easyui\themes\vue.css" />
     <Content Include="Js\RemoteConfiguration\Index.js" />
     <Content Include="Js\RemoteConfiguration\ViewHistory.js" />
@@ -1016,8 +1018,6 @@
     <Content Include="jquery-easyui\demo\treegrid\treegrid_data3.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data1.json" />
     <Content Include="jquery-easyui\demo\tree\tree_data2.json" />
-    <Content Include="jquery-easyui\themes\material-teal\images\Thumbs.db" />
-    <Content Include="jquery-easyui\themes\material\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

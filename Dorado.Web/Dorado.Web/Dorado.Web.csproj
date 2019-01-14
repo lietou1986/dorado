@@ -173,6 +173,7 @@
     <Compile Include="Filters\Notifier.cs" />
     <Compile Include="Filters\NotifyAttribute.cs" />
     <Compile Include="Filters\NotifyEntry.cs" />
+    <Compile Include="Filters\UsingAttribute.cs" />
     <Compile Include="Filters\UsingDBAttribute.cs" />
     <Compile Include="HtmlBuilder\DynamicTypeGenerator.cs" />
     <Compile Include="HtmlBuilder\HtmlString.cs" />

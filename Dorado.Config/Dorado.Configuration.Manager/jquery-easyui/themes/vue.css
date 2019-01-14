@@ -320,7 +320,7 @@
 .tabs li{
 	display: inherit;
 }
-.tabs li a.tabs-inner{
+.tabs li .tabs-inner{
 	height: auto;
 	line-height: normal;
 	display: inherit;
@@ -344,8 +344,8 @@
 	right: -1px;
 }
 .tabs-header-left .tabs li,.tabs-header-right .tabs li,
-.tabs-header-left .tabs li a.tabs-inner,
-.tabs-header-right .tabs li a.tabs-inner{
+.tabs-header-left .tabs li .tabs-inner,
+.tabs-header-right .tabs li .tabs-inner{
 	display: inherit;
 }
 
@@ -380,7 +380,14 @@
 	height: 20px;
 	line-height: 20px;
 }
-
+.tree-editing.tree-title{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 26px;
+	line-height: 26px;
+	overflow: hidden;
+}
 .datagrid,
 .datagrid-view,.datagrid-view1,.datagrid-view2{
 	position: relative;

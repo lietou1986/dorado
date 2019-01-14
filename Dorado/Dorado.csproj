@@ -198,6 +198,11 @@
     <Compile Include="Extensions\MiscExtensions.cs" />
     <Compile Include="Extensions\RouteValueDictionaryExtensions.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Ioc\IServiceFactory.cs" />
+    <Compile Include="Ioc\ServiceContainer.cs" />
+    <Compile Include="Ioc\ServiceFactory.cs" />
+    <Compile Include="Ioc\ServiceNotFountException.cs" />
+    <Compile Include="Ioc\ServiceUnvailablelException.cs" />
     <Compile Include="MimeType.cs" />
     <Compile Include="ResultStatus.cs" />
     <Compile Include="Core\Cache\CacheExpireDependencies\DynamicCacheExpireDependency.cs" />
@@ -295,6 +300,7 @@
     <Compile Include="Result.cs" />
     <Compile Include="ResultList.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
