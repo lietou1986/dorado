@@ -1,76 +1,20 @@
 ﻿<%@ CodeTemplate Language="C#" TargetLanguage="T-SQL"  Description="Generates a DMMIS EntityClass."  %>
 <%@ Property Name="SourceTables" Type="Dictionary<string,List<TableSchema>>" Category="Context" Description="The tables to use for this sample." %>
+<%@ Property Name="NamePlaceName" Type="System.String" Description="This will show up at the bottom of the property grid when the property is selected." %>
 <%@ Assembly Name="SchemaExplorer" %>
 <%@ Import Namespace="SchemaExplorer" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Assembly Name="SchemaExplorer" %>
 <%@ Assembly Name="mscorlib" %>
 <%@ Import Namespace="System.Collections.Generic" %>
-    <script type="text/javascript">
-BUI.use('common/main', function () {
-            var config = [
-             {
-                    id: 'Index',
-                    menu: [
-                {
-                    text: '快速入口',
-                    items: [
-			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
-             ]
-                }]
-                },
+
+<% int i = 0; %>
     <%  foreach(KeyValuePair<string,List<TableSchema>> tables in SourceTables){%>
-    {
-                id: '<%=tables.Key%>',
-                menu: [
                 <%foreach(TableSchema table  in tables.Value) {%>
-                <%if(!table.Description.Contains("逻辑")){ %>
-                {
-                    text: '<%=GetTableDescription(table)%>管理',
-                    items: [
-			    { id: '<%=table.Name%>', text: '<%=GetTableDescription(table)%>', href: '/<%=tables.Key%>/<%=GetShortName(table.Name)%>' },
-                <%if(!table.Description.Contains("view")) {%>
-                { id: '<%=table.Name%>add', text: '新增<%=GetTableDescription(table)%>', href:  '/<%=tables.Key%>/<%=GetShortName(table.Name)%>add'}
-             <%}%>
-              ]
-                },
-            <%}%><%}%>]
-               },<%}%>
-               {
-                    id: 'SEO',
-                    menu: [
-                {
-                    text: '待添加',
-                    items: [
-			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
-             ]
-                }]
-                },
-                {
-                    id: 'Statistics',
-                    menu: [
-                {
-                    text: '待添加',
-                    items: [
-			    { id: '待添加', text: '待添加1', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加2', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加3', href: 'http://www.baidu.com' },
-                { id: '待添加', text: '待添加4', href: 'http://www.baidu.com' }
-             ]
-                }]
-                }
-            ];
-            new PageUtil.MainPage({
-                modulesConfig: config
-            });
-        });
-  </script>
+                <% i++; %>
+INSERT INTO [Sys_DictValue] ([ID],[DictFlag],[Name],[Code],[Value],[DisplayOrder],[IsShow],[Description],[IsDeleted],[ParentCode]) VALUES (<%=1762433635691718000-i%>,N'sys_event_target',N'<%=GetTableDescription(table)%>',N'<%=i%>',NULL,<%=100-i%>,1,N'',0,N'');
+               <%}%>
+<% } %>    
 <script runat="template">
 
 private List<ColumnSchema> GetSearchColumns(SchemaExplorer.TableSchema SourceTable){

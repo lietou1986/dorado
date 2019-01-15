@@ -118,7 +118,7 @@ private void GenerateMenuCode()
 {
  MenuTemplate template=new MenuTemplate();
     Dictionary<string,List<TableSchema>>  groupTables=GetGroupTables();
-    string fileDirectory=CodeDirectory+"\\menu.txt";
+    string fileDirectory=CodeDirectory+"\\menu.js";
     template.SetProperty("SourceTables",groupTables);
     template.RenderToFile(fileDirectory,true); 
 }
