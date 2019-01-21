@@ -202,7 +202,33 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         }
         <%} %>
         
-        
+        /// <summary>
+        /// 浏览<%=GetTableDescription(SourceTable) %>数据
+        /// </summary>
+        /// <param name="id">数据记录标识</param>
+        /// <returns></returns>
+         [Description("浏览[<%=GetTableDescription(SourceTable) %>]数据")]
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>View(long id, int viewOnly = 0)
+        {
+             ViewBag.ViewOnly = viewOnly > 0;
+                 using (Conn conn = GetConn())
+                {
+ <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=SourceTable.Name%>.*");
+ <%}else{ %>
+            conn.Field("<%=GetAllColumn(SourceTable) %>");
+            <%}%>
+            conn.From("<%=SourceTable.Name%>");
+             <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
+            conn.LeftJoin("sys_user cUser", "<%=SourceTable.Name%>.createuserid=cUser.id");
+            conn.LeftJoin("sys_user eUser", "<%=SourceTable.Name%>.edituserid=eUser.id");
+             <%}%>
+            conn.Where("<%=SourceTable.Name%>.ID={0}", id);
+            DataArray data = conn.Select();
+
+            return View(data);}
+        }
+
          <%if(!SourceTable.Description.Contains("view")) {%>
         /// <summary>
         /// 删除<%=GetTableDescription(SourceTable) %>数据
@@ -241,34 +267,6 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
 
         }
         <%} %>
-        /// <summary>
-        /// 浏览<%=GetTableDescription(SourceTable) %>数据
-        /// </summary>
-        /// <param name="id">数据记录标识</param>
-        /// <returns></returns>
-         [Description("浏览[<%=GetTableDescription(SourceTable) %>]数据")]
-        public ActionResult  <%=GetShortName(SourceTable.Name) %>View(long id, int viewOnly = 0)
-        {
-             ViewBag.ViewOnly = viewOnly > 0;
-                 using (Conn conn = GetConn())
-                {
- <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
-  conn.Field("cUser.name createUserName,eUser.name editUserName,<%=SourceTable.Name%>.*");
- <%}else{ %>
-            conn.Field("<%=GetAllColumn(SourceTable) %>");
-            <%}%>
-            conn.From("<%=SourceTable.Name%>");
-             <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
-            conn.LeftJoin("sys_user cUser", "<%=SourceTable.Name%>.createuserid=cUser.id");
-            conn.LeftJoin("sys_user eUser", "<%=SourceTable.Name%>.edituserid=eUser.id");
-             <%}%>
-            conn.Where("<%=SourceTable.Name%>.ID={0}", id);
-            DataArray data = conn.Select();
-
-            return View(data);}
-        }
-
-        
         
        #endregion <%=GetTableDescription(SourceTable)%>管理
        

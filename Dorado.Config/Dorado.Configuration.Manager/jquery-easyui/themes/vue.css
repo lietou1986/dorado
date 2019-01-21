@@ -388,6 +388,15 @@
 	line-height: 26px;
 	overflow: hidden;
 }
+.tree-editing .f-field{
+	width: 100%;
+	border-radius: 0;
+	height: auto;
+	vertical-align: top;
+}
+.tree-editing .textbox-text{
+	line-height: 24px;
+}
 .datagrid,
 .datagrid-view,.datagrid-view1,.datagrid-view2{
 	position: relative;
