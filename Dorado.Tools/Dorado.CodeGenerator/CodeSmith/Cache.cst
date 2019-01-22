@@ -17,27 +17,51 @@
 using Dorado.Core;
 using Dorado.Core.Data;
 using Dorado.Core.Logger;
-using Dorado.Core.SuperCache;
 using System;
+
 namespace <%=NamePlaceName%>.Services.Cache
 {
-    public partial class <%=BSName%>CacheProvider : BaseProvider
+    public partial class <%=BSName%>CacheProvider : BaseCacheProvider
     {
         private static readonly string Cache_Prefix = "cache:<%=BSName.ToLower()%>";
-        private static readonly string Trigger_Clear = "clear_<%=BSName.ToLower()%>_cache";
-        private readonly ICacheManager _superCache;
-        private readonly ISignals _signals;
-        private readonly IClock _clock;
-
-        public <%=BSName%>CacheProvider(ICacheManager cacheManager, ISignals signals, IClock clock)
-        {
-            _superCache = cacheManager;
-            _signals = signals;
-            _clock = clock;
-        }
+        private static readonly string Trigger_Clear = "trigger:<%=BSName.ToLower()%>:clear";
         
     <% foreach (SchemaExplorer.TableSchema SourceTable in SourceTables) { %>
     
+      /// <summary>
+        /// 获取<%=GetTableDescription(SourceTable)%>缓存基础信息
+        /// </summary>
+        /// <param name="uticket"></param>
+        /// <returns></returns>
+        public DataArray Get<%=GetShortName(SourceTable.Name) %>BaseInfo(long id)
+        {
+            DataArray result = new DataArray();
+            try
+            {
+                result = CacheManager.Get(string.Format("{0}:<%=GetShortName(SourceTable.Name).ToLower() %>:base:{1}", Cache_Prefix, id),
+                   ctx =>
+                   {
+                       ctx.Monitor(Clock.When(TimeSpan.FromSeconds(60 * 5)));
+                       ctx.Monitor(Signals.When(Trigger_Clear));
+                       using (Conn conn = GetConn())
+                       {
+                           DataArray data = conn.Select("select <%=GetBaseColumn(SourceTable) %> from [<%=SourceTable.Name %>](nolock) where [id]={0}", id);
+                           if (data.IsEmpty)
+                               throw new CoreException("数据不存在");
+
+                           return data;
+                       }
+                   });
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LoggerWrapper.Logger.Error("从缓存中获取<%=GetTableDescription(SourceTable)%>基础信息错误，id="+id, ex);
+            }
+            return result;
+        }
+        
         /// <summary>
         /// 获取<%=GetTableDescription(SourceTable)%>缓存信息
         /// </summary>
@@ -48,16 +72,16 @@ namespace <%=NamePlaceName%>.Services.Cache
             DataArray result = new DataArray();
             try
             {
-                result = _superCache.Get(string.Format("{0}:<%=GetShortName(SourceTable.Name).ToLower() %>:{1}", Cache_Prefix, id),
+                result = CacheManager.Get(string.Format("{0}:<%=GetShortName(SourceTable.Name).ToLower() %>:{1}", Cache_Prefix, id),
                    ctx =>
                    {
-                       ctx.Monitor(_clock.When(TimeSpan.FromSeconds(60 * 5)));
-                       ctx.Monitor(_signals.When(Trigger_Clear));
+                       ctx.Monitor(Clock.When(TimeSpan.FromSeconds(60 * 5)));
+                       ctx.Monitor(Signals.When(Trigger_Clear));
                        using (Conn conn = GetConn())
                        {
                            DataArray data = conn.Select("select * from [<%=SourceTable.Name %>](nolock) where [id]={0}", id);
                            if (data.IsEmpty)
-                               throw new CoreException("<%=GetTableDescription(SourceTable)%>不存在");
+                               throw new CoreException("数据不存在");
 
                            return data;
                        }
@@ -67,7 +91,7 @@ namespace <%=NamePlaceName%>.Services.Cache
             }
             catch (Exception ex)
             {
-                LoggerWrapper.Logger.Error("从缓存中获取<%=GetTableDescription(SourceTable)%>错误", ex);
+                  LoggerWrapper.Logger.Error("从缓存中获取<%=GetTableDescription(SourceTable)%>信息错误，id="+id, ex);
             }
             return result;
         }
@@ -75,14 +99,37 @@ namespace <%=NamePlaceName%>.Services.Cache
        <% }%> 
        
        
-        public void Clear() {
-            _signals.Trigger(Trigger_Clear);
+        public override void Clear() {
+            Signals.Trigger(Trigger_Clear);
         }
     }
 }
 
 <script runat="template">
 
+         private string GetBaseColumn(SchemaExplorer.TableSchema SourceTable){
+             
+             string columns = "";
+            Dictionary<string, int> d = new Dictionary<string, int>();
+            d.Add("autoid",1);
+            d.Add("createuserid",1);
+            d.Add("createtime",1);
+            d.Add("edituserid",1);
+            d.Add("edittime",1);
+            d.Add("description",1);
+
+foreach(ColumnSchema column in SourceTable.Columns)
+{
+
+    if(!d.ContainsKey(column.Name.ToLower()))
+      {
+        columns += SourceTable.Name+".["+column.Name + "],";
+      }
+}
+columns = columns.Substring(0,columns.Length-1);
+return columns;
+}
+         
      private List<ColumnSchema> GetListColumns(SchemaExplorer.TableSchema SourceTable){
 
 List<ColumnSchema> groupTables=new List<ColumnSchema>();
