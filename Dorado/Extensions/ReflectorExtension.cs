@@ -178,7 +178,7 @@ namespace Dorado.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns></returns>
-        public static MethodInfo[] GetMethods(Type type)
+        public static MethodInfo[] GetMethods(this Type type)
         {
             return GetMethods(type, null);
         }
@@ -189,7 +189,7 @@ namespace Dorado.Extensions
         /// <param name="type">The type.</param>
         /// <param name="attrType">Type of the attr.</param>
         /// <returns></returns>
-        public static MethodInfo[] GetMethods(Type type, Type attrType)
+        public static MethodInfo[] GetMethods(this Type type, Type attrType)
         {
             MethodInfo[] infos = type.GetMethods(BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.FlattenHierarchy);
             List<MethodInfo> ret = new List<MethodInfo>();
@@ -217,7 +217,7 @@ namespace Dorado.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns></returns>
-        public static string GetTypeName(Type type)
+        public static string GetTypeName(this Type type)
         {
             if (type.IsGenericType)
             {
@@ -243,7 +243,7 @@ namespace Dorado.Extensions
         /// </summary>
         /// <param name="method">The method.</param>
         /// <returns></returns>
-        public static string GenerateMethodDeclaration(MethodInfo method)
+        public static string GenerateMethodDeclaration(this MethodInfo method)
         {
             StringBuilder builder = new StringBuilder(4096);
             builder.Append("public ");
@@ -279,7 +279,7 @@ namespace Dorado.Extensions
         /// </summary>
         /// <param name="method">The method.</param>
         /// <returns></returns>
-        public static string GetMethodParameterString(MethodInfo method)
+        public static string GetMethodParameterString(this MethodInfo method)
         {
             StringBuilder builder = new StringBuilder(1024);
             ParameterInfo[] prms = method.GetParameters();
@@ -362,7 +362,7 @@ namespace Dorado.Extensions
         /// </summary>
         /// <param name="targetType">Type of the target.</param>
         /// <returns></returns>
-        public static object DefaultForType(Type targetType)
+        public static object DefaultForType(this Type targetType)
         {
             return targetType.IsValueType ? Activator.CreateInstance(targetType) : null;
         }
@@ -372,7 +372,7 @@ namespace Dorado.Extensions
         /// </summary>
         /// <param name="targetType">Type of the target.</param>
         /// <returns></returns>
-        public static string DefaultStringForType(Type targetType)
+        public static string DefaultStringForType(this Type targetType)
         {
             string typeString = targetType.FullName;
             if (typeString.Contains("&"))
@@ -389,5 +389,26 @@ namespace Dorado.Extensions
         }
 
         #endregion 程序集生成操作
+
+        public static IEnumerable<PropertyInfo> GetSetPropertys<T>(this Type type)
+        {
+            var t= type
+                .GetProperties(BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
+                .Select(p => new
+                {
+                    PropertyInfo = p,
+                    p.PropertyType,
+                    IndexParameters = p.GetIndexParameters(),
+                    Accessors = p.GetAccessors(false)
+                })
+                .Where(x => x.PropertyType == typeof(T)) 
+                .Where(x => x.IndexParameters.Count() == 0) 
+                .Where(x => x.Accessors.Length != 1 || x.Accessors[0].ReturnType == typeof(void));
+
+            if (t.Any()) {
+                return t.Select(p=>p.PropertyInfo);
+            }
+            return new List<PropertyInfo>();
+        }
     }
 }
