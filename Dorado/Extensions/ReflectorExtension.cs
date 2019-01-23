@@ -392,7 +392,12 @@ namespace Dorado.Extensions
 
         public static IEnumerable<PropertyInfo> GetSetPropertys<T>(this Type type)
         {
-            var t= type
+            return type.GetSetPropertys(typeof(T));
+        }
+
+        public static IEnumerable<PropertyInfo> GetSetPropertys(this Type type, Type targetType)
+        {
+            var t = type
                 .GetProperties(BindingFlags.SetProperty | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
                 .Select(p => new
                 {
@@ -401,12 +406,13 @@ namespace Dorado.Extensions
                     IndexParameters = p.GetIndexParameters(),
                     Accessors = p.GetAccessors(false)
                 })
-                .Where(x => x.PropertyType == typeof(T)) 
-                .Where(x => x.IndexParameters.Count() == 0) 
+                .Where(x => x.PropertyType == targetType)
+                .Where(x => x.IndexParameters.Count() == 0)
                 .Where(x => x.Accessors.Length != 1 || x.Accessors[0].ReturnType == typeof(void));
 
-            if (t.Any()) {
-                return t.Select(p=>p.PropertyInfo);
+            if (t.Any())
+            {
+                return t.Select(p => p.PropertyInfo);
             }
             return new List<PropertyInfo>();
         }
