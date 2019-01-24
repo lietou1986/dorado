@@ -107,6 +107,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKFinder.Net", "Dorado.Tool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Tool", "Dorado.Tools\Dorado.CodeGenerator\Dorado.Tool.csproj", "{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Platform", "Dorado.Platform\Dorado.Platform.csproj", "{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Platform.ServiceGenerator", "Dorado.Platform.ServiceGenerator\Dorado.Platform.ServiceGenerator.csproj", "{4645D7C6-45A0-47E4-94D1-2690C04BC04D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -767,6 +771,42 @@ Global
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}.Release-Combine|Mixed Platforms.Build.0 = Release|x86
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}.Release-Combine|x86.ActiveCfg = Release|x86
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}.Release-Combine|x86.Build.0 = Release|x86
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|x86.Build.0 = Debug|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|x86.ActiveCfg = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|x86.Build.0 = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Any CPU.ActiveCfg = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Any CPU.Build.0 = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Mixed Platforms.Build.0 = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|x86.ActiveCfg = Release|Any CPU
+		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|x86.Build.0 = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|x86.Build.0 = Debug|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release|x86.ActiveCfg = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release|x86.Build.0 = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release-Combine|Any CPU.ActiveCfg = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release-Combine|Any CPU.Build.0 = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release-Combine|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release-Combine|Mixed Platforms.Build.0 = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release-Combine|x86.ActiveCfg = Release|Any CPU
+		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Release-Combine|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -812,8 +852,8 @@ Global
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE} = {F5F45F70-5782-4A12-ABD2-7B96B6984585}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {11A5AF7A-9029-424C-A1DE-2D76C3292DA1}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Dorado.vsmdi
