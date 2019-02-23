@@ -108,7 +108,7 @@ namespace <%=NamePlaceName%>.Data.Table
         {
             if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
 
-            long primaryKey = CommonUtility.GeneratePrimaryKey();
+            long primaryKey = CommonUtility.GenerateId();
             if (!data.Contains(Field.ID))
                 data.Columns.Add(Field.ID);
             data[Field.ID].Set(primaryKey);

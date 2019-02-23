@@ -112,7 +112,7 @@ namespace <%=NamePlaceName%>.Services.Data
         public static long Insert(Conn conn, DataArray data, bool strict = true)
         {
             if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
-            long primaryKey = CommonUtility.GeneratePrimaryKey();
+            long primaryKey = CommonUtility.GenerateId();
             data.Columns.Add(Field.<%=GetPrimarykeyColumnName()%>).Set(primaryKey);
             string sql = _insert_sql(data, strict);
             if (sql == string.Empty) return 0;

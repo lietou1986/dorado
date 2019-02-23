@@ -1,3 +1,4 @@
+using Dorado.Core;
 using Dorado.Core.ComponentModel;
 using Dorado.Extensions;
 using System;
@@ -127,12 +128,21 @@ namespace Dorado.Utils
         }
 
         /// <summary>
-        /// 生成主键
+        /// 生成Id
         /// </summary>
         /// <returns></returns>
-        public static long GeneratePrimaryKey()
+        public static long GenerateGID()
         {
             return GenerateGuid().ToLong();
+        }
+
+        /// <summary>
+        /// 生成雪花Id
+        /// </summary>
+        /// <returns></returns>
+        public static long GenerateId()
+        {
+            return Snowflake.Instance().GetId();
         }
     }
 }
