@@ -919,6 +919,27 @@
   border-color: #ffa8a8;
   background-color: #fff;
 }
+.form-floating-label.form-field .textbox-text {
+  padding: 0;
+}
+.form-floating-label.form-field .textbox-label {
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+  transition: all .3s;
+  font-size: 12px;
+  z-index: 9;
+}
+.form-floating-label.form-field-empty .textbox-label {
+  cursor: text;
+  font-size: 14px;
+  transform: translate(0,25px);
+}
+.form-floating-label.form-field-empty.form-field-focused .textbox-label {
+  cursor: default;
+  font-size: 12px;
+  transform: translate(0,0);
+}
 .passwordbox-open {
   background: url('images/passwordbox_open.png') no-repeat center center;
 }
@@ -3269,6 +3290,12 @@
 .switchbutton-readonly {
   cursor: default;
 }
+.switchbutton:focus {
+  -moz-box-shadow: 0 0 3px 0 #dfdfdf;
+  -webkit-box-shadow: 0 0 3px 0 #dfdfdf;
+  box-shadow: 0 0 3px 0 #dfdfdf;
+  outline: none;
+}
 .radiobutton {
   position: relative;
   border: 2px solid #39c;
@@ -3385,6 +3412,12 @@
   left: 50%;
   margin-left: -8px;
 }
+.sidemenu-collapsed .collapsed-icon {
+  position: relative;
+}
+.sidemenu-collapsed .collapsed-text {
+  text-align: center;
+}
 .sidemenu-tooltip {
   padding: 0;
   margin: 0 -12px;
@@ -3422,6 +3455,12 @@
 .textbox .textbox-button-top,
 .textbox .textbox-button-bottom {
   border-color: transparent;
+}
+.form-floating-label.form-field .textbox-label {
+  color: #8d8d8d;
+}
+.form-floating-label.form-field-focused .textbox-label {
+  color: #39c;
 }
 .combo-arrow,
 .combo-arrow:hover,

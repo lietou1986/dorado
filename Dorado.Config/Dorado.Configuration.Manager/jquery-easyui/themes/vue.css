@@ -492,6 +492,7 @@
 	position: relative;
 }
 .datagrid-editable> .f-field,
+.datagrid-editable>form> .f-field,
 .datagrid-editable> *{
 	width: 100%;
 	height: 31px;

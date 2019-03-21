@@ -4,6 +4,8 @@ Version 1.7.x
  * treegrid: The 'pageNumber' can't be initialized with the specified value. fixed.
 * Improvement
  * switchbutton: Add the 'label','labelAlign','labelPosition','labelWidth' properties.
+ * switchbutton: Accept 'tabindex' attribute to get focus when the user press TAB key.
+ * form: The 'onChange' event is available for all the form component.
 
 Version 1.7.0
 -------------

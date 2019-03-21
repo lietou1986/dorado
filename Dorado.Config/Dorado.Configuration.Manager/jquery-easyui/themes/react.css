@@ -109,7 +109,14 @@
 	width: 12em;
 	height: 30px;
 }
-
+.f-vtitle{
+	-ms-writing-mode: tb-lr;
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 .scroll-body{
 	overflow: auto;
 	position: relative;
@@ -453,6 +460,7 @@
 .datagrid-header td.datagrid-field-td{
 	border-bottom: 0;
 }
+  
 .datagrid-cell{
 	text-align: left;
 	height: auto;
@@ -668,19 +676,22 @@
 .layout-panel-south.layout-collapsed{
 	transform: translate3d(0, 100%, 0)
 }
+.layout-expand .panel-tool{
+	right: 6px;
+}
 
-.form-item{
+.form-field{
 	margin-bottom: 28px;
 }
-.form-item-haserror{
+.form-field-haserror{
 	margin-bottom: 4px;
 }
-.form-item-error{
+.form-field-error{
 	font-size: 14px;
 	color: #ed4014;
 	height: 24px;
 	line-height: 24px;
 }
-.form-item .f-field{
+.form-field .f-field{
 	width: auto;
 }

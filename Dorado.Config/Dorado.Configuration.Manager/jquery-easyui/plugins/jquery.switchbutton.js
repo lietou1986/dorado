@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.7.2
+ * EasyUI for jQuery 1.7.5
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -10,7 +10,7 @@
 (function($){
 var _1=1;
 function _2(_3){
-var _4=$("<span class=\"switchbutton\">"+"<span class=\"switchbutton-inner\">"+"<span class=\"switchbutton-on\"></span>"+"<span class=\"switchbutton-handle\"></span>"+"<span class=\"switchbutton-off\"></span>"+"<input class=\"switchbutton-value\" type=\"checkbox\">"+"</span>"+"</span>").insertAfter(_3);
+var _4=$("<span class=\"switchbutton\">"+"<span class=\"switchbutton-inner\">"+"<span class=\"switchbutton-on\"></span>"+"<span class=\"switchbutton-handle\"></span>"+"<span class=\"switchbutton-off\"></span>"+"<input class=\"switchbutton-value\" type=\"checkbox\" tabindex=\"-1\">"+"</span>"+"</span>").insertAfter(_3);
 var t=$(_3);
 t.addClass("switchbutton-f").hide();
 var _5=t.attr("name");
@@ -78,8 +78,10 @@ on.prependTo(_16);
 off.insertAfter(_17);
 }
 var _18="_easyui_switchbutton_"+(++_1);
-_15.find(".switchbutton-value")._propAttr("checked",_14.checked).attr("id",_18);
-_15.removeClass("switchbutton-disabled").addClass(_14.disabled?"switchbutton-disabled":"");
+var _19=_15.find(".switchbutton-value")._propAttr("checked",_14.checked).attr("id",_18);
+_19.unbind(".switchbutton").bind("change.switchbutton",function(e){
+return false;
+});
 _15.removeClass("switchbutton-reversed").addClass(_14.reversed?"switchbutton-reversed":"");
 if(_14.label){
 if(typeof _14.label=="object"){
@@ -101,93 +103,103 @@ _13.label.addClass("textbox-label-"+_14.labelPosition);
 $(_13.label).remove();
 }
 _10(_12,_14.checked);
-_19(_12,_14.readonly);
+_1a(_12,_14.readonly);
+_1b(_12,_14.disabled);
 $(_12).switchbutton("setValue",_14.value);
 };
-function _10(_1a,_1b,_1c){
-var _1d=$.data(_1a,"switchbutton");
-var _1e=_1d.options;
-_1e.checked=_1b;
-var _1f=_1d.switchbutton.find(".switchbutton-inner");
-var _20=_1f.find(".switchbutton-on");
-var _21=_1e.reversed?(_1e.checked?_1e.marginWidth:0):(_1e.checked?0:_1e.marginWidth);
-var dir=_20.css("float").toLowerCase();
+function _10(_1c,_1d,_1e){
+var _1f=$.data(_1c,"switchbutton");
+var _20=_1f.options;
+var _21=_1f.switchbutton.find(".switchbutton-inner");
+var _22=_21.find(".switchbutton-on");
+var _23=_20.reversed?(_1d?_20.marginWidth:0):(_1d?0:_20.marginWidth);
+var dir=_22.css("float").toLowerCase();
 var css={};
-css["margin-"+dir]=-_21+"px";
-_1c?_1f.animate(css,200):_1f.css(css);
-var _22=_1f.find(".switchbutton-value");
-var ck=_22.is(":checked");
-$(_1a).add(_22)._propAttr("checked",_1e.checked);
-if(ck!=_1e.checked){
-_1e.onChange.call(_1a,_1e.checked);
+css["margin-"+dir]=-_23+"px";
+_1e?_21.animate(css,200):_21.css(css);
+var _24=_21.find(".switchbutton-value");
+$(_1c).add(_24)._propAttr("checked",_1d);
+if(_20.checked!=_1d){
+_20.checked=_1d;
+_20.onChange.call(_1c,_20.checked);
+$(_1c).closest("form").trigger("_change",[_1c]);
 }
 };
-function _23(_24,_25){
-var _26=$.data(_24,"switchbutton");
-var _27=_26.options;
-var _28=_26.switchbutton;
-var _29=_28.find(".switchbutton-value");
-if(_25){
-_27.disabled=true;
-$(_24).add(_29)._propAttr("disabled",true);
-_28.addClass("switchbutton-disabled");
+function _1b(_25,_26){
+var _27=$.data(_25,"switchbutton");
+var _28=_27.options;
+var _29=_27.switchbutton;
+var _2a=_29.find(".switchbutton-value");
+if(_26){
+_28.disabled=true;
+$(_25).add(_2a)._propAttr("disabled",true);
+_29.addClass("switchbutton-disabled");
+_29.removeAttr("tabindex");
 }else{
-_27.disabled=false;
-$(_24).add(_29)._propAttr("disabled",false);
-_28.removeClass("switchbutton-disabled");
+_28.disabled=false;
+$(_25).add(_2a)._propAttr("disabled",false);
+_29.removeClass("switchbutton-disabled");
+_29.attr("tabindex",$(_25).attr("tabindex")||"");
 }
 };
-function _19(_2a,_2b){
-var _2c=$.data(_2a,"switchbutton");
-var _2d=_2c.options;
-_2d.readonly=_2b==undefined?true:_2b;
-_2c.switchbutton.removeClass("switchbutton-readonly").addClass(_2d.readonly?"switchbutton-readonly":"");
+function _1a(_2b,_2c){
+var _2d=$.data(_2b,"switchbutton");
+var _2e=_2d.options;
+_2e.readonly=_2c==undefined?true:_2c;
+_2d.switchbutton.removeClass("switchbutton-readonly").addClass(_2e.readonly?"switchbutton-readonly":"");
 };
-function _2e(_2f){
-var _30=$.data(_2f,"switchbutton");
-var _31=_30.options;
-_30.switchbutton.unbind(".switchbutton").bind("click.switchbutton",function(){
-if(!_31.disabled&&!_31.readonly){
-_10(_2f,_31.checked?false:true,true);
+function _2f(_30){
+var _31=$.data(_30,"switchbutton");
+var _32=_31.options;
+_31.switchbutton.unbind(".switchbutton").bind("click.switchbutton",function(){
+if(!_32.disabled&&!_32.readonly){
+_10(_30,_32.checked?false:true,true);
+}
+}).bind("keydown.switchbutton",function(e){
+if(e.which==13||e.which==32){
+if(!_32.disabled&&!_32.readonly){
+_10(_30,_32.checked?false:true,true);
+return false;
+}
 }
 });
 };
-$.fn.switchbutton=function(_32,_33){
-if(typeof _32=="string"){
-return $.fn.switchbutton.methods[_32](this,_33);
+$.fn.switchbutton=function(_33,_34){
+if(typeof _33=="string"){
+return $.fn.switchbutton.methods[_33](this,_34);
 }
-_32=_32||{};
+_33=_33||{};
 return this.each(function(){
-var _34=$.data(this,"switchbutton");
-if(_34){
-$.extend(_34.options,_32);
+var _35=$.data(this,"switchbutton");
+if(_35){
+$.extend(_35.options,_33);
 }else{
-_34=$.data(this,"switchbutton",{options:$.extend({},$.fn.switchbutton.defaults,$.fn.switchbutton.parseOptions(this),_32),switchbutton:_2(this)});
+_35=$.data(this,"switchbutton",{options:$.extend({},$.fn.switchbutton.defaults,$.fn.switchbutton.parseOptions(this),_33),switchbutton:_2(this)});
 }
-_34.options.originalChecked=_34.options.checked;
+_35.options.originalChecked=_35.options.checked;
 _11(this);
 _7(this);
-_2e(this);
+_2f(this);
 });
 };
 $.fn.switchbutton.methods={options:function(jq){
-var _35=jq.data("switchbutton");
-return $.extend(_35.options,{value:_35.switchbutton.find(".switchbutton-value").val()});
-},resize:function(jq,_36){
+var _36=jq.data("switchbutton");
+return $.extend(_36.options,{value:_36.switchbutton.find(".switchbutton-value").val()});
+},resize:function(jq,_37){
 return jq.each(function(){
-_7(this,_36);
+_7(this,_37);
 });
 },enable:function(jq){
 return jq.each(function(){
-_23(this,false);
+_1b(this,false);
 });
 },disable:function(jq){
 return jq.each(function(){
-_23(this,true);
+_1b(this,true);
 });
-},readonly:function(jq,_37){
+},readonly:function(jq,_38){
 return jq.each(function(){
-_19(this,_37);
+_1a(this,_38);
 });
 },check:function(jq){
 return jq.each(function(){
@@ -203,20 +215,20 @@ _10(this,false);
 });
 },reset:function(jq){
 return jq.each(function(){
-var _38=$(this).switchbutton("options");
-_10(this,_38.originalChecked);
+var _39=$(this).switchbutton("options");
+_10(this,_39.originalChecked);
 });
-},setValue:function(jq,_39){
+},setValue:function(jq,_3a){
 return jq.each(function(){
-$(this).val(_39);
-$.data(this,"switchbutton").switchbutton.find(".switchbutton-value").val(_39);
+$(this).val(_3a);
+$.data(this,"switchbutton").switchbutton.find(".switchbutton-value").val(_3a);
 });
 }};
-$.fn.switchbutton.parseOptions=function(_3a){
-var t=$(_3a);
-return $.extend({},$.parser.parseOptions(_3a,["onText","offText","handleText",{handleWidth:"number",reversed:"boolean"},"label","labelPosition","labelAlign",{labelWidth:"number"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined),readonly:(t.attr("readonly")?true:undefined)});
+$.fn.switchbutton.parseOptions=function(_3b){
+var t=$(_3b);
+return $.extend({},$.parser.parseOptions(_3b,["onText","offText","handleText",{handleWidth:"number",reversed:"boolean"},"label","labelPosition","labelAlign",{labelWidth:"number"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined),readonly:(t.attr("readonly")?true:undefined)});
 };
-$.fn.switchbutton.defaults={handleWidth:"auto",width:60,height:30,checked:false,disabled:false,readonly:false,reversed:false,onText:"ON",offText:"OFF",handleText:"",value:"on",label:null,labelWidth:"auto",labelPosition:"before",labelAlign:"left",onChange:function(_3b){
+$.fn.switchbutton.defaults={handleWidth:"auto",width:60,height:30,checked:false,disabled:false,readonly:false,reversed:false,onText:"ON",offText:"OFF",handleText:"",value:"on",label:null,labelWidth:"auto",labelPosition:"before",labelAlign:"left",onChange:function(_3c){
 }};
 })(jQuery);
 
