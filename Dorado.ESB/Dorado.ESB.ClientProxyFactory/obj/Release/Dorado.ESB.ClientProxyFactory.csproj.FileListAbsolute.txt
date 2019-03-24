@@ -45,3 +45,9 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorad
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.pdb
 D:\work\_learn\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.csprojAssemblyReference.cache
+D:\_Repos\dorado\Build\Dorado.ESB.ClientProxyFactory.dll
+D:\_Repos\dorado\Build\Dorado.ESB.ClientProxyFactory.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.dll
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.pdb

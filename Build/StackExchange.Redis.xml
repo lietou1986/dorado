@@ -703,6 +703,52 @@
             <param name="key">The key of the sorted set to check.</param>
             <param name="member">The member the sorted set must not contain.</param>
         </member>
+        <member name="M:StackExchange.Redis.Condition.SortedSetEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)">
+            <summary>
+            Enforces that the given sorted set member must have the specified score.
+            </summary>
+            <param name="key">The key of the sorted set to check.</param>
+            <param name="member">The member the sorted set to check.</param>
+            <param name="score">The score that member must have.</param>
+        </member>
+        <member name="M:StackExchange.Redis.Condition.SortedSetNotEqual(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)">
+            <summary>
+            Enforces that the given sorted set member must not have the specified score.
+            </summary>
+            <param name="key">The key of the sorted set to check.</param>
+            <param name="member">The member the sorted set to check.</param>
+            <param name="score">The score that member must not have.</param>
+        </member>
+        <member name="M:StackExchange.Redis.Condition.SortedSetScoreExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)">
+            <summary>
+            Enforces that the given sorted set must have the given score.
+            </summary>
+            <param name="key">The key of the sorted set to check.</param>
+            <param name="score">The score that the sorted set must have.</param>
+        </member>
+        <member name="M:StackExchange.Redis.Condition.SortedSetScoreNotExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue)">
+            <summary>
+            Enforces that the given sorted set must not have the given score.
+            </summary>
+            <param name="key">The key of the sorted set to check.</param>
+            <param name="score">The score that the sorted set must not have.</param>
+        </member>
+        <member name="M:StackExchange.Redis.Condition.SortedSetScoreExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)">
+            <summary>
+            Enforces that the given sorted set must have the specified count of the given score.
+            </summary>
+            <param name="key">The key of the sorted set to check.</param>
+            <param name="score">The score that the sorted set must have.</param>
+            <param name="count">The number of members which sorted set must have.</param>
+        </member>
+        <member name="M:StackExchange.Redis.Condition.SortedSetScoreNotExists(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue)">
+            <summary>
+            Enforces that the given sorted set must not have the specified count of the given score.
+            </summary>
+            <param name="key">The key of the sorted set to check.</param>
+            <param name="score">The score that the sorted set must not have.</param>
+            <param name="count">The number of members which sorted set must not have.</param>
+        </member>
         <member name="T:StackExchange.Redis.ConditionResult">
             <summary>
             Indicates the status of a condition as part of a transaction
@@ -878,7 +924,7 @@
         </member>
         <member name="P:StackExchange.Redis.ConfigurationOptions.SyncTimeout">
             <summary>
-            Specifies the time in milliseconds that the system should allow for synchronous operations (defaults to 1 second)
+            Specifies the time in milliseconds that the system should allow for synchronous operations (defaults to 5 seconds)
             </summary>
         </member>
         <member name="P:StackExchange.Redis.ConfigurationOptions.TieBreaker">
@@ -2417,7 +2463,7 @@
             The coordinates of the matched member.
             </summary>
         </member>
-        <member name="M:StackExchange.Redis.GeoRadiusResult.#ctor(StackExchange.Redis.RedisValue,System.Nullable{System.Double},System.Nullable{System.Int64},System.Nullable{StackExchange.Redis.GeoPosition})">
+        <member name="M:StackExchange.Redis.GeoRadiusResult.#ctor(StackExchange.Redis.RedisValue@,System.Nullable{System.Double},System.Nullable{System.Int64},System.Nullable{StackExchange.Redis.GeoPosition})">
             <summary>
             Returns a new GeoRadiusResult
             </summary>
@@ -4336,6 +4382,29 @@
             <returns>The score of the member.</returns>
             <remarks>https://redis.io/commands/zscore</remarks>
         </member>
+        <member name="M:StackExchange.Redis.IDatabase.SortedSetPop(StackExchange.Redis.RedisKey,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Removes and returns the first element from the sorted set stored at key, by default with the scores ordered from low to high.
+            </summary>
+            <param name="key">The key of the sorted set.</param>
+            <param name="order">The order to sort by (defaults to ascending).</param>
+            <param name="flags">The flags to use for this operation.</param>
+            <returns>The removed element, or nil when key does not exist.</returns>
+            <remarks>https://redis.io/commands/zpopmin</remarks>
+            <remarks>https://redis.io/commands/zpopmax</remarks>
+        </member>
+        <member name="M:StackExchange.Redis.IDatabase.SortedSetPop(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Removes and returns the specified number of first elements from the sorted set stored at key, by default with the scores ordered from low to high.
+            </summary>
+            <param name="key">The key of the sorted set.</param>
+            <param name="count">The number of elements to return.</param>
+            <param name="order">The order to sort by (defaults to ascending).</param>
+            <param name="flags">The flags to use for this operation.</param>
+            <returns>An array of elements, or an empty array when key does not exist.</returns>
+            <remarks>https://redis.io/commands/zpopmin</remarks>
+            <remarks>https://redis.io/commands/zpopmax</remarks>
+        </member>
         <member name="M:StackExchange.Redis.IDatabase.StreamAcknowledge(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)">
             <summary>
             Allow the consumer to mark a pending message as correctly processed. Returns the number of messages acknowledged.
@@ -6160,6 +6229,29 @@
             <param name="flags">The flags to use for this operation.</param>
             <returns>The score of the member.</returns>
             <remarks>https://redis.io/commands/zscore</remarks>
+        </member>
+        <member name="M:StackExchange.Redis.IDatabaseAsync.SortedSetPopAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Removes and returns the first element from the sorted set stored at key, by default with the scores ordered from low to high.
+            </summary>
+            <param name="key">The key of the sorted set.</param>
+            <param name="order">The order to sort by (defaults to ascending).</param>
+            <param name="flags">The flags to use for this operation.</param>
+            <returns>The removed element, or nil when key does not exist.</returns>
+            <remarks>https://redis.io/commands/zpopmin</remarks>
+            <remarks>https://redis.io/commands/zpopmax</remarks>
+        </member>
+        <member name="M:StackExchange.Redis.IDatabaseAsync.SortedSetPopAsync(StackExchange.Redis.RedisKey,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.CommandFlags)">
+            <summary>
+            Removes and returns the specified number of first elements from the sorted set stored at key, by default with the scores ordered from low to high.
+            </summary>
+            <param name="key">The key of the sorted set.</param>
+            <param name="count">The number of elements to return.</param>
+            <param name="order">The order to sort by (defaults to ascending).</param>
+            <param name="flags">The flags to use for this operation.</param>
+            <returns>An array of elements, or an empty array when key does not exist.</returns>
+            <remarks>https://redis.io/commands/zpopmin</remarks>
+            <remarks>https://redis.io/commands/zpopmax</remarks>
         </member>
         <member name="M:StackExchange.Redis.IDatabaseAsync.StreamAcknowledgeAsync(StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue,StackExchange.Redis.RedisValue,StackExchange.Redis.CommandFlags)">
             <summary>
@@ -8001,7 +8093,7 @@
             <param name="x">The first <see cref="T:StackExchange.Redis.NameValueEntry"/> to compare.</param>
             <param name="y">The second <see cref="T:StackExchange.Redis.NameValueEntry"/> to compare.</param>
         </member>
-        <member name="M:StackExchange.Redis.PhysicalBridge.WriteMessageTakingWriteLock(StackExchange.Redis.PhysicalConnection,StackExchange.Redis.Message)">
+        <member name="M:StackExchange.Redis.PhysicalBridge.WriteMessageTakingWriteLockAsync(StackExchange.Redis.PhysicalConnection,StackExchange.Redis.Message)">
             <summary>
             This writes a message to the output stream
             </summary>
@@ -8463,6 +8555,11 @@
         <member name="P:StackExchange.Redis.RedisFeatures.SetVaradicAddRemove">
             <summary>
             Does SADD support varadic usage?
+            </summary>
+        </member>
+        <member name="P:StackExchange.Redis.RedisFeatures.SortedSetPop">
+            <summary>
+            Is ZPOPMAX and ZPOPMIN available?
             </summary>
         </member>
         <member name="P:StackExchange.Redis.RedisFeatures.Streams">
@@ -9263,7 +9360,7 @@
             For testing only
             </summary>
         </member>
-        <member name="M:StackExchange.Redis.ServerSelectionStrategy.HashSlot(StackExchange.Redis.RedisKey)">
+        <member name="M:StackExchange.Redis.ServerSelectionStrategy.HashSlot(StackExchange.Redis.RedisKey@)">
             <summary>
             Computes the hash-slot that would be used by the given key
             </summary>

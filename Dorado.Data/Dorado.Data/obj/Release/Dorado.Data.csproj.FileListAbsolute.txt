@@ -69,3 +69,10 @@ D:\Work\_learn\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.csproj.Cop
 D:\Work\_learn\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.dll
 D:\Work\_learn\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.pdb
 D:\Work\_learn\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.csprojAssemblyReference.cache
+D:\_Repos\dorado\Build\Dorado.Data.dll
+D:\_Repos\dorado\Build\Dorado.Data.pdb
+D:\_Repos\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.dll
+D:\_Repos\dorado\Dorado.Data\Dorado.Data\obj\Release\Dorado.Data.pdb

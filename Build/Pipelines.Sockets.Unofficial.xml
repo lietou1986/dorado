@@ -4,6 +4,959 @@
         <name>Pipelines.Sockets.Unofficial</name>
     </assembly>
     <members>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Allocator`1">
+            <summary>
+            Allocates blocks of memory
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Allocator`1.Allocate(System.Int32)">
+            <summary>
+            Allocate a new block
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Allocator`1.Clear(System.Buffers.IMemoryOwner{`0},System.Int32)">
+            <summary>
+            Clear (zero) the supplied region
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.ArrayPoolAllocator`1">
+            <summary>
+            An allocator that rents memory from the array-pool provided, returning them to the pool when done
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ArrayPoolAllocator`1.Shared">
+            <summary>
+            An array-pool allocator that uses the shared array-pool
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.ArrayPoolAllocator`1.#ctor(System.Buffers.ArrayPool{`0})">
+            <summary>
+            Create a new array-pool allocator that uses the provided array pool (or the shared array-pool otherwise)
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.ArrayPoolAllocator`1.Allocate(System.Int32)">
+            <summary>
+            Allocate a new block 
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.PinnedArrayPoolAllocator`1.Shared">
+            <summary>
+            An array-pool allocator that uses the shared array-pool
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.UnmanagedAllocator`1">
+            <summary>
+            An allocator that allocates unmanaged memory, releasing the memory back to the OS when done
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.UnmanagedAllocator`1.Shared">
+            <summary>
+            The global instance of the unmanaged allocator
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.UnmanagedAllocator`1.Allocate(System.Int32)">
+            <summary>
+            Allocate a new block
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.ArenaOptions">
+            <summary>
+            Options that configure the behahaviour of an arena
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ArenaOptions.Default">
+            <summary>
+            The default arena configuration
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ArenaOptions.Flags">
+            <summary>
+            The flags that are enabled for the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.ArenaOptions.HasFlag(Pipelines.Sockets.Unofficial.Arenas.ArenaFlags)">
+            <summary>
+            Tests an individual flag
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ArenaOptions.BlockSizeBytes">
+            <summary>
+            The block-size to suggest for new allocations in the arena
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ArenaOptions.RetentionPolicy">
+            <summary>
+            The policy for retaining allocations when memory requirements decrease
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.ArenaOptions.#ctor(Pipelines.Sockets.Unofficial.Arenas.ArenaFlags,System.Int32,System.Func{System.Int64,System.Int64,System.Int64})">
+            <summary>
+            Create a new ArenaOptions instance
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.AllocatorFactory">
+            <summary>
+            Provides facilities to create new type-specific allocators for use in an arena
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.AllocatorFactory.Default">
+            <summary>
+            The default allocator factory
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.AllocatorFactory.SuggestAllocator``1(Pipelines.Sockets.Unofficial.Arenas.ArenaOptions)">
+            <summary>
+            Suggest an allocator for any type
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.AllocatorFactory.SuggestBlittableAllocator``1(Pipelines.Sockets.Unofficial.Arenas.ArenaOptions)">
+            <summary>
+            Suggest an allocator for a blittable type
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.AllocatorFactory.SuggestBlockSizeBytes``1(Pipelines.Sockets.Unofficial.Arenas.ArenaOptions)">
+            <summary>
+            Suggest a per-type block size (in bytes) to use for allocations
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.OwnedArena`1">
+            <summary>
+            Represents a typed subset of data within an arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.OwnedArena`1.Allocate(System.Int32)">
+            <summary>
+            Allocate a (possibly non-contiguous) region of memory from the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.OwnedArena`1.Allocate">
+            <summary>
+            Allocate a single instance as a reference
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.OwnedArena`1.Allocate(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Allocate a (possibly non-contiguous) region of memory from the arena
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Arena">
+            <summary>
+            An arena allocator that can allocate sequences for multiple data types
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena.#ctor(Pipelines.Sockets.Unofficial.Arenas.ArenaOptions,Pipelines.Sockets.Unofficial.Arenas.AllocatorFactory)">
+            <summary>
+            Create a new Arena instance
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena.Dispose">
+            <summary>
+            Release all resources associated with this arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena.Reset">
+            <summary>
+            Reset the memory allocated by this arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena.Allocate``1">
+            <summary>
+            Allocate a single instance as a reference
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena.Allocate``1(System.Int32)">
+            <summary>
+            Allocate a (possibly non-contiguous) region of memory from the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena.Allocate``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Allocate a (possibly non-contiguous) region of memory from the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena.GetArena``1">
+            <summary>
+            Get a per-type arena inside a multi-type arena
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags">
+            <summary>
+            Flags that impact behaviour of the arena
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags.ClearAtReset">
+            <summary>
+            Allocations are cleared at each reset (and when initially allocated), so that they are always wiped before use
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags.ClearAtDispose">
+            <summary>
+            Allocations are cleared when the arena is disposed (or when data is released in line with the retention policy), so that the contents are not released back to the underlying allocator
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags.PreferUnmanaged">
+            <summary>
+            When possible, and when no allocator is explicitly provided; prefer using unmanaged memory
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags.PreferPinned">
+            <summary>
+            When possible, use pinned memory
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags.BlittableNonPaddedSharing">
+            <summary>
+            Allow blittable types of the same size to share a pool of data (only applies to multi-type arenas)
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Arenas.ArenaFlags.BlittablePaddedSharing">
+            <summary>
+            Allow blittable types to all share a single pool of byte-data, using padding to align (only applies to multi-type arenas, and for reasonably sized types)
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Arena`1">
+            <summary>
+            Represents a lifetime-bound allocator of multiple non-contiguous memory regions
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.AllocatedBytes">
+            <summary>
+            The number of elements allocated since the last reset
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.#ctor(Pipelines.Sockets.Unofficial.Arenas.ArenaOptions,Pipelines.Sockets.Unofficial.Arenas.Allocator{`0})">
+            <summary>
+            Create a new Arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.Allocate(System.Int32)">
+            <summary>
+            Allocate a (possibly non-contiguous) region of memory from the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.Allocate(System.Int64)">
+            <summary>
+            Allocate a (possibly non-contiguous) region of memory from the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.Allocate(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Allocate a (possibly non-contiguous) region of memory from the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.Allocate">
+            <summary>
+            Allocate a reference to a new instance from the arena
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.Reset">
+            <summary>
+            Resets the arena; all current allocations should be considered invalid - new allocations may overwrite them
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Arena`1.Dispose">
+            <summary>
+            Releases all resources associated with the arena
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Reference`1">
+            <summary>
+            Acts as a fly-weight reference into existing data
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Reference`1.ToString">
+            <summary>
+            Obtain a text representation of the value
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Reference`1.Equals(System.Object)">
+            <summary>
+            Used to compare two instances for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Reference`1.Equals(Pipelines.Sockets.Unofficial.Arenas.Reference{`0}@)">
+            <summary>
+            Used to compare two instances for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Reference`1.GetHashCode">
+            <summary>
+            Used to compare two instances for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Reference`1.#ctor(`0[],System.Int32)">
+            <summary>
+            Create a new reference into an array
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Reference`1.#ctor(System.Memory{`0},System.Int32)">
+            <summary>
+            Create a new reference into a memory
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Reference`1.Value">
+            <summary>
+            Get a reference to the underlying value
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Reference`1.op_Implicit(Pipelines.Sockets.Unofficial.Arenas.Reference{`0}@)~`0">
+            <summary>
+            Convert a reference to the underlying type
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.RetentionPolicy">
+            <summary>
+            Provides common retention policies
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.RetentionPolicy.Default">
+            <summary>
+            The default retention policy
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.RetentionPolicy.Recent">
+            <summary>
+            Retain the space required by the previous operation (trim to the size of the last usage)
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.RetentionPolicy.Nothing">
+            <summary>
+            Retain nothing (trim aggressively)
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.RetentionPolicy.Everything">
+            <summary>
+            Retain everything (grow only)
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.RetentionPolicy.Decay(System.Single)">
+            <summary>
+            When the required usage drops, decay the retained amount exponentially; growth is instant
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Sequence">
+            <summary>
+            Represents a Sequence without needing to know the type at compile-time
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.Empty``1">
+            <summary>
+            Returns an empty sequence of the supplied type
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.Equals(System.Object)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.System#IEquatable{Pipelines#Sockets#Unofficial#Arenas#Sequence}#Equals(Pipelines.Sockets.Unofficial.Arenas.Sequence)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.Equals(Pipelines.Sockets.Unofficial.Arenas.Sequence@)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.GetHashCode">
+            <summary>
+            Used for equality operations
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.ToString">
+            <summary>
+            Summarizes a sequence as a string
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.op_Equality(Pipelines.Sockets.Unofficial.Arenas.Sequence@,Pipelines.Sockets.Unofficial.Arenas.Sequence@)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.op_Inequality(Pipelines.Sockets.Unofficial.Arenas.Sequence@,Pipelines.Sockets.Unofficial.Arenas.Sequence@)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence.IsSingleSegment">
+            <summary>
+            Indicates whether the sequence involves multiple segments, vs whether all the data fits into the first segment
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence.Length">
+            <summary>
+            Indicates the number of elements in the sequence
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence.IsEmpty">
+            <summary>
+            Indicates whether the sequence is empty (zero elements)
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence.ElementType">
+            <summary>
+            Indicates the type of element defined by the sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence.Cast``1">
+            <summary>
+            Converts an untyped sequence back to a typed sequence; the type must be correct
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Sequence`1">
+            <summary>
+            Represents a (possibly non-contiguous) region of memory; the read/write cousin or ReadOnlySequence-T
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.op_Implicit(Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@)~Pipelines.Sockets.Unofficial.Arenas.Sequence">
+            <summary>
+            Represents a typed sequence as an untyped sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.op_Explicit(Pipelines.Sockets.Unofficial.Arenas.Sequence@)~Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}">
+            <summary>
+            Converts an untyped sequence back to a typed sequence; the type must be correct
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Equals(System.Object)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.System#IEquatable{Pipelines#Sockets#Unofficial#Arenas#Sequence{T}}#Equals(Pipelines.Sockets.Unofficial.Arenas.Sequence{`0})">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Equals(Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.GetHashCode">
+            <summary>
+            Used for equality operations
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.ToString">
+            <summary>
+            Summaries a sequence as a string
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.op_Equality(Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.op_Inequality(Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@)">
+            <summary>
+            Tests two sequences for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.op_Implicit(Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@)~System.Buffers.ReadOnlySequence{`0}">
+            <summary>
+            Converts a typed sequence to a typed read-only-sequence
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Item(System.Int32)">
+            <summary>
+            Get a reference to an element by index; note that this *can* have
+            poor performance for multi-segment sequences, but it is usually satisfactory
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Item(System.Int64)">
+            <summary>
+            Get a reference to an element by index; note that this *can* have
+            poor performance for multi-segment sequences, but it is usually satisfactory
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.GetReference(System.Int64)">
+            <summary>
+            Obtains a reference into the segment
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.op_Explicit(System.Buffers.ReadOnlySequence{`0}@)~Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}">
+            <summary>
+            Converts a typed sequence to a typed read-only-sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Untyped">
+            <summary>
+            Represents a typed sequence as an untyped sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.AsReadOnly">
+            <summary>
+            Converts a typed sequence to a typed read-only-sequence
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Start">
+            <summary>
+            Calculate the start position of the current sequence
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.End">
+            <summary>
+            Calculate the end position of the current sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.GetPosition(System.Int64)">
+            <summary>
+            Calculate a position inside the current sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.TryGetArray(System.ArraySegment{`0}@)">
+            <summary>
+            Try to get the contents as an array
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Slice(System.Int64)">
+            <summary>
+            Obtains a sub-region of a sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Slice(System.Int64,System.Int64)">
+            <summary>
+            Obtains a sub-region of a sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.TryGetSequence(System.Buffers.ReadOnlySequence{`0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{`0}@)">
+            <summary>
+            Attempts to convert a typed read-only-sequence back to a typed sequence; the sequence must have originated from a valid typed sequence
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Length">
+            <summary>
+            Indicates the number of elements in the sequence
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.IsSingleSegment">
+            <summary>
+            Indicates whether the sequence involves multiple segments, vs whether all the data fits into the first segment
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.IsEmpty">
+            <summary>
+            Indicates whether the sequence is empty (zero elements)
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.FirstSegment">
+            <summary>
+            Obtains the first segment, in terms of a memory
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.FirstSpan">
+            <summary>
+            Obtains the first segment, in terms of a span
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.CopyTo(System.Span{`0})">
+            <summary>
+            Copy the contents of the sequence into a contiguous region
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.TryCopyTo(System.Span{`0})">
+            <summary>
+            If possible, copy the contents of the sequence into a contiguous region
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.#ctor(System.Memory{`0})">
+            <summary>
+            Create a new single-segment sequence from a memory
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.#ctor(`0[])">
+            <summary>
+            Create a new single-segment sequence from an array
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.#ctor(`0[],System.Int32,System.Int32)">
+            <summary>
+            Create a new single-segment sequence from an array
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Spans">
+            <summary>
+            Allows a sequence to be enumerated as spans
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Segments">
+            <summary>
+            Allows a sequence to be enumerated as memory instances
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.SpanEnumerable">
+            <summary>
+            Allows a sequence to be enumerated as spans
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.SpanEnumerable.GetEnumerator">
+            <summary>
+            Allows a sequence to be enumerated as spans
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.MemoryEnumerable">
+            <summary>
+            Allows a sequence to be enumerated as memory instances
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.MemoryEnumerable.GetEnumerator">
+            <summary>
+            Allows a sequence to be enumerated as memory instances
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.GetEnumerator">
+            <summary>
+            Allows a sequence to be enumerated as values
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Enumerator">
+            <summary>
+            Allows a sequence to be enumerated as values
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Enumerator.MoveNext">
+            <summary>
+            Attempt to move the next value
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Enumerator.GetNext">
+            <summary>
+            Progresses the iterator, asserting that space is available, returning a reference to the next value
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.Enumerator.Current">
+            <summary>
+            Obtain a reference to the current value
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.SpanEnumerator">
+            <summary>
+            Allows a sequence to be enumerated as spans
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.SpanEnumerator.MoveNext">
+            <summary>
+            Attempt to move the next segment
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.SpanEnumerator.GetNext">
+            <summary>
+            Asserts that another span is available, and returns then next span
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.SpanEnumerator.Current">
+            <summary>
+            Obtain the current segment
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.MemoryEnumerator">
+            <summary>
+            Allows a sequence to be enumerated as memory instances
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.MemoryEnumerator.MoveNext">
+            <summary>
+            Attempt to move the next segment
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.MemoryEnumerator.Current">
+            <summary>
+            Obtain the current segment
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.Sequence`1.MemoryEnumerator.GetNext">
+            <summary>
+            Asserts that another span is available, and returns then next span
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Projection`2">
+            <summary>
+            Similar to Func, but with "in" parameters
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.Projection`3">
+            <summary>
+            Similar to Func, but with "in" parameters
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions">
+            <summary>
+            Provides utility methods for working with sequences
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.ToArray``1(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Create an array with the contents of the sequence; if possible, an existing
+            wrapped array may be reused
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.ToSequence``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Obtain a Sequence from an enumerable; this may reuse existing sequence-compatible data if possible
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.ToList``1(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Create a list-like object that provides access to the sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.ToArray``2(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Create an array with the contents of the sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.ToArray``3(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Create an array with the contents of the sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``2(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,System.Span{``1},Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from a sequence to a span, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``3(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,System.Span{``2},Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from a sequence to a span, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``1(System.ReadOnlySpan{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Copy the data from a span to a sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``2(System.Span{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``1}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``3(System.ReadOnlySpan{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``2}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``2(System.ReadOnlySpan{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``1}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``3(System.Span{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``2}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``2(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,System.Span{``1},Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from a sequence to a span, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``3(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,System.Span{``2},Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from a sequence to a span, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``1(System.ReadOnlySpan{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Copy the data from a span to a sequence
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``2(System.Span{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``1}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``3(System.Span{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``2}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``2(System.ReadOnlySpan{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``1}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``3(System.ReadOnlySpan{``0},Pipelines.Sockets.Unofficial.Arenas.Sequence{``2}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from a span to a sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.Allocate``2(Pipelines.Sockets.Unofficial.Arenas.Arena{``1},Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from a sequence to a newly allocated sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.Allocate``3(Pipelines.Sockets.Unofficial.Arenas.Arena{``2},Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from a sequence to a newly allocated sequence, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``1(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``1(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``1(System.Buffers.ReadOnlySequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``1(System.Buffers.ReadOnlySequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@)">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``2(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``1}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``2(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``1}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1})">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.CopyTo``3(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``2}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryCopyTo``3(Pipelines.Sockets.Unofficial.Arenas.Sequence{``0}@,Pipelines.Sockets.Unofficial.Arenas.Sequence{``2}@,Pipelines.Sockets.Unofficial.Arenas.Projection{``0,``1,``2},``1@)">
+            <summary>
+            Copy the data from between two sequences, applying a projection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryGetOffset(System.SequencePosition@)">
+            <summary>
+            Attempt to calculate the net offset of a position
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceExtensions.TryGetSummary(System.SequencePosition@)">
+            <summary>
+            Attempt to calculate the net offset of a position
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.SequenceList`1">
+            <summary>
+            A list-like reference type that can be used in most APIs that expect a list object
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.SequenceList`1.Count">
+            <summary>
+            Returns the size of the list
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceList`1.GetEnumerator">
+            <summary>
+            Allows a sequence to be enumerated as values
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.SequenceList`1.Item(System.Int32)">
+            <summary>
+            Provide a reference to an element by index
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceList`1.ToSequence">
+            <summary>
+            Get the sequence represented by this list
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.ISegment">
+            <summary>
+            Represents an abstract chained segment of mutable memory
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ISegment.Index">
+            <summary>
+            The segment index
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ISegment.ElementType">
+            <summary>
+            The type of data represented by this segment
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ISegment.UnderlyingType">
+            <summary>
+            The actual type of memory used for the storage
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.ISegment.RunningIndex">
+            <summary>
+            The offset of this segment in the chain
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.IPinnedMemoryOwner`1">
+            <summary>
+            A memory-owner that provides direct access to the root reference
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.IPinnedMemoryOwner`1.Origin">
+            <summary>
+            The root reference of the block, or a null-pointer if the data should not be considered pinned
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.IPinnedMemoryOwner`1.Length">
+            <summary>
+            Gets the size of the data
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1">
+            <summary>
+            Represents an abstract chained segment of mutable memory
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.#ctor(System.Memory{`0},Pipelines.Sockets.Unofficial.Arenas.SequenceSegment{`0})">
+            <summary>
+            Creates a new SequenceSegment, optionally attaching the segment to an existing chain
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.Length">
+            <summary>
+            The length of the memory
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.RunningIndex">
+            <summary>
+            The logical position of the start of this segment
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.Next">
+            <summary>
+            The next segment in the chain
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.Memory">
+            <summary>
+            The memory represented by this segment
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.GetSegmentIndex">
+            <summary>
+            Get the logical index of this segment
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.GetUnderlyingType">
+            <summary>
+            Get the real type of data being used to hold this data
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Arenas.SequenceSegment`1.DetachNext">
+            <summary>
+            Remove the Next node in this chain, terminating the chain - returning the detached segment
+            </summary>
+        </member>
         <member name="T:Pipelines.Sockets.Unofficial.ConnectionAbortedException">
             <summary>
             Indicates that a connection was aborted
@@ -48,6 +1001,12 @@
         <member name="P:Pipelines.Sockets.Unofficial.DedicatedThreadPoolPipeScheduler.Default">
             <summary>
             Reusable shared scheduler instance
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.DedicatedThreadPoolPipeScheduler.IsWorker(Pipelines.Sockets.Unofficial.DedicatedThreadPoolPipeScheduler)">
+            <summary>
+            Indicates whether the current thread is a worker, optionally for the specific pool
+            (otherwise for any pool)
             </summary>
         </member>
         <member name="M:Pipelines.Sockets.Unofficial.DedicatedThreadPoolPipeScheduler.ToString">
@@ -693,6 +1652,113 @@
             <param name="reader">The reader to wrap</param>
             <param name="name">The logical name of the reader</param>
         </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Threading.MutexSlim">
+            <summary>
+            A mutex primitive that can be waited or awaited, with support for schedulers
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Threading.MutexSlim.TimeoutMilliseconds">
+            <summary>
+            Time to wait, in milliseconds - or zero for immediate-only
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.ToString">
+            <summary>
+            See Object.ToString
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.#ctor(System.Int32,System.IO.Pipelines.PipeScheduler)">
+            <summary>
+            Create a new MutexSlim instance
+            </summary>
+            <param name = "timeoutMilliseconds">Time to wait, in milliseconds - or zero for immediate-only</param>
+            <param name="scheduler">The scheduler to use for async continuations, or the thread-pool if omitted</param>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.TryWaitAsync(System.Threading.CancellationToken,Pipelines.Sockets.Unofficial.Threading.MutexSlim.WaitOptions)">
+            <summary>
+            Attempt to take the lock (Success should be checked by the caller)
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.TryWait(Pipelines.Sockets.Unofficial.Threading.MutexSlim.WaitOptions)">
+            <summary>
+            Attempt to take the lock (Success should be checked by the caller)
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Threading.MutexSlim.WaitOptions">
+            <summary>
+            Additional options that influence how TryWait/TryWaitAsync operate
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Threading.MutexSlim.WaitOptions.None">
+            <summary>
+            Default options
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Threading.MutexSlim.WaitOptions.NoDelay">
+            <summary>
+            If the mutex cannot be acquired immediately, it is failed
+            </summary>
+        </member>
+        <member name="F:Pipelines.Sockets.Unofficial.Threading.MutexSlim.WaitOptions.DisableAsyncContext">
+            <summary>
+            Disable full TPL flow; more efficient, but no sync-context or execution-context guarantees
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken">
+            <summary>
+            The result of a Wait/WaitAsync operation on MutexSlim; the caller *must* check Success to see whether the mutex was obtained
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.op_Equality(Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken@,Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken@)">
+            <summary>
+            Compare two LockToken instances for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.op_Inequality(Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken@,Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken@)">
+            <summary>
+            Compare two LockToken instances for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.Equals(System.Object)">
+            <summary>
+            Compare two LockToken instances for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.GetHashCode">
+            <summary>
+            See Object.GetHashCode
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.ToString">
+            <summary>
+            See Object.ToString()
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.Equals(Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken@)">
+            <summary>
+            Compare two LockToken instances for equality
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.op_True(Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken@)">
+            <summary>
+            Indicates whether the mutex was successfully taken
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.op_False(Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken@)">
+            <summary>
+            Indicates whether the mutex was successfully taken
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.Success">
+            <summary>
+            Indicates whether the mutex was successfully taken
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.Threading.MutexSlim.LockToken.Dispose">
+            <summary>
+            Release the mutex, if obtained
+            </summary>
+        </member>
         <member name="T:Pipelines.Sockets.Unofficial.UnmanagedMemoryManager`1">
             <summary>
             A MemoryManager over a raw pointer
@@ -706,6 +1772,11 @@
             <remarks>It is assumed that the span provided is already unmanaged or externally pinned</remarks>
         </member>
         <member name="M:Pipelines.Sockets.Unofficial.UnmanagedMemoryManager`1.#ctor(`0*,System.Int32)">
+            <summary>
+            Create a new UnmanagedMemoryManager instance at the given pointer and size
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.UnmanagedMemoryManager`1.#ctor(System.IntPtr,System.Int32)">
             <summary>
             Create a new UnmanagedMemoryManager instance at the given pointer and size
             </summary>

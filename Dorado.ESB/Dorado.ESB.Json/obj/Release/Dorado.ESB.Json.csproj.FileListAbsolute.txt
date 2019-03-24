@@ -43,3 +43,10 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.csp
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.pdb
+D:\_Repos\dorado\Build\Dorado.ESB.Json.dll
+D:\_Repos\dorado\Build\Dorado.ESB.Json.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.dll
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Json\obj\Release\Dorado.ESB.Json.csprojAssemblyReference.cache

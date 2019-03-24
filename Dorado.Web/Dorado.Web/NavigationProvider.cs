@@ -43,7 +43,7 @@ namespace Dorado.Web
                                 select asm).SelectMany((Assembly a) => a.GetTypes())
                         where type.IsPublic && type.IsSubclassOf(typeof(Controller))
                         select type).SelectMany((Type t) => t.GetMethods())
-                where m.ReturnType.IsSubclassOf(typeof(Result)) || m.ReturnType == typeof(Result)
+                where m.ReturnType.IsSubclassOf(typeof(ActionResult)) || m.ReturnType == typeof(ActionResult) || m.ReturnType == typeof(Result)
                 select new NavigationDescription
                 {
                     Action = m.Name,

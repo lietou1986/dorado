@@ -40,3 +40,5 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Release\Dorado.
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Release\Dorado.ESB.GenerateServices.csproj.CoreCompileInputs.cache
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Release\Dorado.ESB.GenerateServices.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Release\Dorado.ESB.GenerateServices.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Release\Dorado.ESB.GenerateServices.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.GenerateServices\obj\Release\Dorado.ESB.GenerateServices.csproj.CoreCompileInputs.cache

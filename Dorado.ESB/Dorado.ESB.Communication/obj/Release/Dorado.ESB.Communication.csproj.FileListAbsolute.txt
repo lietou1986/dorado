@@ -56,3 +56,10 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.pdb
 D:\work\_learn\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.csprojAssemblyReference.cache
+D:\_Repos\dorado\Build\Dorado.ESB.Communication.dll
+D:\_Repos\dorado\Build\Dorado.ESB.Communication.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.dll
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Communication\obj\Release\Dorado.ESB.Communication.pdb

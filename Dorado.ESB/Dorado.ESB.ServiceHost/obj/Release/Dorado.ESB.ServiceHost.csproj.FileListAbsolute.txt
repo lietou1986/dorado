@@ -39,3 +39,10 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.S
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.pdb
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csprojAssemblyReference.cache
+D:\_Repos\dorado\Build\Dorado.ESB.ServiceHost.dll
+D:\_Repos\dorado\Build\Dorado.ESB.ServiceHost.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.dll
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Release\Dorado.ESB.ServiceHost.pdb

@@ -36,3 +36,10 @@ D:\OneDrive\work\dorado\Build\Dorado.ESB.ServiceGenerateFactory.pdb
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.csprojResolveAssemblyReference.cache
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.dll
 D:\OneDrive\work\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.pdb
+D:\_Repos\dorado\Build\Dorado.ESB.ServiceGenerateFactory.dll
+D:\_Repos\dorado\Build\Dorado.ESB.ServiceGenerateFactory.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.dll
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ServiceGenerateFactory\obj\Release\Dorado.ESB.ServiceGenerateFactory.pdb
