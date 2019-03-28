@@ -2094,7 +2094,7 @@
         </member>
         <member name="M:Autofac.Core.DependencyResolutionException.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:Autofac.Core.DependencyResolutionException"/> class.
+            Initializes a new instance of the <see cref="T:Autofac.Core.DependencyResolutionException" /> class.
             </summary>
             <param name="message">The message.</param>
         </member>
@@ -2104,35 +2104,6 @@
             </summary>
             <param name="message">The message.</param>
             <param name="innerException">The inner exception.</param>
-        </member>
-        <member name="P:Autofac.Core.DependencyResolutionException.Message">
-            <summary>
-            Gets a message that describes the current exception.
-            </summary>
-            <value>
-            The error message that explains the reason for the exception, or an empty string("").
-            </value>
-        </member>
-        <member name="T:Autofac.Core.DependencyResolutionExceptionResources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Autofac.Core.DependencyResolutionExceptionResources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Autofac.Core.DependencyResolutionExceptionResources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Autofac.Core.DependencyResolutionExceptionResources.MessageNestingFormat">
-            <summary>
-              Looks up a localized string similar to {0} ---&gt; {1} (See inner exception for details.).
-            </summary>
         </member>
         <member name="T:Autofac.Core.Diagnostics.IContainerAwareComponent">
             <summary>
@@ -3729,7 +3700,7 @@
         </member>
         <member name="P:Autofac.Core.Resolving.ComponentActivationResources.ErrorDuringActivation">
             <summary>
-              Looks up a localized string similar to An error occurred during the activation of a particular registration. See the inner exception for details. Registration: {0}.
+              Looks up a localized string similar to An exception was thrown while activating {0}..
             </summary>
         </member>
         <member name="P:Autofac.Core.Resolving.ComponentActivationResources.UnableToLocateLifetimeScope">

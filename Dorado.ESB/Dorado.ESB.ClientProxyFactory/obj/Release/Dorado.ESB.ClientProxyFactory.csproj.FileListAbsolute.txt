@@ -51,3 +51,4 @@ D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB
 D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.csproj.CopyComplete
 D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.dll
 D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.ClientProxyFactory\obj\Release\Dorado.ESB.ClientProxyFactory.csprojAssemblyReference.cache

@@ -25,3 +25,4 @@ D:\_Repos\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csproj.Core
 D:\_Repos\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csproj.CopyComplete
 D:\_Repos\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.dll
 D:\_Repos\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.pdb
+D:\_Repos\dorado\Dorado.Data\Dorado.SQLite\obj\Release\Dorado.SQLite.csprojAssemblyReference.cache

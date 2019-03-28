@@ -218,3 +218,4 @@ D:\_Repos\dorado\Dorado.Config\Dorado.Configuration.Manager\obj\Release\Dorado.C
 D:\_Repos\dorado\Dorado.Config\Dorado.Configuration.Manager\obj\Release\Dorado.Configuration.Manager.csproj.CopyComplete
 D:\_Repos\dorado\Dorado.Config\Dorado.Configuration.Manager\obj\Release\Dorado.Configuration.Manager.dll
 D:\_Repos\dorado\Dorado.Config\Dorado.Configuration.Manager\obj\Release\Dorado.Configuration.Manager.pdb
+D:\_Repos\dorado\Dorado.Config\Dorado.Configuration.Manager\obj\Release\Dorado.Configuration.Manager.csprojAssemblyReference.cache

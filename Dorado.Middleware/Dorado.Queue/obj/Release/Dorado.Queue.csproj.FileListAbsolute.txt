@@ -86,3 +86,4 @@ D:\_Repos\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.csproj.
 D:\_Repos\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.csproj.CopyComplete
 D:\_Repos\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.dll
 D:\_Repos\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.pdb
+D:\_Repos\dorado\Dorado.Middleware\Dorado.Queue\obj\Release\Dorado.Queue.csprojAssemblyReference.cache

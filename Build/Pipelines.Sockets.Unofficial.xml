@@ -1251,6 +1251,36 @@
             The underlying socket for this connection
             </summary>
         </member>
+        <member name="M:Pipelines.Sockets.Unofficial.SocketConnection.GetCounters">
+            <summary>
+            Obtain performance monitoring counters about this connection
+            </summary>
+        </member>
+        <member name="T:Pipelines.Sockets.Unofficial.SocketConnection.Counters">
+            <summary>
+            Exposes performance monitoring counters about a connection
+            </summary>
+        </member>
+        <member name="M:Pipelines.Sockets.Unofficial.SocketConnection.Counters.GetPipeLength(System.IO.Pipelines.Pipe)">
+            <summary>
+            Get the number of bytes currently held in a pipe instance
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.SocketConnection.Counters.BytesAvailableOnSocket">
+            <summary>
+            The number of bytes available on the socket that have not yet been consumed into the pipe
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.SocketConnection.Counters.BytesWaitingToBeSent">
+            <summary>
+            The number of bytes available on the send pipe that have not yet been sent to the socket
+            </summary>
+        </member>
+        <member name="P:Pipelines.Sockets.Unofficial.SocketConnection.Counters.BytesWaitingToBeRead">
+            <summary>
+            The number of bytes available on the receive pipe, i.e. they have been processed from the socket, but not yet read
+            </summary>
+        </member>
         <member name="M:Pipelines.Sockets.Unofficial.SocketConnection.Create(System.Net.Sockets.Socket,System.IO.Pipelines.PipeOptions,Pipelines.Sockets.Unofficial.SocketConnectionOptions,System.String)">
             <summary>
             Create a SocketConnection instance over an existing socket
