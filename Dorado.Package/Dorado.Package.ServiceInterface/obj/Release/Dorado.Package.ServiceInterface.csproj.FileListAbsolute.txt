@@ -79,3 +79,10 @@ D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.dll
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.pdb
 D:\work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csprojAssemblyReference.cache
+E:\_learn\dorado\Build\Dorado.Package.ServiceInterface.dll
+E:\_learn\dorado\Build\Dorado.Package.ServiceInterface.pdb
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csproj.CopyComplete
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.dll
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.pdb

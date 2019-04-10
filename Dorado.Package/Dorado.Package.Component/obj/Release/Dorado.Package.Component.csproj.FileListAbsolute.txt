@@ -93,3 +93,10 @@ D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.dll
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.pdb
+E:\_learn\dorado\Build\Dorado.Package.Component.dll
+E:\_learn\dorado\Build\Dorado.Package.Component.pdb
+E:\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.csproj.CopyComplete
+E:\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.dll
+E:\_learn\dorado\Dorado.Package\Dorado.Package.Component\obj\Release\Dorado.Package.Component.pdb

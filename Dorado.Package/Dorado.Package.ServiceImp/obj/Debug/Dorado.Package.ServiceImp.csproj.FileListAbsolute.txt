@@ -58,3 +58,10 @@ D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.pdb
 D:\Projects\.Net\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.csprojAssemblyReference.cache
 D:\Projects\.Net\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Build\Dorado.Package.ServiceImp.dll
+E:\_learn\dorado\Build\Dorado.Package.ServiceImp.pdb
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.csproj.CopyComplete
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.dll
+E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceImp\obj\Debug\Dorado.Package.ServiceImp.pdb

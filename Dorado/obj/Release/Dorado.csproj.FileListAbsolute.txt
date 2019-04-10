@@ -22,3 +22,4 @@ D:\Projects\.Net\dorado\Build\Dorado.pdb
 D:\Projects\.Net\dorado\Dorado\obj\Release\Dorado.csproj.CoreCompileInputs.cache
 D:\Projects\.Net\dorado\Dorado\obj\Release\Dorado.dll
 D:\Projects\.Net\dorado\Dorado\obj\Release\Dorado.pdb
+E:\_learn\dorado\Dorado\obj\Release\Dorado.csprojAssemblyReference.cache

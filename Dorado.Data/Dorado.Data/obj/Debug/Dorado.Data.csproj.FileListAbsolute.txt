@@ -49,3 +49,10 @@ D:\Projects\.Net\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.csproj.Cor
 D:\Projects\.Net\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.csproj.CopyComplete
 D:\Projects\.Net\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.dll
 D:\Projects\.Net\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.pdb
+E:\_learn\dorado\Build\Dorado.Data.dll
+E:\_learn\dorado\Build\Dorado.Data.pdb
+E:\_learn\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.csproj.CopyComplete
+E:\_learn\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.dll
+E:\_learn\dorado\Dorado.Data\Dorado.Data\obj\Debug\Dorado.Data.pdb
