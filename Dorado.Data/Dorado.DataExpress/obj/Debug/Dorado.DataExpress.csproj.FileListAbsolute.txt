@@ -43,11 +43,3 @@ D:\Projects\.Net\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpr
 D:\Projects\.Net\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.csproj.CopyComplete
 D:\Projects\.Net\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.dll
 D:\Projects\.Net\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.pdb
-E:\_learn\dorado\Build\Dorado.DataExpress.dll.config
-E:\_learn\dorado\Build\Dorado.DataExpress.dll
-E:\_learn\dorado\Build\Dorado.DataExpress.pdb
-E:\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.csprojAssemblyReference.cache
-E:\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.csproj.CoreCompileInputs.cache
-E:\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.csproj.CopyComplete
-E:\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.dll
-E:\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Debug\Dorado.DataExpress.pdb

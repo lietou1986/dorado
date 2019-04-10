@@ -52,9 +52,3 @@ D:\Projects\.Net\dorado\Build\Dorado.pdb
 D:\Projects\.Net\dorado\Dorado\obj\Debug\Dorado.csproj.CoreCompileInputs.cache
 D:\Projects\.Net\dorado\Dorado\obj\Debug\Dorado.dll
 D:\Projects\.Net\dorado\Dorado\obj\Debug\Dorado.pdb
-E:\_learn\dorado\Build\Dorado.dll
-E:\_learn\dorado\Build\Dorado.pdb
-E:\_learn\dorado\Dorado\obj\Debug\Dorado.csprojAssemblyReference.cache
-E:\_learn\dorado\Dorado\obj\Debug\Dorado.csproj.CoreCompileInputs.cache
-E:\_learn\dorado\Dorado\obj\Debug\Dorado.dll
-E:\_learn\dorado\Dorado\obj\Debug\Dorado.pdb

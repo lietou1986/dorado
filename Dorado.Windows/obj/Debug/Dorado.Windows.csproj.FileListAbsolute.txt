@@ -36,11 +36,3 @@ D:\Projects\.Net\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.ResolveCo
 D:\Projects\.Net\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.CoreCompileInputs.cache
 D:\Projects\.Net\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.dll
 D:\Projects\.Net\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.pdb
-E:\_learn\dorado\Build\Dorado.Windows.dll
-E:\_learn\dorado\Build\Dorado.Windows.pdb
-E:\_learn\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csprojAssemblyReference.cache
-E:\_learn\dorado\Dorado.Windows\obj\Debug\Interop.IWshRuntimeLibrary.dll
-E:\_learn\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.ResolveComReference.cache
-E:\_learn\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.csproj.CoreCompileInputs.cache
-E:\_learn\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.dll
-E:\_learn\dorado\Dorado.Windows\obj\Debug\Dorado.Windows.pdb

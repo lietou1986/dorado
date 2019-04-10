@@ -51,5 +51,3 @@ D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj
 D:\Work\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.pdb
 D:\Projects\.Net\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.csprojAssemblyReference.cache
 D:\Projects\.Net\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.csproj.CoreCompileInputs.cache
-E:\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.csprojAssemblyReference.cache
-E:\_learn\dorado\Dorado.ActivityEngine\Dorado.ActivityEngine.ServiceImp\obj\Debug\Dorado.ActivityEngine.ServiceImp.csproj.CoreCompileInputs.cache
