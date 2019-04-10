@@ -115,3 +115,11 @@ D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\D
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.exe
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.pdb
+D:\_Repos\dorado\Build\Dorado.Package.WindowsService.exe.config
+D:\_Repos\dorado\Build\Dorado.Package.WindowsService.exe
+D:\_Repos\dorado\Build\Dorado.Package.WindowsService.pdb
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.exe
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Release\Dorado.Package.WindowsService.pdb

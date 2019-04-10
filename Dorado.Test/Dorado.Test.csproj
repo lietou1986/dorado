@@ -84,10 +84,6 @@
       <Project>{81eded4b-f818-4d2e-9627-7140b5d804f5}</Project>
       <Name>Dorado.Package.ServiceInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Dorado.Platform\Dorado.Platform.csproj">
-      <Project>{91d3324c-7da3-47cd-a947-b65b4a52ba0d}</Project>
-      <Name>Dorado.Platform</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Dorado.Web\Dorado.Web\Dorado.Web.csproj">
       <Project>{146499b2-113a-4bcb-b30c-860f8f1153a6}</Project>
       <Name>Dorado.Web</Name>

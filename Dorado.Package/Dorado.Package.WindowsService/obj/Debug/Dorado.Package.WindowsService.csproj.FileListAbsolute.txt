@@ -71,3 +71,5 @@ D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Debug\Dor
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Debug\Dorado.Package.WindowsService.pdb
 D:\Projects\.Net\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Debug\Dorado.Package.WindowsService.csprojAssemblyReference.cache
 D:\Projects\.Net\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Debug\Dorado.Package.WindowsService.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Debug\Dorado.Package.WindowsService.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Package\Dorado.Package.WindowsService\obj\Debug\Dorado.Package.WindowsService.csproj.CoreCompileInputs.cache

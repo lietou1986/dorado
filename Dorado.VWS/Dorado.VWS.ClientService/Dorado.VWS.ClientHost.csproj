@@ -89,7 +89,11 @@
       <HintPath>..\Lib\Microsoft.Web.Administration.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+<<<<<<< HEAD
       <HintPath>..\..\packages\NLog.4.6.2\lib\net45\NLog.dll</HintPath>
+=======
+      <HintPath>..\..\packages\NLog.4.6.0\lib\net45\NLog.dll</HintPath>
+>>>>>>> e315380f0d357498ae78e515fab9998ace7f243d
     </Reference>
     <Reference Include="sysglobl" />
     <Reference Include="System" />

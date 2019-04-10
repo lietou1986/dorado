@@ -59,3 +59,11 @@ D:\Work\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpr
 D:\Work\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.dll
 D:\Work\_learn\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.pdb
+D:\_Repos\dorado\Build\Dorado.DataExpress.dll.config
+D:\_Repos\dorado\Build\Dorado.DataExpress.dll
+D:\_Repos\dorado\Build\Dorado.DataExpress.pdb
+D:\_Repos\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.dll
+D:\_Repos\dorado\Dorado.Data\Dorado.DataExpress\obj\Release\Dorado.DataExpress.pdb

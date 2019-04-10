@@ -79,6 +79,7 @@ D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.dll
 D:\Work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.pdb
 D:\work\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csprojAssemblyReference.cache
+<<<<<<< HEAD
 E:\_learn\dorado\Build\Dorado.Package.ServiceInterface.dll
 E:\_learn\dorado\Build\Dorado.Package.ServiceInterface.pdb
 E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csprojAssemblyReference.cache
@@ -86,3 +87,12 @@ E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dora
 E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csproj.CopyComplete
 E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.dll
 E:\_learn\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.pdb
+=======
+D:\_Repos\dorado\Build\Dorado.Package.ServiceInterface.dll
+D:\_Repos\dorado\Build\Dorado.Package.ServiceInterface.pdb
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.dll
+D:\_Repos\dorado\Dorado.Package\Dorado.Package.ServiceInterface\obj\Release\Dorado.Package.ServiceInterface.pdb
+>>>>>>> e315380f0d357498ae78e515fab9998ace7f243d

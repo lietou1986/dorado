@@ -219,6 +219,7 @@ D:\Work\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.csproj.CoreCompileInpu
 D:\Work\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.csproj.CopyComplete
 D:\Work\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.dll
 D:\Work\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.pdb
+<<<<<<< HEAD
 E:\_learn\dorado\Dorado.Test\bin\Release\Dorado.Test.dll.config
 E:\_learn\dorado\Dorado.Test\bin\Release\Dorado.Test.dll
 E:\_learn\dorado\Dorado.Test\bin\Release\Dorado.Test.pdb
@@ -263,3 +264,28 @@ E:\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.csproj.CoreCompileInputs.ca
 E:\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.csproj.CopyComplete
 E:\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.dll
 E:\_learn\dorado\Dorado.Test\obj\Release\Dorado.Test.pdb
+=======
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Test.dll.config
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Test.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Test.pdb
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Configuration.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Data.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Package.ServiceImp.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Package.ServiceInterface.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Package.Component.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Ionic.Zip.dll
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Configuration.pdb
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Data.pdb
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Package.ServiceImp.pdb
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Package.ServiceInterface.pdb
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.pdb
+D:\_Repos\dorado\Dorado.Test\bin\Release\Dorado.Package.Component.pdb
+D:\_Repos\dorado\Dorado.Test\bin\Release\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\_Repos\dorado\Dorado.Test\obj\Release\Dorado.Test.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.Test\obj\Release\Dorado.Test.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.Test\obj\Release\Dorado.Test.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.Test\obj\Release\Dorado.Test.dll
+D:\_Repos\dorado\Dorado.Test\obj\Release\Dorado.Test.pdb
+>>>>>>> e315380f0d357498ae78e515fab9998ace7f243d

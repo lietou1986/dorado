@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dorado.Package", "Dorado.Package", "{32DEA407-F0A1-4E3A-BE86-795BDFC5283F}"
 EndProject
@@ -106,8 +106,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKFinder.Net", "Dorado.Tools\CKFinder.Net\CKFinder.Net.csproj", "{C5376ADF-309A-48DE-904C-B1FE1965C370}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Tool", "Dorado.Tools\Dorado.CodeGenerator\Dorado.Tool.csproj", "{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Platform", "Dorado.Platform\Dorado.Platform.csproj", "{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dorado.Platform.ServiceGenerator", "Dorado.Platform.ServiceGenerator\Dorado.Platform.ServiceGenerator.csproj", "{4645D7C6-45A0-47E4-94D1-2690C04BC04D}"
 EndProject
@@ -771,24 +769,6 @@ Global
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}.Release-Combine|Mixed Platforms.Build.0 = Release|x86
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}.Release-Combine|x86.ActiveCfg = Release|x86
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE}.Release-Combine|x86.Build.0 = Release|x86
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Debug|x86.Build.0 = Debug|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|x86.ActiveCfg = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release|x86.Build.0 = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Any CPU.ActiveCfg = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Any CPU.Build.0 = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|Mixed Platforms.Build.0 = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|x86.ActiveCfg = Release|Any CPU
-		{91D3324C-7DA3-47CD-A947-B65B4A52BA0D}.Release-Combine|x86.Build.0 = Release|Any CPU
 		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4645D7C6-45A0-47E4-94D1-2690C04BC04D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -852,8 +832,8 @@ Global
 		{9ACBE892-C18D-48B2-B34F-C03BA2D03FBE} = {F5F45F70-5782-4A12-ABD2-7B96B6984585}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {11A5AF7A-9029-424C-A1DE-2D76C3292DA1}
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {11A5AF7A-9029-424C-A1DE-2D76C3292DA1}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Dorado.vsmdi

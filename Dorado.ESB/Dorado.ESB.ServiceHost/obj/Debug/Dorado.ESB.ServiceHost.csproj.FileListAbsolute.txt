@@ -42,3 +42,12 @@ D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.S
 D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csproj.CopyComplete
 D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.dll
 D:\Projects\.Net\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.pdb
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.ESB.ServiceHost.dll
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.ESB.ServiceHost.pdb
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.dll
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\bin\Debug\Dorado.pdb
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.csproj.CopyComplete
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.dll
+E:\_learn\dorado\Dorado.ESB\Dorado.ESB.ServiceHost\obj\Debug\Dorado.ESB.ServiceHost.pdb

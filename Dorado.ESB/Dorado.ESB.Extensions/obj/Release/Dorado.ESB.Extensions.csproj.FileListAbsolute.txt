@@ -85,3 +85,10 @@ D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Ex
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.dll
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.pdb
 D:\Work\_learn\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.csprojAssemblyReference.cache
+D:\_Repos\dorado\Build\Dorado.ESB.Extensions.dll
+D:\_Repos\dorado\Build\Dorado.ESB.Extensions.pdb
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.csprojAssemblyReference.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.dll
+D:\_Repos\dorado\Dorado.ESB\Dorado.ESB.Extensions\obj\Release\Dorado.ESB.Extensions.pdb

@@ -52,3 +52,10 @@ D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Secur
 D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.dll
 D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.pdb
 D:\work\_learn\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.csprojAssemblyReference.cache
+D:\_Repos\dorado\Build\Dorado.Security.dll
+D:\_Repos\dorado\Build\Dorado.Security.pdb
+D:\_Repos\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.csproj.CopyComplete
+D:\_Repos\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.dll
+D:\_Repos\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.pdb
+D:\_Repos\dorado\Dorado.Middleware\Dorado.Security\obj\Release\Dorado.Security.csprojAssemblyReference.cache

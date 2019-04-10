@@ -48,3 +48,11 @@ D:\Work\_learn\dorado\Dorado.Windows\obj\Release\Dorado.Windows.csproj.CoreCompi
 D:\Work\_learn\dorado\Dorado.Windows\obj\Release\Dorado.Windows.dll
 D:\Work\_learn\dorado\Dorado.Windows\obj\Release\Dorado.Windows.pdb
 D:\work\_learn\dorado\Dorado.Windows\obj\Release\Dorado.Windows.csprojAssemblyReference.cache
+D:\_Repos\dorado\Build\Dorado.Windows.dll
+D:\_Repos\dorado\Build\Dorado.Windows.pdb
+D:\_Repos\dorado\Dorado.Windows\obj\Release\Interop.IWshRuntimeLibrary.dll
+D:\_Repos\dorado\Dorado.Windows\obj\Release\Dorado.Windows.csproj.ResolveComReference.cache
+D:\_Repos\dorado\Dorado.Windows\obj\Release\Dorado.Windows.csproj.CoreCompileInputs.cache
+D:\_Repos\dorado\Dorado.Windows\obj\Release\Dorado.Windows.dll
+D:\_Repos\dorado\Dorado.Windows\obj\Release\Dorado.Windows.pdb
+D:\_Repos\dorado\Dorado.Windows\obj\Release\Dorado.Windows.csprojAssemblyReference.cache

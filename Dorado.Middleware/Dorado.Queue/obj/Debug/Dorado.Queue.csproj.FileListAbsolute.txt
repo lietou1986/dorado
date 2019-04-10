@@ -43,3 +43,5 @@ D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.dll
 D:\Work\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.pdb
 D:\Projects\.Net\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csprojAssemblyReference.cache
 D:\Projects\.Net\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Middleware\Dorado.Queue\obj\Debug\Dorado.Queue.csproj.CoreCompileInputs.cache
