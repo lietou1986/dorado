@@ -72,6 +72,7 @@
     <Compile Include="Core\Cache\StorageStrategys\AspNetStorageStrategy.cs" />
     <Compile Include="Core\Cache\StorageStrategys\NullStorageStrategy.cs" />
     <Compile Include="Core\Cache\StorageStrategys\HttpRequestStorageStrategy.cs" />
+    <Compile Include="Core\Collection\SerializableDictionary.cs" />
     <Compile Include="Core\Snowflake.cs" />
     <Compile Include="Core\Collection\BlockingQueue.cs" />
     <Compile Include="Core\Collection\DoubleKeyDictionary.cs" />

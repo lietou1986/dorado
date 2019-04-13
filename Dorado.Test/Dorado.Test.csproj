@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dorado.Test</RootNamespace>
     <AssemblyName>Dorado.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkProfile />
@@ -37,12 +37,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NPinyin, Version=0.2.6321.26573, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bca\packages\NPinyin.0.2.6321.26573\lib\net20\NPinyin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -52,6 +57,8 @@
   <ItemGroup>
     <Compile Include="Core\LoggerTest.cs" />
     <Compile Include="Core\WebTest.cs" />
+    <Compile Include="schema.cs" />
+    <Compile Include="UnitTest.cs" />
     <Compile Include="MsmqTest.cs" />
     <Compile Include="Package\PackageDaoTest.cs" />
     <Compile Include="Package\PackageProviderTest.cs" />
@@ -76,6 +83,10 @@
     <ProjectReference Include="..\Dorado.Package\Dorado.Package.ServiceInterface\Dorado.Package.ServiceInterface.csproj">
       <Project>{81eded4b-f818-4d2e-9627-7140b5d804f5}</Project>
       <Name>Dorado.Package.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dorado.Web\Dorado.Web\Dorado.Web.csproj">
+      <Project>{146499b2-113a-4bcb-b30c-860f8f1153a6}</Project>
+      <Name>Dorado.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dorado\Dorado.csproj">
       <Project>{56cb9912-4ce8-4370-8b21-5eeef2123e9e}</Project>
