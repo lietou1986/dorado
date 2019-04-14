@@ -1,13 +1,26 @@
 ﻿using Dorado.Core.Data;
 using System;
 using System.ComponentModel;
+using System.IO;
+using System.Text;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Dorado.Extensions
 {
     /// <remarks>codehint: sm-add</remarks>
     public static class XmlExtensions
     {
+        public static string ToString(this XDocument document, Encoding encoding)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            using (StringWriter stringWriter = new StringWriterWithEncoding(stringBuilder, encoding))
+            {
+                document.Save(stringWriter);
+            }
+            return stringBuilder.ToString();
+        }
+
         /// <summary>Safe way to get inner text of an attribute.</summary>
         public static T GetAttributeText<T>(this XmlNode node, string attributeName, T defaultValue = default(T))
         {

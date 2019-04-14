@@ -8,16 +8,10 @@ namespace Dorado.Ioc
     {
         static ServiceFactoryWrapper ( )
         {
-            _instance = new ServiceFactoryWrapper( );
+            Instance = new ServiceFactoryWrapper( );
         }
-        static readonly IServiceFactory _instance;
-        public static IServiceFactory Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
+
+        public static IServiceFactory Instance { get; private set; }
         #region IServiceFactory 成员
         /// <summary>
         /// 创建服务实例

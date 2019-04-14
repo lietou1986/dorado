@@ -7,17 +7,12 @@ namespace Dorado.Platform.Infrastructure.DependencyManagement
 {
     public class ContainerManager
     {
-        private readonly IContainer _container;
-
         public ContainerManager(IContainer container)
         {
-            _container = container;
+            Container = container;
         }
 
-        public IContainer Container
-        {
-            get { return _container; }
-        }
+        public IContainer Container { get; }
 
         public T Resolve<T>(string key = "", ILifetimeScope scope = null) where T : class
         {
@@ -114,15 +109,15 @@ namespace Dorado.Platform.Infrastructure.DependencyManagement
 
         public ILifetimeScope Scope()
         {
-            var scope = _container.Resolve<ILifetimeScopeAccessor>().GetLifetimeScope(null);
-            return scope ?? _container;
+            var scope = Container.Resolve<ILifetimeScopeAccessor>().GetLifetimeScope(null);
+            return scope ?? Container;
         }
 
         public ILifetimeScopeAccessor ScopeAccessor
         {
             get
             {
-                return _container.Resolve<ILifetimeScopeAccessor>();
+                return Container.Resolve<ILifetimeScopeAccessor>();
             }
         }
     }

@@ -21,7 +21,7 @@ using System;
 
 namespace <%=NamePlaceName%>.Services.Cache
 {
-    public partial class <%=BSName%>CacheProvider : BaseCacheProvider
+    public partial class <%=BSName%>CacheProvider : BaseProvider
     {
         private static readonly string Cache_Prefix = "cache:<%=BSName.ToLower()%>";
         private static readonly string Trigger_Clear = "trigger:<%=BSName.ToLower()%>:clear";

@@ -269,6 +269,7 @@
     <Compile Include="Async\AsyncState.cs" />
     <Compile Include="CommonHelper.cs" />
     <Compile Include="Infrastructure\DependencyManagement\PropertyInject.cs" />
+    <Compile Include="Infrastructure\Extensions.cs" />
     <Compile Include="PlatformSettings.cs" />
     <Compile Include="FileSystems\VirtualPath\ICustomVirtualPathProvider.cs" />
     <Compile Include="Infrastructure\DependencyManagement\DynamicProxy2\ConstructorFinderWrapper.cs" />
@@ -276,10 +277,6 @@
     <Compile Include="Infrastructure\DependencyManagement\DynamicProxy2\DynamicProxyExtensions.cs" />
     <Compile Include="Infrastructure\DependencyManagement\LifetimeScopeContainer.cs" />
     <Compile Include="Exceptions\SitemapException.cs" />
-    <Compile Include="Extensions\StringBuilderExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Extensions\StringWriterWithEncoding.cs" />
-    <Compile Include="Extensions\XDocumentExtensions.cs" />
     <Compile Include="Infrastructure\BackgroundHttpContextFactory.cs" />
     <Compile Include="Infrastructure\Expando.cs" />
     <Compile Include="Events\DefaultDoradoEventBus.cs" />
@@ -394,7 +391,7 @@
     <Compile Include="Redis\RedisDatabaseExtensions.cs" />
     <Compile Include="Redis\RedisClient.cs" />
     <Compile Include="Redis\SharedConnection.cs" />
-    <Compile Include="Extensions\RSACryptoServiceProviderExtension.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="RouteInfo.cs" />
     <Compile Include="Services\JilSerializer.cs" />
     <Compile Include="Services\RequestServiceExtension.cs" />
@@ -418,7 +415,6 @@
     <Compile Include="Utils\CollectionHelper.cs" />
     <Compile Include="Utils\DateTimeConvert.cs" />
     <Compile Include="Utils\DictionaryConverter.cs" />
-    <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Utils\FileUploader.cs" />
     <Compile Include="Utils\Inflector.cs" />
     <Compile Include="Utils\JsonObject.cs" />

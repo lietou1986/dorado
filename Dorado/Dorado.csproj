@@ -159,7 +159,10 @@
     <Compile Include="Extensions\LinqExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\NullableExtensions.cs" />
+    <Compile Include="Extensions\RSACryptoServiceProviderExtension.cs" />
     <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Extensions\StringWriterWithEncoding.cs" />
     <Compile Include="Extensions\TypeDescriptorExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Extensions\WebExtensions.cs" />
