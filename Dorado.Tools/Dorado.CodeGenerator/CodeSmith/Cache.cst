@@ -21,7 +21,7 @@ using System;
 
 namespace <%=NamePlaceName%>.Services.Cache
 {
-    public partial class <%=BSName%>CacheProvider : BaseProvider
+    public partial class <%=BSName%>CacheProvider : CacheProvider
     {
         private static readonly string Cache_Prefix = "cache:<%=BSName.ToLower()%>";
         private static readonly string Trigger_Clear = "trigger:<%=BSName.ToLower()%>:clear";
@@ -43,7 +43,7 @@ namespace <%=NamePlaceName%>.Services.Cache
                    {
                        ctx.Monitor(Clock.When(TimeSpan.FromSeconds(60 * 5)));
                        ctx.Monitor(Signals.When(Trigger_Clear));
-                       using (Conn conn = GetConn())
+                       using (Conn conn = this.GetConn())
                        {
                            DataArray data = conn.Select("select <%=GetBaseColumn(SourceTable) %> from [<%=SourceTable.Name %>](nolock) where [id]={0}", id);
                            if (data.IsEmpty)
@@ -77,7 +77,7 @@ namespace <%=NamePlaceName%>.Services.Cache
                    {
                        ctx.Monitor(Clock.When(TimeSpan.FromSeconds(60 * 5)));
                        ctx.Monitor(Signals.When(Trigger_Clear));
-                       using (Conn conn = GetConn())
+                       using (Conn conn = this.GetConn())
                        {
                            DataArray data = conn.Select("select * from [<%=SourceTable.Name %>](nolock) where [id]={0}", id);
                            if (data.IsEmpty)

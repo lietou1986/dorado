@@ -269,7 +269,7 @@
     <Compile Include="Async\AsyncState.cs" />
     <Compile Include="CommonHelper.cs" />
     <Compile Include="Infrastructure\DependencyManagement\PropertyInject.cs" />
-    <Compile Include="Infrastructure\Extensions.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="PlatformSettings.cs" />
     <Compile Include="FileSystems\VirtualPath\ICustomVirtualPathProvider.cs" />
     <Compile Include="Infrastructure\DependencyManagement\DynamicProxy2\ConstructorFinderWrapper.cs" />
@@ -391,7 +391,6 @@
     <Compile Include="Redis\RedisDatabaseExtensions.cs" />
     <Compile Include="Redis\RedisClient.cs" />
     <Compile Include="Redis\SharedConnection.cs" />
-    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="RouteInfo.cs" />
     <Compile Include="Services\JilSerializer.cs" />
     <Compile Include="Services\RequestServiceExtension.cs" />

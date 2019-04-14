@@ -1,7 +1,6 @@
 ﻿using Dorado.Configuration;
 using Dorado.Core.Encrypt;
 using Dorado.Extensions;
-using Dorado.Platform.Extensions;
 using Dorado.Services;
 using System;
 using System.Text;
