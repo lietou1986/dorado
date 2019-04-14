@@ -3,3 +3,4 @@ D:\_Repos\work\dorado\Build\Dorado.pdb
 D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.csproj.CoreCompileInputs.cache
 D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.dll
 D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.pdb
+D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.csprojAssemblyReference.cache

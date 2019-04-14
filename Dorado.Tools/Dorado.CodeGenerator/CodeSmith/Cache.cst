@@ -47,7 +47,7 @@ namespace <%=NamePlaceName%>.Services.Cache
                        {
                            DataArray data = conn.Select("select <%=GetBaseColumn(SourceTable) %> from [<%=SourceTable.Name %>](nolock) where [id]={0}", id);
                            if (data.IsEmpty)
-                               throw new CoreException("数据不存在");
+                               throw new CoreException("<%=GetTableDescription(SourceTable)%>数据不存在");
 
                            return data;
                        }
@@ -81,7 +81,7 @@ namespace <%=NamePlaceName%>.Services.Cache
                        {
                            DataArray data = conn.Select("select * from [<%=SourceTable.Name %>](nolock) where [id]={0}", id);
                            if (data.IsEmpty)
-                               throw new CoreException("数据不存在");
+                               throw new CoreException("<%=GetTableDescription(SourceTable)%>数据不存在");
 
                            return data;
                        }

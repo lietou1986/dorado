@@ -52,7 +52,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         {
             try
             {
-                using (Conn conn = GetConn())
+                using (Conn conn = this.GetConn())
                 {
                 conn.PageSize = PageSize;
                 
@@ -126,7 +126,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
             try
             {
                 long id=0;
-                using (Conn conn = GetConn())
+                using (Conn conn = this.GetConn())
                 {
              <%--<% foreach (ColumnSchema column in SourceTable.Columns) { %>
              <% if(!column.AllowDBNull&&!column.IsPrimaryKeyMember&&!column.Description.Contains("即时更新")&&!column.Description.Contains("逻辑")){ %>
@@ -153,7 +153,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         /// <returns></returns>
         public ActionResult  <%=GetShortName(SourceTable.Name) %>Edit(long id)
         {
-             using (Conn conn = GetConn())
+             using (Conn conn = this.GetConn())
                 {
  <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
   conn.Field("cUser.name createUserName,eUser.name editUserName,<%=SourceTable.Name%>.*");
@@ -186,7 +186,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
             try
             {
                 long id=data["id"].ToLong();
-                using (Conn conn = GetConn())
+                using (Conn conn = this.GetConn())
                 {
                 T_<%=SourceTable.Name%>.Update(conn, data);
                 }
@@ -211,7 +211,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
         public ActionResult  <%=GetShortName(SourceTable.Name) %>View(long id, int viewOnly = 0)
         {
              ViewBag.ViewOnly = viewOnly > 0;
-                 using (Conn conn = GetConn())
+                 using (Conn conn = this.GetConn())
                 {
  <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
   conn.Field("cUser.name createUserName,eUser.name editUserName,<%=SourceTable.Name%>.*");
@@ -242,7 +242,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
             
             try
             {
-              using (Conn conn = GetConn())
+              using (Conn conn = this.GetConn())
                 {
                <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="isdeleted")){%>
                <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="edi")){%>
