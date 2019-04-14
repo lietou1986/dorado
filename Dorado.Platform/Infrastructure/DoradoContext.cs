@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Hosting;
 using System.Web.Mvc;
+using static Dorado.Platform.Infrastructure.DependencyManagement.PropertyInject;
 
 namespace Dorado.Platform.Infrastructure
 {
@@ -41,6 +42,7 @@ namespace Dorado.Platform.Infrastructure
 
             builder.RegisterInstance(typeFinder).As<ITypeFinder>();
             builder.RegisterModule(new CacheModule());
+            builder.RegisterModule(new PropertyInjectionModule(typeof(ICacheManager), typeof(ISignals), typeof(IClock)));
             builder.RegisterModule(new EventsModule());
 
             builder.RegisterType<Signals>().As<ISignals>();

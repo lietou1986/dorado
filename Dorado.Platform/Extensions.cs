@@ -7,9 +7,9 @@ namespace Dorado.Platform
 {
     public static class Extensions
     {
-        public static T GetService<T>(this object obj)
+        public static T GetService<T>(this object obj) where T : class
         {
-            return DoradoContext.Instance.ContainerManager.GetService<T>();
+            return DoradoContext.Instance.ContainerManager.Resolve<T>();
         }
 
         public static Conn GetConn(this object obj, string connName = "Default")

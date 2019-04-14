@@ -58,14 +58,6 @@ namespace Dorado.Platform.Infrastructure.DependencyManagement
         {
             private List<Type> _types = new List<Type>();
 
-            public PropertyInjectionModule()
-            {
-                _types.Clear();
-                _types.Add(typeof(ICacheManager));
-                _types.Add(typeof(ISignals));
-                _types.Add(typeof(IClock));
-            }
-
             public PropertyInjectionModule(params Type[] types)
             {
                 types.ForEach(n => { _types.Add(n); });
