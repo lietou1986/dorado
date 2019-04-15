@@ -4,3 +4,9 @@ D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.csproj.CoreCompileInputs.cache
 D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.dll
 D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.pdb
 D:\_Repos\work\dorado\Dorado\obj\Release\Dorado.csprojAssemblyReference.cache
+E:\_learn\dorado\Build\Dorado.dll
+E:\_learn\dorado\Build\Dorado.pdb
+E:\_learn\dorado\Dorado\obj\Release\Dorado.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado\obj\Release\Dorado.dll
+E:\_learn\dorado\Dorado\obj\Release\Dorado.pdb
+E:\_learn\dorado\Dorado\obj\Release\Dorado.csprojAssemblyReference.cache

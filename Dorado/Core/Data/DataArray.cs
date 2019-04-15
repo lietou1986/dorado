@@ -14,16 +14,11 @@ namespace Dorado.Core.Data
     {
         private int _rowsize;//当前定义的行数
         private int _count;
-        private string _name = "data";//名称
-        private int _cursor;//当前下标
-        private int _page = 1;//页数
-        private int _pagesize;	//每页显示数据
-        private int _maxcount;	//总数
-        private DataArrayColumns _cols;
+        private int _pagesize;  //每页显示数据
         private bool _reading;
 
         public DataArray()
-            : this("data", 20)
+            : this("mlist", 20)
         {
         }
 
@@ -34,9 +29,9 @@ namespace Dorado.Core.Data
 
         public DataArray(string name, int rows)
         {
-            _name = name;
+            Name = name;
             _rowsize = rows;
-            _cols = new DataArrayColumns(this);
+            Columns = new DataArrayColumns(this);
         }
 
         public DataArray Union(DataArray arr)
@@ -94,32 +89,11 @@ namespace Dorado.Core.Data
             return this;
         }
 
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
+        public string Name { get; set; }
 
-        public int Cursor
-        {
-            get { return _cursor; }
-            set
-            {
-                _cursor = value;
-            }
-        }
+        public int Cursor { get; set; }
 
-        public int Page
-        {
-            get { return _page; }
-            set { _page = value; }
-        }
+        public int Page { get; set; } = 1;
 
         public int PageSize
         {
@@ -131,19 +105,15 @@ namespace Dorado.Core.Data
             }
         }
 
-        public int MaxCount
-        {
-            get { return _maxcount; }
-            set { _maxcount = value; }
-        }
+        public int MaxCount { get; set; }
 
         public int MaxPage
         {
             get
             {
-                if (_maxcount == 0) return 0;
+                if (MaxCount == 0) return 0;
                 int size = (_pagesize == 0 ? 20 : _pagesize);
-                return (_maxcount - 1) / size + 1;
+                return (MaxCount - 1) / size + 1;
             }
         }
 
@@ -156,13 +126,7 @@ namespace Dorado.Core.Data
             }
         }
 
-        public DataArrayColumns Columns
-        {
-            get
-            {
-                return _cols;
-            }
-        }
+        public DataArrayColumns Columns { get; private set; }
 
         public DataArrayRows Rows
         {
@@ -173,7 +137,7 @@ namespace Dorado.Core.Data
         {
             get
             {
-                return _cols[name];
+                return Columns[name];
             }
         }
 
@@ -181,13 +145,13 @@ namespace Dorado.Core.Data
         {
             get
             {
-                return _cols[name, row];
+                return Columns[name, row];
             }
         }
 
         public bool Contains(string name)
         {
-            return _cols.Contains(name);
+            return Columns.Contains(name);
         }
 
         public bool IsDataEmpty(string name)
@@ -255,7 +219,7 @@ namespace Dorado.Core.Data
             {
                 if (value <= _rowsize) return;
                 _rowsize = value > 2 * _rowsize ? value : 2 * _rowsize;
-                foreach (DataArrayColumn col in _cols)
+                foreach (DataArrayColumn col in Columns)
                 {
                     Array tmp = Array.CreateInstance(col.Type, _rowsize);
                     ((Array)col.Data).CopyTo(tmp, 0);
@@ -371,12 +335,12 @@ namespace Dorado.Core.Data
 
         public void Rename(string old, string name)
         {
-            _cols.Rename(old, name);
+            Columns.Rename(old, name);
         }
 
         public bool ChangeType(string name, Type type)
         {
-            DataArrayColumn col = _cols[name];
+            DataArrayColumn col = Columns[name];
             if (col != null) return col.ChangeType(type);
             return false;
         }
@@ -385,7 +349,7 @@ namespace Dorado.Core.Data
         {
             get
             {
-                if (_cursor >= _count || _count == 0) return true;
+                if (Cursor >= _count || _count == 0) return true;
                 return false;
             }
         }
@@ -394,17 +358,17 @@ namespace Dorado.Core.Data
         {
             if (_reading)
             {
-                if (_cursor >= _count - 1)
+                if (Cursor >= _count - 1)
                 {
                     _reading = false;
                     return false;
                 }
-                _cursor++;
+                Cursor++;
             }
             else
             {
                 if (_count == 0) return false;
-                _cursor = 0;
+                Cursor = 0;
                 _reading = true;
             }
             return true;
@@ -412,7 +376,7 @@ namespace Dorado.Core.Data
 
         public void MoveFirst()
         {
-            _cursor = 0;
+            Cursor = 0;
         }
 
         public void Clear()
@@ -430,7 +394,7 @@ namespace Dorado.Core.Data
 
         public void AddRow()
         {
-            _cursor = _count;
+            Cursor = _count;
             RowSize = ++_count;
         }
 
@@ -584,7 +548,7 @@ namespace Dorado.Core.Data
 
         public new string ToString()
         {
-            return ToString(_name);
+            return ToString(Name);
         }
 
         public string ToString(string name)
@@ -596,7 +560,7 @@ namespace Dorado.Core.Data
             if (_pagesize == 0)
             {
                 ret.Append("{");
-                foreach (DataArrayColumn col in _cols)
+                foreach (DataArrayColumn col in Columns)
                 {
                     if (tmp.Length > 0) tmp.Append(",");
                     tmp.Append(col.Name + ":" + col.ToSafeString());
@@ -607,7 +571,7 @@ namespace Dorado.Core.Data
             else
             {
                 ret.Append("{");
-                foreach (DataArrayColumn col in _cols)
+                foreach (DataArrayColumn col in Columns)
                 {
                     if (tmp.Length > 0) tmp.Append(",");
                     tmp.Append(col.Name + ":[");
@@ -620,12 +584,12 @@ namespace Dorado.Core.Data
                 }
                 ret.Append(tmp);
                 ret.Append("};");
-                ret.Append("T.page=" + _page.ToString() + ";");
+                ret.Append("T.page=" + Page.ToString() + ";");
                 ret.Append("T.pagesize=" + _pagesize.ToString() + ";");
-                ret.Append("T.maxcount=" + _maxcount.ToString() + ";");
-                int maxpage = _maxcount == 0 ? 0 : (_maxcount - 1) / _pagesize + 1;
+                ret.Append("T.maxcount=" + MaxCount.ToString() + ";");
+                int maxpage = MaxCount == 0 ? 0 : (MaxCount - 1) / _pagesize + 1;
                 ret.Append("T.maxpage=" + maxpage.ToString() + ";");
-                ret.Append("T.pageturn=\"" + _page.ToString() + "|" + maxpage.ToString() + "\";");
+                ret.Append("T.pageturn=\"" + Page.ToString() + "|" + maxpage.ToString() + "\";");
             }
 
             return ret.ToString();
@@ -633,7 +597,7 @@ namespace Dorado.Core.Data
 
         public string ToJson()
         {
-            return ToJson(_name);
+            return ToJson(Name);
         }
 
         public string ToJson(string name)
@@ -645,7 +609,7 @@ namespace Dorado.Core.Data
             {
                 StringBuilder tmp = new StringBuilder();
                 ret.Append("{");
-                foreach (DataArrayColumn col in _cols)
+                foreach (DataArrayColumn col in Columns)
                 {
                     if (tmp.Length > 0) tmp.Append(",");
                     tmp.Append("\"" + col.Name + "\"" + ":" + col[i].ToSafeString());
@@ -666,7 +630,7 @@ namespace Dorado.Core.Data
             for (int i = 0; i < _count; i++)
             {
                 if (i > 0) ret.Append(",");
-                foreach (DataArrayColumn col in _cols)
+                foreach (DataArrayColumn col in Columns)
                 {
                     ret.Append("\"" + col[i].ToString().Replace("\"", "\"\"") + "\"");
                 }
@@ -685,16 +649,16 @@ namespace Dorado.Core.Data
 
         public void WriteXml(XmlWriter writer, bool close)
         {
-            if (_name != null)
-                writer.WriteStartElement(_name);
+            if (Name != null)
+                writer.WriteStartElement(Name);
             else
                 writer.WriteStartElement("none");
 
             if (_pagesize > 0)
             {
-                if (_page > 1) writer.WriteAttributeString("page", _page.ToString());
+                if (Page > 1) writer.WriteAttributeString("page", Page.ToString());
                 if (_pagesize > 0) writer.WriteAttributeString("pagesize", _pagesize.ToString());
-                if (_maxcount > 0) writer.WriteAttributeString("maxcount", _maxcount.ToString());
+                if (MaxCount > 0) writer.WriteAttributeString("maxcount", MaxCount.ToString());
             }
 
             while (Read())
@@ -736,7 +700,7 @@ namespace Dorado.Core.Data
                             AddRow();
                             while (reader.MoveToNextAttribute())
                             {
-                                if (!_cols.Contains(reader.Name)) _cols.Add(reader.Name);
+                                if (!Columns.Contains(reader.Name)) Columns.Add(reader.Name);
                                 this[reader.Name].Set(reader.Value.Replace("\\r", "\r").Replace("\\n", "\n"));
                             }
                         }
@@ -744,7 +708,7 @@ namespace Dorado.Core.Data
 
                     case XmlNodeType.EndElement:
                         reader.ReadEndElement();
-                        _cursor = 0;
+                        Cursor = 0;
                         return;
                 }
             }
@@ -774,11 +738,11 @@ namespace Dorado.Core.Data
                 {
                     string nodeName = n.Groups[1].Value;
                     string nodeValue = XmlExtensions.Outbox(n.Groups[2].Value);
-                    if (!_cols.Contains(nodeName)) _cols.Add(nodeName);
+                    if (!Columns.Contains(nodeName)) Columns.Add(nodeName);
                     this[nodeName].Set(nodeValue);
                 }
             }
-            _cursor = 0;
+            Cursor = 0;
         }
 
         #endregion IXmlSerializable   成员
@@ -787,15 +751,15 @@ namespace Dorado.Core.Data
 
         public object Clone()
         {
-            DataArray data = new DataArray(_name, RowSize)
+            DataArray data = new DataArray(Name, RowSize)
             {
-                _name = _name,
-                _cols = (DataArrayColumns)_cols.Clone(),
-                _page = _page,
+                Name = Name,
+                Columns = (DataArrayColumns)Columns.Clone(),
+                Page = Page,
                 _pagesize = _pagesize,
-                _maxcount = _maxcount,
+                MaxCount = MaxCount,
                 _count = _count,
-                _cursor = 0
+                Cursor = 0
             };
             return data;
         }

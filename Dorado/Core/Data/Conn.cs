@@ -15,8 +15,6 @@ namespace Dorado.Core.Data
     public class Conn : IConn
     {
         private static string _default;
-        private SqlConnection _conn;
-        private SqlTransaction _trans;
         private string _name = "mlist";
         private string _tablename;
         private int _top;
@@ -31,7 +29,6 @@ namespace Dorado.Core.Data
         private ArrayList _batchName;
         private ArrayList _batchSql;
         private string _keyid;
-        private int _commandTimeOut;
 
         public Conn(string connectionString, int commandTimeOut = 60)
         {
@@ -39,9 +36,9 @@ namespace Dorado.Core.Data
             {
                 throw new CoreException("数据库连接串不能为空");
             }
-            _commandTimeOut = commandTimeOut;
+            CommandTimeOut = commandTimeOut;
             _default = connectionString;
-            _conn = new SqlConnection(connectionString);
+            Connection = new SqlConnection(connectionString);
         }
 
         /// <summary>
@@ -60,11 +57,7 @@ namespace Dorado.Core.Data
             }
         }
 
-        public int CommandTimeOut
-        {
-            get { return _commandTimeOut; }
-            set { _commandTimeOut = value; }
-        }
+        public int CommandTimeOut { get; set; }
 
         public int Top
         {
@@ -114,7 +107,7 @@ namespace Dorado.Core.Data
             get
             {
                 Open();
-                return _conn.Database;
+                return Connection.Database;
             }
             set { ChangeDatabase(value); }
         }
@@ -201,76 +194,63 @@ namespace Dorado.Core.Data
         public Conn ChangeDatabase(string databaseName)
         {
             Open();
-            _conn.ChangeDatabase(databaseName);
+            Connection.ChangeDatabase(databaseName);
             return this;
         }
 
-        public SqlConnection Connection
-        {
-            get { return _conn; }
-        }
+        public SqlConnection Connection { get; private set; }
 
-        public SqlTransaction Transaction
-        {
-            get
-            {
-                return _trans;
-            }
-            set
-            {
-                _trans = value;
-            }
-        }
+        public SqlTransaction Transaction { get; set; }
 
         public Conn Open()
         {
-            if (_conn == null) _conn = new SqlConnection(_default);
-            if (_conn.State != ConnectionState.Open) _conn.Open();
+            if (Connection == null) Connection = new SqlConnection(_default);
+            if (Connection.State != ConnectionState.Open) Connection.Open();
             return this;
         }
 
         public Conn BeginTrans()
         {
-            if (_trans != null) return this;
-            if (_conn == null) _conn = new SqlConnection(_default);
-            if (_conn.State != ConnectionState.Open) _conn.Open();
-            _trans = _conn.BeginTransaction(IsolationLevel.ReadUncommitted);
+            if (Transaction != null) return this;
+            if (Connection == null) Connection = new SqlConnection(_default);
+            if (Connection.State != ConnectionState.Open) Connection.Open();
+            Transaction = Connection.BeginTransaction(IsolationLevel.ReadUncommitted);
             return this;
         }
 
         public Conn BeginTrans(IsolationLevel isolationLevel)
         {
-            if (_trans != null) return this;
-            if (_conn == null) _conn = new SqlConnection(_default);
-            if (_conn.State != ConnectionState.Open) _conn.Open();
-            _trans = _conn.BeginTransaction(isolationLevel);
+            if (Transaction != null) return this;
+            if (Connection == null) Connection = new SqlConnection(_default);
+            if (Connection.State != ConnectionState.Open) Connection.Open();
+            Transaction = Connection.BeginTransaction(isolationLevel);
             return this;
         }
 
         public Conn Rollback()
         {
-            if (_conn == null || _conn.State == ConnectionState.Closed) return this;
-            if (_trans == null) return this;
-            _trans.Rollback();
-            _trans.Dispose();
-            _trans = null;
+            if (Connection == null || Connection.State == ConnectionState.Closed) return this;
+            if (Transaction == null) return this;
+            Transaction.Rollback();
+            Transaction.Dispose();
+            Transaction = null;
             return this;
         }
 
         public Conn Close()
         {
-            if (_conn == null || _conn.State == ConnectionState.Closed) return this;
+            if (Connection == null || Connection.State == ConnectionState.Closed) return this;
 
-            if (_trans != null)
+            if (Transaction != null)
             {
-                _trans.Commit();
-                _trans.Dispose();
-                _trans = null;
+                Transaction.Commit();
+                Transaction.Dispose();
+                Transaction = null;
             }
 
-            _conn.Close();
-            _conn.Dispose();
-            _conn = null;
+            Connection.Close();
+            Connection.Dispose();
+            Connection = null;
             return this;
         }
 
@@ -589,7 +569,7 @@ namespace Dorado.Core.Data
         public int ExecuteNonQuery(string sql)
         {
             Open();
-            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
                 return cmd.ExecuteNonQuery();
             }
@@ -602,7 +582,7 @@ namespace Dorado.Core.Data
                 if (para[i] is string) para[i] = para[i].ToString();
             }
             Open();
-            using (SqlCommand cmd = new SqlCommand(string.Format(sql, para), _conn))
+            using (SqlCommand cmd = new SqlCommand(string.Format(sql, para), Connection))
             {
                 if (Transaction != null) cmd.Transaction = Transaction;
                 return cmd.ExecuteNonQuery();
@@ -612,7 +592,7 @@ namespace Dorado.Core.Data
         public object ExecuteScalar(string sql)
         {
             Open();
-            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
                 if (Transaction != null) cmd.Transaction = Transaction;
                 return cmd.ExecuteScalar();
@@ -626,7 +606,7 @@ namespace Dorado.Core.Data
                 if (para[i] is string) para[i] = para[i].ToString();
             }
             Open();
-            using (SqlCommand cmd = new SqlCommand(string.Format(sql, para), _conn))
+            using (SqlCommand cmd = new SqlCommand(string.Format(sql, para), Connection))
             {
                 if (Transaction != null) cmd.Transaction = Transaction;
                 return cmd.ExecuteScalar();
@@ -652,7 +632,7 @@ namespace Dorado.Core.Data
             SqlDataReader reader = null;
             try
             {
-                cmd = new SqlCommand(sb.ToString(), Connection) { CommandTimeout = _commandTimeOut };
+                cmd = new SqlCommand(sb.ToString(), Connection) { CommandTimeout = CommandTimeOut };
                 reader = cmd.ExecuteReader();
 
                 int index = 0;
@@ -712,7 +692,7 @@ namespace Dorado.Core.Data
                 SqlDataReader reader = null;
                 try
                 {
-                    cmd = new SqlCommand(_batchSql.ToString(), Connection) { CommandTimeout = _commandTimeOut };
+                    cmd = new SqlCommand(_batchSql.ToString(), Connection) { CommandTimeout = CommandTimeOut };
                     reader = cmd.ExecuteReader();
 
                     list.Add(_batchName[i].ToString(), reader.Exec(null, false));
@@ -797,7 +777,7 @@ namespace Dorado.Core.Data
             try
             {
                 Open();
-                cmd = new SqlCommand(sql, Connection) { CommandTimeout = _commandTimeOut };
+                cmd = new SqlCommand(sql, Connection) { CommandTimeout = CommandTimeOut };
                 reader = cmd.ExecuteReader();
                 reader.Exec(data, false);
             }
@@ -858,7 +838,7 @@ namespace Dorado.Core.Data
             try
             {
                 Open();
-                cmd = new SqlCommand(sql, _conn) { CommandTimeout = _commandTimeOut };
+                cmd = new SqlCommand(sql, Connection) { CommandTimeout = CommandTimeOut };
 
                 reader = cmd.ExecuteReader();
 
@@ -919,7 +899,7 @@ namespace Dorado.Core.Data
             try
             {
                 Open();
-                cmd = new SqlCommand(sql, _conn) { CommandTimeout = _commandTimeOut };
+                cmd = new SqlCommand(sql, Connection) { CommandTimeout = CommandTimeOut };
 
                 reader = cmd.ExecuteReader();
                 reader.Read();
