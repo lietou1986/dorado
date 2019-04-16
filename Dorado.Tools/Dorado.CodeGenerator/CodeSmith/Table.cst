@@ -89,7 +89,7 @@ namespace <%=NamePlaceName%>.Services.Data
 
         public static DataArray Get(Conn conn, long id, string fields = "*")
         {
-            string sql = string.Format("select {0} from {1} with (nolock) where id={2}", fields, TableName, id);
+            string sql = $"select {fields} from {TableName} with (nolock) where id={id}";
             return conn.Select(sql);
         }
 
@@ -99,7 +99,7 @@ namespace <%=NamePlaceName%>.Services.Data
             {
                 if (para[i] is string) para[i] = para[i].ToString().Replace("'", "''");
             }
-            sql = string.Format("select {0} from {1} with (nolock)  where {2}", fields, TableName, string.Format(sql, para));
+            sql = $"select {fields} from {TableName} with (nolock)  where {string.Format(sql, para)}";
             return conn.Select(sql);
         }
         
@@ -125,7 +125,7 @@ namespace <%=NamePlaceName%>.Services.Data
             if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
             string sql = _update_sql(data);
             if (sql == string.Empty) return 0;
-            sql = string.Format("update {0} with (rowlock) set {1}", TableName, sql);
+            sql = $"update {TableName} with (rowlock) set {sql}";
             return conn.ExecuteNonQuery(sql);
         }
 
@@ -135,7 +135,7 @@ namespace <%=NamePlaceName%>.Services.Data
             {
                 if (para[i] is string) para[i] = para[i].ToString().Replace("'", "''");
             }
-            sql = string.Format("update {0} with (rowlock) set {1}", TableName, string.Format(sql, para));
+            sql = $"update {TableName} with (rowlock) set {string.Format(sql, para)}";
             return conn.ExecuteNonQuery(sql);
         }
 
@@ -158,7 +158,7 @@ namespace <%=NamePlaceName%>.Services.Data
             {
                 if (para[i] is string) para[i] = para[i].ToString().Replace("'", "''");
             }
-            sql = string.Format("delete {0} with (rowlock) where {1}", TableName, string.Format(sql, para));
+            sql = $"delete {TableName} with (rowlock) where {string.Format(sql, para)}";
             return conn.ExecuteNonQuery(sql);
         }
      }

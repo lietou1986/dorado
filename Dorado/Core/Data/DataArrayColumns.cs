@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Dorado.Core.Data.DataType;
 using Dorado.Extensions;
+using Dorado.Utils;
 
 namespace Dorado.Core.Data
 {
@@ -623,92 +624,115 @@ namespace Dorado.Core.Data
             return true;
         }
 
-        public void Set(bool value)
+        public DataArrayColumn GenerateId()
         {
-            Set(value, _cursor);
+            Set(CommonUtility.GenerateId(), _cursor);
+            return this;
         }
 
-        public void Set(char value)
+        public DataArrayColumn Set(bool value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(byte value)
+        public DataArrayColumn Set(char value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(sbyte value)
+        public DataArrayColumn Set(byte value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(short value)
+        public DataArrayColumn Set(sbyte value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(ushort value)
+        public DataArrayColumn Set(short value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(int value)
+        public DataArrayColumn Set(ushort value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(uint value)
+        public DataArrayColumn Set(int value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(long value)
+        public DataArrayColumn Set(uint value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(ulong value)
+        public DataArrayColumn Set(long value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(decimal value)
+        public DataArrayColumn Set(ulong value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(double value)
+        public DataArrayColumn Set(decimal value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(float value)
+        public DataArrayColumn Set(double value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(DateTime value)
+        public DataArrayColumn Set(float value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(string value)
+        public DataArrayColumn Set(DateTime value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(object value)
+        public DataArrayColumn Set(string value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(Enum value)
+        public DataArrayColumn Set(object value)
         {
             Set(value, _cursor);
+            return this;
         }
 
-        public void Set(bool value, int index)
+        public DataArrayColumn Set(Enum value)
+        {
+            Set(value, _cursor);
+            return this;
+        }
+
+        public DataArrayColumn Set(bool value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -776,9 +800,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(char value, int index)
+        public DataArrayColumn Set(char value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -846,9 +871,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(byte value, int index)
+        public DataArrayColumn Set(byte value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -916,9 +942,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(sbyte value, int index)
+        public DataArrayColumn Set(sbyte value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -986,9 +1013,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(short value, int index)
+        public DataArrayColumn Set(short value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1056,9 +1084,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(ushort value, int index)
+        public DataArrayColumn Set(ushort value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1126,9 +1155,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(int value, int index)
+        public DataArrayColumn Set(int value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1196,9 +1226,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(uint value, int index)
+        public DataArrayColumn Set(uint value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1266,9 +1297,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(long value, int index)
+        public DataArrayColumn Set(long value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1336,9 +1368,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(ulong value, int index)
+        public DataArrayColumn Set(ulong value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1406,9 +1439,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(decimal value, int index)
+        public DataArrayColumn Set(decimal value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1476,9 +1510,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(double value, int index)
+        public DataArrayColumn Set(double value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1546,9 +1581,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(float value, int index)
+        public DataArrayColumn Set(float value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1616,9 +1652,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(DateTime value, int index)
+        public DataArrayColumn Set(DateTime value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1686,9 +1723,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(string value, int index)
+        public DataArrayColumn Set(string value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1756,9 +1794,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(object value, int index)
+        public DataArrayColumn Set(object value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1826,9 +1865,10 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
-        public void Set(Enum value, int index)
+        public DataArrayColumn Set(Enum value, int index)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -1896,6 +1936,7 @@ namespace Dorado.Core.Data
                     ((Array)_data).SetValue(value, index);
                     break;
             }
+            return this;
         }
 
         #region IConvertible 成员
@@ -2831,7 +2872,7 @@ namespace Dorado.Core.Data
 
         #endregion IConvertible 成员
 
-        public void Replace(string old, string value)
+        public DataArrayColumn Replace(string old, string value)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -2843,9 +2884,10 @@ namespace Dorado.Core.Data
                     }
                     break;
             }
+            return this;
         }
 
-        public void ReplaceReg(string regStr, string value)
+        public DataArrayColumn ReplaceReg(string regStr, string value)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -2857,9 +2899,10 @@ namespace Dorado.Core.Data
                     }
                     break;
             }
+            return this;
         }
 
-        public void ReplaceReg(string regStr, MatchEvaluator func)
+        public DataArrayColumn ReplaceReg(string regStr, MatchEvaluator func)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -2871,9 +2914,10 @@ namespace Dorado.Core.Data
                     }
                     break;
             }
+            return this;
         }
 
-        public void HighLight(string value)
+        public DataArrayColumn HighLight(string value)
         {
             switch (Type.GetTypeCode((Type)_type))
             {
@@ -2885,41 +2929,40 @@ namespace Dorado.Core.Data
                     }
                     break;
             }
+            return this;
         }
 
-        public void Replace(Func<object, object> tran)
+        public DataArrayColumn Replace(Func<object, object> tran)
         {
             for (int i = 0; i < _columns.DataArray.Count; i++)
             {
                 ((Array)_data).SetValue(tran(((Array)_data).GetValue(i)), i);
             }
+            return this;
         }
 
-        public void Replace(Func<DataArray, object> tran)
+        public DataArrayColumn Replace(Func<DataArray, object> tran)
         {
             while (_columns.DataArray.Read())
             {
                 ((Array)_data).SetValue(tran(_columns.DataArray), _columns.DataArray.Cursor);
             }
             _columns.DataArray.Cursor = 0;
+            return this;
         }
     }
 
     [Serializable]
     public class DataArrayColumns : IEnumerable, IEnumerator, ICloneable
     {
-        private readonly DataArray _array;
         private TreeName _tree = new TreeName();
 
         public DataArrayColumns(DataArray data)
         {
-            _array = data;
+            DataArray = data;
         }
 
-        public DataArray DataArray
-        {
-            get { return _array; }
-        }
+        public DataArray DataArray { get; }
 
         public int Count
         {
@@ -2931,42 +2974,46 @@ namespace Dorado.Core.Data
             return Add(name, typeof(string));
         }
 
-        public void Add(params string[] names)
+        public DataArrayColumns Add(params string[] names)
         {
             names.ForEach(name => { Add(name); });
+            return this;
         }
 
         public DataArrayColumn Add(string name, Type type)
         {
             TreeNameNode node = _tree.Add(new TreeNameNode(name, new DataArrayColumn(this, name, type)));
-            if (node == null) return _array[name];
+            if (node == null) return DataArray[name];
             return (DataArrayColumn)node.Data;
         }
 
         public DataArrayColumn Add(DataArrayColumn col)
         {
             TreeNameNode node = _tree.Add(new TreeNameNode(col.Name, col));
-            if (node == null) return _array[col.Name];
+            if (node == null) return DataArray[col.Name];
             return col;
         }
 
-        public void Add(params DataArrayColumn[] cols)
+        public DataArrayColumns Add(params DataArrayColumn[] cols)
         {
             cols.ForEach(col => { Add(col); });
+            return this;
         }
 
-        public void Add(Type type)
+        public DataArrayColumns Add(Type type)
         {
             FieldInfo[] list = type.GetFields(BindingFlags.Instance | BindingFlags.Public);
             foreach (FieldInfo t in list)
             {
                 Add(t.Name.ToLower(), t.FieldType);
             }
+            return this;
         }
 
-        public void Add(params Type[] types)
+        public DataArrayColumns Add(params Type[] types)
         {
             types.ForEach(type => { Add(type); });
+            return this;
         }
 
         public bool Contains(string name)
@@ -2981,7 +3028,7 @@ namespace Dorado.Core.Data
                 TreeNameNode node = _tree[name];
                 if (node == null) return null;
                 DataArrayColumn col = (DataArrayColumn)node.Data;
-                col._cursor = _array.Cursor;
+                col._cursor = DataArray.Cursor;
                 return col;
             }
         }
@@ -2993,7 +3040,7 @@ namespace Dorado.Core.Data
                 TreeNameNode node = _tree[name];
                 if (node == null) return null;
                 DataArrayColumn col = (DataArrayColumn)node.Data;
-                col._cursor = row > _array.Count - 1 ? _array.Count - 1 : row;
+                col._cursor = row > DataArray.Count - 1 ? DataArray.Count - 1 : row;
                 return (DataArrayColumn)node.Data;
             }
         }
@@ -3035,7 +3082,7 @@ namespace Dorado.Core.Data
 
         public object Clone()
         {
-            DataArrayColumns cols = new DataArrayColumns(_array);
+            DataArrayColumns cols = new DataArrayColumns(DataArray);
             cols._tree = (TreeName)_tree.Clone();
             return cols;
         }
@@ -3056,7 +3103,7 @@ namespace Dorado.Core.Data
                 TreeNameNode node = (TreeNameNode)_tree.Current;
                 if (node == null) return null;
                 DataArrayColumn col = (DataArrayColumn)node.Data;
-                col._cursor = _array.Cursor;
+                col._cursor = DataArray.Cursor;
                 return col;
             }
         }
