@@ -37,6 +37,36 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
 
        #region <%=GetTableDescription(SourceTable)%>业务操作
        
+         /// <summary>
+        /// 校准<%=GetTableDescription(SourceTable) %>数据
+        /// </summary>
+        /// <param name="data">数据体</param>
+        /// <returns></returns>
+        [HttpPost]
+        <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="edituserid")) {%>
+        [UserTrace(false)]
+        <%}%>
+        [Description("校准[<%=GetTableDescription(SourceTable) %>]数据")]
+        public ActionResult  <%=GetShortName(SourceTable.Name) %>Adjust(DataArray data)
+        {
+            try
+            {
+                long id=data["id"].ToLong();
+                using (Conn conn = this.GetConn())
+                {
+                T_<%=SourceTable.Name%>.Update(conn, data);
+                }
+                
+                this.BuildEvent(TableEnum.<%=SourceTable.Name%>, id, "校准<%=GetTableDescription(SourceTable) %>", "校准成功");
+
+                return this.FastSuccessResult(id);
+            }
+            catch (Exception ex)
+            {
+               return this.FastErrorResult(ex);
+            }
+        }
+
        #endregion <%=GetTableDescription(SourceTable)%>业务操作
        
        <% }%> 
