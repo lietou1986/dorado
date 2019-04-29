@@ -26,13 +26,6 @@ namespace Dorado.Configuration.ServerHost
         {
             string strCurrentPath = Request.Path.ToLower();
 
-            //if (strCurrentPath.IndexOf("configversionhandler.ashx") >= 0)
-            //    ConfigVersionCounter.Increment();
-            //else if (strCurrentPath.IndexOf("resourcemanagerhandler.ashx") >= 0)
-            //    ResourceMgrCounter.Increment();
-            //else if (strCurrentPath.IndexOf("configmanagerhandler.ashx") >= 0)
-            //    ConfigMgrCounter.Increment();
-
             if (bool.Parse(System.Configuration.ConfigurationManager.AppSettings["debug"]))
             {
                 var info = string.Format("Begin Request: {0}", strCurrentPath);
@@ -100,11 +93,9 @@ namespace Dorado.Configuration.ServerHost
             LoggerWrapper.Logger.Info("Web ending...");
         }
 
-        protected void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Exception ex = e.ExceptionObject as Exception;
-
-            if (ex != null)
+            if (e.ExceptionObject is Exception ex)
             {
                 LoggerWrapper.Logger.Error("Unhandled exception on thread", ex);
             }

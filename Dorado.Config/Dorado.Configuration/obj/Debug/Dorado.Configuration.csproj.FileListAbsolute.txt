@@ -74,3 +74,10 @@ D:\Projects\.Net\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Conf
 D:\Projects\.Net\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.csproj.CopyComplete
 D:\Projects\.Net\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.dll
 D:\Projects\.Net\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.pdb
+E:\_learn\dorado\Build\Dorado.Configuration.dll
+E:\_learn\dorado\Build\Dorado.Configuration.pdb
+E:\_learn\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.csprojAssemblyReference.cache
+E:\_learn\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.csproj.CoreCompileInputs.cache
+E:\_learn\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.csproj.CopyComplete
+E:\_learn\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.dll
+E:\_learn\dorado\Dorado.Config\Dorado.Configuration\obj\Debug\Dorado.Configuration.pdb

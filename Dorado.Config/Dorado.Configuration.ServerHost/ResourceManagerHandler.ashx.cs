@@ -373,12 +373,6 @@ namespace Dorado.Configuration.ServerHost
             xser.Serialize(context.Response.OutputStream, result);
         }
 
-        public bool IsReusable
-        {
-            get
-            {
-                return false;
-            }
-        }
+        public bool IsReusable => false;
     }
 }

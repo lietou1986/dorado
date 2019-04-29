@@ -11,8 +11,6 @@ namespace Dorado.Configuration.Manager.Controllers
 {
     public class RemoteConfigurationController : Controller
     {
-        private static readonly string NoAppPath = "General";
-
         public ActionResult Index()
         {
             return View();
@@ -29,27 +27,9 @@ namespace Dorado.Configuration.Manager.Controllers
         }
 
         [HttpPost]
-        public void Create(string sectionName, string application)
+        public void Create(string application, string sectionName)
         {
-            int result = 1;
-            TreeNode node = new TreeNode();
-            node.Value = sectionName;
-            node.Value = Path.Combine(node.Value, application.Trim());
-            node.Value = Path.Combine(node.Value, "1");
-
-            RawConfigurationManager rcm = RawConfigurationManager.Instance;
-            HttpFileCollectionBase files = Request.Files;
-            HttpPostedFileBase currentFile = files["fileName"];
-
-            byte[] fileBytes = new byte[currentFile.ContentLength];
-            currentFile.InputStream.Read(fileBytes, 0, fileBytes.Length);
-
-            //判断是否符合XML要求
-            if (!rcm.IsStandardXML(Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(fileBytes))))
-                result = 0;
-            else
-                rcm.CreateMinor(node, fileBytes);
-            Response.Write(string.Format("<script>parent.CreateCallBack({0});</script>", result));
+            CreateVersion(application, sectionName);
         }
 
         public ActionResult CreateVersion()
@@ -58,33 +38,22 @@ namespace Dorado.Configuration.Manager.Controllers
         }
 
         [HttpPost]
-        public void CreateVersion(string sectionName, string application, int major = 1)
+        public void CreateVersion(string application, string sectionName, int major = 1)
         {
-            int result = 1;
-            TreeNode node = new TreeNode();
-            node.Value = sectionName;
-            node.Value = Path.Combine(node.Value, application.Trim());
-            node.Value = Path.Combine(node.Value, major.ToString());
-
-            RawConfigurationManager rcm = RawConfigurationManager.Instance;
             HttpFileCollectionBase files = Request.Files;
+
             HttpPostedFileBase currentFile = files["fileName"];
 
             byte[] fileBytes = new byte[currentFile.ContentLength];
             currentFile.InputStream.Read(fileBytes, 0, fileBytes.Length);
 
-            //判断是否符合XML要求
-            if (!rcm.IsStandardXML(Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(fileBytes))))
-                result = 0;
-            else
-                rcm.CreateMinor(node, fileBytes);//添加创建人ID
+            int result = RawConfigurationManager.Instance.CreateMinor(application, sectionName, major, fileBytes) ? 1 : 0; //添加创建人ID
             Response.Write(string.Format("<script>location.reload();parent.CreateCallBack({0});</script>", result));
         }
 
         public ActionResult EditVersion(string downloadUrl)
         {
-            WebClient webClient = new WebClient();
-            webClient.Credentials = CredentialCache.DefaultCredentials;
+            WebClient webClient = new WebClient {Credentials = CredentialCache.DefaultCredentials};
             byte[] buffer = webClient.DownloadData(downloadUrl);
             ViewBag.FileContent = Encoding.UTF8.GetString(buffer);
             return View();
@@ -92,49 +61,22 @@ namespace Dorado.Configuration.Manager.Controllers
 
         public ActionResult GetConfigContent(string downloadUrl)
         {
-            WebClient webClient = new WebClient();
-            webClient.Credentials = CredentialCache.DefaultCredentials;
+            WebClient webClient = new WebClient {Credentials = CredentialCache.DefaultCredentials};
             byte[] buffer = webClient.DownloadData(downloadUrl);
             return Content(Encoding.UTF8.GetString(buffer));
         }
 
         [HttpPost]
-        public ActionResult EditVersion(string sectionName, string application, string major, string fileContent)
+        public ActionResult EditVersion(string application, string sectionName, int major, string fileContent)
         {
-            int result = 1;
-            TreeNode node = new TreeNode();
-            node.Value = sectionName;
-            node.Value = Path.Combine(node.Value, application);
-            node.Value = Path.Combine(node.Value, major);
-
-            RawConfigurationManager rcm = RawConfigurationManager.Instance;
-            fileContent = Server.UrlDecode(fileContent).Trim();
-
-            //判断是否符合XML要求
-            if (!rcm.IsStandardXML(Encoding.UTF8.GetBytes(fileContent)))
-                result = 0;
-            else
-                rcm.CreateMinor(node, Encoding.UTF8.GetBytes(fileContent));//添加创建人ID
-            return Content(result.ToString());
+            return EditConfig(application, sectionName, major, fileContent);
         }
 
         [HttpPost]
-        public ActionResult EditConfig(string sectionName, string application, string major, string fileContent)
+        public ActionResult EditConfig(string application, string sectionName, int major, string fileContent)
         {
-            int result = 1;
-            TreeNode node = new TreeNode();
-            node.Value = sectionName;
-            node.Value = Path.Combine(node.Value, application);
-            node.Value = Path.Combine(node.Value, major);
-
-            RawConfigurationManager rcm = RawConfigurationManager.Instance;
             fileContent = Server.UrlDecode(fileContent).Trim();
-
-            //判断是否符合XML要求
-            if (!rcm.IsStandardXML(Encoding.UTF8.GetBytes(fileContent)))
-                result = 0;
-            else
-                rcm.CreateMinor(node, Encoding.UTF8.GetBytes(fileContent));//添加创建人ID
+            int result = RawConfigurationManager.Instance.CreateMinor(application, sectionName, major, fileContent) ? 1 : 0;
             return Content(result.ToString());
         }
 
@@ -143,87 +85,54 @@ namespace Dorado.Configuration.Manager.Controllers
             return View();
         }
 
-        public ActionResult ViewConfig(string downloadurl)
+        public ActionResult ViewConfig(string downloadUrl)
         {
-            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(downloadurl);
-            req.ContentType = "text/xml";
-            req.Method = "GET";
-            req.Timeout = 30000;
-            req.ReadWriteTimeout = 30000;
-            req.KeepAlive = false;
-            string resultContent = string.Empty;
-            HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
-            using (Stream stream = rsp.GetResponseStream())
-            {
-                StreamReader sr = new StreamReader(stream, System.Text.Encoding.UTF8);
-                resultContent = sr.ReadToEnd();
-                stream.Close();
-            }
-            rsp.Close();
-            ViewBag.FileContent = resultContent;
+            WebClient webClient = new WebClient {Credentials = CredentialCache.DefaultCredentials};
+            byte[] buffer = webClient.DownloadData(downloadUrl);
+            ViewBag.FileContent = Encoding.UTF8.GetString(buffer);
             return View();
         }
 
-        public ActionResult DeleteSection(string sectionName)
+        public ActionResult DeleteConfig(string application, string sectionName)
         {
-            sectionName = Server.UrlDecode(sectionName);
-
-            bool result = RawConfigurationManager.Instance.DeleteConfig(sectionName);
-            return Content(result.ToString());
-        }
-
-        public ActionResult DeleteApplication(string application, string sectionName)
-        {
-            sectionName = Server.UrlDecode(sectionName);
             application = Server.UrlDecode(application);
-            if (string.Compare(application, NoAppPath) == 0)
-            {
-                sectionName = Path.Combine(sectionName, NoAppPath);
-            }
-            else
-            {
-                sectionName = Path.Combine(sectionName, application);
-            }
-            bool result = RawConfigurationManager.Instance.DeleteConfig(sectionName);
+            sectionName = Server.UrlDecode(sectionName);
+
+            bool result = RawConfigurationManager.Instance.DeleteConfig(application, sectionName);
             return Content(result.ToString());
         }
 
-        public ActionResult GetHistory(string sectionName, string application, string major)
+        public ActionResult GetHistory(string application, string sectionName, int major=1)
         {
-            string value = sectionName;
+            application = Server.UrlDecode(application);
+            sectionName = Server.UrlDecode(sectionName);
 
-            if (string.Compare(application, NoAppPath) == 0)
-            {
-                value = Path.Combine(value, NoAppPath);
-            }
-            else
-            {
-                value = Path.Combine(value, application);
-            }
-            value = Path.Combine(value, major);
-
-            DataTable dt = RawConfigurationManager.Instance.GetMinors(value);
+            DataTable dt = RawConfigurationManager.Instance.GetMinors(application, sectionName, major);
             string json = JsonUtility.DataTableToJson("rows", dt);
             return Content(json);
         }
 
-        public ActionResult GetAllLastVersion()
+        public ActionResult GetAllLastVersion(string application)
         {
-            DataTable dt = RawConfigurationManager.Instance.GetAllLastVersion();
+            application = Server.UrlDecode(application);
+
+            DataTable dt = RawConfigurationManager.Instance.GetAllLastVersion(application);
             string json = JsonUtility.DataTableToJson("rows", dt);
             return Content(json);
         }
 
-        public ActionResult GetApplications(string sectionName)
+        public ActionResult GetApplications()
         {
-            DataTable dt = RawConfigurationManager.Instance.GetApplications(sectionName);
+            DataTable dt = RawConfigurationManager.Instance.GetApplications();
             string json = JsonUtility.DataTableToJson(dt);
             return Content(json);
         }
 
-        public ActionResult GetAllConfigs()
+        public ActionResult GetAllConfigs(string application)
         {
-            DataTable dt = RawConfigurationManager.Instance.GetAllConfigs();
+            application = Server.UrlDecode(application);
+
+            DataTable dt = RawConfigurationManager.Instance.GetAllConfigs(application);
             string json = JsonUtility.DataTableToJson("rows", dt);
             return Content(json);
         }

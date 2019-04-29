@@ -111,13 +111,7 @@ namespace Dorado.Configuration
 
         private static RawConfigurationManager instance = new RawConfigurationManager();
 
-        public static RawConfigurationManager Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static RawConfigurationManager Instance => instance;
 
         private RawConfigurationManager()
         {
@@ -127,7 +121,7 @@ namespace Dorado.Configuration
 
         private static readonly string NoAppPath = "General";
 
-        public DataTable GetAllLastVersion(RemoteConfigSectionCollection configs)
+        private DataTable GetAllLastVersion(RemoteConfigSectionCollection configs)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID", typeof(Int32));
@@ -140,7 +134,7 @@ namespace Dorado.Configuration
             dt.Columns.Add("CanDelete", typeof(bool));
             dt.Columns.Add("ShowValue", typeof(bool));
             dt.Columns.Add("CanDeleteApp", typeof(bool));
-            dt.PrimaryKey = new DataColumn[] { dt.Columns["ID"] };
+            dt.PrimaryKey = new DataColumn[] {dt.Columns["ID"]};
 
             if (configs.Sections.Count == 0)
             {
@@ -175,18 +169,22 @@ namespace Dorado.Configuration
                     dr["CanDelete"] = true;
                     lastSectionName = dr["SectionName"].ToString();
                 }
+
                 dr["Major"] = section.MajorVersion;
                 dr["CanDeleteApp"] = GetAppCount(configs, strs[0]) > 1 ? true : false;
                 if (string.Compare(strs[1], NoAppPath) == 0)
                 {
                     dr["Application"] = NoAppPath;
-                    dr["FileName"] = string.Format("{0}.{1}.{2}.xml", strs[0], section.MajorVersion, section.MinorVersion);
+                    dr["FileName"] = string.Format("{0}.{1}.{2}.xml", strs[0], section.MajorVersion,
+                        section.MinorVersion);
                 }
                 else
                 {
                     dr["Application"] = strs[1];
-                    dr["FileName"] = string.Format("{0}.{1}.{2}.{3}.xml", strs[0], strs[1], section.MajorVersion, section.MinorVersion);
+                    dr["FileName"] = string.Format("{0}.{1}.{2}.{3}.xml", strs[0], strs[1], section.MajorVersion,
+                        section.MinorVersion);
                 }
+
                 dr["Minor"] = section.MinorVersion;
                 dr["DownloadUrl"] = section.DownloadUrl;
                 dr["ShowValue"] = true;
@@ -196,7 +194,7 @@ namespace Dorado.Configuration
             return dt;
         }
 
-        public DataTable GetMinors(RemoteConfigSectionCollection configs, byte[] Log)
+        private DataTable GetMinors(RemoteConfigSectionCollection configs, byte[] Log)
         {
             string[] logs = new string[0];
             if ((Log != null) && (Log.Length > 0))
@@ -222,7 +220,7 @@ namespace Dorado.Configuration
             dt.Columns.Add("CanDelete", typeof(bool));
             dt.Columns.Add("OperatorID", typeof(string));
             dt.Columns.Add("OperateTime", typeof(string));
-            dt.PrimaryKey = new DataColumn[] { dt.Columns["ID"] };
+            dt.PrimaryKey = new DataColumn[] {dt.Columns["ID"]};
 
             string lastSectionName = null;
             for (int i = 0; i < configs.Sections.Count; i++)
@@ -241,17 +239,21 @@ namespace Dorado.Configuration
                     dr["CanDelete"] = true;
                     lastSectionName = dr["SectionName"].ToString();
                 }
+
                 dr["Major"] = section.MajorVersion;
                 if (string.Compare(strs[1], NoAppPath) == 0)
                 {
                     dr["Application"] = NoAppPath;
-                    dr["FileName"] = string.Format("{0}.{1}.{2}.xml", strs[0], section.MajorVersion, section.MinorVersion);
+                    dr["FileName"] = string.Format("{0}.{1}.{2}.xml", strs[0], section.MajorVersion,
+                        section.MinorVersion);
                 }
                 else
                 {
                     dr["Application"] = strs[1];
-                    dr["FileName"] = string.Format("{0}.{1}.{2}.{3}.xml", strs[0], strs[1], section.MajorVersion, section.MinorVersion);
+                    dr["FileName"] = string.Format("{0}.{1}.{2}.{3}.xml", strs[0], strs[1], section.MajorVersion,
+                        section.MinorVersion);
                 }
+
                 dr["Minor"] = section.MinorVersion;
                 dr["DownloadUrl"] = section.DownloadUrl;
                 foreach (string log in logs)
@@ -265,30 +267,31 @@ namespace Dorado.Configuration
                         break;
                     }
                 }
+
                 dt.Rows.Add(dr);
             }
 
             return dt;
         }
 
-        public DataTable GetAllLastVersion(string application = "")
+        public DataTable GetAllLastVersion(string application)
         {
             DataTable result = new DataTable();
-            RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO();
-            remoteConfigManagerDto.Operation.Command = "getAllLastVersion";
-            if (!string.IsNullOrEmpty(application))
-            {
-                remoteConfigManagerDto.Operation.Condition = application;
-            }
             try
             {
-                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] + "ConfigManagerHandler.ashx";
+                RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO
+                {
+                    Operation = {Command = "getAllLastVersion", Condition = application}
+                };
+
+                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] +
+                             "ConfigManagerHandler.ashx";
 
                 MemoryStream ms = new MemoryStream();
                 XmlSerializer ser = new XmlSerializer(typeof(RemoteConfigManagerDTO));
                 ser.Serialize(ms, remoteConfigManagerDto);
 
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(URL);
+                HttpWebRequest req = (HttpWebRequest) HttpWebRequest.Create(URL);
                 req.ContentType = "text/xml";
                 req.Method = "POST";
                 req.Timeout = 30000;
@@ -304,12 +307,13 @@ namespace Dorado.Configuration
                 }
 
                 RemoteConfigManagerDTO lstOutput;
-                HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
+                HttpWebResponse rsp = (HttpWebResponse) req.GetResponse();
                 using (Stream stream = rsp.GetResponseStream())
                 {
-                    lstOutput = (RemoteConfigManagerDTO)ser.Deserialize(stream);
+                    lstOutput = (RemoteConfigManagerDTO) ser.Deserialize(stream);
                     stream.Close();
                 }
+
                 rsp.Close();
 
                 if (lstOutput.Operation.Result)
@@ -325,10 +329,11 @@ namespace Dorado.Configuration
             {
                 LoggerWrapper.Logger.Error(ex);
             }
+
             return result;
         }
 
-        public DataTable GetRemoteConfigs(RemoteConfigSectionCollection configs)
+        private DataTable GetRemoteConfigs(RemoteConfigSectionCollection configs)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("id", typeof(string));
@@ -340,15 +345,16 @@ namespace Dorado.Configuration
                 dr["text"] = section.SectionName;
                 dt.Rows.Add(dr);
             }
+
             return dt;
         }
 
-        public int CompareApplication(RemoteConfigSectionParam x, RemoteConfigSectionParam y)
+        private int CompareApplication(RemoteConfigSectionParam x, RemoteConfigSectionParam y)
         {
             return x.SectionName.CompareTo(y.SectionName);
         }
 
-        public DataTable GetApplications(RemoteConfigSectionCollection configs)
+        private DataTable GetApplications(RemoteConfigSectionCollection configs)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("id", typeof(string));
@@ -362,15 +368,17 @@ namespace Dorado.Configuration
                     break;
                 }
             }
+
             if (!HaveNoAppPath)
             {
                 configs.AddSection(NoAppPath, 0, 0);
             }
+
             configs.Sections.Sort(CompareApplication);
-            for (int i = 0; i < configs.Sections.Count; i++)
+            foreach (var t in configs.Sections)
             {
                 DataRow dr = dt.NewRow();
-                RemoteConfigSectionParam section = configs.Sections[i];
+                RemoteConfigSectionParam section = t;
                 if (string.Compare(section.SectionName, NoAppPath) == 0)
                 {
                     dr["id"] = section.SectionName;
@@ -381,30 +389,36 @@ namespace Dorado.Configuration
                     dr["id"] = section.SectionName;
                     dr["text"] = section.SectionName;
                 }
+
                 dt.Rows.Add(dr);
             }
+
             return dt;
         }
 
-        public int CompareMajor(RemoteConfigSectionParam x, RemoteConfigSectionParam y)
+        private int CompareMajor(RemoteConfigSectionParam x, RemoteConfigSectionParam y)
         {
             return y.MajorVersion.CompareTo(x.MajorVersion);
         }
 
-        public DataTable GetAllConfigs()
+        public DataTable GetAllConfigs(String application)
         {
             DataTable result = new DataTable();
-            RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO();
-            remoteConfigManagerDto.Operation.Command = "getAllConfigs";
             try
             {
-                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] + "ConfigManagerHandler.ashx";
+                RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO
+                {
+                    Operation = {Command = "getAllConfigs", Condition = application}
+                };
+
+                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] +
+                             "ConfigManagerHandler.ashx";
 
                 MemoryStream ms = new MemoryStream();
                 XmlSerializer ser = new XmlSerializer(typeof(RemoteConfigManagerDTO));
                 ser.Serialize(ms, remoteConfigManagerDto);
 
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(URL);
+                HttpWebRequest req = (HttpWebRequest) HttpWebRequest.Create(URL);
                 req.ContentType = "text/xml";
                 req.Method = "POST";
                 req.Timeout = 30000;
@@ -420,12 +434,13 @@ namespace Dorado.Configuration
                 }
 
                 RemoteConfigManagerDTO lstOutput;
-                HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
+                HttpWebResponse rsp = (HttpWebResponse) req.GetResponse();
                 using (Stream stream = rsp.GetResponseStream())
                 {
-                    lstOutput = (RemoteConfigManagerDTO)ser.Deserialize(stream);
+                    lstOutput = (RemoteConfigManagerDTO) ser.Deserialize(stream);
                     stream.Close();
                 }
+
                 rsp.Close();
 
                 if (lstOutput.Operation.Result)
@@ -441,24 +456,28 @@ namespace Dorado.Configuration
             {
                 LoggerWrapper.Logger.Error(ex);
             }
+
             return result;
         }
 
-        public DataTable GetApplications(string value)
+        public DataTable GetApplications()
         {
             DataTable dt = new DataTable();
-            RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO();
-            remoteConfigManagerDto.Operation.Command = "getApplications";
-            remoteConfigManagerDto.Operation.Condition = value;
             try
             {
-                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] + "ConfigManagerHandler.ashx";
+                RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO
+                {
+                    Operation = {Command = "getApplications"}
+                };
+
+                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] +
+                             "ConfigManagerHandler.ashx";
 
                 MemoryStream ms = new MemoryStream();
                 XmlSerializer ser = new XmlSerializer(typeof(RemoteConfigManagerDTO));
                 ser.Serialize(ms, remoteConfigManagerDto);
 
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(URL);
+                HttpWebRequest req = (HttpWebRequest) HttpWebRequest.Create(URL);
                 req.ContentType = "text/xml";
                 req.Method = "POST";
                 req.Timeout = 30000;
@@ -474,12 +493,13 @@ namespace Dorado.Configuration
                 }
 
                 RemoteConfigManagerDTO lstOutput;
-                HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
+                HttpWebResponse rsp = (HttpWebResponse) req.GetResponse();
                 using (Stream stream = rsp.GetResponseStream())
                 {
-                    lstOutput = (RemoteConfigManagerDTO)ser.Deserialize(stream);
+                    lstOutput = (RemoteConfigManagerDTO) ser.Deserialize(stream);
                     stream.Close();
                 }
+
                 rsp.Close();
 
                 if (lstOutput.Operation.Result)
@@ -495,24 +515,28 @@ namespace Dorado.Configuration
             {
                 LoggerWrapper.Logger.Error(ex);
             }
+
             return dt;
         }
 
-        public DataTable GetMajors(string value)
+        public DataTable GetMajors(string application)
         {
             DataTable dt = new DataTable();
-            RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO();
-            remoteConfigManagerDto.Operation.Command = "getMajors";
-            remoteConfigManagerDto.Operation.Condition = value;
             try
             {
-                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] + "ConfigManagerHandler.ashx";
+                RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO
+                {
+                    Operation = {Command = "getMajors", Condition = application}
+                };
+
+                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] +
+                             "ConfigManagerHandler.ashx";
 
                 MemoryStream ms = new MemoryStream();
                 XmlSerializer ser = new XmlSerializer(typeof(RemoteConfigManagerDTO));
                 ser.Serialize(ms, remoteConfigManagerDto);
 
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(URL);
+                HttpWebRequest req = (HttpWebRequest) HttpWebRequest.Create(URL);
                 req.ContentType = "text/xml";
                 req.Method = "POST";
                 req.Timeout = 30000;
@@ -528,12 +552,13 @@ namespace Dorado.Configuration
                 }
 
                 RemoteConfigManagerDTO lstOutput;
-                HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
+                HttpWebResponse rsp = (HttpWebResponse) req.GetResponse();
                 using (Stream stream = rsp.GetResponseStream())
                 {
-                    lstOutput = (RemoteConfigManagerDTO)ser.Deserialize(stream);
+                    lstOutput = (RemoteConfigManagerDTO) ser.Deserialize(stream);
                     stream.Close();
                 }
+
                 rsp.Close();
 
                 if (lstOutput.Operation.Result)
@@ -549,42 +574,48 @@ namespace Dorado.Configuration
             {
                 LoggerWrapper.Logger.Error(ex);
             }
+
             return dt;
         }
 
-        public DataTable GetMajors(RemoteConfigSectionCollection configs)
+        private DataTable GetMajors(RemoteConfigSectionCollection configs)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("id", typeof(string));
             dt.Columns.Add("text", typeof(string));
             configs.Sections.Sort(CompareMajor);
-            DataRow dr;
-            for (int i = 0; i < configs.Sections.Count; i++)
+            foreach (var t in configs.Sections)
             {
-                dr = dt.NewRow();
-                RemoteConfigSectionParam section = configs.Sections[i];
+                var dr = dt.NewRow();
+                RemoteConfigSectionParam section = t;
                 dr["id"] = section.MajorVersion.ToString();
                 dr["text"] = section.MajorVersion.ToString();
                 dt.Rows.Add(dr);
             }
+
             return dt;
         }
 
-        public DataTable GetMinors(string value)
+        public DataTable GetMinors(string application, string sectionName, int major)
         {
             DataTable dt = new DataTable();
-            RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO();
-            remoteConfigManagerDto.Operation.Command = "getMinors";
-            remoteConfigManagerDto.Operation.Condition = value;
+            RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO
+            {
+                Operation =
+                {
+                    Command = "getMinors", Condition = String.Format("{0}/{1}/{2}", application, sectionName, major),
+                }
+            };
             try
             {
-                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] + "ConfigManagerHandler.ashx";
+                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] +
+                             "ConfigManagerHandler.ashx";
 
                 MemoryStream ms = new MemoryStream();
                 XmlSerializer ser = new XmlSerializer(typeof(RemoteConfigManagerDTO));
                 ser.Serialize(ms, remoteConfigManagerDto);
 
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(URL);
+                HttpWebRequest req = (HttpWebRequest) HttpWebRequest.Create(URL);
                 req.ContentType = "text/xml";
                 req.Method = "POST";
                 req.Timeout = 30000;
@@ -600,12 +631,13 @@ namespace Dorado.Configuration
                 }
 
                 RemoteConfigManagerDTO lstOutput;
-                HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
+                HttpWebResponse rsp = (HttpWebResponse) req.GetResponse();
                 using (Stream stream = rsp.GetResponseStream())
                 {
-                    lstOutput = (RemoteConfigManagerDTO)ser.Deserialize(stream);
+                    lstOutput = (RemoteConfigManagerDTO) ser.Deserialize(stream);
                     stream.Close();
                 }
+
                 rsp.Close();
 
                 if (lstOutput.Operation.Result)
@@ -617,27 +649,37 @@ namespace Dorado.Configuration
             {
                 LoggerWrapper.Logger.Error(ex);
             }
+
             return dt;
         }
 
-        public void CreateMinor(TreeNode node, byte[] cfg)
+        public bool CreateMinor(string application, string sectionName, int major, String cfg)
         {
-            RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO();
+            return CreateMinor(application, sectionName, major, Encoding.UTF8.GetBytes(cfg));
+        }
 
-            remoteConfigManagerDto.Operation.OperatorID = "";
-
-            remoteConfigManagerDto.Operation.Command = "createMinor";
-            remoteConfigManagerDto.Operation.Condition = node.Value;
-            remoteConfigManagerDto.Operation.Value = cfg;
+        public bool CreateMinor(string application, string sectionName, int major, byte[] cfg)
+        {
             try
             {
-                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] + "ConfigManagerHandler.ashx";
+                RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO
+                {
+                    Operation =
+                    {
+                        Command = "createMinor",
+                        Condition = String.Format("{0}/{1}/{2}", application, sectionName, major),
+                        Value = cfg
+                    }
+                };
+
+                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] +
+                             "ConfigManagerHandler.ashx";
 
                 MemoryStream ms = new MemoryStream();
                 XmlSerializer ser = new XmlSerializer(typeof(RemoteConfigManagerDTO));
                 ser.Serialize(ms, remoteConfigManagerDto);
 
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(URL);
+                HttpWebRequest req = (HttpWebRequest) HttpWebRequest.Create(URL);
                 req.ContentType = "text/xml";
                 req.Method = "POST";
                 req.Timeout = 30000;
@@ -653,12 +695,13 @@ namespace Dorado.Configuration
                 }
 
                 RemoteConfigManagerDTO lstOutput;
-                HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
+                HttpWebResponse rsp = (HttpWebResponse) req.GetResponse();
                 using (Stream stream = rsp.GetResponseStream())
                 {
-                    lstOutput = (RemoteConfigManagerDTO)ser.Deserialize(stream);
+                    lstOutput = (RemoteConfigManagerDTO) ser.Deserialize(stream);
                     stream.Close();
                 }
+
                 rsp.Close();
 
                 if (lstOutput.Operation.Result)
@@ -669,28 +712,36 @@ namespace Dorado.Configuration
                 {
                     LoggerWrapper.Logger.Error(lstOutput.Operation.ResultInfo);
                 }
+
+                return true;
             }
             catch (Exception ex)
             {
                 LoggerWrapper.Logger.Error(ex);
             }
+
+            return false;
         }
 
-        public bool DeleteConfig(string value)
+        public bool DeleteConfig(string application, String sectionName)
         {
+            String condition = Path.Combine(string.Compare(application, NoAppPath) == 0 ? NoAppPath : application,
+                sectionName);
+
             bool result = true;
             RemoteConfigManagerDTO remoteConfigManagerDto = new RemoteConfigManagerDTO();
             remoteConfigManagerDto.Operation.Command = "deleteConfig";
-            remoteConfigManagerDto.Operation.Condition = value;
+            remoteConfigManagerDto.Operation.Condition = condition;
             try
             {
-                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] + "ConfigManagerHandler.ashx";
+                string URL = System.Configuration.ConfigurationManager.AppSettings["remoteConfigurationManagerUrl"] +
+                             "ConfigManagerHandler.ashx";
 
                 MemoryStream ms = new MemoryStream();
                 XmlSerializer ser = new XmlSerializer(typeof(RemoteConfigManagerDTO));
                 ser.Serialize(ms, remoteConfigManagerDto);
 
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(URL);
+                HttpWebRequest req = (HttpWebRequest) HttpWebRequest.Create(URL);
                 req.ContentType = "text/xml";
                 req.Method = "POST";
                 req.Timeout = 30000;
@@ -706,12 +757,13 @@ namespace Dorado.Configuration
                 }
 
                 RemoteConfigManagerDTO lstOutput;
-                HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
+                HttpWebResponse rsp = (HttpWebResponse) req.GetResponse();
                 using (Stream stream = rsp.GetResponseStream())
                 {
-                    lstOutput = (RemoteConfigManagerDTO)ser.Deserialize(stream);
+                    lstOutput = (RemoteConfigManagerDTO) ser.Deserialize(stream);
                     stream.Close();
                 }
+
                 rsp.Close();
 
                 if (!lstOutput.Operation.Result)
@@ -721,18 +773,18 @@ namespace Dorado.Configuration
             {
                 LoggerWrapper.Logger.Error(ex);
             }
+
             return result;
         }
 
-        public int CompareSection(RemoteConfigSectionParam rcsp1, RemoteConfigSectionParam rcsp2)
+        private int CompareSection(RemoteConfigSectionParam rcsp1, RemoteConfigSectionParam rcsp2)
         {
             if (rcsp1.MajorVersion == rcsp2.MajorVersion)
                 return rcsp2.MinorVersion - rcsp1.MinorVersion;
-            else
-                return rcsp2.MajorVersion - rcsp1.MajorVersion;
+            return rcsp2.MajorVersion - rcsp1.MajorVersion;
         }
 
-        public int GetAppCount(RemoteConfigSectionCollection configs, string curSectionName)
+        private int GetAppCount(RemoteConfigSectionCollection configs, string curSectionName)
         {
             int num = 0;
             foreach (RemoteConfigSectionParam current in configs.Sections)
@@ -743,6 +795,7 @@ namespace Dorado.Configuration
                     num++;
                 }
             }
+
             return num;
         }
 

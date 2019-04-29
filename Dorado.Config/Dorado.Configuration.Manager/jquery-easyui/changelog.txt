@@ -2,10 +2,12 @@ Version 1.7.x
 -------------
 * Bug
  * treegrid: The 'pageNumber' can't be initialized with the specified value. fixed.
+ * checkbox: The disabled checkbox has no disabled label. fixed.
 * Improvement
  * switchbutton: Add the 'label','labelAlign','labelPosition','labelWidth' properties.
  * switchbutton: Accept 'tabindex' attribute to get focus when the user press TAB key.
  * form: The 'onChange' event is available for all the form component.
+ * calendar: The 'Date' property is available to support the hijri date.
 
 Version 1.7.0
 -------------

@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.7.5
+ * EasyUI for jQuery 1.7.6
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -102,9 +102,11 @@ _22.disabled=_20;
 if(_20){
 $(_1f).add(rv)._propAttr("disabled",true);
 _23.addClass("checkbox-disabled");
+$(_21.label).addClass("textbox-label-disabled");
 }else{
 $(_1f).add(rv)._propAttr("disabled",false);
 _23.removeClass("checkbox-disabled");
+$(_21.label).removeClass("textbox-label-disabled");
 }
 };
 $.fn.checkbox=function(_24,_25){

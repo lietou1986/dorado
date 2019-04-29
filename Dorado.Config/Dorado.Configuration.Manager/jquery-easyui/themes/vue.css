@@ -49,10 +49,22 @@
 	-moz-align-items: center;
 	align-items: center;
 }
+.f-vcenter{
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+}
 .f-full{
 	-webkit-box-flex: 1 1 auto;
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+}
+.f-none{
+	-webkit-box-flex: none;
+	-ms-flex: none;
+	flex: none;
 }
 .f-hide{
 	display: none;
@@ -649,3 +661,21 @@
 	transform: translate3d(0, 100%, 0)
 }
 
+.form-field{
+	margin-bottom: 28px;
+}
+.form-field-haserror{
+	margin-bottom: 4px;
+}
+.form-field-error{
+	font-size: 14px;
+	color: #ed4014;
+	height: 24px;
+	line-height: 24px;
+}
+.form-field .f-field{
+	width: auto;
+	-webkit-box-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}

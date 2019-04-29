@@ -498,7 +498,9 @@
     <Content Include="jquery-easyui\locale\easyui-lang-ua.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-zh_CN.js" />
     <Content Include="jquery-easyui\locale\easyui-lang-zh_TW.js" />
+    <Content Include="jquery-easyui\plugins\copy.js" />
     <Content Include="jquery-easyui\plugins\jquery.accordion.js" />
+    <Content Include="jquery-easyui\plugins\jquery.calendar" />
     <Content Include="jquery-easyui\plugins\jquery.calendar.js" />
     <Content Include="jquery-easyui\plugins\jquery.checkbox.js" />
     <Content Include="jquery-easyui\plugins\jquery.combo.js" />

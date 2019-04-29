@@ -10,7 +10,7 @@ namespace Dorado.Configuration.ServerHost
     {
         private const string NoAppPath = "General";
 
-        static private string GetDownloadUrl(string sectionName, string applicationName, int major, int minor, int configType)
+        private static string GetDownloadUrl(string sectionName, string applicationName, int major, int minor, int configType)
         {
             string folder = string.Empty;
             switch (configType)
@@ -27,12 +27,6 @@ namespace Dorado.Configuration.ServerHost
                     }
             }
             return folder + "/" + sectionName + "/" + applicationName + "/" + major + "/" + sectionName + "." + minor;
-        }
-
-        private static string GetLocalFolderName(string sectionName, int major)
-        {
-            string baseFolder = System.Configuration.ConfigurationManager.AppSettings["publishFolder"];
-            return baseFolder + " \\" + sectionName + "\\" + major;
         }
 
         private int GetLastVersion(string sectionName, string applicationName, int major, out int configType, out bool exitAppConfig)
@@ -56,10 +50,8 @@ namespace Dorado.Configuration.ServerHost
                     configType = 0;
                     return -1;
                 }
-                else
-                {
-                    configType = 2;
-                }
+
+                configType = 2;
             }
             else
             {
@@ -83,10 +75,8 @@ namespace Dorado.Configuration.ServerHost
             {
                 return -1;
             }
-            else
-            {
-                return maxMinor;
-            }
+
+            return maxMinor;
         }
 
         public void ProcessRequest(HttpContext context)
@@ -102,7 +92,7 @@ namespace Dorado.Configuration.ServerHost
             bool exitAppConfig = false;
             foreach (RemoteConfigSectionParam param in rcc)
             {
-                var configType = 0;
+                int configType;
                 if (!string.IsNullOrEmpty(rcc.Application))
                 {
                     int minor = GetLastVersion(param.SectionName, rcc.Application, param.MajorVersion, out configType, out exitAppConfig);
@@ -113,7 +103,7 @@ namespace Dorado.Configuration.ServerHost
                         continue;
                     }
                 }
-                //如果指定了应用程序，且应用程序有配置文件，就不再处理默认配置文件
+                //濡傛灉鎸囧畾浜嗗簲鐢ㄧ▼搴忥紝涓斿簲鐢ㄧ▼搴忔湁閰嶇疆鏂囦欢锛屽氨涓嶅啀澶勭悊榛樿閰嶇疆鏂囦欢
                 if (exitAppConfig) continue;
                 int minor2 = GetLastVersion(param.SectionName, NoAppPath, param.MajorVersion, out configType, out exitAppConfig);
                 if (minor2 > param.MinorVersion)
@@ -127,12 +117,6 @@ namespace Dorado.Configuration.ServerHost
             xser.Serialize(context.Response.OutputStream, ret);
         }
 
-        public bool IsReusable
-        {
-            get
-            {
-                return false;
-            }
-        }
+        public bool IsReusable => false;
     }
 }
