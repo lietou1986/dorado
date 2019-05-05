@@ -30,7 +30,7 @@ namespace Dorado.Core.Data
     }
 
     /// <summary>
-    /// DataArrayRow µÄÕªÒªËµÃ÷¡£
+    /// DataArrayRow çš„æ‘˜è¦è¯´æ˜ã€‚
     /// </summary>
     public class DataArrayRows : IEnumerable, IEnumerator
     {
@@ -58,7 +58,7 @@ namespace Dorado.Core.Data
             }
         }
 
-        #region IEnumerator ³ÉÔ±
+        #region IEnumerator æˆå‘˜
 
         public void Reset()
         {
@@ -99,15 +99,15 @@ namespace Dorado.Core.Data
             return false;
         }
 
-        #endregion IEnumerator ³ÉÔ±
+        #endregion IEnumerator æˆå‘˜
 
-        #region IEnumerable ³ÉÔ±
+        #region IEnumerable æˆå‘˜
 
         public IEnumerator GetEnumerator()
         {
             return this;
         }
 
-        #endregion IEnumerable ³ÉÔ±
+        #endregion IEnumerable æˆå‘˜
     }
 }

@@ -10,7 +10,7 @@ using System.Text;
 namespace Dorado.Core.Data
 {
     /// <summary>
-    /// Sql Sever Êı¾İ¿âÁ¬½ÓÀà¡£
+    /// Sql Sever æ•°æ®åº“è¿æ¥ç±»ã€‚
     /// </summary>
     public class Conn : IConn
     {
@@ -34,7 +34,7 @@ namespace Dorado.Core.Data
         {
             if (!connectionString.HasValue())
             {
-                throw new CoreException("Êı¾İ¿âÁ¬½Ó´®²»ÄÜÎª¿Õ");
+                throw new CoreException("æ•°æ®åº“è¿æ¥ä¸²ä¸èƒ½ä¸ºç©º");
             }
             CommandTimeOut = commandTimeOut;
             _default = connectionString;
@@ -42,7 +42,7 @@ namespace Dorado.Core.Data
         }
 
         /// <summary>
-        /// µ±Ç°²éÑ¯¼¯Ãû³Æ
+        /// å½“å‰æŸ¥è¯¢é›†åç§°
         /// </summary>
         public string Name
         {
@@ -52,7 +52,7 @@ namespace Dorado.Core.Data
             }
             set
             {
-                if (value == null) throw new CoreException("¶Ô²»Æğ£¬ConnÁ¬½ÓÃû³Æ²»ÄÜÎª¿Õ£¡");
+                if (value == null) throw new CoreException("å¯¹ä¸èµ·ï¼ŒConnè¿æ¥åç§°ä¸èƒ½ä¸ºç©ºï¼");
                 _name = value;
             }
         }
@@ -64,7 +64,7 @@ namespace Dorado.Core.Data
             get { return _top; }
             set
             {
-                if (value <= 0) throw new CoreException("Top²»ÄÜÎª¸ºÖµºÍÁã!");
+                if (value <= 0) throw new CoreException("Topä¸èƒ½ä¸ºè´Ÿå€¼å’Œé›¶!");
                 _top = value;
             }
         }
@@ -86,7 +86,7 @@ namespace Dorado.Core.Data
                 if (value >= 0)
                     _pagesize = value;
                 else
-                    throw new CoreException("Ã¿Ò³ÏÔÊ¾ÌõÊı±ØĞëÎªÕıÖµ!");
+                    throw new CoreException("æ¯é¡µæ˜¾ç¤ºæ¡æ•°å¿…é¡»ä¸ºæ­£å€¼!");
             }
         }
 
@@ -98,7 +98,7 @@ namespace Dorado.Core.Data
                 if (value >= 0)
                     _maxcount = value;
                 else
-                    throw new CoreException("¼ÇÂ¼¼¯×ÜÊı²»ÄÜÎª¸ºÖµ!");
+                    throw new CoreException("è®°å½•é›†æ€»æ•°ä¸èƒ½ä¸ºè´Ÿå€¼!");
             }
         }
 
@@ -168,7 +168,7 @@ namespace Dorado.Core.Data
 
         public Conn Add(string name, string sql)
         {
-            if (name == null) throw new CoreException("¶Ô²»Æğ£¬Ìí¼ÓÊı¾İ¼¯Ê±£¬Ãû³Æ²»ÄÜÎª¿Õ£¡");
+            if (name == null) throw new CoreException("å¯¹ä¸èµ·ï¼Œæ·»åŠ æ•°æ®é›†æ—¶ï¼Œåç§°ä¸èƒ½ä¸ºç©ºï¼");
             if (_batchName == null)
             {
                 _batchName = new ArrayList();
@@ -188,9 +188,9 @@ namespace Dorado.Core.Data
         }
 
         /// <summary>
-        /// ¸Ä³ÉÁ¬½ÓµÄÊı¾İ¿â
+        /// æ”¹æˆè¿æ¥çš„æ•°æ®åº“
         /// </summary>
-        /// <param name="databaseName">Êı¾İ¿âÃû</param>
+        /// <param name="databaseName">æ•°æ®åº“å</param>
         public Conn ChangeDatabase(string databaseName)
         {
             Open();
@@ -549,7 +549,7 @@ namespace Dorado.Core.Data
             return this;
         }
 
-        //Éú³ÉÅÅĞòSql×Ö·û´®
+        //ç”Ÿæˆæ’åºSqlå­—ç¬¦ä¸²
         private string _order
         {
             get
@@ -620,7 +620,7 @@ namespace Dorado.Core.Data
 
         public DataArrayList SelectBatch(DataArrayList list)
         {
-            if (_batchName == null) throw new CoreException("Äú»¹Ã»ÓĞÖ¸¶¨ÈÎºÎ²éÑ¯Óï¾ä£¡");
+            if (_batchName == null) throw new CoreException("æ‚¨è¿˜æ²¡æœ‰æŒ‡å®šä»»ä½•æŸ¥è¯¢è¯­å¥ï¼");
             if (list == null) list = new DataArrayList();
             StringBuilder sb = new StringBuilder();
             foreach (object t in _batchSql)
@@ -663,7 +663,7 @@ namespace Dorado.Core.Data
             }
             catch (SqlException ex)
             {
-                LoggerWrapper.Logger.Error("Conn.SelectBacth·¢Éú´íÎó£º", ex);
+                LoggerWrapper.Logger.Error("Conn.SelectBacthå‘ç”Ÿé”™è¯¯ï¼š", ex);
             }
             finally
             {
@@ -682,7 +682,7 @@ namespace Dorado.Core.Data
 
         public DataArrayList SelectAll(DataArrayList list)
         {
-            if (_batchName == null) throw new CoreException("Äú»¹Ã»ÓĞÖ¸¶¨ÈÎºÎ²éÑ¯Óï¾ä£¡");
+            if (_batchName == null) throw new CoreException("æ‚¨è¿˜æ²¡æœ‰æŒ‡å®šä»»ä½•æŸ¥è¯¢è¯­å¥ï¼");
             if (list == null) list = new DataArrayList();
             Open();
             StringBuilder error = new StringBuilder();
@@ -700,7 +700,7 @@ namespace Dorado.Core.Data
                 }
                 catch (SqlException ex)
                 {
-                    error.Append("´íÎó£º" + ex.Message + "\n" + _batchSql[i].ToString() + "\n");
+                    error.Append("é”™è¯¯ï¼š" + ex.Message + "\n" + _batchSql[i].ToString() + "\n");
                 }
                 finally
                 {
@@ -710,7 +710,7 @@ namespace Dorado.Core.Data
             }
             if (error.Length > 0)
             {
-                LoggerWrapper.Logger.Error("Conn.SelectAll·¢Éú´íÎó£º\r\n" + error.ToString());
+                LoggerWrapper.Logger.Error("Conn.SelectAllå‘ç”Ÿé”™è¯¯ï¼š\r\n" + error.ToString());
             }
             _batchName.Clear();
             _batchSql.Clear();
@@ -743,11 +743,11 @@ namespace Dorado.Core.Data
             return ret.ToString();
         }
 
-        #region ¼òµ¥²éÑ¯ Select
+        #region ç®€å•æŸ¥è¯¢ Select
 
         public string Sql()
         {
-            if (_tablename == null) throw new CoreException("¶Ô²»Æğ£¬ÄúÃ»ÓĞÖ¸¶¨±íÃû£¡");
+            if (_tablename == null) throw new CoreException("å¯¹ä¸èµ·ï¼Œæ‚¨æ²¡æœ‰æŒ‡å®šè¡¨åï¼");
             return "select"
                 + (_top > 0 ? " top " + _top : string.Empty) + " "
                 + Fld()
@@ -783,7 +783,7 @@ namespace Dorado.Core.Data
             }
             catch (SqlException ex)
             {
-                LoggerWrapper.Logger.Error("Conn.Select·¢Éú´íÎó£º" + sql, ex);
+                LoggerWrapper.Logger.Error("Conn.Selectå‘ç”Ÿé”™è¯¯ï¼š" + sql, ex);
                 throw;
             }
             finally
@@ -795,9 +795,9 @@ namespace Dorado.Core.Data
             return data;
         }
 
-        #endregion ¼òµ¥²éÑ¯ Select
+        #endregion ç®€å•æŸ¥è¯¢ Select
 
-        #region ÓÎ±ê·ÖÒ³²éÑ¯ SelectCursor
+        #region æ¸¸æ ‡åˆ†é¡µæŸ¥è¯¢ SelectCursor
 
         private string SqlCursor(string sql, bool isLimitPageIndex)
         {
@@ -855,7 +855,7 @@ namespace Dorado.Core.Data
             }
             catch (SqlException ex)
             {
-                LoggerWrapper.Logger.Error("Conn.SelectCursor·¢Éú´íÎó£º" + sql, ex);
+                LoggerWrapper.Logger.Error("Conn.SelectCursorå‘ç”Ÿé”™è¯¯ï¼š" + sql, ex);
                 throw ex;
             }
             finally
@@ -866,9 +866,9 @@ namespace Dorado.Core.Data
             return data;
         }
 
-        #endregion ÓÎ±ê·ÖÒ³²éÑ¯ SelectCursor
+        #endregion æ¸¸æ ‡åˆ†é¡µæŸ¥è¯¢ SelectCursor
 
-        #region RowNumber·ÖÒ³²éÑ¯ SelectPage
+        #region RowNumberåˆ†é¡µæŸ¥è¯¢ SelectPage
 
         private string SqlRowNumber()
         {
@@ -912,7 +912,7 @@ namespace Dorado.Core.Data
             }
             catch (SqlException ex)
             {
-                LoggerWrapper.Logger.Error("Conn.SelectPage·¢Éú´íÎó£º" + sql, ex);
+                LoggerWrapper.Logger.Error("Conn.SelectPageå‘ç”Ÿé”™è¯¯ï¼š" + sql, ex);
                 throw;
             }
             finally
@@ -923,7 +923,7 @@ namespace Dorado.Core.Data
             return data;
         }
 
-        #endregion RowNumber·ÖÒ³²éÑ¯ SelectPage
+        #endregion RowNumberåˆ†é¡µæŸ¥è¯¢ SelectPage
 
         public void Dispose()
         {

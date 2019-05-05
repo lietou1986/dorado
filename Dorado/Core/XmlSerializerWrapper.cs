@@ -13,29 +13,38 @@ namespace Dorado.Core
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="indentRequired"></param>
-        /// <param name="headRequired"></param>
+        /// <param name="omitXmlDeclaration"></param>
         /// <returns></returns>
-        public static string Export(T obj, bool indentRequired = false, bool headRequired = false)
+        public static string Export(T obj, bool indentRequired = false, bool omitXmlDeclaration = false,
+            bool removeBom = true)
         {
             XmlSerializer serializer = new XmlSerializer(obj.GetType());
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = indentRequired;
+            settings.Encoding = new UTF8Encoding(false);
             if (indentRequired)
             {
                 settings.IndentChars = "    ";
-                settings.NewLineChars = "\r\n";
+                settings.NewLineChars = Environment.NewLine;
             }
-            settings.OmitXmlDeclaration = headRequired;
-            using (MemoryStream stream = new MemoryStream())
+
+            settings.OmitXmlDeclaration = omitXmlDeclaration;
+            using (MemoryStream ms = new MemoryStream())
             {
-                using (XmlWriter xmlWriter = XmlWriter.Create(stream, settings))
+                using (XmlWriter xmlWriter = XmlWriter.Create(ms, settings))
                 {
                     // 强制指定命名空间，覆盖默认的命名空间
                     XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
                     namespaces.Add(string.Empty, string.Empty);
                     serializer.Serialize(xmlWriter, obj, namespaces);
-                };
-                return GetUTF8NoBOMString(stream.GetBuffer());
+                }
+
+                if (removeBom)
+                {
+                    return GetUTF8NoBOMString(ms.ToArray());
+                }
+
+                return Encoding.UTF8.GetString(ms.ToArray());
             }
         }
 
@@ -46,9 +55,10 @@ namespace Dorado.Core
         /// <param name="indentRequired"></param>
         /// <param name="headRequired"></param>
         /// <returns></returns>
-        public static byte[] ExportBuffer(T obj, bool indentRequired = false, bool headRequired = false)
+        public static byte[] ExportBuffer(T obj, bool indentRequired = false, bool omitXmlDeclaration = false,
+            bool removeBom = true)
         {
-            return Encoding.UTF8.GetBytes(Export(obj, indentRequired, headRequired));
+            return Encoding.UTF8.GetBytes(Export(obj, indentRequired, omitXmlDeclaration, removeBom));
         }
 
         /// <summary>
@@ -64,9 +74,9 @@ namespace Dorado.Core
             using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(xml)))
             {
                 XmlSerializer ser = new XmlSerializer(typeof(T), new Type[]
-                    {
-                    });
-                return (T)ser.Deserialize(stream);
+                {
+                });
+                return (T) ser.Deserialize(stream);
             }
         }
 
@@ -85,7 +95,7 @@ namespace Dorado.Core
                 return Encoding.UTF8.GetString(buffer);
             }
 
-            byte[] bomBuffer = new byte[] { 0xef, 0xbb, 0xbf };
+            byte[] bomBuffer = {0xef, 0xbb, 0xbf};
 
             if (buffer[0] == bomBuffer[0] && buffer[1] == bomBuffer[1] && buffer[2] == bomBuffer[2])
             {

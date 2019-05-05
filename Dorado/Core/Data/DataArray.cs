@@ -12,9 +12,9 @@ namespace Dorado.Core.Data
     [Serializable]
     public class DataArray : IXmlSerializable, IEnumerable, ICloneable
     {
-        private int _rowsize;//µ±Ç°¶¨ÒåµÄĞĞÊı
+        private int _rowsize;//å½“å‰å®šä¹‰çš„è¡Œæ•°
         private int _count;
-        private int _pagesize;  //Ã¿Ò³ÏÔÊ¾Êı¾İ
+        private int _pagesize;  //æ¯é¡µæ˜¾ç¤ºæ•°æ®
         private bool _reading;
 
         public DataArray()
@@ -264,9 +264,9 @@ namespace Dorado.Core.Data
 
         public string PageTurn(string head, int scale, object para, string key)
         {
-            if (MaxCount <= 0) return "Ã»ÓĞÕÒµ½Ïà¹Ø¼ÇÂ¼";
+            if (MaxCount <= 0) return "æ²¡æœ‰æ‰¾åˆ°ç›¸å…³è®°å½•";
             int MaxPage = (MaxCount - 1) / PageSize + 1;
-            if (MaxPage == 1) return "<font color=#ff0000>¹² 1 Ò³</font>";
+            if (MaxPage == 1) return "<font color=#ff0000>å…± 1 é¡µ</font>";
 
             string url = string.Empty;
             string query = string.Empty;
@@ -284,7 +284,7 @@ namespace Dorado.Core.Data
 
             StringBuilder sb = new StringBuilder();
 
-            if (Page > 1) sb.Append("<a href=\"" + head + "-" + query + (Page - 1).ToString() + url + "\">ÉÏÒ»Ò³</a> ");
+            if (Page > 1) sb.Append("<a href=\"" + head + "-" + query + (Page - 1).ToString() + url + "\">ä¸Šä¸€é¡µ</a> ");
             for (int i = prev; i < Page; i++)
             {
                 sb.Append("<a href=\"" + head + "-" + query + i.ToString() + url + "\">[" + i.ToString() + "]</a> ");
@@ -294,15 +294,15 @@ namespace Dorado.Core.Data
             {
                 sb.Append("<a href=\"" + head + "-" + query + i.ToString() + url + "\">[" + i.ToString() + "]</a> ");
             }
-            if (Page < MaxPage) sb.Append("<a href=\"" + head + "-" + query + (Page + 1).ToString() + url + "\">ÏÂÒ»Ò³</a> ");
+            if (Page < MaxPage) sb.Append("<a href=\"" + head + "-" + query + (Page + 1).ToString() + url + "\">ä¸‹ä¸€é¡µ</a> ");
 
             return sb.ToString();
         }
 
         public string PageTurn(string head, int page, int maxPage, int scale, object para)
         {
-            if (maxPage <= 0) return "Ã»ÓĞÕÒµ½Ïà¹Ø¼ÇÂ¼";
-            if (maxPage == 1) return "<font color=#ff0000>¹² 1 Ò³</font>";
+            if (maxPage <= 0) return "æ²¡æœ‰æ‰¾åˆ°ç›¸å…³è®°å½•";
+            if (maxPage == 1) return "<font color=#ff0000>å…± 1 é¡µ</font>";
 
             string url = "";
 
@@ -318,7 +318,7 @@ namespace Dorado.Core.Data
             string addr = head + "?";
             StringBuilder sb = new StringBuilder();
 
-            if (page > 1) sb.Append("<a href=\"" + addr + url + "page=" + (page - 1).ToString() + "\">ÉÏÒ»Ò³</a> ");
+            if (page > 1) sb.Append("<a href=\"" + addr + url + "page=" + (page - 1).ToString() + "\">ä¸Šä¸€é¡µ</a> ");
             for (int i = prev; i < page; i++)
             {
                 sb.Append("<a href=\"" + addr + url + "page=" + i.ToString() + "\">[" + i.ToString() + "]</a> ");
@@ -328,7 +328,7 @@ namespace Dorado.Core.Data
             {
                 sb.Append("<a href=\"" + addr + url + "page=" + i.ToString() + "\">[" + i.ToString() + "]</a> ");
             }
-            if (page < maxPage) sb.Append("<a href=\"" + addr + url + "page=" + (page + 1).ToString() + "\">ÏÂÒ»Ò³</a> ");
+            if (page < maxPage) sb.Append("<a href=\"" + addr + url + "page=" + (page + 1).ToString() + "\">ä¸‹ä¸€é¡µ</a> ");
 
             return sb.ToString();
         }
@@ -640,7 +640,7 @@ namespace Dorado.Core.Data
             return ret.ToString();
         }
 
-        #region IXmlSerializable   ³ÉÔ±
+        #region IXmlSerializable   æˆå‘˜
 
         public void WriteXml(XmlWriter writer)
         {
@@ -745,9 +745,9 @@ namespace Dorado.Core.Data
             Cursor = 0;
         }
 
-        #endregion IXmlSerializable   ³ÉÔ±
+        #endregion IXmlSerializable   æˆå‘˜
 
-        #region ICloneable ³ÉÔ±
+        #region ICloneable æˆå‘˜
 
         public object Clone()
         {
@@ -764,15 +764,15 @@ namespace Dorado.Core.Data
             return data;
         }
 
-        #endregion ICloneable ³ÉÔ±
+        #endregion ICloneable æˆå‘˜
 
-        #region IEnumerable ³ÉÔ±
+        #region IEnumerable æˆå‘˜
 
         public IEnumerator GetEnumerator()
         {
             return new DataArrayRows(this);
         }
 
-        #endregion IEnumerable ³ÉÔ±
+        #endregion IEnumerable æˆå‘˜
     }
 }

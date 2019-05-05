@@ -24,7 +24,7 @@ namespace Dorado.Core.Data
     }
 
     /// <summary>
-    /// ConnÁ¬½Ó»ù´¡Àà
+    /// Connè¿æ¥åŸºç¡€ç±»
     /// </summary>
     public static class ConnExtension
     {

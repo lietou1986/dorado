@@ -76,7 +76,7 @@ namespace Dorado.Core.Data
         public DataArray Rename(string old, string name)
         {
             TreeNameNode node = _tree.Rename(old, name);
-            if (node == null) throw new ApplicationException("´Ó" + old + "¸ÄÃû" + name + "Ã»ÓĞ³É¹¦£¡");
+            if (node == null) throw new ApplicationException("ä»" + old + "æ”¹å" + name + "æ²¡æœ‰æˆåŠŸï¼");
             return (DataArray)node.Data;
         }
 
@@ -88,7 +88,7 @@ namespace Dorado.Core.Data
             }
         }
 
-        #region IXmlSerializable   ³ÉÔ±
+        #region IXmlSerializable   æˆå‘˜
 
         public void WriteXml(XmlWriter writer)
         {
@@ -151,9 +151,9 @@ namespace Dorado.Core.Data
             ReadXml(reader);
         }
 
-        #endregion IXmlSerializable   ³ÉÔ±
+        #endregion IXmlSerializable   æˆå‘˜
 
-        #region ICloneable ³ÉÔ±
+        #region ICloneable æˆå‘˜
 
         public object Clone()
         {
@@ -162,9 +162,9 @@ namespace Dorado.Core.Data
             return cols;
         }
 
-        #endregion ICloneable ³ÉÔ±
+        #endregion ICloneable æˆå‘˜
 
-        #region IEnumerator ³ÉÔ±
+        #region IEnumerator æˆå‘˜
 
         public void Reset()
         {
@@ -186,9 +186,9 @@ namespace Dorado.Core.Data
             return _tree.MoveNext();
         }
 
-        #endregion IEnumerator ³ÉÔ±
+        #endregion IEnumerator æˆå‘˜
 
-        #region IEnumerable ³ÉÔ±
+        #region IEnumerable æˆå‘˜
 
         public IEnumerator GetEnumerator()
         {
@@ -196,6 +196,6 @@ namespace Dorado.Core.Data
             return this;
         }
 
-        #endregion IEnumerable ³ÉÔ±
+        #endregion IEnumerable æˆå‘˜
     }
 }

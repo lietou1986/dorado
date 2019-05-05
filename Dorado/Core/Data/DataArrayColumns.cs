@@ -12,12 +12,12 @@ namespace Dorado.Core.Data
     [Serializable]
     public class DataArrayColumn : IConvertible
     {
-        internal string _name;      //Ãû³Æ
-        internal int _hash;         //¹şÏ£Âë
-        internal int _cursor;       //ÏÂ±ê
-        internal object _type;      //ÀàĞÍ
-        internal object _data;      //Êı¾İ
-        internal DataArrayColumns _columns; //Ïà¹ØÁªµÄDataArray
+        internal string _name;      //åç§°
+        internal int _hash;         //å“ˆå¸Œç 
+        internal int _cursor;       //ä¸‹æ ‡
+        internal object _type;      //ç±»å‹
+        internal object _data;      //æ•°æ®
+        internal DataArrayColumns _columns; //ç›¸å…³è”çš„DataArray
         internal DataArrayColumn Left;
         internal DataArrayColumn Right;
 
@@ -95,7 +95,7 @@ namespace Dorado.Core.Data
                     break;
 
                 default:
-                    throw new ApplicationException("¶Ô²»Æğ£¬DataArrayColumnÊÇ" + type.Name + "ÀàĞÍ£¡");
+                    throw new ApplicationException("å¯¹ä¸èµ·ï¼ŒDataArrayColumnæ˜¯" + type.Name + "ç±»å‹ï¼");
             }
             Left = null;
             Right = null;
@@ -1939,7 +1939,7 @@ namespace Dorado.Core.Data
             return this;
         }
 
-        #region IConvertible ³ÉÔ±
+        #region IConvertible æˆå‘˜
 
         public ulong ToUInt64(IFormatProvider provider)
         {
@@ -2870,7 +2870,7 @@ namespace Dorado.Core.Data
             return Type.GetTypeCode((Type)_type);
         }
 
-        #endregion IConvertible ³ÉÔ±
+        #endregion IConvertible æˆå‘˜
 
         public DataArrayColumn Replace(string old, string value)
         {
@@ -3055,7 +3055,7 @@ namespace Dorado.Core.Data
         public DataArrayColumn Rename(string old, string name)
         {
             TreeNameNode node = _tree.Rename(old, name);
-            if (node == null) throw new ApplicationException("´Ó" + old + "¸ÄÃû" + name + "Ã»ÓĞ³É¹¦£¡");
+            if (node == null) throw new ApplicationException("ä»" + old + "æ”¹å" + name + "æ²¡æœ‰æˆåŠŸï¼");
             return (DataArrayColumn)node.Data;
         }
 
@@ -3078,7 +3078,7 @@ namespace Dorado.Core.Data
             }
         }
 
-        #region ICloneable ³ÉÔ±
+        #region ICloneable æˆå‘˜
 
         public object Clone()
         {
@@ -3087,9 +3087,9 @@ namespace Dorado.Core.Data
             return cols;
         }
 
-        #endregion ICloneable ³ÉÔ±
+        #endregion ICloneable æˆå‘˜
 
-        #region IEnumerator ³ÉÔ±
+        #region IEnumerator æˆå‘˜
 
         public void Reset()
         {
@@ -3113,9 +3113,9 @@ namespace Dorado.Core.Data
             return _tree.MoveNext();
         }
 
-        #endregion IEnumerator ³ÉÔ±
+        #endregion IEnumerator æˆå‘˜
 
-        #region IEnumerable ³ÉÔ±
+        #region IEnumerable æˆå‘˜
 
         public IEnumerator GetEnumerator()
         {
@@ -3123,6 +3123,6 @@ namespace Dorado.Core.Data
             return this;
         }
 
-        #endregion IEnumerable ³ÉÔ±
+        #endregion IEnumerable æˆå‘˜
     }
 }
