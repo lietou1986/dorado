@@ -194,6 +194,16 @@ namespace Dorado.Core.Data
             return ToInt64(null);
         }
 
+        public string GetValue(string defaultValue = "")
+        {
+            string v = ToString(null);
+            if (string.IsNullOrWhiteSpace(v))
+            {
+                return defaultValue;
+            }
+            return v;
+        }
+
         public override string ToString()
         {
             return ToString(null);
