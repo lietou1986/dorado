@@ -47,7 +47,7 @@ namespace <%=NamePlaceName%>.Services.Data
             field=data[Field.<%=column.Name%>];
             <%if(!column.AllowDBNull&&!IsHasDefaultValue(column)) {%>
 			if (field == null || strict && string.IsNullOrWhiteSpace(field.ToString()))
-				throw new ApplicationException("请您输入<%=GetColumnDescription(column)%>");
+				throw new ApplicationException("<%=GetColumnDescription(column)%>不能为空");
 
 			fld.Append(Field.<%=column.Name%> + "," );
 			var.Append(field<%=GetTranType(column)%> + "," );
