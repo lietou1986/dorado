@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.7.6
+ * EasyUI for jQuery 1.8.1
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -50,98 +50,109 @@ $(_8.label).remove();
 }
 $(_7).checkbox("setValue",_9.value);
 _d(_7,_9.checked);
-_e(_7,_9.disabled);
+_e(_7,_9.readonly);
+_f(_7,_9.disabled);
 };
-function _f(_10){
-var _11=$.data(_10,"checkbox");
-var _12=_11.options;
-var _13=_11.checkbox;
-_13.unbind(".checkbox").bind("click.checkbox",function(){
-if(!_12.disabled){
-_d(_10,!_12.checked);
+function _10(_11){
+var _12=$.data(_11,"checkbox");
+var _13=_12.options;
+var _14=_12.checkbox;
+_14.unbind(".checkbox").bind("click.checkbox",function(){
+if(!_13.disabled&&!_13.readonly){
+_d(_11,!_13.checked);
 }
 });
 };
-function _14(_15){
-var _16=$.data(_15,"checkbox");
-var _17=_16.options;
-var _18=_16.checkbox;
-_18._size(_17,_18.parent());
-if(_17.label&&_17.labelPosition){
-if(_17.labelPosition=="top"){
-_16.label._size({width:_17.labelWidth},_18);
+function _15(_16){
+var _17=$.data(_16,"checkbox");
+var _18=_17.options;
+var _19=_17.checkbox;
+_19._size(_18,_19.parent());
+if(_18.label&&_18.labelPosition){
+if(_18.labelPosition=="top"){
+_17.label._size({width:_18.labelWidth},_19);
 }else{
-_16.label._size({width:_17.labelWidth,height:_18.outerHeight()},_18);
-_16.label.css("lineHeight",_18.outerHeight()+"px");
+_17.label._size({width:_18.labelWidth,height:_19.outerHeight()},_19);
+_17.label.css("lineHeight",_19.outerHeight()+"px");
 }
 }
 };
-function _d(_19,_1a){
-var _1b=$.data(_19,"checkbox");
-var _1c=_1b.options;
-var _1d=_1b.checkbox;
-_1d.find(".checkbox-value")._propAttr("checked",_1a);
-var _1e=_1d.find(".checkbox-inner").css("display",_1a?"":"none");
-if(_1a){
-_1e.addClass("checkbox-checked");
+function _d(_1a,_1b){
+var _1c=$.data(_1a,"checkbox");
+var _1d=_1c.options;
+var _1e=_1c.checkbox;
+_1e.find(".checkbox-value")._propAttr("checked",_1b);
+var _1f=_1e.find(".checkbox-inner").css("display",_1b?"":"none");
+if(_1b){
+_1f.addClass("checkbox-checked");
 }else{
-_1e.removeClass("checkbox-checked");
+_1f.removeClass("checkbox-checked");
 }
-if(_1c.checked!=_1a){
-_1c.checked=_1a;
-_1c.onChange.call(_19,_1a);
-$(_19).closest("form").trigger("_change",[_19]);
+if(_1d.checked!=_1b){
+_1d.checked=_1b;
+_1d.onChange.call(_1a,_1b);
+$(_1a).closest("form").trigger("_change",[_1a]);
 }
 };
-function _e(_1f,_20){
-var _21=$.data(_1f,"checkbox");
-var _22=_21.options;
-var _23=_21.checkbox;
-var rv=_23.find(".checkbox-value");
-_22.disabled=_20;
-if(_20){
-$(_1f).add(rv)._propAttr("disabled",true);
-_23.addClass("checkbox-disabled");
-$(_21.label).addClass("textbox-label-disabled");
+function _e(_20,_21){
+var _22=$.data(_20,"checkbox");
+var _23=_22.options;
+_23.readonly=_21==undefined?true:_21;
+_22.checkbox.removeClass("checkbox-readonly").addClass(_23.readonly?"checkbox-readonly":"");
+};
+function _f(_24,_25){
+var _26=$.data(_24,"checkbox");
+var _27=_26.options;
+var _28=_26.checkbox;
+var rv=_28.find(".checkbox-value");
+_27.disabled=_25;
+if(_25){
+$(_24).add(rv)._propAttr("disabled",true);
+_28.addClass("checkbox-disabled");
+$(_26.label).addClass("textbox-label-disabled");
 }else{
-$(_1f).add(rv)._propAttr("disabled",false);
-_23.removeClass("checkbox-disabled");
-$(_21.label).removeClass("textbox-label-disabled");
+$(_24).add(rv)._propAttr("disabled",false);
+_28.removeClass("checkbox-disabled");
+$(_26.label).removeClass("textbox-label-disabled");
 }
 };
-$.fn.checkbox=function(_24,_25){
-if(typeof _24=="string"){
-return $.fn.checkbox.methods[_24](this,_25);
+$.fn.checkbox=function(_29,_2a){
+if(typeof _29=="string"){
+return $.fn.checkbox.methods[_29](this,_2a);
 }
-_24=_24||{};
+_29=_29||{};
 return this.each(function(){
-var _26=$.data(this,"checkbox");
-if(_26){
-$.extend(_26.options,_24);
+var _2b=$.data(this,"checkbox");
+if(_2b){
+$.extend(_2b.options,_29);
 }else{
-_26=$.data(this,"checkbox",{options:$.extend({},$.fn.checkbox.defaults,$.fn.checkbox.parseOptions(this),_24),checkbox:_2(this)});
+_2b=$.data(this,"checkbox",{options:$.extend({},$.fn.checkbox.defaults,$.fn.checkbox.parseOptions(this),_29),checkbox:_2(this)});
 }
-_26.options.originalChecked=_26.options.checked;
+_2b.options.originalChecked=_2b.options.checked;
 _6(this);
-_f(this);
-_14(this);
+_10(this);
+_15(this);
 });
 };
 $.fn.checkbox.methods={options:function(jq){
-var _27=jq.data("checkbox");
-return $.extend(_27.options,{value:_27.checkbox.find(".checkbox-value").val()});
-},setValue:function(jq,_28){
+var _2c=jq.data("checkbox");
+return $.extend(_2c.options,{value:_2c.checkbox.find(".checkbox-value").val()});
+},setValue:function(jq,_2d){
 return jq.each(function(){
-$(this).val(_28);
-$.data(this,"checkbox").checkbox.find(".checkbox-value").val(_28);
+$(this).val(_2d);
+$.data(this,"checkbox").checkbox.find(".checkbox-value").val(_2d);
 });
 },enable:function(jq){
 return jq.each(function(){
-_e(this,false);
+_f(this,false);
 });
 },disable:function(jq){
 return jq.each(function(){
-_e(this,true);
+_f(this,true);
+});
+},readonly:function(jq,_2e){
+return jq.each(function(){
+_e(this,_2e);
 });
 },check:function(jq){
 return jq.each(function(){
@@ -157,15 +168,15 @@ _d(this,false);
 });
 },reset:function(jq){
 return jq.each(function(){
-var _29=$(this).checkbox("options");
-_d(this,_29.originalChecked);
+var _2f=$(this).checkbox("options");
+_d(this,_2f.originalChecked);
 });
 }};
-$.fn.checkbox.parseOptions=function(_2a){
-var t=$(_2a);
-return $.extend({},$.parser.parseOptions(_2a,["label","labelPosition","labelAlign",{labelWidth:"number"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined)});
+$.fn.checkbox.parseOptions=function(_30){
+var t=$(_30);
+return $.extend({},$.parser.parseOptions(_30,["label","labelPosition","labelAlign",{labelWidth:"number"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined),readonly:(t.attr("readonly")?true:undefined)});
 };
-$.fn.checkbox.defaults={width:20,height:20,value:null,disabled:false,checked:false,label:null,labelWidth:"auto",labelPosition:"before",labelAlign:"left",onChange:function(_2b){
+$.fn.checkbox.defaults={width:20,height:20,value:null,disabled:false,readonly:false,checked:false,label:null,labelWidth:"auto",labelPosition:"before",labelAlign:"left",onChange:function(_31){
 }};
 })(jQuery);
 
