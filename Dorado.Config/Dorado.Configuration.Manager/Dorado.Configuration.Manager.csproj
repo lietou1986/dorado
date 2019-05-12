@@ -1110,9 +1110,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_code\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\RemoteConfiguration\Index.cshtml" />

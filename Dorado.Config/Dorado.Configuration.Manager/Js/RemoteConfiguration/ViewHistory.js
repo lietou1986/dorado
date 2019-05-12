@@ -25,59 +25,62 @@ $(function () {
         sortName: 'SectionName',
         sortOrder: 'asc',
         columns: [[
-					{ field: 'SectionName', title: '配置名称', width: 80, sortable: true,
-					    formatter: function (value, rec, index) {
-					        if (index == 0)
-					            return value;
-					        else
-					            return "";
-					    }
-					},
-					{ field: 'Application', title: '应用程序', width: 80, sortable: true },
-					{ field: 'Major', title: '主版本', width: 60, align: 'right', sortable: true },
-					{ field: 'Minor', title: '次版本', width: 60, align: 'right', sortable: true },
-					{ field: 'FileName', title: '文件名称', width: 250, sortable: true,
-					    formatter: function (value, rec) {
-					        var temp = new Array(' ');
-					        temp.push('SectionName="' + rec.SectionName + '"');
-					        temp.push(' ');
-					        temp.push('Application="' + rec.Application + '"');
-					        temp.push(' ');
-					        temp.push('Major="' + rec.Major + '"');
-					        temp.push(' ');
-					        temp.push('Minor="' + rec.Minor + '"');
-					        temp.push(' ');
-					        temp.push('FileName="' + rec.FileName + '"');
-					        temp.push(' ');
-					        temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
-					        var item = temp.join(' ');
-					        return '<a ' + item + '" href="#" class="config_view">' + value + '</a>';
-					    }
-					},
-                    	{ field: 'OperatorID', title: '操作人ID', width: 60, align: 'right', sortable: true },
-                    	{ field: 'OperateTime', title: '操作时间', width: 120, align: 'right', sortable: true },
-					{ field: 'Operation', title: '配置操作', width: 100, align: 'left', sortable: false,
-					    formatter: function (value, rec) {
-					        var temp = new Array(' ');
-					        temp.push('SectionName="' + rec.SectionName + '"');
-					        temp.push(' ');
-					        temp.push('Application="' + rec.Application + '"');
-					        temp.push(' ');
-					        temp.push('Major="' + rec.Major + '"');
-					        temp.push(' ');
-					        temp.push('Minor="' + rec.Minor + '"');
-					        temp.push(' ');
-					        temp.push('FileName="' + rec.FileName + '"');
-					        temp.push(' ');
-					        temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
-					        var item = temp.join(' ');
-					        var result = '<a href="#" class="config_rollback"' + item + '>[应用此版本]</a> ';
-					        return result;
-					    }
-					}
-				]],
+            {
+                field: 'SectionName', title: '配置名称', width: 80, sortable: true,
+                formatter: function (value, rec, index) {
+                    if (index == 0)
+                        return value;
+                    else
+                        return "";
+                }
+            },
+            { field: 'Application', title: '应用程序', width: 80, sortable: true },
+            { field: 'Major', title: '主版本', width: 60, align: 'right', sortable: true },
+            { field: 'Minor', title: '次版本', width: 60, align: 'right', sortable: true },
+            {
+                field: 'FileName', title: '文件名称', width: 250, sortable: true,
+                formatter: function (value, rec) {
+                    var temp = new Array(' ');
+                    temp.push('SectionName="' + rec.SectionName + '"');
+                    temp.push(' ');
+                    temp.push('Application="' + rec.Application + '"');
+                    temp.push(' ');
+                    temp.push('Major="' + rec.Major + '"');
+                    temp.push(' ');
+                    temp.push('Minor="' + rec.Minor + '"');
+                    temp.push(' ');
+                    temp.push('FileName="' + rec.FileName + '"');
+                    temp.push(' ');
+                    temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
+                    var item = temp.join(' ');
+                    return '<a ' + item + '" href="#" class="config_view">' + value + '</a>';
+                }
+            },
+            { field: 'OperatorID', title: '操作人ID', width: 60, align: 'right', sortable: true },
+            { field: 'OperateTime', title: '操作时间', width: 120, align: 'right', sortable: true },
+            {
+                field: 'Operation', title: '配置操作', width: 100, align: 'left', sortable: false,
+                formatter: function (value, rec) {
+                    var temp = new Array(' ');
+                    temp.push('SectionName="' + rec.SectionName + '"');
+                    temp.push(' ');
+                    temp.push('Application="' + rec.Application + '"');
+                    temp.push(' ');
+                    temp.push('Major="' + rec.Major + '"');
+                    temp.push(' ');
+                    temp.push('Minor="' + rec.Minor + '"');
+                    temp.push(' ');
+                    temp.push('FileName="' + rec.FileName + '"');
+                    temp.push(' ');
+                    temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
+                    var item = temp.join(' ');
+                    var result = '<a href="#" class="config_rollback"' + item + '>[应用此版本]</a> ';
+                    return result;
+                }
+            }
+        ]],
         toolbar: [{
-            text: '刷新列表',
+            text: '刷新配置',
             iconCls: 'icon-reload',
             handler: function () {
                 RefreshConfigList();

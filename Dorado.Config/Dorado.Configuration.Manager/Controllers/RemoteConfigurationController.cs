@@ -11,6 +11,9 @@ namespace Dorado.Configuration.Manager.Controllers
 {
     public class RemoteConfigurationController : Controller
     {
+
+        private const string NoAppPath = "General";
+
         public ActionResult Index()
         {
             return View();
@@ -53,7 +56,7 @@ namespace Dorado.Configuration.Manager.Controllers
 
         public ActionResult EditVersion(string downloadUrl)
         {
-            WebClient webClient = new WebClient {Credentials = CredentialCache.DefaultCredentials};
+            WebClient webClient = new WebClient { Credentials = CredentialCache.DefaultCredentials };
             byte[] buffer = webClient.DownloadData(downloadUrl);
             ViewBag.FileContent = Encoding.UTF8.GetString(buffer);
             return View();
@@ -61,7 +64,7 @@ namespace Dorado.Configuration.Manager.Controllers
 
         public ActionResult GetConfigContent(string downloadUrl)
         {
-            WebClient webClient = new WebClient {Credentials = CredentialCache.DefaultCredentials};
+            WebClient webClient = new WebClient { Credentials = CredentialCache.DefaultCredentials };
             byte[] buffer = webClient.DownloadData(downloadUrl);
             return Content(Encoding.UTF8.GetString(buffer));
         }
@@ -87,7 +90,7 @@ namespace Dorado.Configuration.Manager.Controllers
 
         public ActionResult ViewConfig(string downloadUrl)
         {
-            WebClient webClient = new WebClient {Credentials = CredentialCache.DefaultCredentials};
+            WebClient webClient = new WebClient { Credentials = CredentialCache.DefaultCredentials };
             byte[] buffer = webClient.DownloadData(downloadUrl);
             ViewBag.FileContent = Encoding.UTF8.GetString(buffer);
             return View();
@@ -102,7 +105,7 @@ namespace Dorado.Configuration.Manager.Controllers
             return Content(result.ToString());
         }
 
-        public ActionResult GetHistory(string application, string sectionName, int major=1)
+        public ActionResult GetHistory(string application, string sectionName, int major = 1)
         {
             application = Server.UrlDecode(application);
             sectionName = Server.UrlDecode(sectionName);
@@ -112,7 +115,7 @@ namespace Dorado.Configuration.Manager.Controllers
             return Content(json);
         }
 
-        public ActionResult GetAllLastVersion(string application)
+        public ActionResult GetAllLastVersion(string application = NoAppPath)
         {
             application = Server.UrlDecode(application);
 

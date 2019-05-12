@@ -44,7 +44,7 @@
 					'<div class="calendar-menu">' +
 						'<div class="calendar-menu-year-inner">' +
 							'<span class="calendar-nav calendar-menu-prev"></span>' +
-							'<span><input class="calendar-menu-year" type="text"></input></span>' +
+							'<span><input class="calendar-menu-year" type="text"/></span>' +
 							'<span class="calendar-nav calendar-menu-next"></span>' +
 						'</div>' +
 						'<div class="calendar-menu-month-inner">' +

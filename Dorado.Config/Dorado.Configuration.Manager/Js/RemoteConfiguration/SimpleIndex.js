@@ -1,8 +1,8 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
     $('#tabs').tabs({
         tools: [{
             iconCls: 'icon-add',
-            handler: function() {
+            handler: function () {
                 CreateConfig();
             }
         }]
@@ -74,7 +74,7 @@ function DeleteSelectApp() {
 }
 function CreateConfig() {
     $('#w-create').window({
-        title: '新建配置',
+        title: '新增配置',
         width: 350,
         modal: true,
         content: '<iframe scrolling="no" frameborder="0" src="/RemoteConfiguration/Create" style="width: 100%; height: 100%;"></iframe>',
@@ -97,9 +97,9 @@ function ViewConfig(e) {
 }
 function CreateConfigVersion(e) {
     var item = $(e);
-    var query = "sectionName=" + item.attr('sectionname') + "&application=" + item.attr('application') + "&major=" + item.attr('major') ;
+    var query = "sectionName=" + item.attr('sectionname') + "&application=" + item.attr('application') + "&major=" + item.attr('major');
     $('#w-createversion').window({
-        title: '新建版本',
+        title: '新增版本',
         width: 400,
         modal: true,
         content: '<iframe scrolling="no" frameborder="0" src="/RemoteConfiguration/CreateVersion?' + query + '" style="width: 100%; height: 100%;"></iframe>',
@@ -110,7 +110,7 @@ function CreateConfigVersion(e) {
 }
 function EditConfigVersion(e) {
     var item = $(e);
-    var query = "sectionName=" + item.attr('sectionname') + "&application=" + item.attr('application') + "&major=" + item.attr('major') + "&downloadUrl=" + item.attr('downloadurl') ;
+    var query = "sectionName=" + item.attr('sectionname') + "&application=" + item.attr('application') + "&major=" + item.attr('major') + "&downloadUrl=" + item.attr('downloadurl');
     $('#w-editversion').window({
         title: '修改版本',
         width: 600,
@@ -132,7 +132,7 @@ function DeleteConfig(e) {
             text: 'Ok',
             iconCls: 'icon-ok',
             handler: function () {
-                $.get("/RemoteConfiguration/DeleteSection?sectionName=" + encodeURIComponent(sectionName) , function (result) {
+                $.get("/RemoteConfiguration/DeleteSection?sectionName=" + encodeURIComponent(sectionName), function (result) {
                     if (result != "False") {
                         ConfirmMessage('删除配置[' + sectionName + ']成功！');
                     }
@@ -158,7 +158,7 @@ function DeleteApp(e) {
             text: 'Ok',
             iconCls: 'icon-ok',
             handler: function () {
-                $.get("/RemoteConfiguration/DeleteApplication?sectionName=" + encodeURIComponent(sectionName) + "&application=" + encodeURIComponent(application) , function (result) {
+                $.get("/RemoteConfiguration/DeleteApplication?sectionName=" + encodeURIComponent(sectionName) + "&application=" + encodeURIComponent(application), function (result) {
                     if (result != "False") {
                         ConfirmMessage('删除配置[' + application + ']成功！');
                     }
@@ -175,7 +175,7 @@ function DeleteApp(e) {
 }
 function ViewHistory(e) {
     var item = $(e);
-    var query = "sectionName=" + item.attr('sectionname') + "&application=" + item.attr('application') + "&major=" + item.attr('major') ;
+    var query = "sectionName=" + item.attr('sectionname') + "&application=" + item.attr('application') + "&major=" + item.attr('major');
     $('#tabs').tabs('add', {
         title: '版本历史' + item.attr('filename'),
         content: '<iframe scrolling="yes" frameborder="0"  src="/RemoteConfiguration/ViewHistory?' + query + '"  style="width:100%;height:100%"></iframe>',
@@ -210,7 +210,7 @@ function createColumnMenu() {
 
 function CreateCallBack(result) {
     if (result == 1) {
-        ConfirmMessage("新建配置成功!");
+        ConfirmMessage("新增配置成功!");
         $('#w-create').window("close");
     }
     else if (result == 0) {
@@ -220,19 +220,19 @@ function CreateCallBack(result) {
 
 function GridLoad() {
     var toolbar = [{
-        text: '新建配置',
+        text: '新增配置',
         iconCls: 'icon-add',
         handler: function () {
             CreateConfig();
         }
     }, '-', {
-        text: '刷新列表',
+        text: '刷新配置',
         iconCls: 'icon-reload',
         handler: function () {
             RefreshConfigList();
         }
     }];
-    
+
     $('#tt').datagrid({
         url: '/RemoteConfiguration/GetAllLastVersion',
         title: '配置文件列表',
@@ -241,52 +241,54 @@ function GridLoad() {
         sortName: 'SectionName',
         sortOrder: 'asc',
         columns: [[
-                    { field: 'ck', checkbox: true },
-                    { field: 'Application', title: '应用程序', width: 200, sortable: true },
-                    { field: 'SectionName', title: '配置文件节点', width: 200, sortable: true,
-                            formatter: function (value, rec) {
-                                var temp = new Array(' ');
-                                temp.push('Application="' + rec.Application + '"');
-                                temp.push(' ');
-                                temp.push('SectionName="' + rec.SectionName + '"');
-                                temp.push(' ');
-                                temp.push('Major="' + rec.Major + '"');
-                                temp.push(' ');
-                                temp.push('Minor="' + rec.Minor + '"');
-                                temp.push(' ');
-                                temp.push('FileName="' + rec.FileName + '"');
-                                temp.push(' ');
-                                temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
-                                var item = temp.join(' ');
-                                return '<a ' + item + '" href="#" class="config_view"><strong>' + value + '</a></strong>';
-                            }
-                     },
-					{field: 'Major', title: '主版本', width: 60, align: 'right', sortable: true },
-					{ field: 'Minor', title: '次版本', width: 60, align: 'right', sortable: true },
-					{ field: 'Operation', title: '配置操作', width: 350, align: 'left', sortable: true,
-					    formatter: function (value, rec) {
-					        var temp = new Array(' ');
-					        temp.push('SectionName="' + rec.SectionName + '"');
-					        temp.push(' ');
-					        temp.push('Application="' + rec.Application + '"');
-					        temp.push(' ');
-					        temp.push('Major="' + rec.Major + '"');
-					        temp.push(' ');
-					        temp.push('Minor="' + rec.Minor + '"');
-					        temp.push(' ');
-					        temp.push('FileName="' + rec.FileName + '"');
-					        temp.push(' ');
-					        temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
-					        var item = temp.join(' ');
-					        var result = '<a href="#" class="config_history"' + item + '>[历史]</a> <a href="#" class="config_create"' + item + '>[新建版本]</a> <a href="#" class="config_edit"' + item + '>[修改版本]</a>';
-					        if (rec.CanDelete == "True")
-					            result += ' <a href="#" class="config_delete"' + item + '>[删除配置]</a>';
-					        if (rec.CanDeleteApp == "True")
-					            result += ' <a href="#" class="app_delete"' + item + '>[删除应用]</a>';
-					        return result;
-					    }
-					}
-				]],
+            { field: 'ck', checkbox: true },
+            { field: 'Application', title: '应用程序', width: 200, sortable: true },
+            {
+                field: 'SectionName', title: '配置名称', width: 200, sortable: true,
+                formatter: function (value, rec) {
+                    var temp = new Array(' ');
+                    temp.push('Application="' + rec.Application + '"');
+                    temp.push(' ');
+                    temp.push('SectionName="' + rec.SectionName + '"');
+                    temp.push(' ');
+                    temp.push('Major="' + rec.Major + '"');
+                    temp.push(' ');
+                    temp.push('Minor="' + rec.Minor + '"');
+                    temp.push(' ');
+                    temp.push('FileName="' + rec.FileName + '"');
+                    temp.push(' ');
+                    temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
+                    var item = temp.join(' ');
+                    return '<a ' + item + '" href="#" class="config_view"><strong>' + value + '</a></strong>';
+                }
+            },
+            { field: 'Major', title: '主版本', width: 60, align: 'right', sortable: true },
+            { field: 'Minor', title: '次版本', width: 60, align: 'right', sortable: true },
+            {
+                field: 'Operation', title: '配置操作', width: 350, align: 'left', sortable: true,
+                formatter: function (value, rec) {
+                    var temp = new Array(' ');
+                    temp.push('SectionName="' + rec.SectionName + '"');
+                    temp.push(' ');
+                    temp.push('Application="' + rec.Application + '"');
+                    temp.push(' ');
+                    temp.push('Major="' + rec.Major + '"');
+                    temp.push(' ');
+                    temp.push('Minor="' + rec.Minor + '"');
+                    temp.push(' ');
+                    temp.push('FileName="' + rec.FileName + '"');
+                    temp.push(' ');
+                    temp.push('DownloadUrl="' + rec.DownloadUrl + '"');
+                    var item = temp.join(' ');
+                    var result = '<a href="#" class="config_history"' + item + '>[历史]</a> <a href="#" class="config_create"' + item + '>[新增版本]</a> <a href="#" class="config_edit"' + item + '>[修改版本]</a>';
+                    if (rec.CanDelete == "True")
+                        result += ' <a href="#" class="config_delete"' + item + '>[删除配置]</a>';
+                    if (rec.CanDeleteApp == "True")
+                        result += ' <a href="#" class="app_delete"' + item + '>[删除应用]</a>';
+                    return result;
+                }
+            }
+        ]],
         toolbar: toolbar,
         onLoadSuccess: function () {
             $("#easyui-tabs-0 .datagrid-body").bind('contextmenu', function (e) {

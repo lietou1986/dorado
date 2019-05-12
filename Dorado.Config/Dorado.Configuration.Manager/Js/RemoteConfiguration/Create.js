@@ -10,6 +10,7 @@ $("#formSubmit").click(function () {
     //alert($("#CurrentSetting").val());
     $("#formCreate").submit();
 })
+
 $("#application").focus(function () {
     $(this).val('').removeClass("watermark");
 }).blur(function () {

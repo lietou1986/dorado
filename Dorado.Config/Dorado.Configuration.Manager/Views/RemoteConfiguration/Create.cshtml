@@ -5,41 +5,45 @@
 <link href="/Css/RemoteConfiguration/Create.css" rel="stylesheet" type="text/css" />
 <link href="/Css/Share/Share.css" rel="stylesheet" type="text/css" />
 <form action="/RemoteConfiguration/Create" id="formCreate" method="post" name="formCreate" enctype="multipart/form-data">
-<div class="from-config">
-    <div class="editor-label">
-        <label for="SectionName">
-            配置文件节点 :</label>
-    </div>
-    <div class="editor-field">
-        <input class="easyui-validatebox" type="text" name="SectionName" required="true"
-            id="sectionName" missingmessage="必填"></input>
-    </div>
-    <div class="editor-label">
-        <label for="Application">
-            应用程序:</label>
-    </div>
-    <div class="editor-field">
-        <input class="watermark" type="text" id="application" name="Application" value="General"></input>
-    </div>
-    <div class="editor-label">
-        <label for="fileName">
-            配置文件:</label>
-    </div>
-    <div class="editor-field">
-        <input type="hidden" value="@ViewBag.CurrentSetting" name="CurrentSetting" id="CurrentSetting" />
-    </div>
-    <div class="editor-field">
-        <input type="file" name="fileName" required="true" id="fileName" class="easyui-validatebox"
-            required="true" missingmessage="必填" />
-    </div>
-    <div class="submit-label">
-        <div class="editor-field" border="false" style="text-align: center; height: 30px;
+    <div class="from-config">
+        <div class="editor-label">
+            <label for="Application">
+                应用程序:
+            </label>
+        </div>
+        <div class="editor-field">
+            <input class="watermark" type="text" id="application" name="Application" value="General" />
+        </div>
+        <div class="editor-label">
+            <label for="SectionName">
+                配置名称 :
+            </label>
+        </div>
+        <div class="editor-field">
+            <input class="easyui-validatebox" type="text" name="SectionName" required="true"
+                   id="sectionName" missingmessage="必填" />
+        </div>
+        <div class="editor-label">
+            <label for="fileName">
+                配置文件:
+            </label>
+        </div>
+        <div class="editor-field">
+            <input type="hidden" value="@ViewBag.CurrentSetting" name="CurrentSetting" id="CurrentSetting" />
+        </div>
+        <div class="editor-field">
+            <input type="file" name="fileName" required="true" id="fileName" class="easyui-validatebox"
+                   required="true" missingmessage="必填" />
+        </div>
+        <div class="submit-label">
+            <div class="editor-field" border="false" style="text-align: center; height: 30px;
             line-height: 30px;">
-            <a class="easyui-linkbutton" iconcls="icon-ok" href="javascript:void(0)" id="formSubmit">
-                Submit</a> <a class="easyui-linkbutton" iconcls="icon-cancel" href="javascript:void(0)"
-                    id="formCancel">Cancel</a>
+                <a class="easyui-linkbutton" iconcls="icon-ok" href="javascript:void(0)" id="formSubmit">
+                    保存
+                </a> <a class="easyui-linkbutton" iconcls="icon-cancel" href="javascript:void(0)"
+                        id="formCancel">取消</a>
+            </div>
         </div>
     </div>
-</div>
 </form>
 <script src="/Js/RemoteConfiguration/Create.js" type="text/javascript"></script>
