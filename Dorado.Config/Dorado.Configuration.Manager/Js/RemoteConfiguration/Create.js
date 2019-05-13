@@ -3,11 +3,6 @@
 })
 
 $("#formSubmit").click(function () {
-    if (!$("#sectionName").validatebox("isValid"))
-        return false;
-    if (!$("#fileName").validatebox("isValid"))
-        return false;
-    //alert($("#CurrentSetting").val());
     $("#formCreate").submit();
 })
 

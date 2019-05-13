@@ -4,7 +4,7 @@
 }
 <link href="/Css/RemoteConfiguration/Create.css" rel="stylesheet" type="text/css" />
 <link href="/Css/Share/Share.css" rel="stylesheet" type="text/css" />
-<form action="/RemoteConfiguration/Create" id="formCreate" method="post" name="formCreate" enctype="multipart/form-data">
+<form action="/RemoteConfiguration/Create" id="formCreate" method="post" name="formCreate" enctype="multipart/form-data" class="easyui-form">
     <div class="from-config">
         <div class="editor-label">
             <label for="Application">
@@ -12,7 +12,7 @@
             </label>
         </div>
         <div class="editor-field">
-            <input class="watermark" type="text" id="application" name="Application" value="General" />
+            <input class="watermark easyui-textbox easyui-validatebox" type="text" id="application" name="Application" value="General" required="true" missingmessage="必填" />
         </div>
         <div class="editor-label">
             <label for="SectionName">
@@ -20,8 +20,8 @@
             </label>
         </div>
         <div class="editor-field">
-            <input class="easyui-validatebox" type="text" name="SectionName" required="true"
-                   id="sectionName" missingmessage="必填" />
+            <input class="easyui-textbox easyui-validatebox" type="text" name="SectionName"
+                   id="sectionName" required="true" missingmessage="必填" />
         </div>
         <div class="editor-label">
             <label for="fileName">
@@ -29,11 +29,7 @@
             </label>
         </div>
         <div class="editor-field">
-            <input type="hidden" value="@ViewBag.CurrentSetting" name="CurrentSetting" id="CurrentSetting" />
-        </div>
-        <div class="editor-field">
-            <input type="file" name="fileName" required="true" id="fileName" class="easyui-validatebox"
-                   required="true" missingmessage="必填" />
+            <input type="file" name="fileName" id="fileName" class="easyui-validatebox" required="true" missingmessage="必填" />
         </div>
         <div class="submit-label">
             <div class="editor-field" border="false" style="text-align: center; height: 30px;

@@ -74,12 +74,12 @@ function DeleteSelectApp() {
 function CreateConfig() {
     $('#w-create').window({
         title: '新增配置',
-        width: 350,
+        width: 400,
         modal: true,
         content: '<iframe scrolling="no" frameborder="0" src="/RemoteConfiguration/Create" style="width: 100%; height: 100%;"></iframe>',
         shadow: true,
         closed: false,
-        height: 300
+        height: 360
     });
 }
 function ViewConfig(e) {
@@ -217,7 +217,7 @@ function CreateCallBack(result) {
     }
 }
 
-function GridLoad() {
+function GridLoad(application) {
     var toolbar = [{
         text: '新增配置',
         iconCls: 'icon-add',
@@ -233,7 +233,7 @@ function GridLoad() {
     }];
 
     $('#tt').datagrid({
-        url: '/RemoteConfiguration/GetAllLastVersion',
+        url: '/RemoteConfiguration/GetAllLastVersion?application=' + application,
         title: '配置文件列表',
         height: 'auto',
         fitColumns: true,

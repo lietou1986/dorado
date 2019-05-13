@@ -634,6 +634,11 @@ namespace Dorado.Core.Data
             return true;
         }
 
+        public bool IsDataEmpty()
+        {
+            return string.IsNullOrWhiteSpace(ToString());
+        }
+
         public DataArrayColumn GenerateId()
         {
             Set(CommonUtility.GenerateId(), _cursor);
