@@ -46,7 +46,7 @@ namespace <%=NamePlaceName%>.Services.Data
            <%if(!column.Description.Contains("即时更新")&&!IsIdentity(column)) {%>
             field=data[Field.<%=column.Name%>];
             <%if(!column.AllowDBNull&&!IsHasDefaultValue(column)) {%>
-			if (field == null || strict && string.IsNullOrWhiteSpace(field.ToString()))
+			if (field == null || strict && field.IsDataEmpty())
 				throw new ApplicationException("<%=GetColumnDescription(column)%>不能为空");
 
 			fld.Append(Field.<%=column.Name%> + "," );
@@ -112,7 +112,7 @@ namespace <%=NamePlaceName%>.Services.Data
         public static long Insert(Conn conn, DataArray data, bool strict = true)
         {
             if (data.Count == 0) throw new ApplicationException("对不起，数据不能为空");
-            data.Columns.Add(Field.<%=GetPrimarykeyColumnName()%>).GenerateId();
+            if (!data.Contains(Field.<%=GetPrimarykeyColumnName()%>)) data.Columns.Add(Field.<%=GetPrimarykeyColumnName()%>).GenerateId();
             string sql = _insert_sql(data, strict);
             if (string.IsNullOrWhiteSpace(sql)) return 0;
             conn.ExecuteNonQuery(sql);
