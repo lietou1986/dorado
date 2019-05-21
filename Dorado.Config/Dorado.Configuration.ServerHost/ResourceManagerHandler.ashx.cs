@@ -154,7 +154,7 @@ namespace Dorado.Configuration.ServerHost
                         return result;
                     foreach (string minorVersion in minorVersions)
                     {
-                        string[] strs = remoteConfigManager.Operation.Condition.Split("\\".ToCharArray());
+                        string[] strs = remoteConfigManager.Operation.Condition.Split("/\\".ToCharArray());
                         string sectionName = strs[0];
                         string applicationName = strs[1];
                         int major = Convert.ToInt32(strs[2]);
@@ -200,7 +200,7 @@ namespace Dorado.Configuration.ServerHost
                 if (!Directory.Exists(folder))
                     Directory.CreateDirectory(folder);
 
-                string[] strs = remoteConfigManager.Operation.Condition.Split("\\".ToCharArray());
+                string[] strs = remoteConfigManager.Operation.Condition.Split("/\\".ToCharArray());
                 string sectionName = strs[0];
                 string applicationName = strs[1];
                 int major = Convert.ToInt32(strs[2]);

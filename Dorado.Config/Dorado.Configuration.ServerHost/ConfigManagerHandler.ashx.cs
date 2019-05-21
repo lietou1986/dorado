@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dorado.Utils;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Dorado.Configuration.ServerHost
             return folder + "/" + applicationName + "/" + sectionName + "/" + major + "/" + sectionName + "." + minor;
         }
 
-        private void SaveConfig(string sectionName, string applicationName, int major, int minor, byte[] buffer,
+        private void SaveConfig(string applicationName, string sectionName, int major, int minor, byte[] buffer,
             string operatorId = "len.zhang")
         {
             MemoryStream stream = new MemoryStream(buffer);
@@ -29,8 +30,9 @@ namespace Dorado.Configuration.ServerHost
             doc.DocumentElement.SetAttribute("minorVersion", minor.ToString());
 
             string folder = System.Configuration.ConfigurationManager.AppSettings["publishFolder"];
-            string fileName = folder + "\\" + applicationName + "\\" + sectionName + "\\" + major + "\\" + sectionName +
-                              "." + minor;
+            folder += "\\" + applicationName + "\\" + sectionName + "\\" + major + "\\";
+            IOUtility.CreateDirectory(folder);
+            string fileName = folder + sectionName + "." + minor;
             doc.Save(fileName);
 
             AddLog(applicationName, sectionName, major, minor, operatorId);
@@ -162,7 +164,7 @@ namespace Dorado.Configuration.ServerHost
                         return result;
                     foreach (string minorVersion in minorVersions)
                     {
-                        string[] strs = remoteConfigManager.Operation.Condition.Split("\\".ToCharArray());
+                        string[] strs = remoteConfigManager.Operation.Condition.Split("/\\".ToCharArray());
                         string applicationName = strs[0];
                         string sectionName = strs[1];
                         int major = Convert.ToInt32(strs[2]);
@@ -204,7 +206,7 @@ namespace Dorado.Configuration.ServerHost
             {
                 result.Operation.Result = true;
 
-                string[] strs = remoteConfigManager.Operation.Condition.Split("\\".ToCharArray());
+                string[] strs = remoteConfigManager.Operation.Condition.Split("/\\".ToCharArray());
                 string applicationName = strs[0];
                 string sectionName = strs[1];
                 int major = Convert.ToInt32(strs[2]);
@@ -329,9 +331,9 @@ namespace Dorado.Configuration.ServerHost
             RemoteConfigManagerDto result = new RemoteConfigManagerDto();
 
             string[] tmpParam = remoteConfigManager.Operation.Condition.Split('|');
-            string[] tmpsectionList = tmpParam[0].Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
-            string[] tmpAppList = tmpParam[1].Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
-            string[] majorList = tmpParam[2].Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+            string[] tmpAppList = tmpParam[0].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] tmpsectionList = tmpParam[1].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] majorList = tmpParam[2].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             Dictionary<string, int> appList = new Dictionary<string, int>();
 
             for (int index = 0; index < tmpsectionList.Length; index++)
@@ -363,35 +365,29 @@ namespace Dorado.Configuration.ServerHost
 
                 if (Directory.Exists(folder))
                 {
-                    string[] applications = Directory.GetDirectories(folder);
-                    foreach (string application in applications)
+                    string applicationName = remoteConfigManager.Operation.Condition;
+                    string[] sections = Directory.GetDirectories(folder);
+                    foreach (string section in sections)
                     {
-                        string applicationName = application.Substring(application.Length + 1);
-                        string[] sections = Directory.GetDirectories(application);
-                        foreach (string section in sections)
+                        string sectionName = section.Substring(section.Length + 1);
+                        string[] majorVersions = Directory.GetDirectories(section);
+                        foreach (string majorVersion in majorVersions)
                         {
-                            string sectionName = section.Substring(section.Length + 1);
-                            string[] majorVersions = Directory.GetDirectories(section);
-                            foreach (string majorVersion in majorVersions)
+                            if (int.TryParse(majorVersion.Substring(folder.Length + 1), out var major))
                             {
-                                int maxMajor = 1;
-
-                                if (int.TryParse(majorVersion.Substring(application.Length + 1), out var major))
+                                var maxMinor = 0;
+                                string[] minorVersions = Directory.GetFiles(majorVersion);
+                                foreach (string minorVersion in minorVersions)
                                 {
-                                    var maxMinor = 0;
-                                    string[] minorVersions = Directory.GetFiles(majorVersion);
-                                    foreach (string minorVersion in minorVersions)
-                                    {
-                                        string fileName = minorVersion.Substring(majorVersion.Length + 1);
-                                        string[] strs = fileName.Split(".".ToCharArray());
-                                        if (int.TryParse(strs[1], out var minor))
-                                            maxMinor = Math.Max(maxMinor, minor);
-                                    }
-
-                                    string url = GetDownloadUrl(applicationName, sectionName, major, maxMinor);
-                                    result.RemoteConfigSections.AddSection(Path.Combine(applicationName, sectionName),
-                                        major, maxMinor, url);
+                                    string fileName = minorVersion.Substring(majorVersion.Length + 1);
+                                    string[] strs = fileName.Split(".".ToCharArray());
+                                    if (int.TryParse(strs[1], out var minor))
+                                        maxMinor = Math.Max(maxMinor, minor);
                                 }
+
+                                string url = GetDownloadUrl(applicationName, sectionName, major, maxMinor);
+                                result.RemoteConfigSections.AddSection(Path.Combine(applicationName, sectionName),
+                                    major, maxMinor, url);
                             }
                         }
                     }
@@ -411,42 +407,42 @@ namespace Dorado.Configuration.ServerHost
             switch (remoteConfigManager.Operation.Command)
             {
                 case "getAllConfigs":
-                {
-                    return GetAllConfigs(remoteConfigManager);
-                }
+                    {
+                        return GetAllConfigs(remoteConfigManager);
+                    }
                 case "getApplications":
-                {
-                    return GetApplications();
-                }
+                    {
+                        return GetApplications();
+                    }
                 case "getMajors":
-                {
-                    return GetMajors(remoteConfigManager);
-                }
+                    {
+                        return GetMajors(remoteConfigManager);
+                    }
                 case "getMinors":
-                {
-                    return GetMinors(remoteConfigManager);
-                }
+                    {
+                        return GetMinors(remoteConfigManager);
+                    }
                 case "createMinor":
-                {
-                    return CreateMinor(remoteConfigManager);
-                }
+                    {
+                        return CreateMinor(remoteConfigManager);
+                    }
                 case "deleteConfig":
-                {
-                    return DeleteConfig(remoteConfigManager);
-                }
+                    {
+                        return DeleteConfig(remoteConfigManager);
+                    }
                 case "getAllLastVersion":
-                {
-                    return GetAllLastVersion(remoteConfigManager);
-                }
+                    {
+                        return GetAllLastVersion(remoteConfigManager);
+                    }
 
                 case "getLastVersionBySectionName":
                     return GetLastVersionBySectionName(remoteConfigManager);
 
                 default:
-                {
-                    var result = new RemoteConfigManagerDto {Operation = {Result = false}};
-                    return result;
-                }
+                    {
+                        var result = new RemoteConfigManagerDto { Operation = { Result = false } };
+                        return result;
+                    }
             }
         }
 
@@ -459,7 +455,7 @@ namespace Dorado.Configuration.ServerHost
 
             XmlSerializer xser = new XmlSerializer(typeof(RemoteConfigManagerDto));
             RemoteConfigManagerDto remoteConfigManager =
-                (RemoteConfigManagerDto) xser.Deserialize(context.Request.InputStream);
+                (RemoteConfigManagerDto)xser.Deserialize(context.Request.InputStream);
 
             RemoteConfigManagerDto result = Manager(remoteConfigManager);
 

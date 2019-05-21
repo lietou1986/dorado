@@ -4,49 +4,51 @@
 }
 <link href="/Css/RemoteConfiguration/CreateVersion.css" rel="stylesheet" type="text/css" />
 <form action="/RemoteConfiguration/CreateVersion" id="formCreateVersion" method="post" name="formCreateVersion"
-    enctype="multipart/form-data">
+      enctype="multipart/form-data">
     <div class="from-config">
         <div class="editor-label">
-            <label for="SectionName">
-                配置文件节点 :</label>
-        </div>
-        <div class="editor-field">
-            <select id="sectionName" class="easyui-combobox easyui-validatebox" name="SectionName"
-                style="width: 200px;" required="true" missingmessage="必填">
-            </select>
-        </div>
-        <div class="editor-label">
             <label for="Application">
-                应用程序:</label>
+                应用程序:
+            </label>
         </div>
         <div class="editor-field">
             <select id="application" class="easyui-combobox easyui-validatebox" name="Application"
-                style="width: 200px;" required="true" missingmessage="必填">
-            </select>
+                    style="width: 200px;" required="true" missingmessage="必填"></select>
+        </div>
+        <div class="editor-label">
+            <label for="SectionName">
+                配置名称 :
+            </label>
+        </div>
+        <div class="editor-field">
+            <select id="sectionName" class="easyui-combobox easyui-validatebox" name="SectionName"
+                    style="width: 200px;" required="true" missingmessage="必填"></select>
         </div>
         <div class="editor-label">
             <label for="Major">
-                主版本:</label>
+                主版本:
+            </label>
         </div>
         <div class="editor-field">
             <input type="hidden" id="CurrentSetting" name="CurrentSetting" value="@ViewBag.CurrentSetting" />
         </div>
         <div class="editor-field">
             <input type="text" name="Major" class="easyui-numberspinner easyui-validatebox" min="1"
-                max="20" required="true" style="width: 80px;" missingmessage="必填" id="major"></input>
+                   max="20" required="true" style="width: 80px;" missingmessage="必填" id="major" />
         </div>
         <div class="editor-label">
             <label for="fileName">
-                配置文件:</label>
+                配置文件:
+            </label>
         </div>
         <div class="editor-field">
             <input type="file" name="fileName" class="easyui-validatebox" required="true" missingmessage="必填"
-                id="fileName" />
+                   id="fileName" />
         </div>
         <div class="submit-label">
             <div class="editor-field" border="false" style="text-align: center; height: 30px; line-height: 30px;">
-                <a class="easyui-linkbutton" iconcls="icon-ok" href="javascript:void(0)" id="formSubmit">Submit</a> <a class="easyui-linkbutton" iconcls="icon-cancel" href="javascript:void(0)"
-                    id="formCancel">Cancel</a>
+                <a class="easyui-linkbutton" iconcls="icon-ok" href="javascript:void(0)" id="formSubmit">保存</a> <a class="easyui-linkbutton" iconcls="icon-cancel" href="javascript:void(0)"
+                                                                                                                   id="formCancel">取消</a>
             </div>
         </div>
     </div>

@@ -13,14 +13,6 @@ $("#formCancel").click(function () {
 })
 
 $("#formSubmit").click(function () {
-    if (!$("#sectionName").validatebox("isValid"))
-        return false;
-    if (!$("#application").validatebox("isValid"))
-        return false;
-    if (!$("#major").validatebox("isValid"))
-        return false;
-    if (!$("#fileName").validatebox("isValid"))
-        return false;
     $("#formCreateVersion").submit();
 })
 

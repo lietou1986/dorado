@@ -119,7 +119,7 @@ namespace Dorado.Configuration
 
         #endregion Singleton
 
-        private static readonly string NoAppPath = "General";
+        private const string NoAppPath = "General";
 
         private DataTable GetAllLastVersion(RemoteConfigSectionCollection configs)
         {

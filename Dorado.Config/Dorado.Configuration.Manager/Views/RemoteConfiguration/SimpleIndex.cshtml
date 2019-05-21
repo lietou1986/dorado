@@ -19,10 +19,9 @@
 <body class="easyui-layout">
     <div region="center" title="控制台" style="overflow: hidden;">
         <div class="easyui-tabs" fit="true" border="false" id="tabs">
-            <div title="配置文件管理" style="padding: 20px; overflow: auto;" id="easyui-tabs-0">
+            <div title="配置文件管理" style="padding: 5px; overflow: auto;" id="easyui-tabs-0">
                 <div>
-                    <table id="tt">
-                    </table>
+                    <table id="tt"></table>
                 </div>
             </div>
         </div>
@@ -32,10 +31,10 @@
     </div>
     <div id="mm" class="easyui-menu" style="width: 120px;">
         <div onclick="CreateConfig()" iconcls="icon-add">
-            新建配置
+            新增配置
         </div>
         <div iconcls="icon-reload" onclick="RefreshConfigList()">
-            刷新列表
+            刷新配置
         </div>
         <div>
             关闭
@@ -43,16 +42,16 @@
     </div>
     <div id="ctmenu" class="easyui-menu" style="width: 120px;">
         <div onclick="CreateConfig()" iconcls="icon-add">
-            新建配置
+            新增配置
         </div>
         <div iconcls="icon-reload" onclick="RefreshConfigList()">
-            刷新列表
+            刷新配置
         </div>
         <div>
             关闭
         </div>
     </div>
-    <div id="w-create" class="easyui-window" title="新建配置" iconcls="icon-add" style="width: 500px;
+    <div id="w-create" class="easyui-window" title="新增配置" iconcls="icon-add" style="width: 500px;
         height: 400px; padding: 5px; overflow: hidden" closed="true">
         <div class="easyui-layout" fit="true">
             <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
@@ -73,7 +72,7 @@
             </div>
         </div>
     </div>
-    <div id="w-createversion" class="easyui-window" title="新建版本" iconcls="icon-add" style="width: 500px;
+    <div id="w-createversion" class="easyui-window" title="新增版本" iconcls="icon-add" style="width: 500px;
         height: 500px; padding: 5px; overflow: hidden" closed="true">
         <div class="easyui-layout" fit="true">
             <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
