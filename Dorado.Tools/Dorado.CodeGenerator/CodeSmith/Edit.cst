@@ -143,9 +143,9 @@
             <a  id="edit"  href="#" act="submit" cmd="mvc.<%=GetClassName(SourceTable.Name).ToLower()%>.<%=GetShortName(SourceTable.Name).ToLower()%>edit" class="button button-primary">
                 保存</a>
              <input  type="reset" class="button" value="重置"/>
-                  <a  id="reload"  href="#" act="keylist" class="button">
+                  <a  id="reload"  href="#" act="direct" class="button">
                 刷新</a>
-                  <a  id="close"  href="#" act="keylist" class="button">
+                  <a  id="close"  href="#" act="direct" class="button">
                 关闭</a>
         </div>
     </div>

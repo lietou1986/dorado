@@ -120,7 +120,7 @@
         </ul>
         <ul group="page" class="pagination pull-right" id="pagenav">
             <li class="disabled">
-                <script type="text/javascript">                    drawPage();</script>
+                <script type="text/javascript">                    drawPager();</script>
             </li>
         </ul>
         <ul id="pageturn" group="pageturn" free="true" scale="6" class="pagination pull-right">
@@ -144,7 +144,7 @@
         <%case "tinyint": %>
        //字典<%=column.Name %>类型转换
        function set<%=column.Name%>(v) {
-            this.innerHTML = Shared.getDictName(Dict.<%=SourceTable.Name.ToLower()%>_<%=column.Name.ToLower()%>,v);
+            this.innerHTML = getDictName(Dict.<%=SourceTable.Name.ToLower()%>_<%=column.Name.ToLower()%>,v);
         }
         <%break; %>
        <% }%>
@@ -201,7 +201,7 @@
                 case "del1":
                 case "del":
                     if (p.success) {
-                        rePage();
+                        resetPager();
                         main.fresh();
                     }
                     break;

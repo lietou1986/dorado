@@ -55,9 +55,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
                 using (Conn conn = this.GetConn())
                 {
                 conn.PageSize = PageSize;
-                
                 conn.Page = para.page;
-                conn.Name = DataName;
 
                 <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="createuserid")) {%>
   conn.Field("cUser.name createUserName,eUser.name editUserName,<%=GetListColumn(SourceTable) %>");
@@ -92,7 +90,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
                
                 DataArray data = conn.SelectPage();
 
-                return this.FastSuccessResult(data);
+                return this.FastResult(data);
 			}
             }
             catch (Exception ex)
@@ -245,7 +243,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
               using (Conn conn = this.GetConn())
                 {
                <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="isdeleted")){%>
-               <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="edi")){%>
+               <%if(SourceTable.Columns.Any(n=>n.Name.ToLower()=="edittime")){%>
                 T_<%=SourceTable.Name%>.Update(conn, "isdeleted=1,edituserid={0},edittime='{1}' where id in ({2})",
                         UserCookie.UserId, DateTime.Now.ToString(), para.id);
                 <%}else { %>
@@ -255,10 +253,10 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
                <%}else { %>
                 T_<%=SourceTable.Name%>.Delete(conn, "id in ({0})", para.id);
                     <%} %>
-			   }
+			   
                para.ids.ForEach(id => {this.BuildEvent(TableEnum.<%=SourceTable.Name%>, id.Long(), "删除<%=GetTableDescription(SourceTable) %>", "删除成功"); });
 
-             return this.FastSuccessResult();
+                return this.FastSuccessResult();
             }
             catch (Exception ex)
             {
