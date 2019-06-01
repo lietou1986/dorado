@@ -116,7 +116,9 @@ namespace <%=NamePlaceName%>.Services.Data
             string sql = _insert_sql(data, strict);
             if (string.IsNullOrWhiteSpace(sql)) return 0;
             conn.ExecuteNonQuery(sql);
-            return data[Field.<%=GetPrimarykeyColumnName()%>].ToLong();
+            long id = data[Field.<%=GetPrimarykeyColumnName()%>].ToLong();
+            data.Columns.Delete(Field.<%=GetPrimarykeyColumnName()%>);
+            return id;
         }
 
         public static int Update(Conn conn, DataArray data)

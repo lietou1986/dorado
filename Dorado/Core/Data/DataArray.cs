@@ -89,6 +89,41 @@ namespace Dorado.Core.Data
             return this;
         }
 
+        public DataArray LeftJoin(DataArray arr, string field)
+        {
+            if (!arr.Contains(field)) return this;
+            if (!Contains(field)) return this;
+
+            else if (RowSize > arr.RowSize) arr.RowSize = RowSize;
+
+            foreach (DataArrayColumn col in arr.Columns)
+            {
+                if (!this.Contains(col.Name)) this.Columns.Add(col.Name,col.Type);
+            }
+
+            while (this.Read())
+            {
+                while (arr.Read())
+                {
+                    if (this[field].ToString() != arr[field].ToString())
+                    {
+                        continue;
+                    }
+
+                    foreach (DataArrayColumn col in arr.Columns)
+                    {
+                        if (col.Name != field)
+                        {
+                            this.Columns[col.Name].Set(arr.Columns[col.Name]);
+                        }
+                    }
+                }
+                arr.MoveFirst();
+            }
+            this.MoveFirst();
+            return this;
+        }
+
         public string Name { get; set; }
 
         public int Cursor { get; set; }
