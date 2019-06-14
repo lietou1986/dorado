@@ -17,7 +17,7 @@ namespace Dorado
         private readonly long _check;
         private long _startTime, _stopTime;
         private readonly long _freq;
-        private readonly Decimal _multiplier = new Decimal(1.0e9);
+        private readonly decimal _multiplier = new decimal(1.0e9);
 
         // 构造函数
         public CodeTimer()
@@ -39,6 +39,12 @@ namespace Dorado
             QueryPerformanceCounter(out _stopTime);
 
             _check += _stopTime - _startTime;
+        }
+
+        // 构造函数
+        public static CodeTimer NewTimer()
+        {
+            return new CodeTimer();
         }
 
         // 开始计时器
