@@ -98,7 +98,7 @@ namespace Dorado.Core.Data
 
             foreach (DataArrayColumn col in arr.Columns)
             {
-                if (!this.Contains(col.Name)) this.Columns.Add(col.Name,col.Type);
+                if (!this.Contains(col.Name)) this.Columns.Add(col.Name, col.Type);
             }
 
             while (this.Read())
@@ -263,7 +263,7 @@ namespace Dorado.Core.Data
             }
         }
 
-        public void AddPara(object para)
+        public DataArray AddPara(object para)
         {
             FieldInfo[] info = para.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public);
             foreach (FieldInfo fld in info)
@@ -275,6 +275,7 @@ namespace Dorado.Core.Data
                 else
                     this[name].Set(fld.GetValue(para));
             }
+            return this;
         }
 
         public string PageTurn(string head)
@@ -368,9 +369,10 @@ namespace Dorado.Core.Data
             return sb.ToString();
         }
 
-        public void Rename(string old, string name)
+        public DataArray Rename(string old, string name)
         {
             Columns.Rename(old, name);
+            return this;
         }
 
         public bool ChangeType(string name, Type type)
@@ -409,14 +411,16 @@ namespace Dorado.Core.Data
             return true;
         }
 
-        public void MoveFirst()
+        public DataArray MoveFirst()
         {
             Cursor = 0;
+            return this;
         }
 
-        public void Clear()
+        public DataArray Clear()
         {
             _count = 0;
+            return this;
         }
 
         public bool IsEmpty
@@ -427,158 +431,180 @@ namespace Dorado.Core.Data
             }
         }
 
-        public void AddRow()
+        public DataArray AddRow()
         {
             Cursor = _count;
             RowSize = ++_count;
+            return this;
         }
 
-        public void Set(string name, bool value)
+        public DataArray Set(string name, bool value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, sbyte value)
+        public DataArray Set(string name, sbyte value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, byte value)
+        public DataArray Set(string name, byte value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, ushort value)
+        public DataArray Set(string name, ushort value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, short value)
+        public DataArray Set(string name, short value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, uint value)
+        public DataArray Set(string name, uint value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, int value)
+        public DataArray Set(string name, int value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, ulong value)
+        public DataArray Set(string name, ulong value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, long value)
+        public DataArray Set(string name, long value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, double value)
+        public DataArray Set(string name, double value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, float value)
+        public DataArray Set(string name, float value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, DateTime value)
+        public DataArray Set(string name, DateTime value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Set(string name, object value)
+        public DataArray Set(string name, object value)
         {
             for (int i = 0; i < _count; i++)
             {
                 this[name, i].Set(value);
             }
+            return this;
         }
 
-        public void Replace(string name, string old, string value)
+        public DataArray Replace(string name, string old, string value)
         {
             this[name].Replace(old, value);
+            return this;
         }
 
-        public void Replace(string name, string field, Func<object, object> tran)
+        public DataArray Replace(string name, string field, Func<object, object> tran)
         {
             Replace(name, field, typeof(string), tran);
+            return this;
         }
 
-        public void Replace(string name, string field, Type type, Func<object, object> tran)
+        public DataArray Replace(string name, string field, Type type, Func<object, object> tran)
         {
             if (!Contains(field)) Columns.Add(field, type);
             for (int i = 0; i < Count; i++)
             {
                 this[field, i].Set(tran(this[name, i].ToObject()));
             }
+            return this;
         }
 
-        public void Replace(string name, Func<object, object> tran)
+        public DataArray Replace(string name, Func<object, object> tran)
         {
             this[name].Replace(tran);
+            return this;
         }
 
-        public void ReplaceLine(string name, Func<DataArray, object> tran)
+        public DataArray ReplaceLine(string name, Func<DataArray, object> tran)
         {
             this[name].Replace(tran);
+            return this;
         }
 
-        public void ReplaceReg(string name, string regStr, string value)
+        public DataArray ReplaceReg(string name, string regStr, string value)
         {
             this[name].ReplaceReg(regStr, value);
+            return this;
         }
 
-        public void ReplaceReg(string name, string regStr, MatchEvaluator func)
+        public DataArray ReplaceReg(string name, string regStr, MatchEvaluator func)
         {
             this[name].ReplaceReg(regStr, func);
+            return this;
         }
 
-        public void HighLight(string name, string value)
+        public DataArray HighLight(string name, string value)
         {
             this[name].HighLight(value);
+            return this;
         }
 
         public new string ToString()
