@@ -223,7 +223,7 @@ namespace <%=NamePlaceName%>.Admin.Controllers.Admin
              <%}%>
             conn.Where("<%=SourceTable.Name%>.ID={0}", id);
             DataArray data = conn.Select();
-
+            }
             return View(data);}
         }
 
