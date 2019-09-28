@@ -571,6 +571,7 @@ namespace Dorado.Core.Data
             Open();
             using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
+                if (Transaction != null) cmd.Transaction = Transaction;
                 return cmd.ExecuteNonQuery();
             }
         }
