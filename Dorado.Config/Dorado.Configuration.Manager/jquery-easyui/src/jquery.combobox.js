@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -332,11 +332,6 @@
 			}
 		}));
 
-		// var p = $(target).combo('panel');
-		// p.unbind('.combobox');
-		// for(var event in opts.panelEvents){
-		// 	p.bind(event+'.combobox', {target:target}, opts.panelEvents[event]);
-		// }
 	}
 
 	function mouseoverHandler(e){

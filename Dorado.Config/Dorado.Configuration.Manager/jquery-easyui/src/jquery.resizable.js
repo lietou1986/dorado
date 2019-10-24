@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -81,7 +81,7 @@
 		resize(e, true);
 		applySize(e);
 		$.data(e.data.target, 'resizable').options.onStopResize.call(e.data.target, e);
-		$(document).unbind('.resizable');
+		$(document)._unbind('.resizable');
 		$('body').css('cursor','');
 		return false;
 	}
@@ -129,7 +129,7 @@
 			var opts = null;
 			var state = $.data(this, 'resizable');
 			if (state) {
-				$(this).unbind('.resizable');
+				$(this)._unbind('.resizable');
 				opts = $.extend(state.options, options || {});
 			} else {
 				opts = $.extend({}, $.fn.resizable.defaults, $.fn.resizable.parseOptions(this), options || {});
@@ -141,13 +141,13 @@
 			if (opts.disabled == true) {
 				return;
 			}
-			$(this).bind('mousemove.resizable', {target:this}, function(e){
+			$(this)._bind('mousemove.resizable', {target:this}, function(e){
 				if ($.fn.resizable.isResizing){return}
 				var dir = getDirection(e);
 				$(e.data.target).css('cursor', dir ? dir+'-resize' : '');
-			}).bind('mouseleave.resizable', {target:this}, function(e){
+			})._bind('mouseleave.resizable', {target:this}, function(e){
 				$(e.data.target).css('cursor', '');
-			}).bind('mousedown.resizable', {target:this}, function(e){
+			})._bind('mousedown.resizable', {target:this}, function(e){
 				var dir = getDirection(e);
 				if (dir == ''){return;}
 				
@@ -176,9 +176,9 @@
 					deltaWidth: $(e.data.target).outerWidth() - $(e.data.target).width(),
 					deltaHeight: $(e.data.target).outerHeight() - $(e.data.target).height()
 				};
-				$(document).bind('mousedown.resizable', data, doDown);
-				$(document).bind('mousemove.resizable', data, doMove);
-				$(document).bind('mouseup.resizable', data, doUp);
+				$(document)._bind('mousedown.resizable', data, doDown);
+				$(document)._bind('mousemove.resizable', data, doMove);
+				$(document)._bind('mouseup.resizable', data, doUp);
 				$('body').css('cursor', dir+'-resize');
 			});
 		});

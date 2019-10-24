@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -78,7 +78,7 @@
 		function bindEvents(target){
 			var opts = $(target).datebox('options');
 			var panel = $(target).combo('panel');
-			panel.unbind('.datebox').bind('click.datebox', function(e){
+			panel._unbind('.datebox')._bind('click.datebox', function(e){
 				if ($(e.target).hasClass('datebox-button-a')){
 					var index = parseInt($(e.target).attr('datebox-button-index'));
 					opts.buttons[index].handler.call(e.target, target);

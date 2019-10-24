@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -21,8 +21,8 @@ _5(_2);
 }
 };
 function _6(_7){
-$(_7).addClass("calendar").html("<div class=\"calendar-header\">"+"<div class=\"calendar-nav calendar-prevmonth\"></div>"+"<div class=\"calendar-nav calendar-nextmonth\"></div>"+"<div class=\"calendar-nav calendar-prevyear\"></div>"+"<div class=\"calendar-nav calendar-nextyear\"></div>"+"<div class=\"calendar-title\">"+"<span class=\"calendar-text\"></span>"+"</div>"+"</div>"+"<div class=\"calendar-body\">"+"<div class=\"calendar-menu\">"+"<div class=\"calendar-menu-year-inner\">"+"<span class=\"calendar-nav calendar-menu-prev\"></span>"+"<span><input class=\"calendar-menu-year\" type=\"text\"/></span>"+"<span class=\"calendar-nav calendar-menu-next\"></span>"+"</div>"+"<div class=\"calendar-menu-month-inner\">"+"</div>"+"</div>"+"</div>");
-$(_7).bind("_resize",function(e,_8){
+$(_7).addClass("calendar").html("<div class=\"calendar-header\">"+"<div class=\"calendar-nav calendar-prevmonth\"></div>"+"<div class=\"calendar-nav calendar-nextmonth\"></div>"+"<div class=\"calendar-nav calendar-prevyear\"></div>"+"<div class=\"calendar-nav calendar-nextyear\"></div>"+"<div class=\"calendar-title\">"+"<span class=\"calendar-text\"></span>"+"</div>"+"</div>"+"<div class=\"calendar-body\">"+"<div class=\"calendar-menu\">"+"<div class=\"calendar-menu-year-inner\">"+"<span class=\"calendar-nav calendar-menu-prev\"></span>"+"<span><input class=\"calendar-menu-year\" type=\"text\"></input></span>"+"<span class=\"calendar-nav calendar-menu-next\"></span>"+"</div>"+"<div class=\"calendar-menu-month-inner\">"+"</div>"+"</div>"+"</div>");
+$(_7)._bind("_resize",function(e,_8){
 if($(this).hasClass("easyui-fluid")||_8){
 _1(_7);
 }
@@ -32,22 +32,22 @@ return false;
 function _9(_a){
 var _b=$.data(_a,"calendar").options;
 var _c=$(_a).find(".calendar-menu");
-_c.find(".calendar-menu-year").unbind(".calendar").bind("keypress.calendar",function(e){
+_c.find(".calendar-menu-year")._unbind(".calendar")._bind("keypress.calendar",function(e){
 if(e.keyCode==13){
 _d(true);
 }
 });
-$(_a).unbind(".calendar").bind("mouseover.calendar",function(e){
+$(_a)._unbind(".calendar")._bind("mouseover.calendar",function(e){
 var t=_e(e.target);
 if(t.hasClass("calendar-nav")||t.hasClass("calendar-text")||(t.hasClass("calendar-day")&&!t.hasClass("calendar-disabled"))){
 t.addClass("calendar-nav-hover");
 }
-}).bind("mouseout.calendar",function(e){
+})._bind("mouseout.calendar",function(e){
 var t=_e(e.target);
 if(t.hasClass("calendar-nav")||t.hasClass("calendar-text")||(t.hasClass("calendar-day")&&!t.hasClass("calendar-disabled"))){
 t.removeClass("calendar-nav-hover");
 }
-}).bind("click.calendar",function(e){
+})._bind("click.calendar",function(e){
 var t=_e(e.target);
 if(t.hasClass("calendar-menu-next")||t.hasClass("calendar-nextyear")){
 _f(1);

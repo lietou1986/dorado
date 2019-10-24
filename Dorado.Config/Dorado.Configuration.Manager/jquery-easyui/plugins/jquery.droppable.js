@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -10,16 +10,16 @@
 (function($){
 function _1(_2){
 $(_2).addClass("droppable");
-$(_2).bind("_dragenter",function(e,_3){
+$(_2)._bind("_dragenter",function(e,_3){
 $.data(_2,"droppable").options.onDragEnter.apply(_2,[e,_3]);
 });
-$(_2).bind("_dragleave",function(e,_4){
+$(_2)._bind("_dragleave",function(e,_4){
 $.data(_2,"droppable").options.onDragLeave.apply(_2,[e,_4]);
 });
-$(_2).bind("_dragover",function(e,_5){
+$(_2)._bind("_dragover",function(e,_5){
 $.data(_2,"droppable").options.onDragOver.apply(_2,[e,_5]);
 });
-$(_2).bind("_drop",function(e,_6){
+$(_2)._bind("_drop",function(e,_6){
 $.data(_2,"droppable").options.onDrop.apply(_2,[e,_6]);
 });
 };

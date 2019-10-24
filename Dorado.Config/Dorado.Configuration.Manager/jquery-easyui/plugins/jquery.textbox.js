@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -203,18 +203,18 @@ var _2b=_2a.options;
 var tb=_2a.textbox;
 var _2c=tb.find(".textbox-text");
 _2c.attr("placeholder",_2b.prompt);
-_2c.unbind(".textbox");
-$(_2a.label).unbind(".textbox");
+_2c._unbind(".textbox");
+$(_2a.label)._unbind(".textbox");
 if(!_2b.disabled&&!_2b.readonly){
 if(_2a.label){
-$(_2a.label).bind("click.textbox",function(e){
+$(_2a.label)._bind("click.textbox",function(e){
 if(!_2b.hasFocusMe){
 _2c.focus();
 $(_29).textbox("setSelectionRange",{start:0,end:_2c.val().length});
 }
 });
 }
-_2c.bind("blur.textbox",function(e){
+_2c._bind("blur.textbox",function(e){
 if(!tb.hasClass("textbox-focused")){
 return;
 }
@@ -226,7 +226,7 @@ $(this).removeClass("textbox-prompt");
 }
 tb.removeClass("textbox-focused");
 tb.closest(".form-field").removeClass("form-field-focused");
-}).bind("focus.textbox",function(e){
+})._bind("focus.textbox",function(e){
 _2b.hasFocusMe=true;
 if(tb.hasClass("textbox-focused")){
 return;
@@ -239,11 +239,11 @@ tb.addClass("textbox-focused");
 tb.closest(".form-field").addClass("form-field-focused");
 });
 for(var _2d in _2b.inputEvents){
-_2c.bind(_2d+".textbox",{target:_29},_2b.inputEvents[_2d]);
+_2c._bind(_2d+".textbox",{target:_29},_2b.inputEvents[_2d]);
 }
 }
 var _2e=tb.find(".textbox-addon");
-_2e.unbind().bind("click",{target:_29},function(e){
+_2e._unbind()._bind("click",{target:_29},function(e){
 var _2f=$(e.target).closest("a.textbox-icon:not(.textbox-icon-disabled)");
 if(_2f.length){
 var _30=parseInt(_2f.attr("icon-index"));
@@ -265,7 +265,7 @@ _34.removeClass("textbox-icon-disabled");
 });
 var btn=tb.find(".textbox-button");
 btn.linkbutton((_2b.disabled||_2b.readonly)?"disable":"enable");
-tb.unbind(".textbox").bind("_resize.textbox",function(e,_35){
+tb._unbind(".textbox")._bind("_resize.textbox",function(e,_35){
 if($(this).hasClass("easyui-fluid")||_35){
 _12(_29);
 }
@@ -302,7 +302,13 @@ if(_3e.readonly){
 _3f.triggerHandler("blur.textbox");
 }
 _3f.validatebox("readonly",_3e.readonly);
-tb.removeClass("textbox-readonly").addClass(_3e.readonly?"textbox-readonly":"");
+if(_3e.readonly){
+tb.addClass("textbox-readonly");
+$(_3d.label).addClass("textbox-label-readonly");
+}else{
+tb.removeClass("textbox-readonly");
+$(_3d.label).removeClass("textbox-label-readonly");
+}
 };
 $.fn.textbox=function(_40,_41){
 if(typeof _40=="string"){

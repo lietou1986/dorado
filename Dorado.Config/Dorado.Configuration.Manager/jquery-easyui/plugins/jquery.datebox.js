@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -53,7 +53,7 @@ $(_2).datebox("initValue",_4.value);
 function _5(_c){
 var _d=$(_c).datebox("options");
 var _e=$(_c).combo("panel");
-_e.unbind(".datebox").bind("click.datebox",function(e){
+_e._unbind(".datebox")._bind("click.datebox",function(e){
 if($(e.target).hasClass("datebox-button-a")){
 var _f=parseInt($(e.target).attr("datebox-button-index"));
 _d.buttons[_f].handler.call(e.target,_c);

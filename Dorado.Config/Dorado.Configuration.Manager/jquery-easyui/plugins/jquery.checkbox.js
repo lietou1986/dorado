@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -26,7 +26,7 @@ var _9=_8.options;
 var _a=_8.checkbox;
 var _b="_easyui_checkbox_"+(++_1);
 var _c=_a.find(".checkbox-value").attr("id",_b);
-_c.unbind(".checkbox").bind("change.checkbox",function(e){
+_c._unbind(".checkbox")._bind("change.checkbox",function(e){
 return false;
 });
 if(_9.label){
@@ -57,7 +57,7 @@ function _10(_11){
 var _12=$.data(_11,"checkbox");
 var _13=_12.options;
 var _14=_12.checkbox;
-_14.unbind(".checkbox").bind("click.checkbox",function(){
+_14._unbind(".checkbox")._bind("click.checkbox",function(){
 if(!_13.disabled&&!_13.readonly){
 _d(_11,!_13.checked);
 }
@@ -84,9 +84,11 @@ var _1e=_1c.checkbox;
 _1e.find(".checkbox-value")._propAttr("checked",_1b);
 var _1f=_1e.find(".checkbox-inner").css("display",_1b?"":"none");
 if(_1b){
-_1f.addClass("checkbox-checked");
+_1e.addClass("checkbox-checked");
+$(_1c.label).addClass("textbox-label-checked");
 }else{
-_1f.removeClass("checkbox-checked");
+_1e.removeClass("checkbox-checked");
+$(_1c.label).removeClass("textbox-label-checked");
 }
 if(_1d.checked!=_1b){
 _1d.checked=_1b;
@@ -98,7 +100,13 @@ function _e(_20,_21){
 var _22=$.data(_20,"checkbox");
 var _23=_22.options;
 _23.readonly=_21==undefined?true:_21;
-_22.checkbox.removeClass("checkbox-readonly").addClass(_23.readonly?"checkbox-readonly":"");
+if(_23.readonly){
+_22.checkbox.addClass("checkbox-readonly");
+$(_22.label).addClass("textbox-label-readonly");
+}else{
+_22.checkbox.removeClass("checkbox-readonly");
+$(_22.label).removeClass("textbox-label-readonly");
+}
 };
 function _f(_24,_25){
 var _26=$.data(_24,"checkbox");

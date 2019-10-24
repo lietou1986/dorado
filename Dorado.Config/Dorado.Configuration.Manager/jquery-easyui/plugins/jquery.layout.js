@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -85,7 +85,7 @@ _14(this);
 });
 _16.onAdd=_17;
 cc.append("<div class=\"layout-split-proxy-h\"></div><div class=\"layout-split-proxy-v\"></div>");
-cc.bind("_resize",function(e,_18){
+cc._bind("_resize",function(e,_18){
 if($(this).hasClass("easyui-fluid")||_18){
 _2(_13);
 }
@@ -115,7 +115,7 @@ var _20="layout-button-"+_1f[dir];
 var t=_1e.children("a."+_20);
 if(!t.length){
 t=$("<a href=\"javascript:;\"></a>").addClass(_20).appendTo(_1e);
-t.bind("click",{dir:dir},function(e){
+t._bind("click",{dir:dir},function(e){
 _39(_1a,e.data.dir);
 return false;
 });
@@ -240,14 +240,14 @@ var ep=_3d[_3f].panel("panel");
 if(!_3e.expandMode){
 ep.css("cursor","default");
 }else{
-ep.bind("click",function(){
+ep._bind("click",function(){
 if(_3e.expandMode=="dock"){
 _4f(_3a,_3b);
 }else{
 p.panel("expand",false).panel("open");
 var _41=_42();
 p.panel("resize",_41.collapse);
-p.panel("panel").unbind(".layout").bind("mouseleave.layout",{region:_3b},function(e){
+p.panel("panel")._unbind(".layout")._bind("mouseleave.layout",{region:_3b},function(e){
 $(this).stop(true,true);
 if(_1==true){
 return;
@@ -272,7 +272,7 @@ _3d.center.panel("resize",_43.resizeC);
 p.panel("panel").animate(_43.collapse,_3c,function(){
 p.panel("collapse",false).panel("close");
 _3d[_3f].panel("open").panel("resize",_43.expandP);
-$(this).unbind(".layout");
+$(this)._unbind(".layout");
 $(_3a).layout("options").onCollapse.call(_3a,_3b);
 });
 function _40(dir){

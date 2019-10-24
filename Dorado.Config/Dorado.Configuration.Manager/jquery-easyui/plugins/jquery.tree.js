@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -15,7 +15,7 @@ return _3;
 };
 function _4(_5){
 var _6=$.data(_5,"tree").options;
-$(_5).unbind().bind("mouseover",function(e){
+$(_5)._unbind()._bind("mouseover",function(e){
 var tt=$(e.target);
 var _7=tt.closest("div.tree-node");
 if(!_7.length){
@@ -30,7 +30,7 @@ tt.addClass("tree-collapsed-hover");
 }
 }
 e.stopPropagation();
-}).bind("mouseout",function(e){
+})._bind("mouseout",function(e){
 var tt=$(e.target);
 var _8=tt.closest("div.tree-node");
 if(!_8.length){
@@ -45,7 +45,7 @@ tt.removeClass("tree-collapsed-hover");
 }
 }
 e.stopPropagation();
-}).bind("click",function(e){
+})._bind("click",function(e){
 var tt=$(e.target);
 var _9=tt.closest("div.tree-node");
 if(!_9.length){
@@ -64,7 +64,7 @@ _6.onClick.call(_5,_c(_5,_9[0]));
 }
 }
 e.stopPropagation();
-}).bind("dblclick",function(e){
+})._bind("dblclick",function(e){
 var _a=$(e.target).closest("div.tree-node");
 if(!_a.length){
 return;
@@ -72,7 +72,7 @@ return;
 _dc(_5,_a[0]);
 _6.onDblClick.call(_5,_c(_5,_a[0]));
 e.stopPropagation();
-}).bind("contextmenu",function(e){
+})._bind("contextmenu",function(e){
 var _b=$(e.target).closest("div.tree-node");
 if(!_b.length){
 return;
@@ -878,13 +878,13 @@ var _e9=$("<input class=\"tree-editor\">").appendTo(nt);
 _e9.val(_e7.text).focus();
 _e9.width(_e8+20);
 _e9._outerHeight(_e6.editorHeight);
-_e9.bind("click",function(e){
+_e9._bind("click",function(e){
 return false;
-}).bind("mousedown",function(e){
+})._bind("mousedown",function(e){
 e.stopPropagation();
-}).bind("mousemove",function(e){
+})._bind("mousemove",function(e){
 e.stopPropagation();
-}).bind("keydown",function(e){
+})._bind("keydown",function(e){
 if(e.keyCode==13){
 _ea(_e4,_e5);
 return false;
@@ -894,7 +894,7 @@ _f0(_e4,_e5);
 return false;
 }
 }
-}).bind("blur",function(e){
+})._bind("blur",function(e){
 e.stopPropagation();
 _ea(_e4,_e5);
 });

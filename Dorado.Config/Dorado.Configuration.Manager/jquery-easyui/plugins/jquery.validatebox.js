@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -21,17 +21,17 @@ if(_5.ftimer){
 clearTimeout(_5.ftimer);
 }
 $(_4).tooltip("destroy");
-$(_4).unbind();
+$(_4)._unbind();
 $(_4).remove();
 };
 function _6(_7){
 var _8=$.data(_7,"validatebox").options;
-$(_7).unbind(".validatebox");
+$(_7)._unbind(".validatebox");
 if(_8.novalidate||_8.disabled){
 return;
 }
 for(var _9 in _8.events){
-$(_7).bind(_9+".validatebox",{target:_7},_8.events[_9]);
+$(_7)._bind(_9+".validatebox",{target:_7},_8.events[_9]);
 }
 };
 function _a(e){

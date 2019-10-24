@@ -1,8 +1,15 @@
 Version 1.8.x
 -------------
+* Bug
+ * datagrid: Slow scrolling with mousewheel on frozen columns. fixed.
+ * datagrid: The 'rowStyler' function is called on empty row. fixed.
+ * linkbutton: Calling 'disable' method still can submit the form. fixed.
+ * combotree: The 'onBeforeSelect' event fires twice while selecting a node. fixed.
+ * combotreegrid: The 'onSelect' event fires twice while selecting a row. fixed.
 * Improvement
  * checkbox: Add 'readonly' property.
  * radiobutton: Add 'readonly' property.
+ * Compatible with jQuery 3.x.
 
 Version 1.8.0
 -------------

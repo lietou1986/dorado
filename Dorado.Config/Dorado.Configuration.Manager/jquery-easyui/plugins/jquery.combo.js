@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -9,7 +9,7 @@
  */
 (function($){
 $(function(){
-$(document).unbind(".combo").bind("mousedown.combo mousewheel.combo",function(e){
+$(document)._unbind(".combo")._bind("mousedown.combo mousewheel.combo",function(e){
 var p=$(e.target).closest("span.combo,div.combo-p,div.menu");
 if(p.length){
 _1(p);
@@ -50,9 +50,9 @@ $(_3).addClass("combo-f").textbox($.extend({},_5,{icons:_a,onChange:function(){
 $(_3).attr("comboName",$(_3).attr("textboxName"));
 _4.combo=$(_3).next();
 _4.combo.addClass("combo");
-_4.panel.unbind(".combo");
+_4.panel._unbind(".combo");
 for(var _b in _5.panelEvents){
-_4.panel.bind(_b+".combo",{target:_3},_5.panelEvents[_b]);
+_4.panel._bind(_b+".combo",{target:_3},_5.panelEvents[_b]);
 }
 };
 function _c(_d){

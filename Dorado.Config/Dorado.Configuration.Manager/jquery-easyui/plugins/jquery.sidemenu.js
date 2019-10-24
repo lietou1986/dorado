@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -43,7 +43,7 @@ $(_11.target).removeClass("tree-node-nonleaf-collapsed");
 $(this).tree("toggle",_11.target);
 }
 }});
-tt.unbind(".sidemenu").bind("mouseleave.sidemenu",function(){
+tt._unbind(".sidemenu")._bind("mouseleave.sidemenu",function(){
 $(_a).trigger("mouseleave");
 });
 _12(_9,_c.selectedItemId);
@@ -60,9 +60,9 @@ var t=$(this);
 var tip=t.tooltip("tip").addClass("sidemenu-tooltip");
 tip.children(".tooltip-content").addClass("sidemenu");
 tip.find(".accordion").accordion("resize");
-tip.add(tip.find("ul.tree")).unbind(".sidemenu").bind("mouseover.sidemenu",function(){
+tip.add(tip.find("ul.tree"))._unbind(".sidemenu")._bind("mouseover.sidemenu",function(){
 t.tooltip("show");
-}).bind("mouseleave.sidemenu",function(){
+})._bind("mouseleave.sidemenu",function(){
 t.tooltip("hide");
 });
 t.tooltip("reposition");

@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -172,9 +172,9 @@ var _2b=this;
 var _2c=$.extend({},$.fn.maskedbox.defaults,_2a);
 $.data(_2b,"maskedbox",{options:_2c});
 var _2d=$(_2b).textbox("textbox");
-_2d.unbind(".maskedbox");
+_2d._unbind(".maskedbox");
 for(var _2e in _2c.inputEvents){
-_2d.bind(_2e+".maskedbox",{target:_2b},_2c.inputEvents[_2e]);
+_2d._bind(_2e+".maskedbox",{target:_2b},_2c.inputEvents[_2e]);
 }
 });
 }});

@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -260,11 +260,16 @@
 			createTab(container, opts, $(this));
 		});
 		
-		cc.children('div.tabs-header').find('.tabs-scroller-left, .tabs-scroller-right').hover(
-				function(){$(this).addClass('tabs-scroller-over');},
-				function(){$(this).removeClass('tabs-scroller-over');}
-		);
-		cc.bind('_resize', function(e,force){
+		// cc.children('div.tabs-header').find('.tabs-scroller-left, .tabs-scroller-right').hover(
+		// 		function(){$(this).addClass('tabs-scroller-over');},
+		// 		function(){$(this).removeClass('tabs-scroller-over');}
+		// );
+		cc.children('div.tabs-header').find('.tabs-scroller-left, .tabs-scroller-right')._bind('mouseenter', function(){
+			$(this).addClass('tabs-scroller-over');
+		})._bind('mouseleave', function(){
+			$(this).removeClass('tabs-scroller-over');
+		});
+		cc._bind('_resize', function(e,force){
 			if ($(this).hasClass('easyui-fluid') || force){
 				setSize(container);
 				setSelectedSize(container);
@@ -276,7 +281,7 @@
 	function bindEvents(container){
 		var state = $.data(container, 'tabs')
 		var opts = state.options;
-		$(container).children('div.tabs-header').unbind().bind('click', function(e){
+		$(container).children('div.tabs-header')._unbind()._bind('click', function(e){
 			if ($(e.target).hasClass('tabs-scroller-left')){
 				$(container).tabs('scrollBy', -opts.scrollIncrement);
 			} else if ($(e.target).hasClass('tabs-scroller-right')){
@@ -299,7 +304,7 @@
 				}
 				return false;
 			}
-		}).bind('contextmenu', function(e){
+		})._bind('contextmenu', function(e){
 			var li = $(e.target).closest('li');
 			if (li.hasClass('tabs-disabled')){return;}
 			if (li.length){
@@ -536,7 +541,7 @@
 							var t = $('<a href="javascript:;"></a>').appendTo(p_tool);
 							t.addClass(opts.tools[i].iconCls);
 							if (opts.tools[i].handler){
-								t.bind('click', {handler:opts.tools[i].handler}, function(e){
+								t._bind('click', {handler:opts.tools[i].handler}, function(e){
 									if ($(this).parents('li').hasClass('tabs-disabled')){return;}
 									e.data.handler.call(this);
 								});

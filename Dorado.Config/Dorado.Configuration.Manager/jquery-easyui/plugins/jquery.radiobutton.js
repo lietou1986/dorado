@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -26,7 +26,7 @@ var _9=_8.options;
 var _a=_8.radiobutton;
 var _b="_easyui_radiobutton_"+(++_1);
 var _c=_a.find(".radiobutton-value").attr("id",_b);
-_c.unbind(".radiobutton").bind("change.radiobutton",function(e){
+_c._unbind(".radiobutton")._bind("change.radiobutton",function(e){
 return false;
 });
 if(_9.label){
@@ -57,7 +57,7 @@ function _10(_11){
 var _12=$.data(_11,"radiobutton");
 var _13=_12.options;
 var _14=_12.radiobutton;
-_14.unbind(".radiobutton").bind("click.radiobutton",function(){
+_14._unbind(".radiobutton")._bind("click.radiobutton",function(){
 if(!_13.disabled&&!_13.readonly){
 _d(_11,true);
 }
@@ -91,64 +91,78 @@ _1d(_1a,true);
 _1d(_1a,false);
 }
 function _1d(b,c){
-var _1e=$(b).radiobutton("options");
-var _1f=$(b).data("radiobutton").radiobutton;
-_1f.find(".radiobutton-inner").css("display",c?"":"none");
-_1f.find(".radiobutton-value")._propAttr("checked",c);
-if(_1e.checked!=c){
-_1e.checked=c;
-_1e.onChange.call($(b)[0],c);
+var _1e=$(b).data("radiobutton");
+var _1f=_1e.options;
+var _20=_1e.radiobutton;
+_20.find(".radiobutton-inner").css("display",c?"":"none");
+_20.find(".radiobutton-value")._propAttr("checked",c);
+if(c){
+_20.addClass("radiobutton-checked");
+$(_1e.label).addClass("textbox-label-checked");
+}else{
+_20.removeClass("radiobutton-checked");
+$(_1e.label).removeClass("textbox-label-checked");
+}
+if(_1f.checked!=c){
+_1f.checked=c;
+_1f.onChange.call($(b)[0],c);
 $(b).closest("form").trigger("_change",[$(b)[0]]);
 }
 };
 };
-function _f(_20,_21){
-var _22=$.data(_20,"radiobutton");
-var _23=_22.options;
-var _24=_22.radiobutton;
-var rv=_24.find(".radiobutton-value");
-_23.disabled=_21;
-if(_21){
-$(_20).add(rv)._propAttr("disabled",true);
-_24.addClass("radiobutton-disabled");
-$(_22.label).addClass("textbox-label-disabled");
+function _f(_21,_22){
+var _23=$.data(_21,"radiobutton");
+var _24=_23.options;
+var _25=_23.radiobutton;
+var rv=_25.find(".radiobutton-value");
+_24.disabled=_22;
+if(_22){
+$(_21).add(rv)._propAttr("disabled",true);
+_25.addClass("radiobutton-disabled");
+$(_23.label).addClass("textbox-label-disabled");
 }else{
-$(_20).add(rv)._propAttr("disabled",false);
-_24.removeClass("radiobutton-disabled");
-$(_22.label).removeClass("textbox-label-disabled");
+$(_21).add(rv)._propAttr("disabled",false);
+_25.removeClass("radiobutton-disabled");
+$(_23.label).removeClass("textbox-label-disabled");
 }
 };
-function _e(_25,_26){
-var _27=$.data(_25,"radiobutton");
-var _28=_27.options;
-_28.readonly=_26==undefined?true:_26;
-_27.radiobutton.removeClass("radiobutton-readonly").addClass(_28.readonly?"radiobutton-readonly":"");
-};
-$.fn.radiobutton=function(_29,_2a){
-if(typeof _29=="string"){
-return $.fn.radiobutton.methods[_29](this,_2a);
+function _e(_26,_27){
+var _28=$.data(_26,"radiobutton");
+var _29=_28.options;
+_29.readonly=_27==undefined?true:_27;
+if(_29.readonly){
+_28.radiobutton.addClass("radiobutton-readonly");
+$(_28.label).addClass("textbox-label-readonly");
+}else{
+_28.radiobutton.removeClass("radiobutton-readonly");
+$(_28.label).removeClass("textbox-label-readonly");
 }
-_29=_29||{};
+};
+$.fn.radiobutton=function(_2a,_2b){
+if(typeof _2a=="string"){
+return $.fn.radiobutton.methods[_2a](this,_2b);
+}
+_2a=_2a||{};
 return this.each(function(){
-var _2b=$.data(this,"radiobutton");
-if(_2b){
-$.extend(_2b.options,_29);
+var _2c=$.data(this,"radiobutton");
+if(_2c){
+$.extend(_2c.options,_2a);
 }else{
-_2b=$.data(this,"radiobutton",{options:$.extend({},$.fn.radiobutton.defaults,$.fn.radiobutton.parseOptions(this),_29),radiobutton:_2(this)});
+_2c=$.data(this,"radiobutton",{options:$.extend({},$.fn.radiobutton.defaults,$.fn.radiobutton.parseOptions(this),_2a),radiobutton:_2(this)});
 }
-_2b.options.originalChecked=_2b.options.checked;
+_2c.options.originalChecked=_2c.options.checked;
 _6(this);
 _10(this);
 _15(this);
 });
 };
 $.fn.radiobutton.methods={options:function(jq){
-var _2c=jq.data("radiobutton");
-return $.extend(_2c.options,{value:_2c.radiobutton.find(".radiobutton-value").val()});
-},setValue:function(jq,_2d){
+var _2d=jq.data("radiobutton");
+return $.extend(_2d.options,{value:_2d.radiobutton.find(".radiobutton-value").val()});
+},setValue:function(jq,_2e){
 return jq.each(function(){
-$(this).val(_2d);
-$.data(this,"radiobutton").radiobutton.find(".radiobutton-value").val(_2d);
+$(this).val(_2e);
+$.data(this,"radiobutton").radiobutton.find(".radiobutton-value").val(_2e);
 });
 },enable:function(jq){
 return jq.each(function(){
@@ -158,9 +172,9 @@ _f(this,false);
 return jq.each(function(){
 _f(this,true);
 });
-},readonly:function(jq,_2e){
+},readonly:function(jq,_2f){
 return jq.each(function(){
-_e(this,_2e);
+_e(this,_2f);
 });
 },check:function(jq){
 return jq.each(function(){
@@ -176,15 +190,15 @@ _d(this,false);
 });
 },reset:function(jq){
 return jq.each(function(){
-var _2f=$(this).radiobutton("options");
-_d(this,_2f.originalChecked);
+var _30=$(this).radiobutton("options");
+_d(this,_30.originalChecked);
 });
 }};
-$.fn.radiobutton.parseOptions=function(_30){
-var t=$(_30);
-return $.extend({},$.parser.parseOptions(_30,["label","labelPosition","labelAlign",{labelWidth:"number"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined),readonly:(t.attr("readonly")?true:undefined)});
+$.fn.radiobutton.parseOptions=function(_31){
+var t=$(_31);
+return $.extend({},$.parser.parseOptions(_31,["label","labelPosition","labelAlign",{labelWidth:"number"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined),readonly:(t.attr("readonly")?true:undefined)});
 };
-$.fn.radiobutton.defaults={width:20,height:20,value:null,disabled:false,readonly:false,checked:false,label:null,labelWidth:"auto",labelPosition:"before",labelAlign:"left",onChange:function(_31){
+$.fn.radiobutton.defaults={width:20,height:20,value:null,disabled:false,readonly:false,checked:false,label:null,labelWidth:"auto",labelPosition:"before",labelAlign:"left",onChange:function(_32){
 }};
 })(jQuery);
 

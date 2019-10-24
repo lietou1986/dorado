@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -70,7 +70,7 @@ _15.find(".textbox-button").linkbutton("resize",{height:"100%"});
 };
 function _1c(_1d){
 var _1e=$(_1d).next();
-_1e.unbind(".tagbox").bind("click.tagbox",function(e){
+_1e._unbind(".tagbox")._bind("click.tagbox",function(e){
 var _1f=$(_1d).tagbox("options");
 if(_1f.disabled||_1f.readonly){
 return;
@@ -93,15 +93,15 @@ _1f.onClickTag.call(_1d,_21[_20]);
 }
 }
 $(this).find(".textbox-text").focus();
-}).bind("keyup.tagbox",function(e){
+})._bind("keyup.tagbox",function(e){
 _23(_1d);
-}).bind("mouseover.tagbox",function(e){
+})._bind("mouseover.tagbox",function(e){
 if($(e.target).closest(".textbox-button,.textbox-addon,.tagbox-label").length){
 $(this).triggerHandler("mouseleave");
 }else{
 $(this).find(".textbox-text").triggerHandler("mouseenter");
 }
-}).bind("mouseleave.tagbox",function(e){
+})._bind("mouseleave.tagbox",function(e){
 $(this).find(".textbox-text").triggerHandler("mouseleave");
 });
 };

@@ -601,6 +601,7 @@
     <Content Include="jquery-easyui\themes\black\tabs.css" />
     <Content Include="jquery-easyui\themes\black\tagbox.css" />
     <Content Include="jquery-easyui\themes\black\textbox.css" />
+    <Content Include="jquery-easyui\themes\black\timepicker.css" />
     <Content Include="jquery-easyui\themes\black\tooltip.css" />
     <Content Include="jquery-easyui\themes\black\tree.css" />
     <Content Include="jquery-easyui\themes\black\validatebox.css" />
@@ -659,6 +660,7 @@
     <Content Include="jquery-easyui\themes\bootstrap\tabs.css" />
     <Content Include="jquery-easyui\themes\bootstrap\tagbox.css" />
     <Content Include="jquery-easyui\themes\bootstrap\textbox.css" />
+    <Content Include="jquery-easyui\themes\bootstrap\timepicker.css" />
     <Content Include="jquery-easyui\themes\bootstrap\tooltip.css" />
     <Content Include="jquery-easyui\themes\bootstrap\tree.css" />
     <Content Include="jquery-easyui\themes\bootstrap\validatebox.css" />
@@ -718,6 +720,7 @@
     <Content Include="jquery-easyui\themes\default\tabs.css" />
     <Content Include="jquery-easyui\themes\default\tagbox.css" />
     <Content Include="jquery-easyui\themes\default\textbox.css" />
+    <Content Include="jquery-easyui\themes\default\timepicker.css" />
     <Content Include="jquery-easyui\themes\default\tooltip.css" />
     <Content Include="jquery-easyui\themes\default\tree.css" />
     <Content Include="jquery-easyui\themes\default\validatebox.css" />
@@ -776,6 +779,7 @@
     <Content Include="jquery-easyui\themes\gray\tabs.css" />
     <Content Include="jquery-easyui\themes\gray\tagbox.css" />
     <Content Include="jquery-easyui\themes\gray\textbox.css" />
+    <Content Include="jquery-easyui\themes\gray\timepicker.css" />
     <Content Include="jquery-easyui\themes\gray\tooltip.css" />
     <Content Include="jquery-easyui\themes\gray\tree.css" />
     <Content Include="jquery-easyui\themes\gray\validatebox.css" />
@@ -868,6 +872,7 @@
     <Content Include="jquery-easyui\themes\material-blue\tabs.css" />
     <Content Include="jquery-easyui\themes\material-blue\tagbox.css" />
     <Content Include="jquery-easyui\themes\material-blue\textbox.css" />
+    <Content Include="jquery-easyui\themes\material-blue\timepicker.css" />
     <Content Include="jquery-easyui\themes\material-blue\tooltip.css" />
     <Content Include="jquery-easyui\themes\material-blue\tree.css" />
     <Content Include="jquery-easyui\themes\material-blue\validatebox.css" />
@@ -926,6 +931,7 @@
     <Content Include="jquery-easyui\themes\material-teal\tabs.css" />
     <Content Include="jquery-easyui\themes\material-teal\tagbox.css" />
     <Content Include="jquery-easyui\themes\material-teal\textbox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\timepicker.css" />
     <Content Include="jquery-easyui\themes\material-teal\tooltip.css" />
     <Content Include="jquery-easyui\themes\material-teal\tree.css" />
     <Content Include="jquery-easyui\themes\material-teal\validatebox.css" />
@@ -984,6 +990,7 @@
     <Content Include="jquery-easyui\themes\material\tabs.css" />
     <Content Include="jquery-easyui\themes\material\tagbox.css" />
     <Content Include="jquery-easyui\themes\material\textbox.css" />
+    <Content Include="jquery-easyui\themes\material\timepicker.css" />
     <Content Include="jquery-easyui\themes\material\tooltip.css" />
     <Content Include="jquery-easyui\themes\material\tree.css" />
     <Content Include="jquery-easyui\themes\material\validatebox.css" />
@@ -1042,6 +1049,7 @@
     <Content Include="jquery-easyui\themes\metro\tabs.css" />
     <Content Include="jquery-easyui\themes\metro\tagbox.css" />
     <Content Include="jquery-easyui\themes\metro\textbox.css" />
+    <Content Include="jquery-easyui\themes\metro\timepicker.css" />
     <Content Include="jquery-easyui\themes\metro\tooltip.css" />
     <Content Include="jquery-easyui\themes\metro\tree.css" />
     <Content Include="jquery-easyui\themes\metro\validatebox.css" />
@@ -1058,6 +1066,28 @@
     <Content Include="Js\RemoteConfiguration\SimpleIndex.js" />
     <Content Include="Js\Share\jquery.snippet.min.js" />
     <Content Include="Js\Share\Share.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\RemoteConfiguration\Index.cshtml" />
+    <Content Include="Views\RemoteConfiguration\Create.cshtml" />
+    <Content Include="Views\RemoteConfiguration\EditVersion.cshtml" />
+    <Content Include="Views\RemoteConfiguration\CreateVersion.cshtml" />
+    <Content Include="Views\RemoteConfiguration\ViewHistory.cshtml" />
+    <Content Include="Views\Shared\_MainNoLayout.cshtml" />
+    <Content Include="Views\RemoteConfiguration\ViewConfig.cshtml" />
+    <Content Include="Views\RemoteConfiguration\SimpleIndex.cshtml" />
     <Content Include="jquery-easyui\demo\accordion\datagrid_data1.json" />
     <Content Include="jquery-easyui\demo\combobox\combobox_data1.json" />
     <Content Include="jquery-easyui\demo\combobox\combobox_data2.json" />
@@ -1083,28 +1113,6 @@
     <Content Include="jquery-easyui\plugins\jquery.calendar" />
     <Content Include="jquery-easyui\themes\material-teal\images\Thumbs.db" />
     <Content Include="jquery-easyui\themes\material\images\Thumbs.db" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Web.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Views\Shared\_MainLayout.cshtml" />
-    <Content Include="Views\RemoteConfiguration\Index.cshtml" />
-    <Content Include="Views\RemoteConfiguration\Create.cshtml" />
-    <Content Include="Views\RemoteConfiguration\EditVersion.cshtml" />
-    <Content Include="Views\RemoteConfiguration\CreateVersion.cshtml" />
-    <Content Include="Views\RemoteConfiguration\ViewHistory.cshtml" />
-    <Content Include="Views\Shared\_MainNoLayout.cshtml" />
-    <Content Include="Views\RemoteConfiguration\ViewConfig.cshtml" />
-    <Content Include="Views\RemoteConfiguration\SimpleIndex.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

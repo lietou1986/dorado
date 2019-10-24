@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -178,12 +178,12 @@ cc.children("div.tabs-panels").children("div").each(function(i){
 var _2e=$.extend({},$.parser.parseOptions(this),{disabled:($(this).attr("disabled")?true:undefined),selected:($(this).attr("selected")?true:undefined)});
 _3e(_2b,_2e,$(this));
 });
-cc.children("div.tabs-header").find(".tabs-scroller-left, .tabs-scroller-right").hover(function(){
+cc.children("div.tabs-header").find(".tabs-scroller-left, .tabs-scroller-right")._bind("mouseenter",function(){
 $(this).addClass("tabs-scroller-over");
-},function(){
+})._bind("mouseleave",function(){
 $(this).removeClass("tabs-scroller-over");
 });
-cc.bind("_resize",function(e,_2f){
+cc._bind("_resize",function(e,_2f){
 if($(this).hasClass("easyui-fluid")||_2f){
 _15(_2b);
 _23(_2b);
@@ -194,7 +194,7 @@ return false;
 function _30(_31){
 var _32=$.data(_31,"tabs");
 var _33=_32.options;
-$(_31).children("div.tabs-header").unbind().bind("click",function(e){
+$(_31).children("div.tabs-header")._unbind()._bind("click",function(e){
 if($(e.target).hasClass("tabs-scroller-left")){
 $(_31).tabs("scrollBy",-_33.scrollIncrement);
 }else{
@@ -222,7 +222,7 @@ _53(_31,_35);
 return false;
 }
 }
-}).bind("contextmenu",function(e){
+})._bind("contextmenu",function(e){
 var li=$(e.target).closest("li");
 if(li.hasClass("tabs-disabled")){
 return;
@@ -429,7 +429,7 @@ for(var i=0;i<_58.tools.length;i++){
 var t=$("<a href=\"javascript:;\"></a>").appendTo(_5c);
 t.addClass(_58.tools[i].iconCls);
 if(_58.tools[i].handler){
-t.bind("click",{handler:_58.tools[i].handler},function(e){
+t._bind("click",{handler:_58.tools[i].handler},function(e){
 if($(this).parents("li").hasClass("tabs-disabled")){
 return;
 }

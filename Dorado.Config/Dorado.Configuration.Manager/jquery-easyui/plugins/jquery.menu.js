@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -9,7 +9,7 @@
  */
 (function($){
 $(function(){
-$(document).unbind(".menu").bind("mousedown.menu",function(e){
+$(document)._unbind(".menu")._bind("mousedown.menu",function(e){
 var m=$(e.target).closest("div.menu,div.combo-p");
 if(m.length){
 return;
@@ -22,7 +22,7 @@ function _2(_3){
 var _4=$.data(_3,"menu").options;
 $(_3).addClass("menu-top");
 _4.inline?$(_3).addClass("menu-inline"):$(_3).appendTo("body");
-$(_3).bind("_resize",function(e,_5){
+$(_3)._bind("_resize",function(e,_5){
 if($(this).hasClass("easyui-fluid")||_5){
 $(_3).menu("resize",_3);
 }
@@ -148,9 +148,9 @@ _18.hide();
 function _11(_20,_21){
 var _22=$.data(_20,"menu");
 var _23=_22.options;
-_21.unbind(".menu");
+_21._unbind(".menu");
 for(var _24 in _23.events){
-_21.bind(_24+".menu",{target:_20},_23.events[_24]);
+_21._bind(_24+".menu",{target:_20},_23.events[_24]);
 }
 };
 function _25(e){

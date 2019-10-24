@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -37,7 +37,7 @@ for(var _7=0;_7<aa.length;_7++){
 var _8=aa[_7];
 if(_8=="list"){
 var ps=$("<select class=\"pagination-page-list\"></select>");
-ps.bind("change",function(){
+ps._bind("change",function(){
 _4.pageSize=parseInt($(this).val());
 _4.onChangePageSize.call(_2,_4.pageSize);
 _10(_2,_4.pageNumber);
@@ -65,7 +65,7 @@ bb.last=_9("last");
 if(_8=="manual"){
 $("<span style=\"padding-left:6px;\"></span>").html(_4.beforePageText).appendTo(tr).wrap("<td></td>");
 bb.num=$("<input class=\"pagination-num\" type=\"text\" value=\"1\" size=\"2\">").appendTo(tr).wrap("<td></td>");
-bb.num.unbind(".pagination").bind("keydown.pagination",function(e){
+bb.num._unbind(".pagination")._bind("keydown.pagination",function(e){
 if(e.keyCode==13){
 var _a=parseInt($(this).val())||1;
 _10(_2,_a);
@@ -122,7 +122,7 @@ function _9(_c){
 var _d=_4.nav[_c];
 var a=$("<a href=\"javascript:;\"></a>").appendTo(tr);
 a.wrap("<td></td>");
-a.linkbutton({iconCls:_d.iconCls,plain:true}).unbind(".pagination").bind("click.pagination",function(){
+a.linkbutton({iconCls:_d.iconCls,plain:true})._unbind(".pagination")._bind("click.pagination",function(){
 _d.handler.call(_2);
 });
 return a;
@@ -188,7 +188,7 @@ a.linkbutton({plain:true,text:i});
 if(i==_18.pageNumber){
 a.linkbutton("select");
 }else{
-a.unbind(".pagination").bind("click.pagination",{pageNumber:i},function(e){
+a._unbind(".pagination")._bind("click.pagination",{pageNumber:i},function(e){
 _10(_15,e.data.pageNumber);
 });
 }

@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -18,7 +18,7 @@ if(_5){
 t.removeAttr("name").attr("switchbuttonName",_5);
 _4.find(".switchbutton-value").attr("name",_5);
 }
-_4.bind("_resize",function(e,_6){
+_4._bind("_resize",function(e,_6){
 if($(this).hasClass("easyui-fluid")||_6){
 _7(_3);
 }
@@ -79,7 +79,7 @@ off.insertAfter(_17);
 }
 var _18="_easyui_switchbutton_"+(++_1);
 var _19=_15.find(".switchbutton-value")._propAttr("checked",_14.checked).attr("id",_18);
-_19.unbind(".switchbutton").bind("change.switchbutton",function(e){
+_19._unbind(".switchbutton")._bind("change.switchbutton",function(e){
 return false;
 });
 _15.removeClass("switchbutton-reversed").addClass(_14.reversed?"switchbutton-reversed":"");
@@ -151,11 +151,11 @@ _2d.switchbutton.removeClass("switchbutton-readonly").addClass(_2e.readonly?"swi
 function _2f(_30){
 var _31=$.data(_30,"switchbutton");
 var _32=_31.options;
-_31.switchbutton.unbind(".switchbutton").bind("click.switchbutton",function(){
+_31.switchbutton._unbind(".switchbutton")._bind("click.switchbutton",function(){
 if(!_32.disabled&&!_32.readonly){
 _10(_30,_32.checked?false:true,true);
 }
-}).bind("keydown.switchbutton",function(e){
+})._bind("keydown.switchbutton",function(e){
 if(e.which==13||e.which==32){
 if(!_32.disabled&&!_32.readonly){
 _10(_30,_32.checked?false:true,true);

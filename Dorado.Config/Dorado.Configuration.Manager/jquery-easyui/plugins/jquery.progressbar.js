@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -11,7 +11,7 @@
 function _1(_2){
 $(_2).addClass("progressbar");
 $(_2).html("<div class=\"progressbar-text\"></div><div class=\"progressbar-value\"><div class=\"progressbar-text\"></div></div>");
-$(_2).bind("_resize",function(e,_3){
+$(_2)._bind("_resize",function(e,_3){
 if($(this).hasClass("easyui-fluid")||_3){
 _4(_2);
 }

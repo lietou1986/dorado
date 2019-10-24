@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -9,7 +9,7 @@
  */
 (function($){
 function _1(){
-$(document).unbind(".messager").bind("keydown.messager",function(e){
+$(document)._unbind(".messager")._bind("keydown.messager",function(e){
 if(e.keyCode==27){
 $("body").children("div.messager-window").children("div.messager-body").each(function(){
 $(this).dialog("close");
@@ -40,7 +40,7 @@ _6(_5,_4.val());
 });
 };
 function _7(){
-$(document).unbind(".messager");
+$(document)._unbind(".messager");
 };
 function _8(_9){
 var _a=$.extend({},$.messager.defaults,{modal:false,shadow:false,draggable:false,resizable:false,closed:true,style:{left:"",top:"",right:0,zIndex:$.fn.window.defaults.zIndex++,bottom:-document.body.scrollTop-document.documentElement.scrollTop},title:"",width:300,height:150,minHeight:0,showType:"slide",showSpeed:600,content:_9.msg,timeout:4000},_9);

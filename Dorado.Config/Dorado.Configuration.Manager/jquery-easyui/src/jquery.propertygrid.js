@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -16,7 +16,7 @@
  */
 (function($){
 	var currTarget;
-	$(document).unbind('.propertygrid').bind('mousedown.propertygrid', function(e){
+	$(document)._unbind('.propertygrid')._bind('mousedown.propertygrid', function(e){
 		var p = $(e.target).closest('div.datagrid-view,div.combo-panel');
 		if (p.length){return;}
 		stopEditing(currTarget);
@@ -200,7 +200,7 @@
 			var dc = state.dc;
 			var body = dc.body1.add(dc.body2);
 			var clickHandler = ($.data(body[0],'events')||$._data(body[0],'events')).click[0].handler;
-			body.unbind('click').bind('click', function(e){
+			body._unbind('click')._bind('click', function(e){
 				var tt = $(e.target);
 				var expander = tt.closest('span.datagrid-row-expander');
 				if (expander.length){

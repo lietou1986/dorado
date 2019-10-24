@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.1
+ * EasyUI for jQuery 1.8.8
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -243,6 +243,8 @@
 	};
 	
 	$.fn._propAttr = $.fn.prop || $.fn.attr;
+	$.fn._bind = $.fn.on;
+	$.fn._unbind = $.fn.off;
 	
 	$.fn._size = function(options, parent){
 		if (typeof options == 'string'){
