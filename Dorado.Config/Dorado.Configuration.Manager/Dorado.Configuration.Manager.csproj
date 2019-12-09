@@ -397,6 +397,7 @@
     <Content Include="jquery-easyui\demo\textbox\icons.html" />
     <Content Include="jquery-easyui\demo\textbox\multiline.html" />
     <Content Include="jquery-easyui\demo\textbox\size.html" />
+    <Content Include="jquery-easyui\demo\timepicker\basic.html" />
     <Content Include="jquery-easyui\demo\timespinner\actions.html" />
     <Content Include="jquery-easyui\demo\timespinner\basic.html" />
     <Content Include="jquery-easyui\demo\timespinner\fluid.html" />
@@ -522,6 +523,7 @@
     <Content Include="jquery-easyui\plugins\jquery.tabs.js" />
     <Content Include="jquery-easyui\plugins\jquery.tagbox.js" />
     <Content Include="jquery-easyui\plugins\jquery.textbox.js" />
+    <Content Include="jquery-easyui\plugins\jquery.timepicker.js" />
     <Content Include="jquery-easyui\plugins\jquery.timespinner.js" />
     <Content Include="jquery-easyui\plugins\jquery.tooltip.js" />
     <Content Include="jquery-easyui\plugins\jquery.tree.js" />
@@ -558,6 +560,7 @@
     <Content Include="jquery-easyui\themes\black\dialog.css" />
     <Content Include="jquery-easyui\themes\black\easyui.css" />
     <Content Include="jquery-easyui\themes\black\filebox.css" />
+    <Content Include="jquery-easyui\themes\black\flex.css" />
     <Content Include="jquery-easyui\themes\black\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\black\images\blank.gif" />
     <Content Include="jquery-easyui\themes\black\images\calendar_arrows.png" />
@@ -617,6 +620,7 @@
     <Content Include="jquery-easyui\themes\bootstrap\dialog.css" />
     <Content Include="jquery-easyui\themes\bootstrap\easyui.css" />
     <Content Include="jquery-easyui\themes\bootstrap\filebox.css" />
+    <Content Include="jquery-easyui\themes\bootstrap\flex.css" />
     <Content Include="jquery-easyui\themes\bootstrap\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\bootstrap\images\blank.gif" />
     <Content Include="jquery-easyui\themes\bootstrap\images\calendar_arrows.png" />
@@ -677,6 +681,7 @@
     <Content Include="jquery-easyui\themes\default\dialog.css" />
     <Content Include="jquery-easyui\themes\default\easyui.css" />
     <Content Include="jquery-easyui\themes\default\filebox.css" />
+    <Content Include="jquery-easyui\themes\default\flex.css" />
     <Content Include="jquery-easyui\themes\default\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\default\images\blank.gif" />
     <Content Include="jquery-easyui\themes\default\images\calendar_arrows.png" />
@@ -736,6 +741,7 @@
     <Content Include="jquery-easyui\themes\gray\dialog.css" />
     <Content Include="jquery-easyui\themes\gray\easyui.css" />
     <Content Include="jquery-easyui\themes\gray\filebox.css" />
+    <Content Include="jquery-easyui\themes\gray\flex.css" />
     <Content Include="jquery-easyui\themes\gray\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\gray\images\blank.gif" />
     <Content Include="jquery-easyui\themes\gray\images\calendar_arrows.png" />
@@ -827,6 +833,7 @@
     <Content Include="jquery-easyui\themes\material-blue\dialog.css" />
     <Content Include="jquery-easyui\themes\material-blue\easyui.css" />
     <Content Include="jquery-easyui\themes\material-blue\filebox.css" />
+    <Content Include="jquery-easyui\themes\material-blue\flex.css" />
     <Content Include="jquery-easyui\themes\material-blue\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\material-blue\images\blank.gif" />
     <Content Include="jquery-easyui\themes\material-blue\images\calendar_arrows.png" />
@@ -888,6 +895,7 @@
     <Content Include="jquery-easyui\themes\material-teal\dialog.css" />
     <Content Include="jquery-easyui\themes\material-teal\easyui.css" />
     <Content Include="jquery-easyui\themes\material-teal\filebox.css" />
+    <Content Include="jquery-easyui\themes\material-teal\flex.css" />
     <Content Include="jquery-easyui\themes\material-teal\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\material-teal\images\blank.gif" />
     <Content Include="jquery-easyui\themes\material-teal\images\calendar_arrows.png" />
@@ -947,6 +955,7 @@
     <Content Include="jquery-easyui\themes\material\dialog.css" />
     <Content Include="jquery-easyui\themes\material\easyui.css" />
     <Content Include="jquery-easyui\themes\material\filebox.css" />
+    <Content Include="jquery-easyui\themes\material\flex.css" />
     <Content Include="jquery-easyui\themes\material\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\material\images\blank.gif" />
     <Content Include="jquery-easyui\themes\material\images\calendar_arrows.png" />
@@ -1006,6 +1015,7 @@
     <Content Include="jquery-easyui\themes\metro\dialog.css" />
     <Content Include="jquery-easyui\themes\metro\easyui.css" />
     <Content Include="jquery-easyui\themes\metro\filebox.css" />
+    <Content Include="jquery-easyui\themes\metro\flex.css" />
     <Content Include="jquery-easyui\themes\metro\images\accordion_arrows.png" />
     <Content Include="jquery-easyui\themes\metro\images\blank.gif" />
     <Content Include="jquery-easyui\themes\metro\images\calendar_arrows.png" />
@@ -1066,31 +1076,6 @@
     <Content Include="Js\RemoteConfiguration\SimpleIndex.js" />
     <Content Include="Js\Share\jquery.snippet.min.js" />
     <Content Include="Js\Share\Share.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Web.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Views\Shared\_MainLayout.cshtml" />
-    <Content Include="Views\RemoteConfiguration\Index.cshtml" />
-    <Content Include="Views\RemoteConfiguration\Create.cshtml" />
-    <Content Include="Views\RemoteConfiguration\EditVersion.cshtml" />
-    <Content Include="Views\RemoteConfiguration\CreateVersion.cshtml" />
-    <Content Include="Views\RemoteConfiguration\ViewHistory.cshtml" />
-    <Content Include="Views\Shared\_MainNoLayout.cshtml" />
-    <Content Include="Views\RemoteConfiguration\ViewConfig.cshtml" />
-    <Content Include="Views\RemoteConfiguration\SimpleIndex.cshtml" />
     <Content Include="jquery-easyui\demo\accordion\datagrid_data1.json" />
     <Content Include="jquery-easyui\demo\combobox\combobox_data1.json" />
     <Content Include="jquery-easyui\demo\combobox\combobox_data2.json" />
@@ -1116,6 +1101,31 @@
     <Content Include="jquery-easyui\plugins\jquery.calendar" />
     <Content Include="jquery-easyui\themes\material-teal\images\Thumbs.db" />
     <Content Include="jquery-easyui\themes\material\images\Thumbs.db" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\RemoteConfiguration\Index.cshtml" />
+    <Content Include="Views\RemoteConfiguration\Create.cshtml" />
+    <Content Include="Views\RemoteConfiguration\EditVersion.cshtml" />
+    <Content Include="Views\RemoteConfiguration\CreateVersion.cshtml" />
+    <Content Include="Views\RemoteConfiguration\ViewHistory.cshtml" />
+    <Content Include="Views\Shared\_MainNoLayout.cshtml" />
+    <Content Include="Views\RemoteConfiguration\ViewConfig.cshtml" />
+    <Content Include="Views\RemoteConfiguration\SimpleIndex.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

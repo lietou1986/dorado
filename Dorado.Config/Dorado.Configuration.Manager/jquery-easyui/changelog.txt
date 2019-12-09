@@ -1,4 +1,4 @@
-Version 1.8.x
+Version 1.9.0
 -------------
 * Bug
  * datagrid: Slow scrolling with mousewheel on frozen columns. fixed.
@@ -10,6 +10,8 @@ Version 1.8.x
  * checkbox: Add 'readonly' property.
  * radiobutton: Add 'readonly' property.
  * Compatible with jQuery 3.x.
+* New Plugins
+ * timepicker: Allow the user to choose time on a clock.
 
 Version 1.8.0
 -------------

@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.8
+ * EasyUI for jQuery 1.9.0
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -198,6 +198,11 @@
 		timespinner:{
 			js:'jquery.timespinner.js',
 			dependencies:['spinner']
+		},
+		timepicker:{
+			js:'jquery.timepicker.js',
+			css:'flex.css',
+			dependencies:['combo']
 		},
 		tree:{
 			js:'jquery.tree.js',

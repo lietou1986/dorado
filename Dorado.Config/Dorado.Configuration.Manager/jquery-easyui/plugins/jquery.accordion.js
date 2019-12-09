@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.8
+ * EasyUI for jQuery 1.9.0
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -180,7 +180,6 @@ var _2f=_2e.children("div.panel-tool");
 _2f.children("a.panel-tool-collapse").hide();
 var t=$("<a href=\"javascript:;\"></a>").addClass("accordion-collapse accordion-expand").appendTo(_2f);
 t._bind("click",function(){
-console.log("cc");
 _30(pp);
 return false;
 });

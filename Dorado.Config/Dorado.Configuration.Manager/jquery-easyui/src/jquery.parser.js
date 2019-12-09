@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.8
+ * EasyUI for jQuery 1.9.0
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -85,7 +85,7 @@
 		plugins:['draggable','droppable','resizable','pagination','tooltip',
 		         'linkbutton','menu','sidemenu','menubutton','splitbutton','switchbutton','progressbar','radiobutton','checkbox',
 				 'tree','textbox','passwordbox','maskedbox','filebox','combo','combobox','combotree','combogrid','combotreegrid','tagbox','numberbox','validatebox','searchbox',
-				 'spinner','numberspinner','timespinner','datetimespinner','calendar','datebox','datetimebox','slider',
+				 'spinner','numberspinner','timespinner','datetimespinner','calendar','datebox','datetimebox','timepicker','slider',
 				 'layout','panel','datagrid','propertygrid','treegrid','datalist','tabs','accordion','window','dialog','form'
 		],
 		parse: function(context){

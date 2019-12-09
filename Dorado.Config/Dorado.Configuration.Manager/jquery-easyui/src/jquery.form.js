@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.8.8
+ * EasyUI for jQuery 1.9.0
  * 
  * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
@@ -475,7 +475,7 @@
 	};
 	
 	$.fn.form.defaults = {
-		fieldTypes: ['tagbox','combobox','combotree','combogrid','combotreegrid','datetimebox','datebox','combo',
+		fieldTypes: ['tagbox','combobox','combotree','combogrid','combotreegrid','datetimebox','datebox','timepicker','combo',
 		        'datetimespinner','timespinner','numberspinner','spinner',
 		        'slider','searchbox','numberbox','passwordbox','filebox','textbox','switchbutton','radiobutton','checkbox'],
 		novalidate: false,
