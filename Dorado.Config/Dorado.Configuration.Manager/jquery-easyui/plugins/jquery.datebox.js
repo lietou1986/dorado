@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.9.0
+ * EasyUI for jQuery 1.9.4
  * 
- * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -153,22 +153,36 @@ return jq.each(function(){
 var _2b=$(this).datebox("options");
 var _2c=_2b.value;
 if(_2c){
-_2c=_2b.formatter.call(this,_2b.parser.call(this,_2c));
+var _2d=_2b.parser.call(this,_2c);
+_2c=_2b.formatter.call(this,_2d);
+$(this).datebox("calendar").calendar("moveTo",_2d);
 }
 $(this).combo("initValue",_2c).combo("setText",_2c);
 });
-},setValue:function(jq,_2d){
+},setValue:function(jq,_2e){
 return jq.each(function(){
-_18(this,_2d);
+_18(this,_2e);
 });
 },reset:function(jq){
 return jq.each(function(){
-var _2e=$(this).datebox("options");
-$(this).datebox("setValue",_2e.originalValue);
+var _2f=$(this).datebox("options");
+$(this).datebox("setValue",_2f.originalValue);
 });
+},setDate:function(jq,_30){
+return jq.each(function(){
+var _31=$(this).datebox("options");
+$(this).datebox("calendar").calendar("moveTo",_30);
+_18(this,_30?_31.formatter.call(this,_30):"");
+});
+},getDate:function(jq){
+if(jq.datebox("getValue")){
+return jq.datebox("calendar").calendar("options").current;
+}else{
+return null;
+}
 }};
-$.fn.datebox.parseOptions=function(_2f){
-return $.extend({},$.fn.combo.parseOptions(_2f),$.parser.parseOptions(_2f,["sharedCalendar"]));
+$.fn.datebox.parseOptions=function(_32){
+return $.extend({},$.fn.combo.parseOptions(_32),$.parser.parseOptions(_32,["sharedCalendar"]));
 };
 $.fn.datebox.defaults=$.extend({},$.fn.combo.defaults,{panelWidth:250,panelHeight:"auto",sharedCalendar:null,keyHandler:{up:function(e){
 },down:function(e){
@@ -178,39 +192,39 @@ $.fn.datebox.defaults=$.extend({},$.fn.combo.defaults,{panelWidth:250,panelHeigh
 _19(this);
 },query:function(q,e){
 _16(this,q);
-}},currentText:"Today",closeText:"Close",okText:"Ok",buttons:[{text:function(_30){
-return $(_30).datebox("options").currentText;
-},handler:function(_31){
-var _32=$(_31).datebox("options");
+}},currentText:"Today",closeText:"Close",okText:"Ok",buttons:[{text:function(_33){
+return $(_33).datebox("options").currentText;
+},handler:function(_34){
+var _35=$(_34).datebox("options");
 var now=new Date();
-var _33=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-$(_31).datebox("calendar").calendar({year:_33.getFullYear(),month:_33.getMonth()+1,current:_33});
-_32.onSelect.call(_31,_33);
-_19(_31);
-}},{text:function(_34){
-return $(_34).datebox("options").closeText;
-},handler:function(_35){
+var _36=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+$(_34).datebox("calendar").calendar({year:_36.getFullYear(),month:_36.getMonth()+1,current:_36});
+_35.onSelect.call(_34,_36);
+_19(_34);
+}},{text:function(_37){
+return $(_37).datebox("options").closeText;
+},handler:function(_38){
 $(this).closest("div.combo-panel").panel("close");
-}}],formatter:function(_36){
-var y=_36.getFullYear();
-var m=_36.getMonth()+1;
-var d=_36.getDate();
+}}],formatter:function(_39){
+var y=_39.getFullYear();
+var m=_39.getMonth()+1;
+var d=_39.getDate();
 return (m<10?("0"+m):m)+"/"+(d<10?("0"+d):d)+"/"+y;
 },parser:function(s){
-var _37=$(this).datebox("calendar").calendar("options");
+var _3a=$(this).datebox("calendar").calendar("options");
 if(!s){
-return new _37.Date();
+return new _3a.Date();
 }
 var ss=s.split("/");
 var m=parseInt(ss[0],10);
 var d=parseInt(ss[1],10);
 var y=parseInt(ss[2],10);
 if(!isNaN(y)&&!isNaN(m)&&!isNaN(d)){
-return new _37.Date(y,m-1,d);
+return new _3a.Date(y,m-1,d);
 }else{
-return new _37.Date();
+return new _3a.Date();
 }
-},onSelect:function(_38){
+},onSelect:function(_3b){
 }});
 })(jQuery);
 

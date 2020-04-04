@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.9.0
+ * EasyUI for jQuery 1.9.4
  * 
- * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -105,23 +105,37 @@ return jq.each(function(){
 var _22=$(this).datetimebox("options");
 var _23=_22.value;
 if(_23){
-_23=_22.formatter.call(this,_22.parser.call(this,_23));
+var _24=_22.parser.call(this,_23);
+_23=_22.formatter.call(this,_24);
+$(this).datetimebox("calendar").calendar("moveTo",_24);
 }
 $(this).combo("initValue",_23).combo("setText",_23);
 });
-},setValue:function(jq,_24){
+},setValue:function(jq,_25){
 return jq.each(function(){
-_d(this,_24);
+_d(this,_25);
 });
 },reset:function(jq){
 return jq.each(function(){
-var _25=$(this).datetimebox("options");
-$(this).datetimebox("setValue",_25.originalValue);
+var _26=$(this).datetimebox("options");
+$(this).datetimebox("setValue",_26.originalValue);
 });
+},setDate:function(jq,_27){
+return jq.each(function(){
+var _28=$(this).datetimebox("options");
+$(this).datetimebox("calendar").calendar("moveTo",_27);
+_d(this,_27?_28.formatter.call(this,_27):"");
+});
+},getDate:function(jq){
+if(jq.datetimebox("getValue")){
+return jq.datetimebox("calendar").calendar("options").current;
+}else{
+return null;
+}
 }};
-$.fn.datetimebox.parseOptions=function(_26){
-var t=$(_26);
-return $.extend({},$.fn.datebox.parseOptions(_26),$.parser.parseOptions(_26,["timeSeparator","spinnerWidth",{showSeconds:"boolean"}]));
+$.fn.datetimebox.parseOptions=function(_29){
+var t=$(_29);
+return $.extend({},$.fn.datebox.parseOptions(_29),$.parser.parseOptions(_29,["timeSeparator","spinnerWidth",{showSeconds:"boolean"}]));
 };
 $.fn.datetimebox.defaults=$.extend({},$.fn.datebox.defaults,{spinnerWidth:"100%",showSeconds:true,timeSeparator:":",hour12:false,panelEvents:{mousedown:function(e){
 }},keyHandler:{up:function(e){
@@ -132,37 +146,37 @@ $.fn.datetimebox.defaults=$.extend({},$.fn.datebox.defaults,{spinnerWidth:"100%"
 _e(this);
 },query:function(q,e){
 _b(this,q);
-}},buttons:[{text:function(_27){
-return $(_27).datetimebox("options").currentText;
-},handler:function(_28){
-var _29=$(_28).datetimebox("options");
-_d(_28,_29.formatter.call(_28,new Date()));
-$(_28).datetimebox("hidePanel");
-}},{text:function(_2a){
-return $(_2a).datetimebox("options").okText;
+}},buttons:[{text:function(_2a){
+return $(_2a).datetimebox("options").currentText;
 },handler:function(_2b){
-_e(_2b);
-}},{text:function(_2c){
-return $(_2c).datetimebox("options").closeText;
-},handler:function(_2d){
-$(_2d).datetimebox("hidePanel");
-}}],formatter:function(_2e){
-if(!_2e){
+var _2c=$(_2b).datetimebox("options");
+_d(_2b,_2c.formatter.call(_2b,new Date()));
+$(_2b).datetimebox("hidePanel");
+}},{text:function(_2d){
+return $(_2d).datetimebox("options").okText;
+},handler:function(_2e){
+_e(_2e);
+}},{text:function(_2f){
+return $(_2f).datetimebox("options").closeText;
+},handler:function(_30){
+$(_30).datetimebox("hidePanel");
+}}],formatter:function(_31){
+if(!_31){
 return "";
 }
-return $.fn.datebox.defaults.formatter.call(this,_2e)+" "+$.fn.timespinner.defaults.formatter.call($(this).datetimebox("spinner")[0],_2e);
+return $.fn.datebox.defaults.formatter.call(this,_31)+" "+$.fn.timespinner.defaults.formatter.call($(this).datetimebox("spinner")[0],_31);
 },parser:function(s){
 s=$.trim(s);
 if(!s){
 return new Date();
 }
 var dt=s.split(" ");
-var _2f=$.fn.datebox.defaults.parser.call(this,dt[0]);
+var _32=$.fn.datebox.defaults.parser.call(this,dt[0]);
 if(dt.length<2){
-return _2f;
+return _32;
 }
-var _30=$.fn.timespinner.defaults.parser.call($(this).datetimebox("spinner")[0],dt[1]+(dt[2]?" "+dt[2]:""));
-return new Date(_2f.getFullYear(),_2f.getMonth(),_2f.getDate(),_30.getHours(),_30.getMinutes(),_30.getSeconds());
+var _33=$.fn.timespinner.defaults.parser.call($(this).datetimebox("spinner")[0],dt[1]+(dt[2]?" "+dt[2]:""));
+return new Date(_32.getFullYear(),_32.getMonth(),_32.getDate(),_33.getHours(),_33.getMinutes(),_33.getSeconds());
 }});
 })(jQuery);
 

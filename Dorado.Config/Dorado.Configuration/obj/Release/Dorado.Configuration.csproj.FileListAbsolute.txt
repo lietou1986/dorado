@@ -102,7 +102,6 @@ D:\_Repos\work\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Conf
 D:\work\_Repos\dorado\Build\Dorado.Configuration.dll
 D:\work\_Repos\dorado\Build\Dorado.Configuration.pdb
 D:\work\_Repos\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.csprojAssemblyReference.cache
-D:\work\_Repos\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.csproj.CoreCompileInputs.cache
 D:\work\_Repos\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.csproj.CopyComplete
 D:\work\_Repos\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.dll
 D:\work\_Repos\dorado\Dorado.Config\Dorado.Configuration\obj\Release\Dorado.Configuration.pdb

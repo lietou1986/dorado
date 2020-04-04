@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.9.0
+ * EasyUI for jQuery 1.9.4
  * 
- * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -137,6 +137,10 @@ return aa;
 };
 function _10(_11,_12){
 var _13=$.data(_11,"pagination").options;
+if(_13.onBeforeSelectPage.call(_11,_12,_13.pageSize)==false){
+_14(_11);
+return;
+}
 _14(_11,{pageNumber:_12});
 _13.onSelectPage.call(_11,_13.pageNumber,_13.pageSize);
 };
@@ -262,37 +266,38 @@ $.fn.pagination.parseOptions=function(_28){
 var t=$(_28);
 return $.extend({},$.parser.parseOptions(_28,[{total:"number",pageSize:"number",pageNumber:"number",links:"number"},{loading:"boolean",showPageList:"boolean",showPageInfo:"boolean",showRefresh:"boolean"}]),{pageList:(t.attr("pageList")?eval(t.attr("pageList")):undefined)});
 };
-$.fn.pagination.defaults={total:1,pageSize:10,pageNumber:1,pageList:[10,20,30,50],loading:false,buttons:null,showPageList:true,showPageInfo:true,showRefresh:true,links:10,layout:["list","sep","first","prev","sep","manual","sep","next","last","sep","refresh","info"],onSelectPage:function(_29,_2a){
-},onBeforeRefresh:function(_2b,_2c){
-},onRefresh:function(_2d,_2e){
-},onChangePageSize:function(_2f){
+$.fn.pagination.defaults={total:1,pageSize:10,pageNumber:1,pageList:[10,20,30,50],loading:false,buttons:null,showPageList:true,showPageInfo:true,showRefresh:true,links:10,layout:["list","sep","first","prev","sep","manual","sep","next","last","sep","refresh","info"],onBeforeSelectPage:function(_29,_2a){
+},onSelectPage:function(_2b,_2c){
+},onBeforeRefresh:function(_2d,_2e){
+},onRefresh:function(_2f,_30){
+},onChangePageSize:function(_31){
 },beforePageText:"Page",afterPageText:"of {pages}",displayMsg:"Displaying {from} to {to} of {total} items",nav:{first:{iconCls:"pagination-first",handler:function(){
-var _30=$(this).pagination("options");
-if(_30.pageNumber>1){
+var _32=$(this).pagination("options");
+if(_32.pageNumber>1){
 $(this).pagination("select",1);
 }
 }},prev:{iconCls:"pagination-prev",handler:function(){
-var _31=$(this).pagination("options");
-if(_31.pageNumber>1){
-$(this).pagination("select",_31.pageNumber-1);
+var _33=$(this).pagination("options");
+if(_33.pageNumber>1){
+$(this).pagination("select",_33.pageNumber-1);
 }
 }},next:{iconCls:"pagination-next",handler:function(){
-var _32=$(this).pagination("options");
-var _33=Math.ceil(_32.total/_32.pageSize);
-if(_32.pageNumber<_33){
-$(this).pagination("select",_32.pageNumber+1);
-}
-}},last:{iconCls:"pagination-last",handler:function(){
 var _34=$(this).pagination("options");
 var _35=Math.ceil(_34.total/_34.pageSize);
 if(_34.pageNumber<_35){
-$(this).pagination("select",_35);
+$(this).pagination("select",_34.pageNumber+1);
+}
+}},last:{iconCls:"pagination-last",handler:function(){
+var _36=$(this).pagination("options");
+var _37=Math.ceil(_36.total/_36.pageSize);
+if(_36.pageNumber<_37){
+$(this).pagination("select",_37);
 }
 }},refresh:{iconCls:"pagination-refresh",handler:function(){
-var _36=$(this).pagination("options");
-if(_36.onBeforeRefresh.call(this,_36.pageNumber,_36.pageSize)!=false){
-$(this).pagination("select",_36.pageNumber);
-_36.onRefresh.call(this,_36.pageNumber,_36.pageSize);
+var _38=$(this).pagination("options");
+if(_38.onBeforeRefresh.call(this,_38.pageNumber,_38.pageSize)!=false){
+$(this).pagination("select",_38.pageNumber);
+_38.onRefresh.call(this,_38.pageNumber,_38.pageSize);
 }
 }}}};
 })(jQuery);

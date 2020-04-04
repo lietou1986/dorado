@@ -57,3 +57,11 @@ D:\_Repos\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.CoreCo
 D:\_Repos\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.CopyComplete
 D:\_Repos\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.dll
 D:\_Repos\work\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.pdb
+D:\work\_Repos\dorado\Build\Dorado.Web.dll
+D:\work\_Repos\dorado\Build\Dorado.Web.pdb
+D:\work\_Repos\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csprojAssemblyReference.cache
+D:\work\_Repos\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.Resource.resources
+D:\work\_Repos\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.GenerateResource.cache
+D:\work\_Repos\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.csproj.CopyComplete
+D:\work\_Repos\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.dll
+D:\work\_Repos\dorado\Dorado.Web\Dorado.Web\obj\Release\Dorado.Web.pdb

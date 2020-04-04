@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.9.0
+ * EasyUI for jQuery 1.9.4
  * 
- * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -1116,7 +1116,7 @@ var col=_76(_10f,sn);
 var _113=col.sorter||function(a,b){
 return a==b?0:(a>b?1:-1);
 };
-r=_113(r1[sn],r2[sn])*(so=="asc"?1:-1);
+r=_113(r1[sn],r2[sn],r1,r2)*(so=="asc"?1:-1);
 if(r!=0){
 return r;
 }
